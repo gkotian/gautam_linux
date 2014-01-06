@@ -1,0 +1,82 @@
+Additional softwares after a fresh Linux installation:
+
+    super-boot-manager (http://www.sourceslist.eu/projects/super-boot-manager)
+        sudo add-apt-repository ppa:ingalex/super-boot-manager
+        sudo apt-get update
+        sudo apt-get install super-boot-manager
+
+---------------------------------------------------------------------------------------------------
+
+Rupee & Euro signs
+------------------
+Linux Mint -> Preferences -> Region & Language -> Layouts -> Options
+under "Adding currency signs to certain keys", choose "Euro on 5" & "Rupee on 4"
+under "Key to choose 3rd level", choose "Any Win key"
+verify using the "Keyboard Layout" button if the changes you made are reflected
+then open a text editor and test "Win + 4" & "Win + 5"
+if they work, make small Rupee & Euro symbols and stick on the keyboard
+
+---------------------------------------------------------------------------------------------------
+
+Extra characters (e.g. German umlauts, beta etc.)
+-------------------------------------------------
+    Linux Mint -> Preferences -> Region & Language -> Layouts -> Options
+    under "Compose key position", choose a compose key (maybe right Alt)
+    open a text editor and test "Compose Key + s" followed by "s", and see if ß appears
+    to change key bindings, edit the .XCompose file in the home directory
+
+references:
+    http://fsymbols.com/keyboard/linux/choosers/
+    https://help.ubuntu.com/community/ComposeKey
+
+---------------------------------------------------------------------------------------------------
+
+To cut the last field (using space as delimiter):
+    awk -F" " '{print $NF}'
+        OR
+    rev | cut -d" " -f1 | rev
+
+---------------------------------------------------------------------------------------------------
+
+To get the sizes of files (without an overwhelming amount of output), use:
+    du -ckhs *
+    (I don't yet know the reason for the 'k', as 'du -chs *' seems to give the same output)
+
+---------------------------------------------------------------------------------------------------
+
+The output of 'echo' can be controlled by using certain "Terminfo Capabilities", e.g:
+    prompt$> tput smso; echo "hello world"; tput rmso
+(more here: http://tldp.org/LDP/lpg/node126.html)
+
+---------------------------------------------------------------------------------------------------
+
+To run a command at startup, there are 2 options:
+    1. sudo crontab -e
+       add the following in the end:
+           @reboot <<command_to_run>>
+      OR
+    2. create a script file with your command
+       make the script executable
+       sudo /etc/rc.local
+       path to your script at the end just above exit 0
+So what's the difference?
+    For the most part they're equivalent. The part where they differ is precisely when they run the
+    command. /etc/rc.local is the last item to run, after all the other services have started.
+    I don't yet know when @reboot runs.
+
+---------------------------------------------------------------------------------------------------
+
+git diff             --> compares working copy with staged copy
+git diff --staged    --> compares staged copy with last committed changes
+
+(so if all changes have been staged, 'git diff' will give no output)
+
+---------------------------------------------------------------------------------------------------
+
+to make wireshark run as root when launched from the main menu:
+system -> preferences -> main menu
+find wireshark's launcher
+change it to "gksudo wireshark"
+
+---------------------------------------------------------------------------------------------------
+

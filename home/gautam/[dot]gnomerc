@@ -1,0 +1,4 @@
+# Overrule Gnome hard coding in favour of the original Xwindow Input Method (XIM)
+# This is so that I can define my own custom compose key bindings in '~/.XCompose'
+export GTK_IM_MODULE="xim"
+
