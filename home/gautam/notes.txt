@@ -7,19 +7,8 @@ Additional softwares after a fresh Linux installation:
 
 ---------------------------------------------------------------------------------------------------
 
-Rupee & Euro signs
-------------------
-Linux Mint -> Preferences -> Region & Language -> Layouts -> Options
-under "Adding currency signs to certain keys", choose "Euro on 5" & "Rupee on 4"
-under "Key to choose 3rd level", choose "Any Win key"
-verify using the "Keyboard Layout" button if the changes you made are reflected
-then open a text editor and test "Win + 4" & "Win + 5"
-if they work, make small Rupee & Euro symbols and stick on the keyboard
-
----------------------------------------------------------------------------------------------------
-
-Extra characters (e.g. German umlauts, beta etc.)
--------------------------------------------------
+Extra characters (e.g. German umlauts, rupee sign, euro sign etc.)
+------------------------------------------------------------------
     Linux Mint -> Preferences -> Region & Language -> Layouts -> Options
     under "Compose key position", choose a compose key (maybe right Alt)
     open a text editor and test "Compose Key + s" followed by "s", and see if ß appears

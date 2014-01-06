@@ -1,6 +1,8 @@
 # UTF-8 (Unicode) compose sequence
 # David.Monniaux@ens.fr
 #
+#
+# Gautam - modified using '/usr/share/X11/locale/en_US.UTF-8/Compose' as the base
 
 # Part 1 - Manual definitions
 
@@ -161,7 +163,13 @@
 <Multi_key> <percent> <o>        	: "‰"   U2030 # PER MILLE SIGN
 
 # Currencies
-<Multi_key> <C> <E>              	: "₠"   U20a0 # EURO-CURRENCY SIGN
+<Multi_key> <C> <E>              	: "€"   EuroSign # EURO SIGN
+<Multi_key> <C> <D>              	: "$"   dollar   # DOLLAR SIGN
+<Multi_key> <C> <R>              	: "₹"   U20b9    # INDIAN RUPEE SIGN
+<Multi_key> <C> <P>              	: "£"   sterling # POUND SIGN
+<Multi_key> <C> <Y>              	: "¥"   yen      # YEN SIGN
+
+#<Multi_key> <C> <E>              	: "₠"   U20a0 # EURO-CURRENCY SIGN
 <Multi_key> <C> <slash>          	: "₡"   U20a1 # COLON SIGN
 <Multi_key> <slash> <C>          	: "₡"   U20a1 # COLON SIGN
 <Multi_key> <C> <r>              	: "₢"   U20a2 # CRUZEIRO SIGN
@@ -652,11 +660,11 @@
 <dead_grave> <a>                 	: "à"   agrave # LATIN SMALL LETTER A WITH GRAVE
 <Multi_key> <grave> <a>          	: "à"   agrave # LATIN SMALL LETTER A WITH GRAVE
 <Multi_key> <a> <grave> 		: "à"   agrave # LATIN SMALL LETTER A WITH GRAVE
-<dead_acute> <a>                 	: "ä"   aacute # LATIN SMALL LETTER A WITH ACUTE
-<Multi_key> <acute> <a>          	: "ä"   aacute # LATIN SMALL LETTER A WITH ACUTE
-<Multi_key> <a> <acute> 		: "ä"   aacute # LATIN SMALL LETTER A WITH ACUTE
-<Multi_key> <apostrophe> <a>     	: "ä"   aacute # LATIN SMALL LETTER A WITH ACUTE
-<Multi_key> <a> <apostrophe> 		: "ä"   aacute # LATIN SMALL LETTER A WITH ACUTE
+<dead_acute> <a>                 	: "á"   aacute # LATIN SMALL LETTER A WITH ACUTE
+<Multi_key> <acute> <a>          	: "á"   aacute # LATIN SMALL LETTER A WITH ACUTE
+<Multi_key> <a> <acute> 		: "á"   aacute # LATIN SMALL LETTER A WITH ACUTE
+<Multi_key> <apostrophe> <a>     	: "á"   aacute # LATIN SMALL LETTER A WITH ACUTE
+<Multi_key> <a> <apostrophe> 		: "á"   aacute # LATIN SMALL LETTER A WITH ACUTE
 <dead_circumflex> <a>            	: "â"   acircumflex # LATIN SMALL LETTER A WITH CIRCUMFLEX
 <Multi_key> <asciicircum> <a>    	: "â"   acircumflex # LATIN SMALL LETTER A WITH CIRCUMFLEX
 <Multi_key> <a> <asciicircum> 		: "â"   acircumflex # LATIN SMALL LETTER A WITH CIRCUMFLEX
