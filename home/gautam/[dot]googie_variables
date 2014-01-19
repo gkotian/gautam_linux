@@ -1,0 +1,17 @@
+# Variables restricted to current shell
+BASESVN=/home/gautam/work/baseSvn
+BASEGIT=/home/gautam/work/baseGit
+BSR=/home/gautam/work/bsr-6.3.0P36
+
+BRANCH=trunk
+
+# Environment variables (passed to all child processes as well)
+
+# For chromium
+export PATH=$PATH:/home/gautam/chromium/depot_tools
+
+export EDITOR=/usr/bin/vim
+export BASE=$BASESVN/$BRANCH
+
+# Temporary variables
+

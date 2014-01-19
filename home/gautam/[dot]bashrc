@@ -1,0 +1,101 @@
+# .bashrc
+
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+# Enable vi editor like interactions with the command line
+set -o vi
+
+#************* BEGIN: History file setup (.bash_history)
+
+# ignoredups  -> don't put duplicate lines in history
+# ignorespace -> don't put commands that begin with a space in history
+HISTCONTROL=ignoredups:ignorespace
+
+# Don't put commonly used commands in history
+export HISTIGNORE="pwd:x:lock:exit:"
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+#************* END: History file setup
+
+
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+
+
+#************* BEGIN: Custom stuff setup
+
+# Definitions of variables.
+# (place this first so that variables declared here can be used in '.googie_aliases' & '.googie_functions')
+if [ -f /home/gautam/.googie_variables ]; then
+    . /home/gautam/.googie_variables
+fi
+
+# Alias definitions.
+if [ -f /home/gautam/.googie_aliases ]; then
+    . /home/gautam/.googie_aliases
+fi
+
+# Function definitions.
+if [ -f /home/gautam/.googie_functions ]; then
+    . /home/gautam/.googie_functions
+fi
+
+#************* END: Custom stuff setup
+
+
+
+#************* BEGIN: Prompt setup
+
+if [ -f /home/gautam/.googie_functions ]; then
+    setPrompt "regular"
+fi
+
+#************* END: Prompt setup
+
+
+
+#************* BEGIN: Title setup
+
+# This portion is now commented out since it does not allow setting of the title
+# of the terminal window using:
+#         echo -ne "\033]0;TITLE\007"
+
+# If this is an xterm set the title to user@host:dir
+#case "$TERM" in
+#xterm*|rxvt*)
+#    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+#    ;;
+#*)
+#    ;;
+#esac
+
+#************* END: Title setup
+
+
+
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
+
+# Ctrl+s causes xterm to freeze on some machines. Then only Ctrl+q can unfreeze it.
+# Using 'stty ixany' unfreezes on any key pressed (so one never notices that the terminal even froze)
+#stty ixany
+

@@ -1,0 +1,19 @@
+[user]
+	name = Gautam Kotian
+	email = gautam.kotian@gmail.com
+[merge]
+	tool = meld
+[alias]
+	st = status
+	br = branch
+	unstage = reset HEAD --
+	last = log -1 HEAD
+    d = difftool --tool=meld --no-prompt
+[giggle]
+	main-window-maximized = true
+	main-window-geometry = 700x550+1+80
+	file-view-vpane-position = 468
+	main-window-view = FileView
+	history-view-vpane-position = 288
+[core]
+	deltaBaseCacheLimit = 1G

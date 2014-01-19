@@ -1,0 +1,171 @@
+##### Aliases to be studied #####
+
+# enable color support of ls and also add handy aliases
+#if [ -x /usr/bin/dircolors ]; then
+#    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+#    alias ls='ls -F --color=auto'
+#    #alias dir='dir --color=auto'
+#    #alias vdir='vdir --color=auto'
+
+#    alias grep='grep --color=auto'
+#    alias fgrep='fgrep --color=auto'
+#    alias egrep='egrep --color=auto'
+#fi
+
+# some more ls aliases
+#alias ll='ls -alF'
+#alias la='ls -A'
+#alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+#alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" '
+
+# To show multi-line output in a single line (space separated). Usage:
+#     $ grep blah * | one_line
+alias one_line='awk '\''{printf "%s ", $1} END {printf "\n"}'\'''
+
+
+
+alias l='less -j 4' # always display the search term on the 4th line from top
+alias x='exit'
+alias rm='rm -i' # Prompt before every removal
+alias mv='mv -i' # Prompt before overwriting
+alias ls='ls --classify'
+alias grep='grep -n --color=auto'
+alias vi='/usr/bin/vim'
+alias B='vi ~/.bashrc'
+alias GA='vi ~/.googie_aliases'
+alias GF='vi ~/.googie_functions'
+alias GV='vi ~/.googie_variables'
+alias SB='source ~/.bashrc'
+alias SGA='source ~/.googie_aliases'
+alias SGF='source ~/.googie_functions'
+alias SGV='source ~/.googie_variables'
+alias r='vi ~/.reminders'
+
+
+# Aliases to commands
+alias codewin='settitle CODE_WINDOW'
+alias searchwin='settitle SEARCH_WINDOW'
+alias bldwin='settitle BUILD_WINDOW'
+alias fd='finddef'
+alias rsa='nohup /home/gautam/.wine/drive_c/Program\ Files/RSA\ SecurID\ Software\ Token/SecurID.exe > /dev/null 2>&1 &'
+alias meld='meld 2>/dev/null' # just preventing 'meld' from throwing errors
+#alias setbld='/WindRiver/wrenv.sh -p wrlinux-4 && source /home/gautam/work/video/gautam_dgm/linux/src/proj/archive/proj32'
+#alias envsp='source /home/gautam/work/video/gautam_dgm/linux/src/proj/vsp/enablevsp'
+#alias m='cd /home/gautam/work/video/gautam_dgm/linux/src/proj/vsp && make -j4 dist'
+#alias mfull='cd /home/gautam/work/video/gautam_dgm/linux/src/proj/archive && make -j4 dist'
+alias setbase='BASE=$PWD'
+alias lock='gnome-screensaver-command --lock'
+alias sd='svn diff --diff-cmd=/home/gautam/.svn_diff_using_meld > /dev/null 2>&1'
+alias kd='kdiff3 > /dev/null 2>&1'
+alias gd='git difftool --tool=meld'
+alias lockdir='chmod -x'
+alias unlockdir='chmod +x'
+alias ppc='qemu-system-ppc -M mac99 -m 512 -hda .debian_squeeze_powerpc_standard.qcow2'
+alias svntrunk='svnbranch trunk'
+alias svnmaster='svnbranch trunk'
+alias myip='ifconfig | \grep "inet addr" | \grep -v "127.0.0.1" | cut -d":" -f2 | cut -d" " -f1'
+alias b?='echo BENUPROJ=$BENUPROJ'
+alias b_plat='export BENUPROJ=PC && larch && time make dist; alert "Build finished"'
+alias cb_plat='export BENUPROJ=PC && larch && make clean && time make dist; alert "Build finished"'
+alias dcb_plat='export BENUPROJ=PC && larch && make distclean && time make dist; alert "Build finished"'
+alias b_wag='lwag && source proj64_pc && time make dist; alert "Build finished"'
+alias cb_wag='wbld && rm -f CMakeCache.txt && lwag && source proj64_pc && make clean; make wagclean; time make dist; alert "Build finished"'
+alias dcb_wag='wbld && rm -f CMakeCache.txt && lwag && source proj64_pc && make distclean; time make dist; alert "Build finished"'
+alias b_mip='export BENUPROJ=PC && lmip && time make dist; alert "Build finished"'
+alias cb_mip='export BENUPROJ=PC && lmip && make clean; time make dist; alert "Build finished"'
+alias dcb_mip='export BENUPROJ=PC && lmip && make distclean; time make dist; alert "Build finished"'
+alias b_vsp='rm -fv /home/gautam/benu-vsp-x86_64-gautam-* && lvsp && source proj64_pc && time make dist; alert "Build finished"'
+alias cb_vsp='rm -fv /home/gautam/benu-vsp-x86_64-gautam-* && lvsp && source proj64_pc && larch && make clean; lvsp && time make dist; alert "Build finished"'
+alias dcb_vsp='rm -fv /home/gautam/benu-vsp-x86_64-gautam-* && lvsp && source proj64_pc && make distclean; time make dist; alert "Build finished"'
+alias vpnbang='sudo vpnc benubang --local-port 0'
+alias vpnbill='sudo vpnc benubill --local-port 0'
+alias closevpn='sudo vpnc-disconnect'
+
+alias mcli='cli && cd main && make clean && make; alert "Done"'
+alias mclilibwag='cli && cd wag_lib && make clean && make'
+alias mclicallbacks='cli && cd callbacks && make clean && make'
+alias mcmd='cmd && make clean && make'
+alias mwamgr='wbld && make clean && make wamgr'
+
+#alias reviewChanges='for file in `svn status -q | awk '\''{print \$NF}'\''`; do sd $file; done'
+alias reviewChanges='for file in `svn status -q | awk '\''{print \$NF}'\''`; do svn diff --diff-cmd kdiff3 $file; done'
+    # To display a quote (') inside an alias, we need to first break out of the quote, escape the
+    # quotation mark, and then re-enter the quote. Hence: '\''
+    # (source: http://muffinresearch.co.uk/archives/2007/01/30/bash-single-quotes-inside-of-single-quoted-strings)
+alias rc='reviewChanges'
+alias cb='createBranch'
+alias rb='reviewBranch'
+alias fb='filesInBranch'
+alias mb='mergeBranch'
+
+alias svnplw='svnp linux wireless'
+alias slw='s linux/src wireless/src'
+
+# Aliases to directories
+alias b='cd $BASE'
+alias t='cd $BASE/../trunk'
+alias bsr='cd /home/gautam/work/bsr-6.3.0P36'
+alias sbase='cd $BASESVN'
+alias gbase='cd $BASEGIT'
+alias lsrc='cd $BASE/linux/src'
+alias lvsp='cd $BASE/linux/src/proj/vsp'
+alias larch='cd $BASE/linux/src/proj/archive'
+alias lmip='cd $BASE/linux/src/proj/mip-pc'
+alias lwag='cd $BASE/linux/src/proj/wag'
+alias libs='cd $BASE/linux/src/proj/linuxsim/final/lib'
+alias linc='cd $BASE/linux/src/include'
+alias lutils='cd $BASE/linux/src/util'
+alias climux='cd $BASE/linux/src/climux'
+alias uicp='cd $BASE/linux/src/udpicp'
+alias sicp='cd $BASE/linux/src/sctpicp'
+alias shm='cd $BASE/linux/src/util/mem'
+alias cli='cd $BASE/linux/src/cli'
+alias cmd='cd $BASE/linux/src/cli/commands'
+alias cinc='cd $BASE/linux/src/cli/include'
+alias evt='cd $BASE/linux/src/evt'
+alias irdp='cd $BASE/linux/src/irdp'
+alias tapp='cd $BASE/linux/src/util/testApp'
+
+alias wsrc='cd $BASE/wireless/src'
+alias wbld='cd $BASE/wireless/src/wlan/build'
+alias ha='cd $BASE/wireless/src/mip'
+alias fa='cd $BASE/wireless/src/wlan/src/fa'
+alias wamgr='cd $BASE/wireless/src/wlan/src/wamgr'
+alias wamgrdp='cd $BASE/wireless/src/wlan/src/wamgr_dp'
+
+VIDEOBASE=/home/gautam/work/baseSvn/trunk
+alias vsrc='cd $VIDEOBASE/video/src'
+alias vvsp='cd $VIDEOBASE/video/src/proj/vsp'
+alias vinc='cd $VIDEOBASE/video/src/include'
+alias dgm='cd $VIDEOBASE/video/src/dgm'
+alias drm='cd $VIDEOBASE/video/src/drm'
+alias crm='cd $VIDEOBASE/video/src/crm'
+alias spm='cd $VIDEOBASE/video/src/spm'
+alias dsg='cd $VIDEOBASE/video/src/dsg'
+alias lb='cd $VIDEOBASE/video/src/lbGrpMgr'
+alias ipdr='cd $VIDEOBASE/video/src/ipdr'
+alias stats='cd $VIDEOBASE/video/src/statsMgr'
+alias rq='cd $VIDEOBASE/video/src/rquery'
+alias vutils='cd $VIDEOBASE/video/src/utils'
+alias regdereg='cd $VIDEOBASE/video/src/utils/regDereg'
+alias rbtree='cd $VIDEOBASE/video/src/utils/rbTree'
+
+# One level up in the directory hierarchy
+alias ..='cd ..'
+
+# Back to the previous directory
+alias pd='cd -'
+
+
+# Aliases to SVN commands
+alias s='svn st -q'
+alias list_conflicts='svn status | \grep -P "^(?=.{0,6}C)"'
+alias update_trunk='svn update $BASE/trunk/*'
+
+
+# Temporary aliases
+
