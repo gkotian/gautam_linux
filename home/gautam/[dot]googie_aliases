@@ -46,6 +46,10 @@ alias SGV='source ~/.googie_variables'
 alias r='vi ~/.reminders'
 
 
+# Sociomantic specific
+alias irc='irssi --connect=192.168.2.152 --port 6667'
+
+
 # Aliases to commands
 alias codewin='settitle CODE_WINDOW'
 alias searchwin='settitle SEARCH_WINDOW'
@@ -61,7 +65,9 @@ alias setbase='BASE=$PWD'
 alias lock='gnome-screensaver-command --lock'
 alias sd='svn diff --diff-cmd=/home/gautam/.svn_diff_using_meld > /dev/null 2>&1'
 alias kd='kdiff3 > /dev/null 2>&1'
-alias gd='git difftool --tool=meld'
+alias gd='git difftool --no-prompt'
+alias gs='git status'
+alias ga='git add'
 alias lockdir='chmod -x'
 alias unlockdir='chmod +x'
 alias ppc='qemu-system-ppc -M mac99 -m 512 -hda .debian_squeeze_powerpc_standard.qcow2'
@@ -168,4 +174,6 @@ alias update_trunk='svn update $BASE/trunk/*'
 
 
 # Temporary aliases
+alias c='/home/gautam/work/shore/bin/lagoon file:///home/gautam/work/shore/testsuite/downloads/ccbparis-fr.xml /home/gautam/work/shore/testsuite/xsl/ccbparis-fr.xslt -n Product -v 2> /dev/null'
+alias lc='/home/gautam/work/shore/bin/lagoon file:///home/gautam/work/shore/testsuite/downloads/canda-fr.xml /home/gautam/work/shore/testsuite/xsl/canda-fr.xslt -n PriceProductInformation -v'
 

@@ -16,13 +16,13 @@ main = do
                         , ppTitle = xmobarColor "green" "" . shorten 50
                         }
         , startupHook = startup
-        }--  `additionalKeys`
-        --[ ((modMask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock")
-        --]
+        }
+        `additionalKeys`
+        [ ((mod1Mask .|. controlMask, xK_l),
+              spawn "slock")
+        ]
 
 startup :: X ()
 startup = do
-    spawn "trayer --edge bottom --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --tint 0x191970 --height 12 &"
-    spawn "nm-applet --sm-disable > /dev/null 2>&1 &"
-    spawn "sleep 3 && gnome-power-manager > /dev/null 2>&1 &"
+    spawn "/home/gautam/.startup.sh"
 

@@ -34,6 +34,9 @@ set columns=100
 " found
 set tags=./tags;
 
+" Options to format comments
+set formatoptions=tcqor
+
 " Enable the taglist plugin
 filetype plugin on
 
@@ -110,6 +113,22 @@ if has("autocmd")
     " Source the vimrc file as soon as it is saved.
     autocmd bufwritepost .vimrc source $MYVIMRC
 endif " has("autocmd")
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" D related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Entered by Joe at
+" https://github.com/sociomantic/backend/wiki/Getting-Friendly-with-D
+filetype plugin indent on
+syntax on
+set sts=0 sw=4 ts=4
+
+" Remove trailing whitespace whenever a buffer is saved
+autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType d :setl cinoptions=(0,u0,U0
+autocmd FileType d set et
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
