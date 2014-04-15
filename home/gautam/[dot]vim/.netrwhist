@@ -1,3 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/usr/share/X11/locale/en_US.UTF-8'
+let g:netrw_dirhist_2='/home/gautam/work/shore/submodules/ocean/script'
+let g:netrw_dirhist_3='/home/gautam/work/shore/src/mod/feed/config'

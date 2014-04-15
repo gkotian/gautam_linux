@@ -13,12 +13,12 @@ settitle ()
 
     echo -ne "\033]0;$title\007"
 
-    # ESC]0;stringBEL -- Set icon name and window title to string 
-    # ESC]1;stringBEL -- Set icon name to string 
-    # ESC]2;stringBEL -- Set window title to string 
+    # ESC]0;stringBEL -- Set icon name and window title to string
+    # ESC]1;stringBEL -- Set icon name to string
+    # ESC]2;stringBEL -- Set window title to string
 
     # where ESC is the escape character (\033),
-    # and BEL is the bell character (\007). 
+    # and BEL is the bell character (\007).
     # (source: http://tldp.org/HOWTO/Xterm-Title-3.html)
 }
 
@@ -246,6 +246,8 @@ setPrompt()
         PS1='${debian_chroot:+($debian_chroot)}\[\033[01;38m\]\u\[\033[00m\]@\h:\w\$ '
     elif [ "$1" = "short" ]; then
         PS1='\$ '
+    elif [ "$1" = "git_friendly" ]; then
+        PS1='${debian_chroot:+($debian_chroot)}\w$(__git_ps1 ":\[\033[00;34m\]%s")\[\033[00m\]\$ '
     else
         # unrecognised prompt type, use regular.
         PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '

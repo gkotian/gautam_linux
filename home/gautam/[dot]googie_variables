@@ -19,6 +19,12 @@ export PATH=$PATH:/home/gautam/chromium/depot_tools
 export EDITOR=/usr/bin/vim
 export BASE=$BASESVN/$BRANCH
 
+# Variables to enable a git friendly prompt
+#------------------------------------------
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWUPSTREAM=auto,svn,verbose
+
 # Temporary variables
 #--------------------
-

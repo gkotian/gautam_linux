@@ -33,6 +33,11 @@ To get the sizes of files (without an overwhelming amount of output), use:
 
 ---------------------------------------------------------------------------------------------------
 
+To get the amount of disk space used & free:
+    df -hT | egrep -i "file|^/"
+
+---------------------------------------------------------------------------------------------------
+
 The output of 'echo' can be controlled by using certain "Terminfo Capabilities", e.g:
     prompt$> tput smso; echo "hello world"; tput rmso
 (more here: http://tldp.org/LDP/lpg/node126.html)

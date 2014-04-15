@@ -1,3 +1,8 @@
+# Work "S" specific aliases.
+if [ -f /home/gautam/.googie_aliases_s ]; then
+    . /home/gautam/.googie_aliases_s
+fi
+
 ##### Aliases to be studied #####
 
 # enable color support of ls and also add handy aliases
@@ -34,6 +39,7 @@ alias rm='rm -i' # Prompt before every removal
 alias mv='mv -i' # Prompt before overwriting
 alias ls='ls --classify'
 alias grep='grep -n --color=auto'
+alias v='/usr/bin/vim'
 alias vi='/usr/bin/vim'
 alias B='vi ~/.bashrc'
 alias GA='vi ~/.googie_aliases'
@@ -44,10 +50,8 @@ alias SGA='source ~/.googie_aliases'
 alias SGF='source ~/.googie_functions'
 alias SGV='source ~/.googie_variables'
 alias r='vi ~/.reminders'
-
-
-# Sociomantic specific
-alias irc='irssi --connect=192.168.2.152 --port 6667'
+alias rmouse='xmodmap -e "pointer = 1 2 3"'
+alias lmouse='xmodmap -e "pointer = 3 2 1"'
 
 
 # Aliases to commands
@@ -68,6 +72,8 @@ alias kd='kdiff3 > /dev/null 2>&1'
 alias gd='git difftool --no-prompt'
 alias gs='git status'
 alias ga='git add'
+alias gk='gitk --all&'
+alias gt='git tree'
 alias lockdir='chmod -x'
 alias unlockdir='chmod +x'
 alias ppc='qemu-system-ppc -M mac99 -m 512 -hda .debian_squeeze_powerpc_standard.qcow2'
@@ -174,6 +180,5 @@ alias update_trunk='svn update $BASE/trunk/*'
 
 
 # Temporary aliases
-alias c='/home/gautam/work/shore/bin/lagoon file:///home/gautam/work/shore/testsuite/downloads/ccbparis-fr.xml /home/gautam/work/shore/testsuite/xsl/ccbparis-fr.xslt -n Product -v 2> /dev/null'
-alias lc='/home/gautam/work/shore/bin/lagoon file:///home/gautam/work/shore/testsuite/downloads/canda-fr.xml /home/gautam/work/shore/testsuite/xsl/canda-fr.xslt -n PriceProductInformation -v'
+alias a='/home/gautam/work/shore/bin/lagoon file:///home/gautam/work/shore/testsuite/downloads/sapato_ru.xml /home/gautam/work/shore/testsuite/xsl/sapato.xslt -n offer -v -i --no-split'
 

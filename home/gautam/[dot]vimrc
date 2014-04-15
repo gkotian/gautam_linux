@@ -28,7 +28,7 @@ set shiftwidth=4
 set scrolloff=3
 
 " Set the number of characters per line
-set columns=100
+set columns=80
 
 " Look in the current directory for the tags file, and work up the tree towards root until one is
 " found
@@ -215,8 +215,16 @@ nnoremap <Leader>h  :match<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map '\sb' to show a bar at line length & '\hb' to remove it
-nnoremap <Leader>sb :set colorcolumn=100<CR>
+" (show bar, hide bar)
+nnoremap <Leader>sb :set colorcolumn=80<CR>
 nnoremap <Leader>hb :set colorcolumn=<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Custom leader maps to insert commonly used stuff in code
+nnoremap <Leader>ws iStdout.formatln("
+inoremap <Leader>ws Stdout.formatln("
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -279,6 +287,10 @@ let g:startify_custom_header = [
 \ '            \/     \/                 \/      \/          \/                  \/     \/ ',
 \ '',
 \]
+
+let g:startify_files_number = 25
+
+let g:startify_bookmarks = [ '~/.vimrc', '~/.googie_aliases' ]
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 

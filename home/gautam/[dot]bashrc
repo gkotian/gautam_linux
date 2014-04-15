@@ -38,7 +38,7 @@ shopt -s checkwinsize
 #************* BEGIN: Custom stuff setup
 
 # Definitions of variables.
-# (place this first so that variables declared here can be used in '.googie_aliases' & '.googie_functions')
+# (place this first so that variables declared here can be used in other files)
 if [ -f /home/gautam/.googie_variables ]; then
     . /home/gautam/.googie_variables
 fi
@@ -60,7 +60,7 @@ fi
 #************* BEGIN: Prompt setup
 
 if [ -f /home/gautam/.googie_functions ]; then
-    setPrompt "regular"
+    setPrompt "git_friendly"
 fi
 
 #************* END: Prompt setup
