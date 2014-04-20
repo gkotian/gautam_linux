@@ -271,8 +271,6 @@ vnoremap <silent> # :<C-U>
     \gV:call setreg('"', old_reg, old_regtype)<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" https://github.com/tpope/vim-pathogen
-execute pathogen#infect()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Startify plugin related
