@@ -1,0 +1,14 @@
+Make links:
+    ln -s gautam_linux/home/gautam/dot_bashrc    ~/.bashrc
+    ln -s gautam_linux/home/gautam/dot_vim       ~/.vim
+    ln -s gautam_linux/home/gautam/dot_vim/vimrc ~/.vimrc
+
+If using xmonad:
+    ln -s ....
+
+Clone Vundle:
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+Install all Vim plugins using Vundle:
+    vim +PluginInstall +qall
+

@@ -1,6 +1,9 @@
 " Let Vundle manage all plugins
 source ~/.vim/vundle.vim
 
+" Automatically detect file types. (must turn on after Vundle)
+filetype plugin indent on
+
 " Insert 4 spaces instead of tabs
 set expandtab
 set tabstop=4
