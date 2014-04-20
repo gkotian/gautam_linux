@@ -1,3 +1,6 @@
+" Let Vundle manage all plugins
+source ~/.vim/vundle.vim
+
 " Insert 4 spaces instead of tabs
 set expandtab
 set tabstop=4
