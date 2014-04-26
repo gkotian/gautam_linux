@@ -1,3 +1,9 @@
+# Check that the 'gautam_linux' directory exists in the current directory
+
+# Check all links that will be overwritten
+
+# Check that the 'bundle' directory is empty
+
 Make links:
     ln -s gautam_linux/home/gautam/dot_bashrc    ~/.bashrc
     ln -s gautam_linux/home/gautam/dot_vim       ~/.vim

@@ -37,33 +37,30 @@ shopt -s checkwinsize
 
 #************* BEGIN: Custom stuff setup
 
+# Directory where 'gautam_linux' is cloned
+GL_CLONE_DIR=/home/gautam
+
 # Definitions of variables.
 # (place this first so that variables declared here can be used in other files)
-if [ -f /home/gautam/.googie_variables ]; then
-    . /home/gautam/.googie_variables
+FILE=$GL_CLONE_DIR/gautam_linux/home/gautam/g_variables
+if [ -f $FILE ]; then
+    . $FILE
 fi
 
 # Alias definitions.
-if [ -f /home/gautam/.googie_aliases ]; then
-    . /home/gautam/.googie_aliases
+FILE=$GL_CLONE_DIR/gautam_linux/home/gautam/g_aliases
+if [ -f $FILE ]; then
+    . $FILE
 fi
 
 # Function definitions.
-if [ -f /home/gautam/.googie_functions ]; then
-    . /home/gautam/.googie_functions
-fi
-
-#************* END: Custom stuff setup
-
-
-
-#************* BEGIN: Prompt setup
-
-if [ -f /home/gautam/.googie_functions ]; then
+FILE=$GL_CLONE_DIR/gautam_linux/home/gautam/g_functions
+if [ -f $FILE ]; then
+    . $FILE
     setPrompt "git_friendly"
 fi
 
-#************* END: Prompt setup
+#************* END: Custom stuff setup
 
 
 
