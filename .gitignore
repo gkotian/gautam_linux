@@ -1,4 +1,5 @@
 .gitignore
+home/gautam/dot_vim/bundle/*
 xmonad.errors
 xmonad.hi
 xmonad.o
