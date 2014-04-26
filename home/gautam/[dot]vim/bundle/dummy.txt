@@ -1,0 +1,3 @@
+This is a dummy file present only because git doesn't allow me to commit an empty 'bundle'
+directory. A fresh clone should have an empty 'bundle' directory. Vundle would then take care of
+installing the necessary plugins within it.
