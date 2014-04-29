@@ -24,5 +24,5 @@ main = do
 
 startup :: X ()
 startup = do
-    spawn "/home/gautam/.startup.sh"
+    spawn "/home/gautam/gautam_linux/home/gautam/g_startup.sh"
 
