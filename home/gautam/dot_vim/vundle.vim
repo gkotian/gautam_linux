@@ -15,4 +15,7 @@ Plugin 'gmarik/vundle'
 "     Plugin Bundles
 " ----------------------
 Plugin 'mhinz/vim-startify'
+Plugin 'ervandew/supertab'
+Plugin 'JesseKPhillips/d.vim'
+" Plugin 'vim-scripts/Smart-Tabs' Do I need this?
 

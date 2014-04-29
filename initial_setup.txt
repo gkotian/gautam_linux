@@ -10,7 +10,13 @@ Make links:
     ln -s gautam_linux/home/gautam/dot_vim/vimrc ~/.vimrc
 
 If using xmonad:
-    ln -s ....
+    ln -s gautam_linux/home/gautam/dot_xmonad ~/.xmonad
+    ln -s gautam_linux/home/gautam/dot_xmobarrc ~/.xmobarrc
+
+For using the compose key and defining custom key-mappings
+(haven't yet figured out how to make it work with xmonad)
+    ln -s gautam_linux/home/gautam/dot_XCompose ~/.XCompose
+    ln -s gautam_linux/home/gautam/dot_gnomerc ~/.gnomerc
 
 Clone Vundle:
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
