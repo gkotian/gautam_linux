@@ -1,4 +1,5 @@
 .gitignore
+g_sociomantic
 home/gautam/dot_vim/bundle/*
 xmonad.errors
 xmonad.hi
