@@ -107,6 +107,8 @@ colorscheme googie_colors
 command! RemoveMultipleBlankLines %s/^\_s\+\n/\r
 command! RemoveTrailingWhiteSpace %s/\s\+$//
 
+" Functions
+source ~/.vim/functions.vim
 
 " Auto commands.
 source ~/.vim/autocmds.vim
@@ -208,9 +210,9 @@ nnoremap <Leader>h  :match<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map '\sb' to show a bar at line length & '\hb' to remove it
-" (show bar, hide bar)
-nnoremap <Leader>sb :set colorcolumn=80<CR>
-nnoremap <Leader>hb :set colorcolumn=<CR>
+" (sb => show bar, hb => hide bar)
+nnoremap <silent> <Leader>sb :call ShowBar()<CR>
+nnoremap <silent> <Leader>hb :set colorcolumn=<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
