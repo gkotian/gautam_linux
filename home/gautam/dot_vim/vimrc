@@ -43,9 +43,6 @@ set tags=./tags;
 " Options to format comments
 set formatoptions=tcqor
 
-" Enable the taglist plugin
-filetype plugin on
-
 set ofu=syntaxcomplete#Complete
 
 " Press Space to turn off highlighting and clear any message already displayed.
@@ -128,8 +125,6 @@ source ~/.vim/vim-startify.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Entered by Joe at
 " https://github.com/sociomantic/backend/wiki/Getting-Friendly-with-D
-filetype plugin indent on
-syntax on
 set sts=0 sw=4 ts=4
 
 " Remove trailing whitespace whenever a buffer is saved
