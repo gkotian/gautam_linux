@@ -43,9 +43,6 @@ set tags=./tags;
 " Options to format comments
 set formatoptions=tcqor
 
-" Enable the taglist plugin
-filetype plugin on
-
 set ofu=syntaxcomplete#Complete
 
 " Press Space to turn off highlighting and clear any message already displayed.
@@ -110,30 +107,22 @@ colorscheme googie_colors
 command! RemoveMultipleBlankLines %s/^\_s\+\n/\r
 command! RemoveTrailingWhiteSpace %s/\s\+$//
 
-" Autocommands
-if has("autocmd")
-    " Turn off syntax highlighting for Benu's cmd files.
-    autocmd BufEnter *.cmd syntax off
-    autocmd BufLeave *.cmd syntax on
+" Functions
+source ~/.vim/functions.vim
 
-    " Source the vimrc file as soon as it is saved.
-    autocmd bufwritepost .vimrc source $MYVIMRC
-endif " has("autocmd")
+" Auto commands.
+source ~/.vim/autocmds.vim
 
+" For the vim-startify plugin
+source ~/.vim/vim-startify.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " D related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Entered by Joe at
 " https://github.com/sociomantic/backend/wiki/Getting-Friendly-with-D
-filetype plugin indent on
-syntax on
 set sts=0 sw=4 ts=4
 
-" Remove trailing whitespace whenever a buffer is saved
-autocmd BufWritePre <buffer> :%s/\s\+$//e
-autocmd FileType d :setl cinoptions=(0,u0,U0
-autocmd FileType d set et
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -221,9 +210,9 @@ nnoremap <Leader>h  :match<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map '\sb' to show a bar at line length & '\hb' to remove it
-" (show bar, hide bar)
-nnoremap <Leader>sb :set colorcolumn=80<CR>
-nnoremap <Leader>hb :set colorcolumn=<CR>
+" (sb => show bar, hb => hide bar)
+nnoremap <silent> <Leader>sb :call ShowBar()<CR>
+nnoremap <silent> <Leader>hb :set colorcolumn=<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -275,26 +264,6 @@ vnoremap <silent> # :<C-U>
     \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
     \gvy?<C-R><C-R>=substitute(escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
     \gV:call setreg('"', old_reg, old_regtype)<CR>
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Startify plugin related
-" (https://github.com/mhinz/vim-startify)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:startify_custom_header = [
-\ '      ________               __                    ____  __       __   __               ',
-\ '     /  _____/_____   __ ___/  |______    _____   |    |/ _|_____/  |_|__|____    ____  ',
-\ '    /   \  ___\__  \ |  |  \   __\__  \  /     \  |      < /  _ \   __\  \__  \  /    \ ',
-\ '    \    \_\  \/ __ \|  |  /|  |  / __ \|  Y Y  \ |    |  (  <_> )  | |  |/ __ \|   |  \',
-\ '     \______  (____  /____/ |__| (____  /__|_|  / |____|__ \____/|__| |__(____  /___|  /',
-\ '            \/     \/                 \/      \/          \/                  \/     \/ ',
-\ '',
-\]
-
-let g:startify_files_number = 25
-
-let g:startify_bookmarks = [ '~/.vimrc', '~/.googie_aliases' ]
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
