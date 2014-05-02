@@ -107,15 +107,9 @@ colorscheme googie_colors
 command! RemoveMultipleBlankLines %s/^\_s\+\n/\r
 command! RemoveTrailingWhiteSpace %s/\s\+$//
 
-" Autocommands
-if has("autocmd")
-    " Turn off syntax highlighting for Benu's cmd files.
-    autocmd BufEnter *.cmd syntax off
-    autocmd BufLeave *.cmd syntax on
 
-    " Source the vimrc file as soon as it is saved.
-    autocmd bufwritepost .vimrc source $MYVIMRC
-endif " has("autocmd")
+" Auto commands.
+source ~/.vim/autocmds.vim
 
 " For the vim-startify plugin
 source ~/.vim/vim-startify.vim
@@ -127,10 +121,6 @@ source ~/.vim/vim-startify.vim
 " https://github.com/sociomantic/backend/wiki/Getting-Friendly-with-D
 set sts=0 sw=4 ts=4
 
-" Remove trailing whitespace whenever a buffer is saved
-autocmd BufWritePre <buffer> :%s/\s\+$//e
-autocmd FileType d :setl cinoptions=(0,u0,U0
-autocmd FileType d set et
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
