@@ -60,6 +60,12 @@ if [ -f $FILE ]; then
     setPrompt "git_friendly"
 fi
 
+# Sociomantic specific definitions.
+FILE=$GL_CLONE_DIR/gautam_linux/home/gautam/g_sociomantic
+if [ -f $FILE ]; then
+    . $FILE
+fi
+
 #************* END: Custom stuff setup
 
 
