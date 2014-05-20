@@ -13,6 +13,9 @@ If using xmonad:
     ln -s gautam_linux/home/gautam/dot_xmonad ~/.xmonad
     ln -s gautam_linux/home/gautam/dot_xmobarrc ~/.xmobarrc
 
+If using i3:
+    ln -s gautam_linux/i3/config ~/.i3/config
+
 For using the compose key and defining custom key-mappings
 (haven't yet figured out how to make it work with xmonad)
     ln -s gautam_linux/home/gautam/dot_XCompose ~/.XCompose
@@ -23,4 +26,14 @@ Clone Vundle:
 
 Install all Vim plugins using Vundle:
     vim +PluginInstall +qall
+
+Other convenience links:
+    sudo ln -s /usr/bin/google-chrome /usr/bin/chrome
+
+    # Link 'todo.sh' to a pre-existing location in PATH so that it can be directly launched using
+    # dmenu.
+    sudo ln -s /home/gautam/gautam_linux/scripts/todo.sh /usr/local/sbin/todo 
+
+    # Backup existing dmenu_path before doing this?
+    sudo ln -s /home/gautam/gautam_linux/scripts/dmenu_path.sh /usr/bin/dmenu_path
 
