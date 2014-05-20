@@ -9,6 +9,9 @@ Make links:
     ln -s gautam_linux/home/gautam/dot_vim       ~/.vim
     ln -s gautam_linux/home/gautam/dot_vim/vimrc ~/.vimrc
 
+To use Google's public DNS servers
+    sudo ln -s gautam_linux/misc/resolv_conf_head /etc/resolvconf/resolv.conf.d/head
+
 If using xmonad:
     ln -s gautam_linux/home/gautam/dot_xmonad ~/.xmonad
     ln -s gautam_linux/home/gautam/dot_xmobarrc ~/.xmobarrc
