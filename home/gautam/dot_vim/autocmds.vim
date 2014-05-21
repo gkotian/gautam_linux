@@ -26,9 +26,9 @@ if has("autocmd")
 
         " Help mode bindings
         " <enter> to follow tag, <bs> to go back, and q to quit.
-        autocmd filetype help nnoremap <buffer><cr> <c-]>
-        autocmd filetype help nnoremap <buffer><bs> <c-T>
-        autocmd filetype help nnoremap <buffer>q :q<CR>
+        autocmd FileType help nnoremap <buffer><cr> <c-]>
+        autocmd FileType help nnoremap <buffer><bs> <c-T>
+        autocmd FileType help nnoremap <buffer>q :q<CR>
 
         " Turn off syntax highlighting for Benu's cmd files.
         " now obsolete
