@@ -11,13 +11,19 @@ call vundle#rc()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle'
 
-" ----------------------
-"     Plugin Bundles
-" ----------------------
+" -------------------------
+"     Installed plugins
+" -------------------------
 Plugin 'mhinz/vim-startify'
 Plugin 'ervandew/supertab'
 Plugin 'JesseKPhillips/d.vim'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-commentary'
-" Plugin 'vim-scripts/Smart-Tabs' Do I need this?
+
+" ----------------------
+"     Plugins to try
+" ----------------------
+"Plugin 'tpope/vim-fugitive'
+
+"Plugin 'vim-scripts/Smart-Tabs' Do I need this?
 
