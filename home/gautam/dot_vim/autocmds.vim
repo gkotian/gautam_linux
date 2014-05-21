@@ -17,13 +17,6 @@ if has("autocmd")
         " (only for files with specified file extensions)
         autocmd BufWritePre *.d,*.sh,*.txt :%s/\s\+$//e
 
-        " TODO: what are these?
-        autocmd FileType d :setl cinoptions=(0,u0,U0
-        autocmd FileType d set et
-
-        " Set textwidth to 80 characters per line
-        autocmd FileType d set tw=80
-
         " Help mode bindings
         " <enter> to follow tag, <bs> to go back, and q to quit.
         autocmd FileType help nnoremap <buffer><cr> <c-]>
