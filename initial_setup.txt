@@ -30,12 +30,15 @@ Clone Vundle:
 Install all Vim plugins using Vundle:
     vim +PluginInstall +qall
 
+SSH config file:
+    ln -s gautam_linux/misc/ssh_config ~/.ssh/config
+
 Other convenience links:
     sudo ln -s /usr/bin/google-chrome /usr/bin/chrome
 
     # Link 'todo.sh' to a pre-existing location in PATH so that it can be directly launched using
     # dmenu.
-    sudo ln -s /home/gautam/gautam_linux/scripts/todo.sh /usr/local/sbin/todo 
+    sudo ln -s /home/gautam/gautam_linux/scripts/todo.sh /usr/local/sbin/todo
 
     # Backup existing dmenu_path before doing this?
     sudo ln -s /home/gautam/gautam_linux/scripts/dmenu_path.sh /usr/bin/dmenu_path

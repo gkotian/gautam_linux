@@ -1,0 +1,17 @@
+# When adding remotes to a git repository, add them as:
+#     git remote add upstream git@Host:path/to/repository.git
+# where 'Host' is one of those given below depending on the type of the repository
+# (http://code.tutsplus.com/tutorials/how-to-work-with-github-and-multiple-accounts--net-22574)
+
+# Sociomantic Github account
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_sociomantic
+
+# Personal Github account
+Host github-PERSONAL
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_personal
+
