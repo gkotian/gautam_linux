@@ -27,6 +27,13 @@ To cut the last field (using space as delimiter):
 
 ---------------------------------------------------------------------------------------------------
 
+Alternative way to do:
+    for file in `ls`; do echo $file; done
+is:
+    ls | while read file; do echo $file; done
+
+---------------------------------------------------------------------------------------------------
+
 To get the sizes of files (without an overwhelming amount of output), use:
     du -ckhs *
     (I don't yet know the reason for the 'k', as 'du -chs *' seems to give the same output)
