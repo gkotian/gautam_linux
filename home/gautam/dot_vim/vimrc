@@ -4,6 +4,10 @@ source ~/.vim/vundle.vim
 " Automatically detect file types. (must turn on after Vundle)
 filetype plugin indent on
 
+" Set textwidth to 100 by default for all files
+" (can be overridden in .vim/after/ftplugin/*.vim)
+set tw=100
+
 " Insert 4 spaces instead of tabs
 set expandtab
 set tabstop=4
