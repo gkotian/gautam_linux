@@ -14,7 +14,8 @@ if has("autocmd")
         autocmd BufNewFile,BufEnter * set formatoptions-=o
 
         " Remove trailing whitespace whenever a buffer is saved
-        autocmd BufWritePre *.d :%s/\s\+$//e
+        " (only for files with specified file extensions)
+        autocmd BufWritePre *.d,*.sh,*.txt :%s/\s\+$//e
 
         " TODO: what are these?
         autocmd FileType d :setl cinoptions=(0,u0,U0
