@@ -97,9 +97,6 @@ bindsym $mod+Shift+R restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+E exit
 
-# lock screen
-bindsym $mod+Control+l exec slock
-
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -126,12 +123,19 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Lock screen
+bindsym $mod+Control+l exec slock
+
+# Get rid of the title-bar
+new_window 1pixel
+
 # Assign specific workspaces to certain applications
 assign [class="^Thunderbird$"] → 7
 assign [class="^Chrome$"]      → 8
 assign [class="^Skype$"]       → 9
 
 # Automatically launch certain applications at startup
+exec /home/gautam/gautam_linux/home/gautam/g_startup.sh
 exec chrome
 exec skype
 exec thunderbird
