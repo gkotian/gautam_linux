@@ -43,3 +43,8 @@ Other convenience links:
     # Backup existing dmenu_path before doing this?
     sudo ln -s /home/gautam/gautam_linux/scripts/dmenu_path.sh /usr/bin/dmenu_path
 
+Install Dropbox
+
+Install Anki
+    change Anki launchers to always launch anki as `anki -b /home/gautam/Dropbox/Anki`
+
