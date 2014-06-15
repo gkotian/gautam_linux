@@ -48,3 +48,6 @@ Install Dropbox
 Install Anki
     change Anki launchers to always launch anki as `anki -b /home/gautam/Dropbox/Anki`
 
+# Useful for batch renaming files
+sudo apt-get install pyrenamer
+
