@@ -102,10 +102,20 @@ git diff --staged    --> compares staged copy with last committed changes
 
 ---------------------------------------------------------------------------------------------------
 
+To see old commits with files changed in each commit:
+    git log --pretty=oneline --name-status
+
+---------------------------------------------------------------------------------------------------
+
 to make wireshark run as root when launched from the main menu:
 system -> preferences -> main menu
 find wireshark's launcher
 change it to "gksudo wireshark"
+
+---------------------------------------------------------------------------------------------------
+
+[15:47:45] Nemanja Boric: btw, good thing for debugging: setarch i686 -R gdb ./program
+[15:47:51] Nemanja Boric: removes address randomization
 
 ---------------------------------------------------------------------------------------------------
 
