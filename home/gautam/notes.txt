@@ -7,6 +7,14 @@ Additional softwares after a fresh Linux installation:
 
 ---------------------------------------------------------------------------------------------------
 
+running a simple HTTP server:
+(http://www.linuxjournal.com/content/tech-tip-really-simple-http-server-python)
+python -m SimpleHTTPServer
+
+connect using: http://127.0.0.1:8000/tmp
+
+---------------------------------------------------------------------------------------------------
+
 Extra characters (e.g. German umlauts, rupee sign, euro sign etc.)
 ------------------------------------------------------------------
     Linux Mint -> Preferences -> Region & Language -> Layouts -> Options
