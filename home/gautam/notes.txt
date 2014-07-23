@@ -15,6 +15,26 @@ connect using: http://127.0.0.1:8000/tmp
 
 ---------------------------------------------------------------------------------------------------
 
+Installing perl modules:
+------------------------
+Many perl scripts use modules (e.g. `use Archive::Ar;`). To install missing modules, use cpanm.
+    - sudo apt-get install cpanminus
+    - cpanm Archive::Ar
+cpanm would normally automatically install all the dependencies also. Without 'sudo' installation
+will happen to a directory in your home directory (e.g. /home/gautam/perl5).
+Sometimes, installation fails (usually because some dependency could not be automatically
+installed). In this case, find the dependency whose installation failed (using the log file whose
+location would be helpfully indicated by cpanm) and install the dependency manually. For example, if
+'Test::Exception' is a dependency whose automatic installation failed, then just run
+    - cpanm Test::Exception
+Then retry the original installation.
+
+Finally, to run the perl script that was using the newly installed modules, you need to specify the
+location of the newly installed modules using,
+    - export PERL5LIB=/home/gautam/perl5/lib/perl5
+
+---------------------------------------------------------------------------------------------------
+
 Extra characters (e.g. German umlauts, rupee sign, euro sign etc.)
 ------------------------------------------------------------------
     Linux Mint -> Preferences -> Region & Language -> Layouts -> Options
