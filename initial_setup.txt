@@ -33,6 +33,12 @@ Install all Vim plugins using Vundle:
 SSH config file:
     ln -s gautam_linux/misc/ssh_config ~/.ssh/config
 
+To use ag:
+    git clone git@github.com:ggreer/the_silver_searcher.git
+    ./configure
+    make
+    make install
+
 Other convenience links:
     sudo ln -s /usr/bin/google-chrome /usr/bin/chrome
 
