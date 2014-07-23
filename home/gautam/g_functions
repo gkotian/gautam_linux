@@ -458,7 +458,7 @@ createBranch()
 #   $CMD
 }
 
-reviewBranch()
+svnReviewBranch()
 {
     BRANCH_NAME=$1
 
