@@ -20,3 +20,10 @@ Host github-PERSONAL
     IdentityFile ~/.ssh/id_rsa_personal
     IdentitiesOnly yes
 
+# Sociomantic servers
+Host *.sociomantic.com
+    HostName %h
+    User developer
+    IdentityFile ~/.ssh/id_rsa_servers
+    IdentitiesOnly yes
+
