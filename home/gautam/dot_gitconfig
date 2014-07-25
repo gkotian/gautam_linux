@@ -1,19 +1,88 @@
 [user]
-	name = Gautam Kotian
+	name  = Gautam Kotian
 	email = gautam.kotian@gmail.com
+
 [merge]
 	tool = meld
+
 [alias]
-	st = status
-	br = branch
+	st      = status
+	br      = branch
 	unstage = reset HEAD --
-	last = log -1 HEAD
-    d = difftool --tool=meld --no-prompt
+	last    = log -1 HEAD
+    d       = difftool --tool=meld --no-prompt
+
 [giggle]
-	main-window-maximized = true
-	main-window-geometry = 700x550+1+80
-	file-view-vpane-position = 468
-	main-window-view = FileView
+	main-window-maximized       = true
+	main-window-geometry        = 700x550+1+80
+	file-view-vpane-position    = 468
+	main-window-view            = FileView
 	history-view-vpane-position = 288
+
 [core]
 	deltaBaseCacheLimit = 1G
+
+[color]
+	diff   = auto
+	status = auto
+	branch = auto
+    ui     = auto
+
+[core]
+	whitespace   = tab-in-indent red reverse
+	excludesfile = /home/gautam/.gitignore
+
+[color "diff"]
+	whitespace = red reverse
+
+[giggle]
+	main-window-maximized = false
+	main-window-geometry  = 1298x1417+1440+936
+	main-window-view      = FileView
+
+[rerere]
+	enable = true
+
+[push]
+	default = current
+
+[alias]
+	k        = !gitk --all&
+	r        = remote -v
+	ru       = remote update --prune
+	co       = checkout
+	gconf    = config --global
+	pof      = push origin -f
+	amend    = commit --amend --no-edit
+	get      = !git checkout -B $(basename $1)
+	st       = status
+	continue = rebase --continue
+    glog     = log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
+	ff       = merge --ff-only
+    ws       = rebase --whitespace=fix 
+	run      = "!F=$1; \
+                ORIG=$(git rev-parse --abbrev-ref HEAD); \
+                shift; \
+                for c in $(git rev-list $F --reverse); do \
+                    echo -n \"Checking out: \"; \
+                    git log --oneline $c -n1 --color | cat ; \
+                    git checkout $c && git submodule update && \
+                    echo \"--------------------\nRunning Command: $@\" && \
+                    $@ && \
+                    echo \"--------------------\" || \
+                    break; \
+                done; \
+                git checkout $ORIG; #"
+
+[pull]
+	rebase = true
+
+[diff]
+	submodule = log
+
+[branch "master"]
+	rebase = true
+
+[git]
+	rebase = true
+
