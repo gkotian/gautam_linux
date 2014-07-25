@@ -1,59 +1,122 @@
-# Check that the 'gautam_linux' directory exists in the current directory
+# Install latest version of git
+sudo apt-add-repository ppa:git-core/ppa
+sudo apt-get install -y git
+
+# First run ssh-keygen to create ~/.ssh/id_rsa_personal
+# Put the contents of ~/.ssh/id_rsa_personal.pub into a new SSH key in Github (personal account)
+# Create a 'not_work' directory
+# git clone git@github-PERSONAL:gkotian/gautam_linux.git
+
+
+
+GL_CLONE_DIR="/home/gautam/not_work/gautam_linux"
+
+
+
+
+# Check that the 'gautam_linux' directory exists.
+if [ ! -d $GL_CLONE_DIR ]; then
+    echo "'gautam_linux' directory not found, aborting."
+    exit 1
+fi
+
+SSH config file:
+    ln -s $GL_CLONE_DIR/misc/ssh_config ~/.ssh/config
 
 # Check all links that will be overwritten
+echo "The following files/directories will be overwritten:"
+echo "    ~/.bashrc"
+echo "    ~/.vim"
+echo "    ~/.vimrc"
+echo -n "Proceed? (y/n): "
+read YES_OR_NO
+if [ $YES_OR_NO != "y" ] && [ $yes_or_no != "Y" ]; then
+    echo "Aborted."
+    exit 2
+fi
 
 # Check that the 'bundle' directory is empty
 
-Make links:
-    ln -s gautam_linux/home/gautam/dot_bashrc    ~/.bashrc
-    ln -s gautam_linux/home/gautam/dot_vim       ~/.vim
-    ln -s gautam_linux/home/gautam/dot_vim/vimrc ~/.vimrc
+# Make necessary links
+rm -f ~/.bashrc
+ln -s $GL_CLONE_DIR/home/gautam/dot_bashrc    ~/.bashrc
+
+rm -rf ~/.vim
+ln -s $GL_CLONE_DIR/home/gautam/dot_vim       ~/.vim
+ln -s $GL_CLONE_DIR/home/gautam/dot_vim/vimrc ~/.vimrc
+exit
+
+    ln -s $GL_CLONE_DIR/home/gautam/dot_gitconfig ~/.gitconfig
 
 To use Google's public DNS servers
-    sudo ln -s gautam_linux/misc/resolv_conf_head /etc/resolvconf/resolv.conf.d/head
+    sudo ln -s $GL_CLONE_DIR/misc/resolv_conf_head /etc/resolvconf/resolv.conf.d/head
 
 If using xmonad:
-    ln -s gautam_linux/home/gautam/dot_xmonad ~/.xmonad
-    ln -s gautam_linux/home/gautam/dot_xmobarrc ~/.xmobarrc
+    ln -s $GL_CLONE_DIR/home/gautam/dot_xmonad ~/.xmonad
+    ln -s $GL_CLONE_DIR/home/gautam/dot_xmobarrc ~/.xmobarrc
 
 If using i3:
-    ln -s gautam_linux/i3/config ~/.i3/config
+    ln -s $GL_CLONE_DIR/i3/config ~/.i3/config
 
 For using the compose key and defining custom key-mappings
 (haven't yet figured out how to make it work with xmonad)
-    ln -s gautam_linux/home/gautam/dot_XCompose ~/.XCompose
-    ln -s gautam_linux/home/gautam/dot_gnomerc ~/.gnomerc
+    ln -s $GL_CLONE_DIR/home/gautam/dot_XCompose ~/.XCompose
+    ln -s $GL_CLONE_DIR/home/gautam/dot_gnomerc ~/.gnomerc
+
+Install exuberant ctags
 
 Clone Vundle:
-    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    git clone git@github-PERSONAL:gmarik/Vundle.vim.git ~/.vim/bundle/vundle
 
 Install all Vim plugins using Vundle:
     vim +PluginInstall +qall
 
-SSH config file:
-    ln -s gautam_linux/misc/ssh_config ~/.ssh/config
-
 To use ag:
-    git clone git@github.com:ggreer/the_silver_searcher.git
-    ./configure
-    make
-    make install
+    git clone git@github-PERSONAL:ggreer/the_silver_searcher.git ~/not_work/the_silver_searcher
+    cd ~/not_work/the_silver_searcher
+    check README for installation instructions
 
 Other convenience links:
     sudo ln -s /usr/bin/google-chrome /usr/bin/chrome
 
     # Link 'todo.sh' to a pre-existing location in PATH so that it can be directly launched using
     # dmenu.
-    sudo ln -s /home/gautam/gautam_linux/scripts/todo.sh /usr/local/sbin/todo
+    sudo ln -s $GL_CLONE_DIR/scripts/todo.sh /usr/local/bin/todo
 
-    # Backup existing dmenu_path before doing this?
-    sudo ln -s /home/gautam/gautam_linux/scripts/dmenu_path.sh /usr/bin/dmenu_path
+    # Maybe a good idea to backup existing dmenu_path before doing this.
+    sudo mv /usr/bin/dmenu_path /usr/bin/dmenu_path.bak
+    sudo ln -s $GL_CLONE_DIR/scripts/dmenu_path.sh /usr/bin/dmenu_path
 
+# Useful for batch renaming files
+sudo apt-get install -y pyrenamer
+
+# Set gnome-terminal
+Edit -> profile preferences
+    Tab General
+        uncheck "Use the system fixed width font"
+        uncheck "Show menubar by default in new terminals"
+        Select-by-word characters -> remove `:, =`
+    Tab Colors
+        uncheck "use colors from system theme", choose custom, text black, background gray
+    Tab Scrolling
+        check "Scrollback unlimited"
+Edit -> keyboard shortcuts
+    uncheck "Enable menu access keys"
+    uncheck "Enable the menu shortcut key"
+    under "Shortcut keys -> View", disable full screen
+    under "Shortcut keys -> Help", disable contents
+
+sudo apt-get install -y meld
+sudo apt-get install -y kdiff3
+sudo apt-get install -y gitk
+sudo apt-get install -y xchat
+
+# ssh-agent
+
+Via Unity:
+----------
 Install Dropbox
 
 Install Anki
     change Anki launchers to always launch anki as `anki -b /home/gautam/Dropbox/Anki`
-
-# Useful for batch renaming files
-sudo apt-get install pyrenamer
 
