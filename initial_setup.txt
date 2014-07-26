@@ -1,7 +1,19 @@
-# Install latest version of git
+# Check internet connectivity
+
+# Add necessary PPAs
 sudo apt-add-repository ppa:git-core/ppa
+# the following command outputs 'OK' - need to handle
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+
+# the following command has a big output!
 sudo apt-get update
+
+# Install latest version of git
 sudo apt-get install -y git
+
+# Install google-chrome
+sudo apt-get install -y google-chrome-stable
 
 # First run ssh-keygen to create ~/.ssh/id_rsa_personal
 # Put the contents of ~/.ssh/id_rsa_personal.pub into a new SSH key in Github (personal account)
