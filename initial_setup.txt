@@ -1,5 +1,6 @@
 # Install latest version of git
 sudo apt-add-repository ppa:git-core/ppa
+sudo apt-get update
 sudo apt-get install -y git
 
 # First run ssh-keygen to create ~/.ssh/id_rsa_personal
