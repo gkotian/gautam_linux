@@ -2,9 +2,6 @@
 	name  = Gautam Kotian
 	email = gautam.kotian@gmail.com
 
-[merge]
-	tool = meld
-
 [alias]
 	st      = status
 	br      = branch
@@ -79,6 +76,10 @@
 
 [diff]
 	submodule = log
+	tool = meld
+
+[merge]
+	tool = kdiff3
 
 [branch "master"]
 	rebase = true
