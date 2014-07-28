@@ -1,8 +1,3 @@
-# Work "S" specific aliases.
-if [ -f /home/gautam/.googie_aliases_s ]; then
-    . /home/gautam/.googie_aliases_s
-fi
-
 ##### Aliases to be studied #####
 
 # enable color support of ls and also add handy aliases
