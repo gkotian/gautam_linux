@@ -112,6 +112,7 @@ alias cb='createBranch'
 alias rb='reviewBranch'
 alias fb='filesInBranch'
 alias mb='mergeBranch'
+alias ldpwd='export LD_LIBRARY_PATH=$PWD'
 
 alias svnplw='svnp linux wireless'
 alias slw='s linux/src wireless/src'
