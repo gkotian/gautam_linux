@@ -123,6 +123,7 @@ sudo apt-get install -y meld
 sudo apt-get install -y kdiff3
 sudo apt-get install -y gitk
 sudo apt-get install -y xchat
+sudo apt-get install -y gthumb
 
 # ssh-agent
 
