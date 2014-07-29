@@ -4,6 +4,12 @@
 # Obviously requires dmenu to be installed.
 # Downloaded from "http://tools.suckless.org/dmenu/scripts"
 
+# Usage:
+#     $> sudo ln -s /path/to/todo.sh /usr/local/bin/todo
+# then just launch dmenu and type 'todo'
+# to add a task: write the task and press Enter
+# to delete a task: go to it and press Enter
+
 SB="#336699"
 SF="#ccc"
 NB="#111"
@@ -28,7 +34,7 @@ while [ -n "$CMD" ]; do
         HEIGHT=$(($HEIGHT+1))
         ACTION="cat $FILE | dmenu -fn $FN -l '$HEIGHT' -nb '$NB' -nf '$NF' -sb '$SB' -sf '$SF' -p '$PROMPT:' "
 	fi
-	
+
 	CMD=$(eval $ACTION)
 
 done
