@@ -1,3 +1,6 @@
+# A default i3 config file can be generated using:
+#    $> i3-config-wizard
+
 # Use 'Alt' as the mod key
 set $mod Mod1
 
