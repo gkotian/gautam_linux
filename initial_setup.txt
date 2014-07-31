@@ -92,9 +92,9 @@ To use ag:
 Other convenience links:
     sudo ln -s /usr/bin/google-chrome /usr/bin/chrome
 
-    # Link 'todo.sh' to a pre-existing location in PATH so that it can be directly launched using
-    # dmenu.
-    sudo ln -s $GL_CLONE_DIR/scripts/todo.sh /usr/local/bin/todo
+    # Create the dmenu todo list
+    sudo ln -s $GL_CLONE_DIR/scripts/dmenu_list.sh /usr/local/bin/todo
+    # Create other lists as needed by linking to the same script
 
     # Maybe a good idea to backup existing dmenu_path before doing this.
     sudo mv /usr/bin/dmenu_path /usr/bin/dmenu_path.bak
