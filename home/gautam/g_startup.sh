@@ -1,9 +1,9 @@
 #!/bin/sh
 
-GL_CLONE_DIR=/home/gautam/gautam_linux
+GL_DIR=/home/gautam/gautam_linux
 
 # Sociomantic specific startup.
-FILE=$GL_CLONE_DIR/g_startup_sociomantic
+FILE=$GL_DIR/g_startup_sociomantic
 if [ -f $FILE ]; then
     $FILE
 fi

@@ -19,19 +19,19 @@ sudo apt-get install -y git
 
 
 
-GL_CLONE_DIR="/home/gautam/not_work/gautam_linux"
+GL_DIR="/home/gautam/not_work/gautam_linux"
 
 
 
 
 # Check that the 'gautam_linux' directory exists.
-if [ ! -d $GL_CLONE_DIR ]; then
+if [ ! -d $GL_DIR ]; then
     echo "'gautam_linux' directory not found, aborting."
     exit 1
 fi
 
 SSH config file:
-    ln -s $GL_CLONE_DIR/misc/ssh_config ~/.ssh/config
+    ln -s $GL_DIR/misc/ssh_config ~/.ssh/config
 
 # Check all links that will be overwritten
 echo "The following files/directories will be overwritten:"
@@ -49,29 +49,29 @@ fi
 
 # Make necessary links
 rm -f ~/.bashrc
-ln -s $GL_CLONE_DIR/home/gautam/dot_bashrc    ~/.bashrc
+ln -s $GL_DIR/home/gautam/dot_bashrc    ~/.bashrc
 
 rm -rf ~/.vim
-ln -s $GL_CLONE_DIR/home/gautam/dot_vim       ~/.vim
-ln -s $GL_CLONE_DIR/home/gautam/dot_vim/vimrc ~/.vimrc
+ln -s $GL_DIR/home/gautam/dot_vim       ~/.vim
+ln -s $GL_DIR/home/gautam/dot_vim/vimrc ~/.vimrc
 exit
 
-    ln -s $GL_CLONE_DIR/home/gautam/dot_gitconfig ~/.gitconfig
+    ln -s $GL_DIR/home/gautam/dot_gitconfig ~/.gitconfig
 
 To use Google's public DNS servers
-    sudo ln -s $GL_CLONE_DIR/misc/resolv_conf_head /etc/resolvconf/resolv.conf.d/head
+    sudo ln -s $GL_DIR/misc/resolv_conf_head /etc/resolvconf/resolv.conf.d/head
 
 If using xmonad:
-    ln -s $GL_CLONE_DIR/home/gautam/dot_xmonad ~/.xmonad
-    ln -s $GL_CLONE_DIR/home/gautam/dot_xmobarrc ~/.xmobarrc
+    ln -s $GL_DIR/home/gautam/dot_xmonad ~/.xmonad
+    ln -s $GL_DIR/home/gautam/dot_xmobarrc ~/.xmobarrc
 
 If using i3:
-    ln -s $GL_CLONE_DIR/i3/config ~/.i3/config
+    ln -s $GL_DIR/i3/config ~/.i3/config
 
 For using the compose key and defining custom key-mappings
 (haven't yet figured out how to make it work with xmonad)
-    ln -s $GL_CLONE_DIR/home/gautam/dot_XCompose ~/.XCompose
-    ln -s $GL_CLONE_DIR/home/gautam/dot_gnomerc ~/.gnomerc
+    ln -s $GL_DIR/home/gautam/dot_XCompose ~/.XCompose
+    ln -s $GL_DIR/home/gautam/dot_gnomerc ~/.gnomerc
 
 Install exuberant ctags
 
@@ -90,16 +90,16 @@ Other convenience links:
     sudo ln -s /usr/bin/google-chrome /usr/bin/chrome
 
     # Create the dmenu todo list
-    sudo ln -s $GL_CLONE_DIR/scripts/dmenu_list.sh /usr/local/bin/todo
+    sudo ln -s $GL_DIR/scripts/dmenu_list.sh /usr/local/bin/todo
     # Create other lists as needed by linking to the same script
 
     # Maybe a good idea to backup existing dmenu_path before doing this.
     sudo mv /usr/bin/dmenu_path /usr/bin/dmenu_path.bak
-    sudo ln -s $GL_CLONE_DIR/scripts/dmenu_path.sh /usr/bin/dmenu_path
+    sudo ln -s $GL_DIR/scripts/dmenu_path.sh /usr/bin/dmenu_path
 
     # Set up work specific links
-    ln -s /path/to/g_sociomantic $GL_CLONE_DIR/g_sociomantic
-    ln -s /path/to/g_startup_sociomantic $GL_CLONE_DIR/g_startup_sociomantic
+    ln -s /path/to/g_sociomantic $GL_DIR/g_sociomantic
+    ln -s /path/to/g_startup_sociomantic $GL_DIR/g_startup_sociomantic
 
 # Set gnome-terminal
 Edit -> profile preferences

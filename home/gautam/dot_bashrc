@@ -38,30 +38,30 @@ shopt -s checkwinsize
 #************* BEGIN: Custom stuff setup
 
 # Directory where 'gautam_linux' is cloned
-GL_CLONE_DIR=/home/gautam/gautam_linux
+GL_DIR=/home/gautam/gautam_linux
 
 # Definitions of variables.
 # (place this first so that variables declared here can be used in other files)
-FILE=$GL_CLONE_DIR/home/gautam/g_variables
+FILE=$GL_DIR/home/gautam/g_variables
 if [ -f $FILE ]; then
     . $FILE
 fi
 
 # Alias definitions.
-FILE=$GL_CLONE_DIR/home/gautam/g_aliases
+FILE=$GL_DIR/home/gautam/g_aliases
 if [ -f $FILE ]; then
     . $FILE
 fi
 
 # Function definitions.
-FILE=$GL_CLONE_DIR/home/gautam/g_functions
+FILE=$GL_DIR/home/gautam/g_functions
 if [ -f $FILE ]; then
     . $FILE
     setPrompt "git_friendly"
 fi
 
 # Sociomantic specific definitions.
-FILE=$GL_CLONE_DIR/g_sociomantic
+FILE=$GL_DIR/g_sociomantic
 if [ -f $FILE ]; then
     . $FILE
 fi
