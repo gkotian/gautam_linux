@@ -97,6 +97,10 @@ Other convenience links:
     sudo mv /usr/bin/dmenu_path /usr/bin/dmenu_path.bak
     sudo ln -s $GL_CLONE_DIR/scripts/dmenu_path.sh /usr/bin/dmenu_path
 
+    # Set up work specific links
+    ln -s /path/to/g_sociomantic $GL_CLONE_DIR/g_sociomantic
+    ln -s /path/to/g_startup_sociomantic $GL_CLONE_DIR/g_startup_sociomantic
+
 # Set gnome-terminal
 Edit -> profile preferences
     Tab General

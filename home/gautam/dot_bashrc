@@ -61,7 +61,7 @@ if [ -f $FILE ]; then
 fi
 
 # Sociomantic specific definitions.
-FILE=$GL_CLONE_DIR/home/gautam/g_sociomantic
+FILE=$GL_CLONE_DIR/g_sociomantic
 if [ -f $FILE ]; then
     . $FILE
 fi
