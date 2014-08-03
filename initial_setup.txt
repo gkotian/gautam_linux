@@ -12,9 +12,6 @@ sudo apt-get update
 # Install latest version of git
 sudo apt-get install -y git
 
-# Install google-chrome
-sudo apt-get install -y google-chrome-stable
-
 # First run ssh-keygen to create ~/.ssh/id_rsa_personal
 # Put the contents of ~/.ssh/id_rsa_personal.pub into a new SSH key in Github (personal account)
 # Create a 'not_work' directory
@@ -100,9 +97,6 @@ Other convenience links:
     sudo mv /usr/bin/dmenu_path /usr/bin/dmenu_path.bak
     sudo ln -s $GL_CLONE_DIR/scripts/dmenu_path.sh /usr/bin/dmenu_path
 
-# Useful for batch renaming files
-sudo apt-get install -y pyrenamer
-
 # Set gnome-terminal
 Edit -> profile preferences
     Tab General
@@ -119,11 +113,7 @@ Edit -> keyboard shortcuts
     under "Shortcut keys -> View", disable full screen
     under "Shortcut keys -> Help", disable contents
 
-sudo apt-get install -y meld
-sudo apt-get install -y kdiff3
-sudo apt-get install -y gitk
-sudo apt-get install -y xchat
-sudo apt-get install -y gthumb
+sudo apt-get install -y meld kdiff3 gitk xchat suckless-tools pyrenamer google-chrome-stable gthumb
 
 # Launch google-chrome and set it as the default browser
 # System -> details -> preferred applications -> choose google-chrome
