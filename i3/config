@@ -142,7 +142,9 @@ workspace 9 output DP-2
 assign [class="^Gitk$"]        → 5
 assign [class="^Thunderbird$"] → 7
 assign [class="^Chrome$"]      → 8
+assign [class="^Firefox$"]     → 8
 assign [class="^Skype$"]       → 9
+assign [class="^Xchat$"]       → 9
 
 # Automatically launch certain applications at startup
 exec /home/gautam/gautam_linux/home/gautam/g_startup.sh
