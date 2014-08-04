@@ -132,6 +132,12 @@ bindsym $mod+Control+l exec slock
 # Get rid of the title-bar
 new_window 1pixel
 
+# Assign specific monitors to certain workspaces
+workspace 5 output DP-2
+workspace 7 output DP-2
+workspace 8 output DP-2
+workspace 9 output DP-2
+
 # Assign specific workspaces to certain applications
 assign [class="^Gitk$"]        → 5
 assign [class="^Thunderbird$"] → 7
