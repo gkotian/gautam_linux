@@ -73,6 +73,11 @@ To get the amount of disk space used & free:
 
 ---------------------------------------------------------------------------------------------------
 
+To grep for tabs in a file
+    grep $'\t' <filename>
+
+---------------------------------------------------------------------------------------------------
+
 The output of 'echo' can be controlled by using certain "Terminfo Capabilities", e.g:
     prompt$> tput smso; echo "hello world"; tput rmso
 (more here: http://tldp.org/LDP/lpg/node126.html)
