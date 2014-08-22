@@ -70,6 +70,7 @@
                     break; \
                 done; \
                 git checkout $ORIG; #"
+	tree     = log --oneline --name-status --graph
 
 [pull]
 	rebase = true
