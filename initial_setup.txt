@@ -101,6 +101,9 @@ Other convenience links:
     ln -s /path/to/g_sociomantic $GL_DIR/g_sociomantic
     ln -s /path/to/g_startup_sociomantic $GL_DIR/g_startup_sociomantic
 
+    # A work specific notes.txt is also present in the same directory as g_sociomantic. Make a link
+    # to this file also in a suitable location
+
 # Set gnome-terminal
 Edit -> profile preferences
     Tab General
