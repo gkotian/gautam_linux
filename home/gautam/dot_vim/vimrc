@@ -158,15 +158,15 @@ set title titlestring=%<%f\ %([%{Tlist_Get_Tagname_By_Line()}]%)
 " Navigation related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Move between split windows with Alt+Arrow instead of Ctrl+w+Arrow
-nmap <silent> <A-Up>    :wincmd k<CR>
-nmap <silent> <A-Down>  :wincmd j<CR>
-nmap <silent> <A-Left>  :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
+nmap <silent> <C-Left>       :wincmd h<CR>
+nmap <silent> <C-Down>       :wincmd j<CR>
+nmap <silent> <C-Up>         :wincmd k<CR>
+nmap <silent> <C-Right>      :wincmd l<CR>
 
-imap <silent> <A-Up>    <C-o>:wincmd k<CR>
-imap <silent> <A-Down>  <C-o>:wincmd j<CR>
-imap <silent> <A-Left>  <C-o>:wincmd h<CR>
-imap <silent> <A-Right> <C-o>:wincmd l<CR>
+imap <silent> <C-Left>  <C-o>:wincmd h<CR>
+imap <silent> <C-Down>  <C-o>:wincmd j<CR>
+imap <silent> <C-Up>    <C-o>:wincmd k<CR>
+imap <silent> <C-Right> <C-o>:wincmd l<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
