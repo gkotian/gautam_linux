@@ -54,7 +54,7 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Map F1 to save the current file
 map <F1>  :w<CR>
-imap <F1> <ESC>:w<CR>a
+imap <F1> <C-o>:w<CR>
 
 " Map F2 to change to the previously opened file
 map <F2>  :e#<CR>
@@ -74,7 +74,7 @@ map <F12> @r
 
 " Map HOME key to jump to the first character in the line.
 map <HOME> ^
-imap <HOME> <ESC>^i
+imap <HOME> <C-o>^
 
 " DOESN'T WORK!!!!!!!!
 " Map <Ctrl+S> to save the current file
