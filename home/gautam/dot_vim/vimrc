@@ -121,6 +121,9 @@ source ~/.vim/autocmds.vim
 " For the vim-startify plugin
 source ~/.vim/vim-startify.vim
 
+" For the NERDTree plugin
+source ~/.vim/NERDTree.vim
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " D related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

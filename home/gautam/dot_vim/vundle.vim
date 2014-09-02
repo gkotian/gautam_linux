@@ -19,6 +19,7 @@ Plugin 'ervandew/supertab'
 Plugin 'JesseKPhillips/d.vim'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-commentary'
+Plugin 'scrooloose/nerdtree'
 
 " ----------------------
 "     Plugins to try
