@@ -109,6 +109,7 @@ alias reviewChanges='for file in `svn status -q | awk '\''{print \$NF}'\''`; do 
     # (source: http://muffinresearch.co.uk/archives/2007/01/30/bash-single-quotes-inside-of-single-quoted-strings)
 alias rc='reviewChanges'
 alias cb='createBranch'
+alias reviewBranch='/home/gautam/not_work/git_scripts/review_branch.sh'
 alias rb='reviewBranch'
 alias fb='filesInBranch'
 alias mb='mergeBranch'
