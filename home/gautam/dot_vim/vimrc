@@ -49,6 +49,12 @@ set formatoptions=tcqor
 
 set ofu=syntaxcomplete#Complete
 
+" Open new horizontal splits below.
+" set splitbelow
+
+" Open new vertical splits on the right.
+" set splitright
+ 
 " Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
