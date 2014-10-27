@@ -121,6 +121,7 @@ Edit -> keyboard shortcuts
     under "Shortcut keys -> Help", disable contents
 
 sudo apt-get install -y meld kdiff3 gitk xchat suckless-tools pyrenamer google-chrome-stable gthumb
+sudo apt-get install -y pdftk
 
 # Launch google-chrome and set it as the default browser
 # System -> details -> preferred applications -> choose google-chrome
