@@ -699,6 +699,11 @@ hex()
     echo "$(($@))"
 }
 
+rebase()
+{
+    git rebase -i HEAD~$1
+}
+
 # Notes:
 # The current value of IFS (Internal Field Separator) may be viewed using the following pipeline:
 #
