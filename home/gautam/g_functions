@@ -694,6 +694,11 @@ hex()
     printf "0x%X\n" $1
 }
 
+=()
+{
+    echo "$(($@))"
+}
+
 # Notes:
 # The current value of IFS (Internal Field Separator) may be viewed using the following pipeline:
 #
