@@ -71,6 +71,15 @@ map <F3> <C-]>
 " Map F4 to show/hide tags
 nnoremap <silent> <F4> :TlistToggle<CR>
 
+" Map F5 to show the list of buffers and also quickly open one
+nnoremap <F5> :buffers<CR>:buffer<Space>
+
+" Map function keys F7 & F8 to go to previous and next buffer respectively
+map  <F7> :bp<CR>
+imap <F7> <C-o>:bp<CR>
+map  <F8> :bn<CR>
+imap <F8> <C-o>:bn<CR>
+
 " Map function keys F9 to F12 to play whatever has been recorded into 'q', 'w', 'e' & 'r'
 " respectively
 map <F9>  @q
