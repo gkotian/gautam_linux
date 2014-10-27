@@ -147,7 +147,7 @@ assign [class="^Skype$"]       → 9
 assign [class="^Xchat$"]       → 9
 
 # Automatically launch certain applications at startup
-exec /home/gautam/gautam_linux/home/gautam/g_startup.sh
+exec /home/gautam/play/gautam_linux/home/gautam/g_startup.sh
 exec chrome
 exec thunderbird
 exec /usr/bin/skype

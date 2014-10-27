@@ -1,6 +1,7 @@
 #!/bin/sh
 
-GL_DIR=/home/gautam/gautam_linux
+PLAY_DIR=/home/gautam/play
+GL_DIR=$PLAY_DIR/gautam_linux
 TODO_FILE=/home/gautam/tmp/TODO.txt
 
 # Sociomantic specific startup.

@@ -37,8 +37,9 @@ shopt -s checkwinsize
 
 #************* BEGIN: Custom stuff setup
 
-# Directory where 'gautam_linux' is cloned
-GL_DIR=/home/gautam/gautam_linux
+PLAY_DIR=/home/gautam/play
+WORK_DIR=/home/gautam/work
+GL_DIR=$PLAY_DIR/gautam_linux
 
 # Definitions of variables.
 # (place this first so that variables declared here can be used in other files)
