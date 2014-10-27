@@ -668,18 +668,6 @@ dns_servers()
     fi
 }
 
-#     $ fetchPullRequest 110
-#     gets PR#110
-fetchPullRequest()
-{
-    # TODO: confirm nothing is modified (as a hard reset will happen)
-    # TODO: confirm PR exists
-
-    git fetch upstream pull/$1/head
-    git checkout pull$1 2>/dev/null || git checkout -b pull$1
-    git reset --hard FETCH_HEAD
-}
-
 dec()
 {
     if [[ $1 == 0x* ]]; then
