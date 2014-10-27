@@ -680,6 +680,20 @@ fetchPullRequest()
     git reset --hard FETCH_HEAD
 }
 
+dec()
+{
+    if [[ $1 == 0x* ]]; then
+        printf "%d\n" $1
+    else
+        printf "%d\n" 0x$1
+    fi
+}
+
+hex()
+{
+    printf "0x%X\n" $1
+}
+
 # Notes:
 # The current value of IFS (Internal Field Separator) may be viewed using the following pipeline:
 #
