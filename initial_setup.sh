@@ -144,6 +144,9 @@ echo "Done!"
 # echo "Done!"
 
 echo -n "    .i3/config... "
+if [ ! -d "/home/$THE_USER/.i3" ]; then
+    mkdir /home/$THE_USER/.i3
+fi
 rm -f /home/$THE_USER/.i3/config
 sudo -u ${THE_USER} ln -s $GL_DIR/i3/config /home/$THE_USER/.i3/config
 echo "Done!"
