@@ -99,7 +99,7 @@ sudo -u ${THE_USER} mkdir $PLAY_DIR
 echo "Done!"
 
 echo "Cloning 'gkotian/gautam_linux.git'... "
-sudo -u ${THE_USER} git clone git@$GITHUB_HOST:gkotian/gautam_linux.git
+sudo -u ${THE_USER} git clone git@$GITHUB_HOST:gkotian/gautam_linux.git $PLAY_DIR
 
 echo "Creating symbolic links for:"
 echo -n "    SSH config file... "
