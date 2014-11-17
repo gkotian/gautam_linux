@@ -68,7 +68,7 @@ echo "Installing packages:"
 for PACKAGE in ${PACKAGES_LIST[@]}
 do
     echo -n "    $PACKAGE... "
-    apt-get install -q -y $PACKAGE
+    apt-get install -qq $PACKAGE > /dev/null 2>&1
     if [[ $? -ne 0 ]]; then
         echo "Failed."
     else
