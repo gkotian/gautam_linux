@@ -7,9 +7,9 @@ GL_DIR="$PLAY_DIR/gautam_linux"
 # GITHUB_HOST="github-PERSONAL"
 GITHUB_HOST="github.com"
 
-PACKAGES_LIST=(git meld kdiff3 gitk xchat suckless-tools pyrenamer
-               google-chrome-stable gthumb pdftk exuberant-ctags
-               silversearcher-ag)
+PACKAGES_LIST=(exuberant-ctags git gitk google-chrome-stable gthumb i3 kdiff3
+               meld pdftk pyrenamer silversearcher-ag suckless-tools vim vlc
+               xchat)
 
 function waitForConfirmation
 {
