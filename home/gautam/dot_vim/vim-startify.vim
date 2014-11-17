@@ -16,8 +16,8 @@ let g:startify_files_number = 25
 
 let g:startify_bookmarks = [ '~/.vimrc',
 \                            '~/.bashrc',
-\                            '~/gautam_linux/home/gautam/g_sociomantic',
-\                            '~/gautam_linux/home/gautam/g_aliases' ]
+\                            '~/play/gautam_linux/home/gautam/g_sociomantic',
+\                            '~/play/gautam_linux/home/gautam/g_aliases' ]
 
 let g:startify_skiplist = [ 'COMMIT_EDITMSG',
 \                           $VIMRUNTIME .'/doc' ]
