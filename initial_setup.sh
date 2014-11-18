@@ -19,6 +19,7 @@ function waitForConfirmation
     do
         read -s -n 1 C
     done
+    echo ""
 }
 
 echo -n "Checking internet connectivity... "
@@ -44,7 +45,7 @@ fi
 echo "$THE_USER"
 
 echo -n "Adding the git-core PPA... "
-apt-add-repository ppa:git-core/ppa > /dev/null
+apt-add-repository -y ppa:git-core/ppa > /dev/null 2>&1
 if [[ $? -ne 0 ]]; then
     echo "Failed. Aborting."
     exit 4
@@ -218,8 +219,17 @@ waitForConfirmation
 
 echo "google-chrome setup"
 echo "-------------------"
-echo "    Launch google-chrome and set it as the default browser"
-echo "    System -> details -> preferred applications -> choose google-chrome"
+echo "    Launch google-chrome, lock it to launcher and set it as the default browser"
+waitForConfirmation
+
+echo "default applications setup"
+echo "--------------------------"
+echo "    System Settings -> Details -> Default Applications"
+echo "        Web    : Google Chrome"
+echo "        Mail   : Thunderbird Mail"
+echo "        Music  : VLC media player"
+echo "        Video  : VLC media player"
+echo "        Photos : gThumb"
 waitForConfirmation
 
 # The Anki website itself recommends downloading and installing
