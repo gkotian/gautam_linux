@@ -243,6 +243,12 @@ echo "-------------"
 echo "    Install using the ubuntu-software-center"
 waitForConfirmation
 
+echo "skype setup"
+echo "-----------"
+echo "    Go to http://goo.gl/Kgrs5P and download the .deb"
+echo "    Open with ubuntu-software-center and install"
+waitForConfirmation
+
 echo "You're all set. Congratulations!!"
 
 exit 0
