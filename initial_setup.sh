@@ -87,20 +87,19 @@ cat /home/$THE_USER/.ssh/id_rsa_personal.pub
 echo ""
 waitForConfirmation
 
-echo -n "Checking access to GitHub... "
-sudo -u ${THE_USER} ssh -T git@$GITHUB_HOST 2>/dev/null
-if [[ $? -ne 1 ]]; then
-    echo "Failed. Aborting."
-    exit 6
-fi
-echo "Success!"
+echo "In a new terminal/tab run the following command:"
+echo "    ssh -T git@$GITHUB_HOST"
+echo "You should get the following output:"
+echo "    Hi gkotian! You've successfully authenticated, but GitHub does not provide shell access."
+waitForConfirmation
 
 echo -n "Creating directory: '$PLAY_DIR'... "
 sudo -u ${THE_USER} mkdir $PLAY_DIR
 echo "Done!"
 
-echo "Cloning 'gkotian/gautam_linux.git'... "
-sudo -u ${THE_USER} git clone git@$GITHUB_HOST:gkotian/gautam_linux.git $PLAY_DIR
+echo "In the other terminal/tab run the following command:"
+echo "    git clone git@$GITHUB_HOST:gkotian/gautam_linux.git $PLAY_DIR/gautam_linux"
+waitForConfirmation
 
 echo "Creating symbolic links for:"
 echo -n "    SSH config file... "
@@ -180,15 +179,15 @@ rm -f /usr/bin/dmenu_path
 sudo ln -s $GL_DIR/scripts/dmenu_path.sh /usr/bin/dmenu_path
 echo "Done!"
 
-# Dependency: .vim directory
-echo "Cloning 'gmarik/Vundle.vim.git'... "
-sudo -u ${THE_USER} git clone git@$GITHUB_HOST:gmarik/Vundle.vim.git /home/$THE_USER/.vim/bundle/vundle
+if [ -d "/home/$THE_USER/.vim" ]; then
+    echo "In the other terminal/tab run the following command:"
+    echo "    git clone git@$GITHUB_HOST:gmarik/Vundle.vim.git /home/$THE_USER/.vim/bundle/vundle"
+    waitForConfirmation
 
-# Dependency: Vundle
-echo -n "Installing all Vim plugins... "
-sudo -u ${THE_USER} vim +PluginInstall +qall
-echo "Done!"
-
+    echo -n "Installing all Vim plugins... "
+    sudo -u ${THE_USER} vim +PluginInstall +qall
+    echo "Done!"
+fi
 
 # Set up work specific links
 # ln -s /path/to/g_sociomantic $GL_DIR/g_sociomantic
