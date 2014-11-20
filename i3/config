@@ -146,6 +146,10 @@ assign [class="^Firefox$"]     → 8
 assign [class="^Skype$"]       → 9
 assign [class="^Xchat$"]       → 9
 
+# Certain windows should always be floating
+for_window [class="Gnome-calculator"] floating enable
+for_window [class="Nautilus" instance="file_progress"] floating enable
+
 # Automatically launch certain applications at startup
 exec /home/gautam/play/gautam_linux/home/gautam/g_startup.sh
 exec chrome
