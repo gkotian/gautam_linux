@@ -27,7 +27,7 @@
 
 [core]
 	whitespace   = tab-in-indent red reverse
-	excludesfile = /home/gautam/.gitignore
+	excludesfile = /home/gautam/.gitignore_global
 
 [color "diff"]
 	whitespace = red reverse

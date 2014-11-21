@@ -127,6 +127,11 @@ rm -f /home/$THE_USER/.gitconfig
 sudo -u ${THE_USER} ln -s $GL_DIR/home/gautam/dot_gitconfig /home/$THE_USER/.gitconfig
 echo "Done!"
 
+echo -n "    .gitignore_global... "
+rm -f /home/$THE_USER/.gitignore_global
+sudo -u ${THE_USER} ln -s $GL_DIR/home/gautam/dot_gitignore_global /home/$THE_USER/.gitignore_global
+echo "Done!"
+
 # For using Google's public DNS servers
 echo -n "    /etc/resolvconf/resolv.conf.d/head... "
 rm -f /etc/resolvconf/resolv.conf.d/head
