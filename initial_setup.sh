@@ -184,6 +184,15 @@ rm -f /usr/bin/dmenu_path
 sudo ln -s $GL_DIR/scripts/dmenu_path.sh /usr/bin/dmenu_path
 echo "Done!"
 
+echo ""
+echo -n "Setting up 'c' to launch calendar... "
+TMP_FILE=mktemp
+echo '#!/bin/bash' > $TMP_FILE
+echo "zenity --calendar" >> $TMP_FILE
+chmod +x $TMP_FILE
+mv $TMP_FILE /usr/local/bin/c
+echo "Done!"
+
 if [ -d "/home/$THE_USER/.vim" ]; then
     echo "In the other terminal/tab run the following command:"
     echo "    git clone git@$GITHUB_HOST:gmarik/Vundle.vim.git /home/$THE_USER/.vim/bundle/vundle"
