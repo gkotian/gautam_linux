@@ -19,6 +19,7 @@ let g:startify_bookmarks = [ '~/.vimrc',
 \                            '~/play/gautam_linux/home/gautam/g_aliases' ]
 
 let g:startify_skiplist = [ 'COMMIT_EDITMSG',
+\                           'HUB_EDITMSG',
 \                           $VIMRUNTIME .'/doc' ]
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
