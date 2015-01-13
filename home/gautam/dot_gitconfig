@@ -88,3 +88,5 @@
 [git]
 	rebase = true
 
+[init]
+	templatedir = /home/gautam/.git_template_dir

@@ -1,0 +1,53 @@
+#!/bin/sh
+# Automatically add a summary of changed modules by using git subsum.
+#
+# To enable this hook, copy it to $repo/.git/hooks/prepare-commit-msg.
+
+set -e
+
+# Don't do anything if the command is not there
+git subsum -h > /dev/null 2>&1 ||
+	exit 0
+
+# If the script is given a reference, then use it
+# (we are amending an existing commit for example)
+ref=
+test -n "$3" &&
+	ref="$3^"
+
+# Create a temporary file with the contents of the summary
+# (and remove it at program exit)
+tmp=`mktemp`
+trap "rm -f '$tmp'" EXIT
+git subsum "$ref" > "$tmp"
+
+# Regex to detect the beginning of the old summary information
+sum_re='^\* [^ ]\+ .*([0-9a-f]\{7\})\.\.\..*([0-9a-f]\{7\}) ([0-9]\+ commits)$'
+
+sed_script=$(cat <<EOS
+
+	# Add an empty line for the message subject
+	1a\\
+
+	# After the first line, add the contents of 'git subsum'
+	1r $tmp
+
+	# Look for the first occurrence of the summary regex and add a header
+	# for the old summary (which will be commented out)
+	0,/$sum_re/ {
+		/$sum_re/ { i\\
+# Old submodules summary:\\
+#
+		}
+	}
+
+	# Comment all that comes after the previous summary (if one was found)
+	/$sum_re/,/^#/ {
+		/^#/ !s/^/# /
+	}
+
+EOS
+)
+
+sed -i -e "$sed_script" "$1"
+
