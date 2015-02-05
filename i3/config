@@ -155,7 +155,6 @@ exec /home/gautam/play/gautam_linux/home/gautam/g_startup.sh
 exec chrome
 exec thunderbird
 exec /usr/bin/skype
-exec xchat
 
 # Set the desired layouts for specific workspaces
 #exec --no-startup-id i3-msg "workspace 6; layout tabbed"
@@ -165,3 +164,4 @@ exec xchat
 bar {
         status_command i3status -c /home/gautam/not_work/gautam_linux/i3/i3bar_config
 }
+
