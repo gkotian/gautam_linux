@@ -192,6 +192,7 @@ echo "Done!"
 echo ""
 echo -n "Setting up 'c' to launch calendar... "
 TMP_FILE=mktemp
+# single quotes are needed to echo '!'
 echo '#!/bin/bash' > $TMP_FILE
 echo "zenity --calendar" >> $TMP_FILE
 chmod +x $TMP_FILE
