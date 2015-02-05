@@ -15,7 +15,7 @@
 let NERDTreeQuitOnOpen = 1
 
 " Shortcut to open NERDTree
-map <C-n> :NERDTreeToggle<CR>
+nmap <silent> <C-n> :NERDTreeToggle<CR>
 
 " Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
