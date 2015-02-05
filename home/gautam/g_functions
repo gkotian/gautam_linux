@@ -614,25 +614,6 @@ tun()
     fi
 }
 
-revertNotMyModifications()
-{
-    revertCount=`svn status -q | grep "^\s" | awk '{print $NF}' | wc -l`
-    noRevertCount=`svn status -q | grep -v "^\s" | awk '{print $NF}' | wc -l`
-
-    echo "This will revert $revertCount files."
-    echo "Only the following $noRevertCount files will be preserved:"
-    svn status -q | grep -v "^\s" | awk '{print "    "$NF}'
-    echo -n "Proceed? (y/n) : "
-    read yes_or_no
-    if [ $yes_or_no != "y" ] && [ $yes_or_no != "Y" ]; then
-        echo "Aborted."
-        return
-    fi
-
-    for file in `svn status -q | grep "^\s" | awk '{print $NF}'`; do svn revert $file; done
-    echo "Done."
-}
-
 dns_servers()
 {
     # to list DNS servers associated with all interfaces, use:
