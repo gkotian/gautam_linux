@@ -213,7 +213,8 @@ set laststatus=2
 "
 " For more, :help statusline
 
-set statusline=%t%m%r\ [buf\ %n]%=[line\ %l\ of\ %L,\ col\ %c]
+set statusline=%t%m%r\ %{fugitive#statusline()}\ [b%n]%=[line\ %l\ of\ %L,\ col\ %c]
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 

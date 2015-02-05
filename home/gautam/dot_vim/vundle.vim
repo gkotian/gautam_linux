@@ -14,17 +14,17 @@ Plugin 'gmarik/vundle'
 " -------------------------
 "     Installed plugins
 " -------------------------
-Plugin 'mhinz/vim-startify'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'ervandew/supertab'
 Plugin 'JesseKPhillips/d.vim'
+Plugin 'mhinz/vim-startify'
 Plugin 'rking/ag.vim'
-Plugin 'tpope/vim-commentary'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
 
 " ----------------------
 "     Plugins to try
 " ----------------------
-"Plugin 'tpope/vim-fugitive'
-
 "Plugin 'vim-scripts/Smart-Tabs' Do I need this?
 
