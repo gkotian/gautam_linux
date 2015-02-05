@@ -16,7 +16,7 @@ set tabstop=4
 set autoindent
 
 " Enable line numbers
-set number
+"set number
 
 " Enable incremental search
 set incsearch
@@ -102,6 +102,8 @@ imap <HOME> <C-o>^
 " newlines by 'NonText' in the colorscheme file.
 " (http://vimcasts.org/episodes/show-invisibles)
 nmap <leader>l :set list!<CR>
+
+nmap <leader>n :set invnumber<CR>
 
 " Map '\c' & '\h' to switch to corresponding .c or .h files respectively, with
 " respect to the current buffer.
