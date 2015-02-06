@@ -11,6 +11,8 @@ PACKAGES_LIST=(exuberant-ctags git gitk google-chrome-stable gthumb i3 kdiff3
                meld pdftk pyrenamer silversearcher-ag suckless-tools vim vlc
                xchat)
 
+MY_PROJECTS_LIST=(awk_scripts git_scripts gkotian.github.io python_scripts)
+
 function waitForConfirmation
 {
     echo "Press 'Enter' when done."
@@ -208,14 +210,19 @@ if [ -d "/home/$THE_USER/.vim" ]; then
     sudo -u ${THE_USER} vim +PluginInstall +qall
     echo "Done!"
 fi
+echo ""
 
-# Set up work specific links
-# ln -s /path/to/g_sociomantic $GL_DIR/g_sociomantic
-# ln -s /path/to/g_startup_sociomantic $GL_DIR/g_startup_sociomantic
+for PROJECT in ${MY_PROJECTS_LIST[@]}
+do
+    echo "In the other terminal/tab run the following command:"
+    echo "    git clone git@$GITHUB_HOST:gkotian/$PROJECT.git $PLAY_DIR/$PROJECT"
+    waitForConfirmation
+done
 
-# A work specific notes.txt is also present in the same directory as
-# g_sociomantic. Make a link to this file also in a suitable location
-
+echo -n "Renaming '$PLAY_DIR/gkotian.github.io' to '$PLAY_DIR/website'... "
+sudo -u ${THE_USER} mv $PLAY_DIR/gkotian.github.io $PLAY_DIR/website
+echo "Done!"
+echo ""
 
 echo "gnome-terminal setup"
 echo "--------------------"
