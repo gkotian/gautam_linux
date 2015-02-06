@@ -2,14 +2,14 @@
 
 THE_USER=${SUDO_USER:-${USERNAME:-unknown}}
 PLAY_DIR="/home/$THE_USER/play"
-WORK_DIR="/home/$THE_USER/work"
 GL_DIR="$PLAY_DIR/gautam_linux"
-# GITHUB_HOST="github-PERSONAL"
-GITHUB_HOST="github.com"
 
-PACKAGES_LIST=(exuberant-ctags git gitk google-chrome-stable gthumb i3 kdiff3
-               meld pdftk pyrenamer silversearcher-ag suckless-tools vim vlc
-               xchat)
+GITHUB_HOST="github-PERSONAL"
+GITHUB_USERNAME="gkotian"
+
+PACKAGES_LIST=(exuberant-ctags git gitk git-gui git-man google-chrome-stable
+               gthumb i3 kdiff3 meld pdftk pyrenamer silversearcher-ag
+               suckless-tools vim vlc xchat)
 
 MY_PROJECTS_LIST=(awk_scripts git_scripts gkotian.github.io python_scripts)
 
@@ -92,7 +92,7 @@ waitForConfirmation
 echo "In a new terminal/tab run the following command:"
 echo "    ssh -T git@$GITHUB_HOST"
 echo "You should get the following output:"
-echo "    Hi gkotian! You've successfully authenticated, but GitHub does not provide shell access."
+echo "    Hi $GITHUB_USERNAME! You've successfully authenticated, but GitHub does not provide shell access."
 waitForConfirmation
 
 echo -n "Creating directory: '$PLAY_DIR'... "
