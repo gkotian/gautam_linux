@@ -105,6 +105,8 @@ alias mclilibwag='cli && cd wag_lib && make clean && make'
 alias mclicallbacks='cli && cd callbacks && make clean && make'
 alias mcmd='cmd && make clean && make'
 alias mwamgr='wbld && make clean && make wamgr'
+alias mute='amixer set Master mute > /dev/null'
+alias unmute='amixer set Master unmute > /dev/null && amixer set Speaker unmute > /dev/null && amixer set Headphone unmute > /dev/null'
 
 #alias reviewChanges='for file in `svn status -q | awk '\''{print \$NF}'\''`; do sd $file; done'
 alias reviewChanges='for file in `svn status -q | awk '\''{print \$NF}'\''`; do svn diff --diff-cmd kdiff3 $file; done'
