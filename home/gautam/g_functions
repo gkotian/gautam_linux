@@ -673,6 +673,36 @@ rebase()
     git rebase -i HEAD~$1
 }
 
+# To start a countdown timer of 30 seconds, use:
+#     $> countdown 30
+# For 2 hours, use:
+#     $> countdown $((2*60*60))
+countdown()
+{
+    date1=$((`date +%s` + $1)); 
+
+    while [ "$date1" -ne `date +%s` ]
+    do 
+        echo -ne "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
+        sleep 0.1
+    done
+
+    echo "00:00:00"
+
+    alert "Countdown complete!!"
+}
+
+stopwatch()
+{
+    date1=`date +%s`; 
+
+    while true
+    do 
+        echo -ne "$(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r"; 
+        sleep 0.1
+    done
+}
+
 # Notes:
 # The current value of IFS (Internal Field Separator) may be viewed using the following pipeline:
 #
