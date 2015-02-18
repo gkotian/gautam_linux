@@ -276,6 +276,12 @@ echo "    Go to http://goo.gl/Kgrs5P and download the .deb"
 echo "    Open with ubuntu-software-center and install"
 waitForConfirmation
 
+echo "Disabling icons on Desktop (or else launching nautilus in i3 will open an
+additional window)"
+sudo -u ${THE_USER} gsettings set org.gnome.desktop.background show-desktop-icons false
+echo "Done!"
+echo ""
+
 echo "You're all set. Congratulations!!"
 
 exit 0
