@@ -8,8 +8,10 @@ GITHUB_HOST="github-PERSONAL"
 GITHUB_USERNAME="gkotian"
 
 PACKAGES_LIST=(exuberant-ctags git gitk git-gui git-man google-chrome-stable
-               gthumb i3 kdiff3 meld pdftk pyrenamer silversearcher-ag
-               suckless-tools vim vlc xchat)
+               gthumb fish i3 kdiff3 meld pdftk pyrenamer python-pip
+               silversearcher-ag suckless-tools vim vlc xchat)
+
+PYTHON_PACKAGES_LIST=(pyenchant)
 
 MY_PROJECTS_LIST=(awk_scripts git_scripts gkotian.github.io python_scripts)
 
@@ -72,6 +74,18 @@ for PACKAGE in ${PACKAGES_LIST[@]}
 do
     echo -n "    $PACKAGE... "
     apt-get install -qq $PACKAGE > /dev/null 2>&1
+    if [[ $? -ne 0 ]]; then
+        echo "Failed."
+    else
+        echo "Done!"
+    fi
+done
+
+echo "Installing python packages:"
+for PACKAGE in ${PYTHON_PACKAGES_LIST[@]}
+do
+    echo -n "    $PACKAGE... "
+    pip install $PACKAGE > /dev/null 2>&1
     if [[ $? -ne 0 ]]; then
         echo "Failed."
     else
