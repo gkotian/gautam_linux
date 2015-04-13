@@ -54,9 +54,10 @@ set ofu=syntaxcomplete#Complete
 
 " Open new vertical splits on the right.
 " set splitright
- 
-" Press Space to turn off highlighting and clear any message already displayed.
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+" Instead of entering Ex mode (:help Q), make 'Q' turn off highlighting and clear any message
+" already displayed.
+nnoremap <silent> Q :nohlsearch<Bar>:echo<CR>
 
 " Map F1 to save the current file
 map <F1>  :w<CR>
