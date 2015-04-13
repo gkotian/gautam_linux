@@ -114,6 +114,9 @@ nmap <leader>h :e %:r.h
 " Map '\i' to automatically insert my usual function body template.
 nmap <leader>i o{<CR>    STATUS rc = ERROR;<CR><CR>do<CR>{<CR>    rc = OK;<CR><BS><BS><BS><BS>}<CR>while (0);<CR><CR>return rc;<CR><BS><BS><BS><BS>}<CR><ESC>
 
+" Map '\ul' to underline the current line
+nmap <leader>ul YpVr-
+
 " Map '\v' to open the vimrc
 nmap <leader>v :e $MYVIMRC<CR>
 
