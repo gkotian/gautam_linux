@@ -13,6 +13,9 @@ BRANCH=trunk
 # For the D garbage collector
 export D_GC=cdgc
 
+# For vimpager
+export PAGER=/usr/local/bin/vimpager
+
 # For chromium
 export PATH=$PATH:/home/gautam/chromium/depot_tools
 

@@ -28,7 +28,9 @@ alias one_line='awk '\''{printf "%s ", $1} END {printf "\n"}'\'''
 
 
 
-alias l='less -j 4' # always display the search term on the 4th line from top
+# alias l='less -j 4' # always display the search term on the 4th line from top
+alias less=$PAGER
+alias zless=$PAGER
 alias x='exit'
 alias rm='rm -i' # Prompt before every removal
 alias mv='mv -i' # Prompt before overwriting
