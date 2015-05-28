@@ -111,8 +111,8 @@ nmap <leader>n :set invnumber<CR>
 nmap <leader>c :e %:r.c
 nmap <leader>h :e %:r.h
 
-" Map '\i' to automatically insert my usual function body template.
-nmap <leader>i o{<CR>    STATUS rc = ERROR;<CR><CR>do<CR>{<CR>    rc = OK;<CR><BS><BS><BS><BS>}<CR>while (0);<CR><CR>return rc;<CR><BS><BS><BS><BS>}<CR><ESC>
+" Map '\fb' to automatically insert my usual function body template.
+nmap <leader>fb o{<CR>    STATUS rc = ERROR;<CR><CR>do<CR>{<CR>    rc = OK;<CR><BS><BS><BS><BS>}<CR>while (0);<CR><CR>return rc;<CR><BS><BS><BS><BS>}<CR><ESC>
 
 " Map '\fh' to automatically insert a function header comment.
 nmap <leader>fh i    /<ESC>75a*<ESC>o<CR>  TODO: Does what?<CR><CR>Params:<ESC>>>>>o    TODO<CR><CR><BS><BS><BS><BS>Returns:<CR>    TODO<CR><CR><ESC>i    <ESC>75a*<ESC>a/<ESC>
