@@ -111,6 +111,9 @@ nmap <leader>n :set invnumber<CR>
 nmap <leader>c :e %:r.c
 nmap <leader>h :e %:r.h
 
+" Map '\o' to instantly obfuscate stuff
+nmap <leader>o ggVGg?
+
 " Map '\fb' to automatically insert my usual function body template.
 nmap <leader>fb o{<CR>    STATUS rc = ERROR;<CR><CR>do<CR>{<CR>    rc = OK;<CR><BS><BS><BS><BS>}<CR>while (0);<CR><CR>return rc;<CR><BS><BS><BS><BS>}<CR><ESC>
 
