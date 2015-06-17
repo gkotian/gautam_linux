@@ -26,4 +26,5 @@ Host *.sociomantic.com
     User developer
     IdentityFile ~/.ssh/id_rsa_servers
     IdentitiesOnly yes
+    ForwardAgent yes
 
