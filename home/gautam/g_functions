@@ -677,6 +677,7 @@ rebase()
 #     $> countdown 30
 # For 2 hours, use:
 #     $> countdown $((2*60*60))
+# Entering a custom message after the time pops up a notification
 countdown()
 {
     date1=$((`date +%s` + $1)); 
@@ -689,7 +690,12 @@ countdown()
 
     echo "00:00:00"
 
-    alert "Countdown complete!!"
+    if [ $# -eq 1 ]
+    then
+        alert "Countdown complete!!"
+    else
+        xmessage "$2"
+    fi
 }
 
 stopwatch()
