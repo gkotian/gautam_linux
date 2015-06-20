@@ -17,7 +17,7 @@ export D_GC=cdgc
 export PAGER=/usr/local/bin/vimpager
 
 # For custom scripts
-export PATH=$PATH:/home/gautam/play/awk_scripts:/home/gautam/play/git_scripts:/home/gautam/play/python_scripts
+export PATH=$PATH:$PLAY_DIR/awk_scripts:$PLAY_DIR/git_scripts:$PLAY_DIR/python_scripts
 
 export EDITOR=/usr/bin/vim
 export BASE=$BASESVN/$BRANCH
