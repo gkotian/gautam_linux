@@ -235,7 +235,7 @@ done
 
 echo "Installing vimpager..."
 echo "In the other terminal/tab run the following command:"
-echo "    git clone git clone git://github.com/rkitover/vimpager $PLAY_DIR/vimpager"
+echo "    git clone git://github.com/rkitover/vimpager $PLAY_DIR/vimpager"
 waitForConfirmation
 cd $PLAY_DIR/vimpager
 make install
