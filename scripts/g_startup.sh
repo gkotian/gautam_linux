@@ -10,6 +10,12 @@ if [ -f $FILE ]; then
     $FILE &
 fi
 
+# Log latest boot time info.
+FILE=$GL_DIR/scripts/boot_times_tracker.sh
+if [ -f $FILE ]; then
+    $FILE &
+fi
+
 # Open the todo file, if it exists.
 if [ -f $TODO_FILE ]; then
     gedit $TODO_FILE &
