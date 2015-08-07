@@ -187,7 +187,7 @@ set title titlestring=%<%f\ %([%{Tlist_Get_Tagname_By_Line()}]%)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Navigation related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Move between split windows with Alt+Arrow instead of Ctrl+w+Arrow
+" Move between split windows with Ctrl+Arrow instead of Ctrl+w+Arrow
 nmap <silent> <C-Left>       :wincmd h<CR>
 nmap <silent> <C-Down>       :wincmd j<CR>
 nmap <silent> <C-Up>         :wincmd k<CR>
