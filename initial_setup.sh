@@ -15,6 +15,8 @@ PYTHON_PACKAGES_LIST=(pyenchant)
 
 MY_PROJECTS_LIST=(awk_scripts git_scripts gkotian.github.io python_scripts)
 
+TMP_FILE=$(mktemp)
+
 function waitForConfirmation
 {
     echo "Press 'Enter' when done."
@@ -206,11 +208,19 @@ sudo ln -s $GL_DIR/scripts/dmenu_path.sh /usr/bin/dmenu_path
 echo "Done!"
 
 echo ""
-echo -n "Setting up 'c' to launch calendar... "
-TMP_FILE=mktemp
+echo -n "Setting up 'cal' to launch calendar... "
 # single quotes are needed to echo '!'
 echo '#!/bin/bash' > $TMP_FILE
 echo "zenity --calendar" >> $TMP_FILE
+chmod +x $TMP_FILE
+mv $TMP_FILE /usr/local/bin/cal
+echo "Done!"
+
+echo ""
+echo -n "Setting up 'c' to launch calculator... "
+# single quotes are needed to echo '!'
+echo '#!/bin/bash' > $TMP_FILE
+echo "gnome-calculator" >> $TMP_FILE
 chmod +x $TMP_FILE
 mv $TMP_FILE /usr/local/bin/c
 echo "Done!"
