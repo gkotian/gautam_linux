@@ -9,7 +9,7 @@ GITHUB_USERNAME="gkotian"
 
 PACKAGES_LIST=(exuberant-ctags git gitk git-gui git-man google-chrome-stable
                gthumb fish i3 kdiff3 meld pdftk pyrenamer python-pip
-               silversearcher-ag suckless-tools vim vlc xchat)
+               silversearcher-ag suckless-tools vim vlc xchat zsh)
 
 PYTHON_PACKAGES_LIST=(pyenchant)
 
@@ -95,6 +95,10 @@ do
     fi
 done
 
+echo -n "Changing default shell to zsh... "
+chsh -s /bin/zsh
+echo "Done!"
+
 echo -n "Setting up ssh to access GitHub... "
 sudo -u ${THE_USER} ssh-keygen -f /home/$THE_USER/.ssh/id_rsa_personal
 
@@ -119,6 +123,10 @@ echo "In the other terminal/tab run the following command:"
 echo "    git clone git@$GITHUB_HOST:gkotian/gautam_linux.git $PLAY_DIR/gautam_linux"
 waitForConfirmation
 
+echo "In the other terminal/tab run the following command:"
+echo "    git clone git@$GITHUB_HOST:robbyrussell/oh-my-zsh.git $PLAY_DIR/oh-my-zsh"
+waitForConfirmation
+
 echo "Creating symbolic links for:"
 echo -n "    SSH config file... "
 rm -f /home/$THE_USER/.ssh/config
@@ -128,6 +136,16 @@ echo "Done!"
 echo -n "    .bashrc... "
 rm -f /home/$THE_USER/.bashrc
 sudo -u ${THE_USER} ln -s $GL_DIR/home/gautam/dot_bashrc /home/$THE_USER/.bashrc
+echo "Done!"
+
+echo -n "    zsh theme... "
+rm -f /home/$THE_USER/.zshrc
+sudo -u ${THE_USER} ln -s $GL_DIR/zsh/gautamkotian.zsh-theme $PLAY_DIR/oh-my-zsh/themes/gautamkotian.zsh-theme
+echo "Done!"
+
+echo -n "    .zshrc... "
+rm -f /home/$THE_USER/.zshrc
+sudo -u ${THE_USER} ln -s $GL_DIR/zsh/zshrc /home/$THE_USER/.zshrc
 echo "Done!"
 
 echo -n "    .vim... "
