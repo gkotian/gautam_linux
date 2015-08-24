@@ -195,67 +195,6 @@ create_backup()
     echo "Files backed up in '/tmp/linux_essential_backup.tar.gz'"
 }
 
-setPrompt()
-{
-    # set a fancy prompt (non-color, unless we know we "want" color)
-    case "$TERM" in
-        xterm-color) color_prompt=yes;;
-    esac
-
-    # uncomment for a colored prompt, if the terminal has the capability; turned
-    # off by default to not distract the user: the focus in a terminal window
-    # should be on the output of commands, not on the prompt
-    force_color_prompt=yes
-
-    if [ -n "$force_color_prompt" ]; then
-        if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-            # We have color support; assume it's compliant with Ecma-48
-            # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-            # a case would tend to support setf rather than setaf.)
-            color_prompt=yes
-        else
-            color_prompt=
-        fi
-    fi
-
-    # set variable identifying the chroot you work in
-    if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-        debian_chroot=$(cat /etc/debian_chroot)
-    fi
-
-    # set the prompt
-    if [ "$1" = "regular" ]; then
-        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    elif [ "$1" = "red" ]; then
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h:\w\$\[\033[00m\] '
-    elif [ "$1" = "green" ]; then
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h:\w\$\[\033[00m\] '
-    elif [ "$1" = "yellow" ]; then
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\u@\h:\w\$\[\033[00m\] '
-    elif [ "$1" = "blue" ]; then
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\u@\h:\w\$\[\033[00m\] '
-    elif [ "$1" = "purple" ]; then
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h:\w\$\[\033[00m\] '
-    elif [ "$1" = "aquamarine" ]; then
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;36m\]\u@\h:\w\$\[\033[00m\] '
-    elif [ "$1" = "gray" ]; then
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;37m\]\u@\h:\w\$\[\033[00m\] '
-    elif [ "$1" = "colorful" ]; then
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[00;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    elif [ "$1" = "bold_username" ]; then
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;38m\]\u\[\033[00m\]@\h:\w\$ '
-    elif [ "$1" = "short" ]; then
-        PS1='\$ '
-    elif [ "$1" = "git_friendly" ]; then
-        PS1='${debian_chroot:+($debian_chroot)}\w$(__git_ps1 ":\[\033[00;34m\]%s")\[\033[00m\]\$ '
-    else
-        # unrecognised prompt type, use regular.
-        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    fi
-
-    unset color_prompt force_color_prompt
-}
-
 svnbranch()
 {
     if [ $1 ]; then
@@ -661,16 +600,6 @@ dec()
 hex()
 {
     printf "0x%X\n" $1
-}
-
-=()
-{
-    echo "$(($@))"
-}
-
-rebase()
-{
-    git rebase -i HEAD~$1
 }
 
 # To start a countdown timer of 30 seconds, use:
