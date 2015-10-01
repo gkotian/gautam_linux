@@ -86,7 +86,6 @@ alias ldpwd='export LD_LIBRARY_PATH=$PWD'
 # Aliases to directories
 alias ..='cd ..'
 alias pd='cd -'
-alias cdr='cd $(git rev-parse --show-toplevel || echo ".")'
 
 # Aliases to SVN commands
 alias s='svn st -q'
