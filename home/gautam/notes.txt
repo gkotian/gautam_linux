@@ -124,3 +124,28 @@ change it to "gksudo wireshark"
 
 ---------------------------------------------------------------------------------------------------
 
+To cherry-pick all commits on a branch on top of another branch:
+----------------------------------------------------------------
+
+    Goal: cherry-pick source_branch commits over target_branch
+          (i.e. commits Cy & Cz over commit C6)
+
+               C6 o           => target_branch
+                  |
+               C5 o  o Cz     => source_branch
+                  |  |
+               C4 o  o Cy
+                  |  |
+               C3 o  o Cx     => some_intermediate_branch
+                  |  |
+               C2 o---
+                  |
+               C1 o
+
+    1. git checkout target_branch
+    2. git rebase --onto HEAD Cx source_branch
+           (commit Cx will not be picked - only commits Cy & Cz will be picked and applied above
+           commit C6)
+
+---------------------------------------------------------------------------------------------------
+
