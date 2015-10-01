@@ -638,6 +638,43 @@ stopwatch()
     done
 }
 
+show_line()
+{
+    LINE_NUM="$1"
+    FILE="$2"
+
+    if [ "$LINE_NUM" -le 0 ]
+    then
+        echo "Invalid line number '$LINE_NUM'"
+        return
+    fi
+
+    SED_CMD="$LINE_NUM"p
+
+    sed -n $SED_CMD $FILE
+}
+
+del_line()
+{
+    LINE_NUM="$1"
+    FILE="$2"
+
+    if [ "$LINE_NUM" -le 0 ]
+    then
+        echo "Invalid line number '$LINE_NUM'"
+        return
+    fi
+
+    SED_CMD="$LINE_NUM"d
+
+    LINE_TO_DELETE=$(show_line $LINE_NUM $FILE)
+
+    sed -i $SED_CMD $FILE
+
+    echo "Deleted line:"
+    echo $LINE_TO_DELETE
+}
+
 # Notes:
 # The current value of IFS (Internal Field Separator) may be viewed using the following pipeline:
 #
