@@ -20,6 +20,9 @@ done
 # Path to the oh-my-zsh installation.
 export ZSH=$PLAY_DIR/oh-my-zsh
 
+# Characters that are to be considered as being part of a word
+WORDCHARS='*?-[]~=&;!#$%^(){}<>'
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
