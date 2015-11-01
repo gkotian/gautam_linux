@@ -13,7 +13,7 @@ PACKAGES_LIST=(exuberant-ctags git gitk git-gui git-man google-chrome-stable
 
 PYTHON_PACKAGES_LIST=(pyenchant)
 
-MY_PROJECTS_LIST=(awk_scripts git_scripts gkotian.github.io python_scripts)
+MY_PROJECTS_LIST=(git_scripts gkotian.github.io python_scripts)
 
 TMP_FILE=$(mktemp)
 
