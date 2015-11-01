@@ -139,12 +139,13 @@ workspace 8 output DP-2
 workspace 9 output DP-2
 
 # Assign specific workspaces to certain applications
-assign [class="^Gitk$"]        → 5
-assign [class="^Thunderbird$"] → 7
-assign [class="^Chrome$"]      → 8
-assign [class="^Firefox$"]     → 8
-assign [class="^Skype$"]       → 9
-assign [class="^Xchat$"]       → 9
+assign [class="^Gitk$"]          → 5
+assign [class="^Thunderbird$"]   → 7
+assign [class="^Chrome$"]        → 8
+assign [class="^google-chrome$"] → 8
+assign [class="^Firefox$"]       → 8
+assign [class="^Skype$"]         → 9
+assign [class="^Xchat$"]         → 9
 
 # Certain windows should always be floating
 for_window [class="Gnome-calculator"] floating enable
