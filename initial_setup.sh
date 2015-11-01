@@ -246,8 +246,8 @@ echo "zenity --calendar" >> $TMP_FILE
 chmod +x $TMP_FILE
 mv $TMP_FILE /usr/local/bin/cal
 echo "Done!"
-
 echo ""
+
 echo -n "Setting up 'c' to launch calculator... "
 # single quotes are needed to echo '!'
 echo '#!/bin/bash' > $TMP_FILE
@@ -255,6 +255,7 @@ echo "gnome-calculator" >> $TMP_FILE
 chmod +x $TMP_FILE
 mv $TMP_FILE /usr/local/bin/c
 echo "Done!"
+echo ""
 
 if [ -d "/home/$THE_USER/.vim" ]; then
     echo "In the other terminal/tab run the following command:"
