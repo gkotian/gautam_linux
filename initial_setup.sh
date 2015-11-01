@@ -8,7 +8,7 @@ GITHUB_HOST="github-PERSONAL"
 GITHUB_USERNAME="gkotian"
 
 PACKAGES_LIST=(exuberant-ctags git gitk git-gui git-man google-chrome-stable
-               gthumb fish i3 kdiff3 keepassx meld pdftk pyrenamer python-pip
+               gthumb i3 kdiff3 keepassx meld pdftk pyrenamer python-pip
                silversearcher-ag suckless-tools vim vlc xchat zsh)
 
 PYTHON_PACKAGES_LIST=(pyenchant)
