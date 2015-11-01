@@ -96,7 +96,7 @@ do
 done
 
 echo -n "Changing default shell to zsh... "
-chsh -s /bin/zsh
+sudo -u ${THE_USER} chsh -s /bin/zsh
 echo "Done!"
 
 echo -n "Setting up ssh to access GitHub... "
