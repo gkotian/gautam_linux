@@ -110,7 +110,7 @@ echo ""
 waitForConfirmation
 
 echo "In a new terminal/tab run the following command:"
-echo "    ssh -T git@$GITHUB_HOST"
+echo "    ssh -T git@github.com"
 echo "You should get the following output:"
 echo "    Hi $GITHUB_USERNAME! You've successfully authenticated, but GitHub does not provide shell access."
 waitForConfirmation
@@ -118,13 +118,14 @@ waitForConfirmation
 echo -n "Creating directory: '$PLAY_DIR'... "
 sudo -u ${THE_USER} mkdir $PLAY_DIR
 echo "Done!"
+echo ""
 
 echo "In the other terminal/tab run the following command:"
-echo "    git clone git@$GITHUB_HOST:gkotian/gautam_linux.git $PLAY_DIR/gautam_linux"
+echo "    git clone git@github.com:gkotian/gautam_linux.git $PLAY_DIR/gautam_linux"
 waitForConfirmation
 
 echo "In the other terminal/tab run the following command:"
-echo "    git clone git@$GITHUB_HOST:robbyrussell/oh-my-zsh.git $PLAY_DIR/oh-my-zsh"
+echo "    git clone git@github.com:robbyrussell/oh-my-zsh.git $PLAY_DIR/oh-my-zsh"
 waitForConfirmation
 
 echo "Creating symbolic links for:"
@@ -226,6 +227,18 @@ sudo ln -s $GL_DIR/scripts/dmenu_path.sh /usr/bin/dmenu_path
 echo "Done!"
 
 echo ""
+
+# Now that the ssh config file has been linked, 'github-PERSONAL' can be used
+# in the remote URLs of cloned repositories. Change the remote URLs accordingly
+# for repositories that were created with 'github.com'.
+cd $PLAY_DIR/gautam_linux
+sudo -u ${THE_USER} git remote set-url origin git@github-PERSONAL:gkotian/gautam_linux.git
+
+cd $PLAY_DIR/oh-my-zsh
+sudo -u ${THE_USER} git remote set-url origin git@github-PERSONAL:robbyrussell/oh-my-zsh.git
+
+cd
+
 echo -n "Setting up 'cal' to launch calendar... "
 # single quotes are needed to echo '!'
 echo '#!/bin/bash' > $TMP_FILE
