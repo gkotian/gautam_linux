@@ -656,6 +656,12 @@ show_line()
 
 del_line()
 {
+    if [ $# -eq 0 ]
+    then
+        echo "Usage: del_line <line_num> <file>"
+        return
+    fi
+
     LINE_NUM="$1"
     FILE="$2"
 
