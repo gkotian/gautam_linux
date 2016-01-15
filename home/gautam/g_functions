@@ -606,10 +606,35 @@ hex()
 #     $> countdown 30
 # For 2 hours, use:
 #     $> countdown $((2*60*60))
+# Alternatively, the short format notation can be used, like so:
+#     $> countdown 30m
+# (the short format notation is only supported for minutes currently)
 # Entering a custom message after the time pops up a notification
 countdown()
 {
-    date1=$((`date +%s` + $1)); 
+    STR=$1
+
+    # Extract the last character of the input to determine if the short format
+    # notation was used
+    TMP=$((${#STR}-1))
+    LAST_CHAR=${STR:$TMP:1}
+
+    case $LAST_CHAR in
+        ''|*[!0-9]*)
+            # The last character is not a digit. Assume short format notation.
+            if [ $LAST_CHAR != "m" ]
+            then
+                echo "Short format notation supported only for minutes currently"
+                return
+            fi
+            # Get rid of the last character
+            MINUTES=${STR:0:$i}
+            SECONDS=$((MINUTES*60))
+            ;;
+        *) SECONDS=$STR ;;
+    esac
+
+    date1=$((`date +%s` + $SECONDS));
 
     while [ "$date1" -ne `date +%s` ]
     do 
