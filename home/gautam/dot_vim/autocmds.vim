@@ -10,6 +10,9 @@ if has("autocmd")
         " Source the vimrc file as soon as it is saved.
         autocmd BufWritePost .vimrc source $MYVIMRC
 
+        " Set scripts to be executable if the first line starts with '#!/bin/'
+        autocmd BufWritePost * if getline(1) =~ "^#!/bin/" | silent execute "!chmod a+x <afile>" | endif
+
         " No formatting on 'o' key newlines
         autocmd BufNewFile,BufEnter * set formatoptions-=o
 
