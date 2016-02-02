@@ -106,6 +106,9 @@ nmap <leader>l :set list!<CR>
 
 nmap <leader>n :set invnumber<CR>
 
+" Map '\p' to toggle paste mode
+nmap <leader>p :set invpaste paste?<CR>
+
 " Map '\c' & '\h' to switch to corresponding .c or .h files respectively, with
 " respect to the current buffer.
 nmap <leader>c :e %:r.c
