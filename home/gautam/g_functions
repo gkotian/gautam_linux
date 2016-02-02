@@ -628,7 +628,7 @@ countdown()
                 return
             fi
             # Get rid of the last character
-            MINUTES=${STR:0:$i}
+            MINUTES=${STR:0:$TMP}
             SECONDS=$((MINUTES*60))
             ;;
         *) SECONDS=$STR ;;
