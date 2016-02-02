@@ -6,18 +6,18 @@
 # The 'IdentitiesOnly yes' line is needed because without this, the ssh agent will only offer the
 # first key, which will gain you access to GitHub, but not to the repository itself.
 
-# Sociomantic Github account
-Host github.com
-    HostName github.com
-    User git
-    IdentityFile ~/.ssh/id_rsa_sociomantic
-    IdentitiesOnly yes
-
 # Personal Github account
 Host github-PERSONAL
     HostName github.com
     User git
     IdentityFile ~/.ssh/id_rsa_personal
+    IdentitiesOnly yes
+
+# Work Github account
+Host github-WORK
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_sociomantic
     IdentitiesOnly yes
 
 # Sociomantic servers
