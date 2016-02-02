@@ -25,6 +25,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # To show multi-line output in a single line (space separated). Usage:
 #     $ grep blah * | one_line
 alias one_line='awk '\''{printf "%s ", $1} END {printf "\n"}'\'''
+alias ol='one_line'
 
 
 
@@ -37,11 +38,11 @@ alias mv='mv -i' # Prompt before overwriting
 alias ls='ls --classify'
 alias grep='grep -n --color=auto'
 alias v='/usr/bin/vim'
-alias vi='/usr/bin/vim'
-alias B='vim ~/.bashrc'
-alias GA='vim $GL_DIR/home/gautam/g_aliases'
-alias GF='vim $GL_DIR/home/gautam/g_functions'
-alias GV='vim $GL_DIR/home/gautam/g_variables'
+alias vi='v'
+alias B='v ~/.bashrc'
+alias GA='v $GL_DIR/home/gautam/g_aliases'
+alias GF='v $GL_DIR/home/gautam/g_functions'
+alias GV='v $GL_DIR/home/gautam/g_variables'
 alias SB='source ~/.bashrc'
 alias SGA='source $GL_DIR/home/gautam/g_aliases'
 alias SGF='source $GL_DIR/home/gautam/g_functions'
@@ -49,6 +50,8 @@ alias SGV='source $GL_DIR/home/gautam/g_variables'
 alias rmouse='xmodmap -e "pointer = 1 2 3"'
 alias lmouse='xmodmap -e "pointer = 3 2 1"'
 alias umlauts='echo "ä    ö    ü    ß"'
+alias kbus='setxkbmap us'
+alias vall='v `ls **/*.d | one_line`'
 
 
 # Aliases to commands
