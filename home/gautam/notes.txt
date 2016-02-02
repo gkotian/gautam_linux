@@ -146,6 +146,8 @@ To cherry-pick all commits on a branch on top of another branch:
     2. git rebase --onto HEAD Cx source_branch
            (commit Cx will not be picked - only commits Cy & Cz will be picked and applied above
            commit C6)
+           (if instead of source_branch, only the commit hash was used, i.e. Cz, then source_branch
+           will not be moved from it's original location)
 
 ---------------------------------------------------------------------------------------------------
 
