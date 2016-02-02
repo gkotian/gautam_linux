@@ -50,6 +50,14 @@ if [ "${THE_USER}" == "unknown" ]; then
 fi
 echo "$THE_USER"
 
+echo -n "Enabling all the Ubuntu repositories... "
+add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
+if [[ $? -ne 0 ]]; then
+    echo "Failed. Aborting."
+    exit 5
+fi
+echo "Done!"
+
 echo -n "Adding the git-core PPA... "
 apt-add-repository -y ppa:git-core/ppa > /dev/null 2>&1
 if [[ $? -ne 0 ]]; then
@@ -112,6 +120,7 @@ waitForConfirmation
 
 echo "In a new terminal/tab run the following command:"
 echo "    ssh -T git@github.com"
+echo "(if a password is asked for, enter the passphrase used above while creating the public/private rsa key pair)"
 echo "You should get the following output:"
 echo "    Hi $GITHUB_USERNAME! You've successfully authenticated, but GitHub does not provide shell access."
 waitForConfirmation
@@ -295,23 +304,29 @@ echo "--------------------"
 echo "    Open a gnome-terminal"
 echo "    Edit -> profile preferences"
 echo "        Tab General"
-echo "            uncheck 'Use the system fixed width font'"
-echo "            uncheck 'Show menubar by default in new terminals'"
+echo "            uncheck 'Terminal bell'"
 echo "            Select-by-word characters -> remove ':' '='"
+echo "                (it may not be there due to:"
+echo "                 https://bugs.launchpad.net/ubuntu/+source/gnome-terminal/+bug/1401207)"
 echo "        Tab Colors"
-echo "            uncheck 'use colors from system theme', choose custom, text black, background gray"
+echo "            uncheck 'use colors from system theme', under 'Built-in schemes' choose custom, text black, background gray"
 echo "        Tab Scrolling"
-echo "            check 'Scrollback unlimited'"
-echo "    Edit -> keyboard shortcuts"
-echo "        uncheck 'Enable menu access keys'"
-echo "        uncheck 'Enable the menu shortcut key'"
-echo "        under 'Shortcut keys -> View', disable full screen"
-echo "        under 'Shortcut keys -> Help', disable contents"
+echo "            uncheck 'Limit scrollback to ...'"
+echo "    Terminal -> preferences"
+echo "        Tab General"
+echo "            uncheck 'Show menubar by default in new terminals'"
+echo "            uncheck 'Enable the menu accelerator key (F10 by default)'"
+echo "        Tab Shortcuts"
+echo "            under 'Shortcut keys -> View', disable full screen"
+echo "            under 'Shortcut keys -> Help', disable contents"
 waitForConfirmation
 
 echo "google-chrome setup"
 echo "-------------------"
 echo "    Launch google-chrome, lock it to launcher and set it as the default browser"
+echo "    Go to 'chrome://settings', scroll down to the end and click on 'Show advanced settings...'"
+echo "    Scroll down further to 'Downloads'"
+echo "    Edit the default path there to '/tmp' and check 'Ask where to save each file before downloading'"
 waitForConfirmation
 
 echo "default applications setup"
