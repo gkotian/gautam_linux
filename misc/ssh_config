@@ -24,7 +24,7 @@ Host github-WORK
 Host *.sociomantic.com
     HostName %h
     User developer
-    IdentityFile ~/.ssh/id_rsa_servers
+    IdentityFile ~/.ssh/id_rsa_sociomantic
     IdentitiesOnly yes
     ForwardAgent yes
 
