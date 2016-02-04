@@ -66,11 +66,11 @@ if [[ $? -ne 0 ]]; then
 fi
 echo "Done!"
 
+echo -n "Adding Google Chrome PPA... "
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - > /dev/null
 # This is probably not necessary anymore
-# echo -n "Adding Google Chrome PPA... "
-# wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - > /dev/null
 # sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-# echo "Done!"
+echo "Done!"
 
 echo -n "Updating package lists... "
 apt-get update > /dev/null
