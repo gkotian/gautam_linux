@@ -147,8 +147,7 @@ sudo -u ${THE_USER} ln -s $GL_DIR/home/gautam/dot_bashrc /home/$THE_USER/.bashrc
 echo "Done!"
 
 echo -n "    zsh theme... "
-rm -f /home/$THE_USER/.zshrc
-sudo -u ${THE_USER} ln -s $GL_DIR/zsh/gautamkotian.zsh-theme $PLAY_DIR/oh-my-zsh/themes/gautamkotian.zsh-theme
+sudo -u ${THE_USER} ln -s $GL_DIR/zsh/customizations/themes/gautam.zsh-theme $PLAY_DIR/oh-my-zsh/themes/gautam.zsh-theme
 echo "Done!"
 
 echo -n "    .zshrc... "
