@@ -72,13 +72,10 @@ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
 # sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 echo "Done!"
 
-echo -n "Updating package lists... "
-apt-get update > /dev/null
-if [[ $? -ne 0 ]]; then
-    echo "Aborting."
-    exit 5
-fi
-echo "Done!"
+echo ""
+echo "In a new terminal/tab run the following command:"
+echo "    sudo apt-get update"
+waitForConfirmation
 
 echo "Installing packages:"
 for PACKAGE in ${PACKAGES_LIST[@]}
@@ -118,7 +115,7 @@ cat /home/$THE_USER/.ssh/id_rsa_personal.pub
 echo ""
 waitForConfirmation
 
-echo "In a new terminal/tab run the following command:"
+echo "In the other terminal/tab run the following command:"
 echo "    ssh -T git@github.com"
 echo "(if a password is asked for, enter the passphrase used above while creating the public/private rsa key pair)"
 echo "You should get the following output:"
