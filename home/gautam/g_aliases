@@ -67,7 +67,7 @@ alias ga='git add'
 alias gk='gitk --all&'
 alias gt='git tree'
 alias gcum='git co upstream/master'
-alias gag='/home/gautam/play/git_scripts/git_add_gui.sh'
+alias gag='$PLAY_DIR/git_scripts/git_add_gui.sh'
 alias lockdir='chmod -x'
 alias unlockdir='chmod +x'
 alias myip='ifconfig | \grep "inet addr" | \grep -v "127.0.0.1" | cut -d":" -f2 | cut -d" " -f1'
@@ -80,7 +80,7 @@ alias reviewChanges='for file in `svn status -q | awk '\''{print \$NF}'\''`; do 
     # quotation mark, and then re-enter the quote. Hence: '\''
     # (source: http://muffinresearch.co.uk/archives/2007/01/30/bash-single-quotes-inside-of-single-quoted-strings)
 alias rc='reviewChanges'
-alias reviewBranch='/home/gautam/play/git_scripts/review_branch.sh'
+alias reviewBranch='$PLAY_DIR/git_scripts/review_branch.sh'
 alias rb='reviewBranch'
 alias fb='filesInBranch'
 alias mb='mergeBranch'
@@ -95,5 +95,4 @@ alias s='svn st -q'
 alias list_conflicts='svn status | \grep -P "^(?=.{0,6}C)"'
 
 # Temporary aliases
-alias a='/home/gautam/work/shore/bin/lagoon file:///home/gautam/work/shore/testsuite/downloads/sapato_ru.xml /home/gautam/work/shore/testsuite/xsl/sapato.xslt -n offer -v -i --no-split'
 
