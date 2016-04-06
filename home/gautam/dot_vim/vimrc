@@ -114,6 +114,9 @@ nmap <leader>p :set invpaste paste?<CR>
 nmap <leader>c :e %:r.c
 nmap <leader>h :e %:r.h
 
+" Map '\d' to show a quick diff of unsaved changes made in the current buffer
+nnoremap <silent> <Leader>d :w !diff % -<CR>
+
 " Map '\o' to instantly obfuscate stuff
 nmap <leader>o ggVGg?
 
@@ -279,4 +282,3 @@ vnoremap <silent> # :<C-U>
 
 
 " Temporary
-
