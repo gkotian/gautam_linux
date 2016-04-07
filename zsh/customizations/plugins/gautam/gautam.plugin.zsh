@@ -26,6 +26,7 @@ alias gcpc='git cherry-pick --continue'
 alias gct='git commit -m "tmp"'
 
 alias gd='git difftool --no-prompt'
+alias gd_cl='PAGER= git diff'
 
 alias gk='\gitk --all --branches&'
 
