@@ -30,6 +30,9 @@ alias gd_cl='PAGER= git diff'
 
 alias gk='\gitk --all --branches&'
 
+# git latest tag
+alias glt='git tag --list "v*" --sort=v:refname | tail -1'
+
 alias gpo='git push origin'
 alias gpod='git push origin --delete'
 alias gpof='git push -f origin'
