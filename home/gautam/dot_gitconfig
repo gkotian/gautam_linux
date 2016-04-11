@@ -76,8 +76,12 @@
 	rebase = true
 
 [diff]
+    algorithm = patience
 	submodule = log
 	tool = meld
+
+[log]
+	submodule = log
 
 [merge]
 	tool = kdiff3
@@ -90,3 +94,6 @@
 
 [init]
 	templatedir = /home/gautam/.git_template_dir
+
+[rebase]
+	autosquash = true
