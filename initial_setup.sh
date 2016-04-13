@@ -7,9 +7,9 @@ GL_DIR="$PLAY_DIR/gautam_linux"
 GITHUB_HOST="github-PERSONAL"
 GITHUB_USERNAME="gkotian"
 
-PACKAGES_LIST=(exuberant-ctags git gitk git-gui git-man google-chrome-stable
-               gthumb i3 kdiff3 keepassx meld pdftk pyrenamer python-pip
-               silversearcher-ag suckless-tools vim vlc xchat zsh)
+PACKAGES_LIST=(exuberant-ctags git gitk git-gui git-man gthumb i3 kdiff3
+    keepassx meld pdftk pyrenamer python-pip silversearcher-ag suckless-tools
+    vim vlc xchat zsh)
 
 PYTHON_PACKAGES_LIST=(pyenchant)
 
@@ -64,12 +64,6 @@ if [[ $? -ne 0 ]]; then
     echo "Failed. Aborting."
     exit 4
 fi
-echo "Done!"
-
-echo -n "Adding Google Chrome PPA... "
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - > /dev/null
-# This is probably not necessary anymore
-# sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 echo "Done!"
 
 echo ""
@@ -319,6 +313,8 @@ waitForConfirmation
 
 echo "google-chrome setup"
 echo "-------------------"
+echo "    Go to 'https://www.google.com/chrome/browser/desktop/index.html', download and install chrome"
+waitForConfirmation
 echo "    Launch google-chrome, lock it to launcher and set it as the default browser"
 echo "    Go to 'chrome://settings', scroll down to the end and click on 'Show advanced settings...'"
 echo "    Scroll down further to 'Downloads'"
