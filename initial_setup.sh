@@ -243,8 +243,8 @@ echo -n "Setting up 'cal' to launch calendar... "
 # single quotes are needed to echo '!'
 echo '#!/bin/bash' > $TMP_FILE
 echo "zenity --calendar" >> $TMP_FILE
-chmod +x $TMP_FILE
 mv $TMP_FILE /usr/local/bin/cal
+chmod 775 /usr/local/bin/cal
 echo "Done!"
 echo ""
 
