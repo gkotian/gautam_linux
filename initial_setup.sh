@@ -226,6 +226,10 @@ rm -f /usr/bin/dmenu_path
 sudo ln -s $GL_DIR/scripts/dmenu_path.sh /usr/bin/dmenu_path
 echo "Done!"
 
+# Create the sock directory in ~/.ssh to allow ssh to re-use existing
+# connections. This makes connecting super fast after the first time.
+sudo -u ${THE_USER} mkdir /home/$THE_USER/.ssh/sock
+
 echo ""
 
 # Now that the ssh config file has been linked, 'github-PERSONAL' can be used

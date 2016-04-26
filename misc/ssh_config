@@ -28,3 +28,8 @@ Host *.sociomantic.com
     IdentitiesOnly yes
     ForwardAgent yes
 
+# Let ssh re-use existing connections, making connecting super fast after the first time
+Host *
+ControlPath ~/.ssh/sock/%r@%h:%p
+ControlMaster auto
+ControlPersist yes
