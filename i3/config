@@ -154,6 +154,7 @@ assign [class="^Xchat$"]         → 9
 
 # Certain windows should always be floating
 for_window [class="Gcalctool"] floating enable
+for_window [class="Gnome-screenshot"] floating enable
 for_window [class="Nautilus" instance="file_progress"] floating enable
 
 # Automatically launch certain applications at startup
