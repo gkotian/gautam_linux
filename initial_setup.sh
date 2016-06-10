@@ -353,22 +353,9 @@ echo "        Video  : VLC media player"
 echo "        Photos : gThumb"
 waitForConfirmation
 
-# The Anki website itself recommends downloading and installing
-echo "anki setup"
-echo "----------"
-echo "    Go to http://ankisrs.net and download the .deb"
-echo "    Open with ubuntu-software-center and install"
-waitForConfirmation
-
 echo "dropbox setup"
 echo "-------------"
 echo "    Install using the ubuntu-software-center"
-waitForConfirmation
-
-echo "skype setup"
-echo "-----------"
-echo "    Go to http://goo.gl/Kgrs5P and download the .deb"
-echo "    Open with ubuntu-software-center and install"
 waitForConfirmation
 
 echo "Disabling icons on Desktop (or else launching nautilus in i3 will open an
