@@ -8,10 +8,12 @@ GITHUB_HOST="github-PERSONAL"
 GITHUB_USERNAME="gkotian"
 
 PACKAGES_LIST=(exuberant-ctags git gitk git-gui git-man gthumb i3 kdiff3
-    keepassx meld pdftk pyrenamer python-pip silversearcher-ag suckless-tools
-    vim vlc xchat zsh)
+    keepassx meld pdftk pyrenamer python-pip ruby-full silversearcher-ag
+    suckless-tools vim vlc xchat zsh)
 
 PYTHON_PACKAGES_LIST=(pyenchant)
+
+RUBY_PACKAGES_LIST=(jekyll)
 
 MY_PROJECTS_LIST=(git_scripts gkotian.github.io python_scripts)
 
@@ -88,6 +90,18 @@ for PACKAGE in ${PYTHON_PACKAGES_LIST[@]}
 do
     echo -n "    $PACKAGE... "
     pip install $PACKAGE > /dev/null 2>&1
+    if [[ $? -ne 0 ]]; then
+        echo "Failed."
+    else
+        echo "Done!"
+    fi
+done
+
+echo "Installing ruby packages:"
+for PACKAGE in ${RUBY_PACKAGES_LIST[@]}
+do
+    echo -n "    $PACKAGE... "
+    gem install $PACKAGE > /dev/null 2>&1
     if [[ $? -ne 0 ]]; then
         echo "Failed."
     else
