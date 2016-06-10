@@ -116,7 +116,7 @@ echo "Done!"
 echo -n "Setting up ssh to access GitHub... "
 sudo -u ${THE_USER} ssh-keygen -f /home/$THE_USER/.ssh/id_rsa_personal
 
-echo "Now log in to GitHub -> Settings -> SSH keys -> Add SSH key"
+echo "Now log in to GitHub -> Settings -> SSH and GPG keys -> New SSH key"
 echo "In 'Title' enter some text to identify this computer"
 echo "In 'Key' paste the following:"
 cat /home/$THE_USER/.ssh/id_rsa_personal.pub
