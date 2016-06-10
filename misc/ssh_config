@@ -7,7 +7,7 @@
 # first key, which will gain you access to GitHub, but not to the repository itself.
 
 # Personal Github account
-Host github-PERSONAL, github.com
+Host github-PERSONAL github.com
     HostName github.com
     User git
     IdentityFile ~/.ssh/id_rsa_personal
