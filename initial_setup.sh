@@ -18,6 +18,7 @@ RUBY_PACKAGES_LIST=(jekyll)
 MY_PROJECTS_LIST=(git_scripts gkotian.github.io python_scripts)
 
 TMP_FILE=$(mktemp)
+START_TIMESTAMP=$(date +%s)
 
 function waitForConfirmation
 {
@@ -29,6 +30,9 @@ function waitForConfirmation
     done
     echo ""
 }
+
+echo "Starting script at: `date +%H:%M:%S`"
+echo ""
 
 echo -n "Checking internet connectivity... "
 wget -q --tries=10 --timeout=20 --spider http://google.com
@@ -365,6 +369,9 @@ echo "Done!"
 echo ""
 
 echo "You're all set. Congratulations!!"
+
+END_TIMESTAMP=$(date +%s)
+echo "Total time taken: $((END_TIMESTAMP - START_TIMESTAMP)) seconds"
 
 exit 0
 
