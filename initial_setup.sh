@@ -31,6 +31,21 @@ function waitForConfirmation
     echo ""
 }
 
+function formatTime
+{
+    local T=$1
+    local D=$((T / 60 / 60 / 24))
+    local H=$((T / 60 / 60 % 24))
+    local M=$((T / 60 % 60))
+    local S=$((T % 60))
+
+    (( $D > 0 )) && printf '%d days ' $D
+    (( $H > 0 )) && printf '%d hours ' $H
+    (( $M > 0 )) && printf '%d minutes ' $M
+    (( $D > 0 || $H > 0 || $M > 0 )) && printf 'and '
+    printf '%d seconds\n' $S
+}
+
 echo "Starting script at: `date +%H:%M:%S`"
 echo ""
 
@@ -371,7 +386,8 @@ echo ""
 echo "You're all set. Congratulations!!"
 
 END_TIMESTAMP=$(date +%s)
-echo "Total time taken: $((END_TIMESTAMP - START_TIMESTAMP)) seconds"
+TIME_TAKEN=$((END_TIMESTAMP - START_TIMESTAMP))
+echo "Total time taken: `formatTime $TIME_TAKEN`"
 
 exit 0
 
