@@ -52,21 +52,21 @@ echo ""
 echo -n "Checking internet connectivity... "
 wget -q --tries=10 --timeout=20 --spider http://google.com
 if [[ $? -ne 0 ]]; then
-    echo "Not connected to the Internet. Aborting."
+    echo "Not connected to the Internet. Aborting." 1>&2
     exit 1
 fi
 echo "Connected!"
 
 echo -n "Checking super-user privileges... "
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root. Aborting."
+   echo "This script must be run as root. Aborting." 1>&2
    exit 2
 fi
 echo "Done!"
 
 echo -n "Checking who's the standard user... "
 if [ "${THE_USER}" == "unknown" ]; then
-    echo "unknown. Aborting."
+    echo "unknown. Aborting." 1>&2
     exit 3
 fi
 echo "$THE_USER"
@@ -74,7 +74,7 @@ echo "$THE_USER"
 echo -n "Enabling all the Ubuntu repositories... "
 add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
 if [[ $? -ne 0 ]]; then
-    echo "Failed. Aborting."
+    echo "Failed. Aborting." 1>&2
     exit 5
 fi
 echo "Done!"
@@ -82,7 +82,7 @@ echo "Done!"
 echo -n "Adding the git-core PPA... "
 apt-add-repository -y ppa:git-core/ppa > /dev/null 2>&1
 if [[ $? -ne 0 ]]; then
-    echo "Failed. Aborting."
+    echo "Failed. Aborting." 1>&2
     exit 4
 fi
 echo "Done!"
@@ -98,7 +98,7 @@ do
     echo -n "    $PACKAGE... "
     apt-get install -qq $PACKAGE > /dev/null 2>&1
     if [[ $? -ne 0 ]]; then
-        echo "Failed."
+        echo "Failed." 1>&2
     else
         echo "Done!"
     fi
@@ -110,7 +110,7 @@ do
     echo -n "    $PACKAGE... "
     pip install $PACKAGE > /dev/null 2>&1
     if [[ $? -ne 0 ]]; then
-        echo "Failed."
+        echo "Failed." 1>&2
     else
         echo "Done!"
     fi
@@ -390,4 +390,3 @@ TIME_TAKEN=$((END_TIMESTAMP - START_TIMESTAMP))
 echo "Total time taken: `formatTime $TIME_TAKEN`"
 
 exit 0
-
