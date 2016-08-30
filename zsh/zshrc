@@ -8,7 +8,7 @@ export GL_DIR=$PLAY_DIR/gautam_linux
 FILES_TO_SOURCE=($GL_DIR/home/gautam/g_variables
                  $GL_DIR/home/gautam/g_aliases
                  $GL_DIR/home/gautam/g_functions
-                 $GL_DIR/g_sociomantic)
+                 $WORK_DIR/rnd/g_sociomantic)
 
 for FILE in ${FILES_TO_SOURCE[@]}
 do
