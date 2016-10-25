@@ -132,8 +132,8 @@ nmap <leader>ul YpVr-
 " Map '\v' to open the vimrc
 nmap <leader>v :e $MYVIMRC<CR>
 
-" Map '\r' to open reminders
-nmap <leader>r :e /home/gautam/.reminders<CR>
+" Map '\r' to refresh all open buffers
+nmap <leader>r :windo e!<CR>
 
 " Use my colorscheme
 colorscheme googie_colors
