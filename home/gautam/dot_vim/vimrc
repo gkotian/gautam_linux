@@ -96,19 +96,6 @@ imap <HOME> <C-o>^
 " Map <Ctrl+S> to save the current file
 "map <C-s> :w<CR>
 
-" Map '\t' to toggle display of invisible characters (tabs & newlines).
-" Tabs are shown as '^I' & newlines are shown as '$'. To change this, or to
-" display other invisible characters - :help listchars
-" To change the display colour, tabs are represented by 'SpecialKey' and
-" newlines by 'NonText' in the colorscheme file.
-" (http://vimcasts.org/episodes/show-invisibles)
-nmap <leader>t :set list!<CR>
-
-nmap <leader>n :set invnumber<CR>
-
-" Map '\p' to toggle paste mode
-nmap <leader>p :set invpaste paste?<CR>
-
 " Map '\c' & '\h' to switch to corresponding .c or .h files respectively, with
 " respect to the current buffer.
 nmap <leader>c :e %:r.c
@@ -117,23 +104,40 @@ nmap <leader>h :e %:r.h
 " Map '\d' to show a quick diff of unsaved changes made in the current buffer
 nnoremap <silent> <Leader>d :w !diff % -<CR>
 
-" Map '\o' to instantly obfuscate stuff
-nmap <leader>o ggVGg?
-
 " Map '\fb' to automatically insert my usual function body template.
 nmap <leader>fb o{<CR>    STATUS rc = ERROR;<CR><CR>do<CR>{<CR>    rc = OK;<CR><BS><BS><BS><BS>}<CR>while (0);<CR><CR>return rc;<CR><BS><BS><BS><BS>}<CR><ESC>
 
 " Map '\fh' to automatically insert a function header comment.
 nmap <leader>fh i    /<ESC>75a*<ESC>o<CR>  TODO: Does what?<CR><CR>Params:<ESC>>>>>o    TODO<CR><CR><BS><BS><BS><BS>Returns:<CR>    TODO<CR><CR><ESC>i    <ESC>75a*<ESC>a/<ESC>
 
+" Mappings for commonly used import statements
+nmap <leader>ios oimport ocean.io.Stdout;<ESC>
+nmap <leader>iot oimport ocean.transition;<ESC>
+
+nmap <leader>n :set invnumber<CR>
+
+" Map '\o' to instantly obfuscate stuff
+nmap <leader>o ggVGg?
+
+" Map '\p' to toggle paste mode
+nmap <leader>p :set invpaste paste?<CR>
+
+" Map '\r' to refresh all open buffers
+nmap <leader>r :windo e!<CR>
+
+" Map '\t' to toggle display of invisible characters (tabs & newlines).
+" Tabs are shown as '^I' & newlines are shown as '$'. To change this, or to
+" display other invisible characters - :help listchars
+" To change the display colour, tabs are represented by 'SpecialKey' and
+" newlines by 'NonText' in the colorscheme file.
+" (http://vimcasts.org/episodes/show-invisibles)
+nmap <leader>t :set list!<CR>
+
 " Map '\ul' to underline the current line
 nmap <leader>ul YpVr-
 
 " Map '\v' to open the vimrc
 nmap <leader>v :e $MYVIMRC<CR>
-
-" Map '\r' to refresh all open buffers
-nmap <leader>r :windo e!<CR>
 
 " Use my colorscheme
 colorscheme googie_colors
