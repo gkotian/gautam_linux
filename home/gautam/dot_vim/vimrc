@@ -96,13 +96,13 @@ imap <HOME> <C-o>^
 " Map <Ctrl+S> to save the current file
 "map <C-s> :w<CR>
 
-" Map '\l' to toggle display of invisible characters (tabs & newlines).
+" Map '\t' to toggle display of invisible characters (tabs & newlines).
 " Tabs are shown as '^I' & newlines are shown as '$'. To change this, or to
 " display other invisible characters - :help listchars
 " To change the display colour, tabs are represented by 'SpecialKey' and
 " newlines by 'NonText' in the colorscheme file.
 " (http://vimcasts.org/episodes/show-invisibles)
-nmap <leader>l :set list!<CR>
+nmap <leader>t :set list!<CR>
 
 nmap <leader>n :set invnumber<CR>
 
