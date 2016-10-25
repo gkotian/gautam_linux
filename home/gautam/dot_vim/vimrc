@@ -114,6 +114,10 @@ nmap <leader>fh i    /<ESC>75a*<ESC>o<CR>  TODO: Does what?<CR><CR>Params:<ESC>>
 nmap <leader>ios oimport ocean.io.Stdout;<ESC>
 nmap <leader>iot oimport ocean.transition;<ESC>
 
+" Map '\l' to split a line and a keep a four-space indent over the preceding
+" line. This is just a hack until I find a better syntax mapping.
+nmap <leader>l i<CR><ESC><UP><HOME><DOWN>dw>>
+
 nmap <leader>n :set invnumber<CR>
 
 " Map '\o' to instantly obfuscate stuff
