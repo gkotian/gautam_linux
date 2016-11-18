@@ -35,5 +35,5 @@ do
         *) TEXT="${TYPE} (TODO: get description)";;
     esac
 
-    echo -e "\e[${COLOUR}m${TEXT}\e[0m"
+    echo -e "Type: ${TYPE}\tColour {$COLOUR}\t\e[${COLOUR}m${TEXT}\e[0m"
 done
