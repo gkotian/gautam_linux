@@ -35,5 +35,5 @@ do
         *) TEXT="${TYPE} (TODO: get description)";;
     esac
 
-    echo -e "\e[${COLOUR}m${TEXT}\e[0m"
+    printf "Type: %-10s Colour: %-10s \e[${COLOUR}m${TEXT}\e[0m\n" ${TYPE} ${COLOUR}
 done
