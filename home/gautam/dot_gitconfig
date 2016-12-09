@@ -2,13 +2,6 @@
 	name  = Gautam Kotian
 	email = gautam.kotian@gmail.com
 
-[alias]
-	st      = status
-	br      = branch
-	unstage = reset HEAD --
-	last    = log -1 HEAD
-    d       = difftool --tool=meld --no-prompt
-
 [giggle]
 	main-window-maximized       = true
 	main-window-geometry        = 700x550+1+80
@@ -42,35 +35,6 @@
 
 [push]
 	default = current
-
-[alias]
-	k        = !gitk --all&
-	r        = remote -v
-	ru       = remote update --prune
-	co       = checkout
-	gconf    = config --global
-	pof      = push origin -f
-	amend    = commit --amend --no-edit
-	get      = !git checkout -B $(basename $1)
-	st       = status
-	continue = rebase --continue
-    glog     = log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
-	ff       = merge --ff-only
-    ws       = rebase --whitespace=fix 
-	run      = "!F=$1; \
-                ORIG=$(git rev-parse --abbrev-ref HEAD); \
-                shift; \
-                for c in $(git rev-list $F --reverse); do \
-                    echo -n \"Checking out: \"; \
-                    git log --oneline $c -n1 --color | cat ; \
-                    git checkout $c && git submodule update && \
-                    echo \"--------------------\nRunning Command: $@\" && \
-                    $@ && \
-                    echo \"--------------------\" || \
-                    break; \
-                done; \
-                git checkout $ORIG; #"
-	tree     = log --oneline --name-status --graph
 
 [pull]
 	rebase = true
