@@ -1,63 +1,63 @@
 [user]
-	name  = Gautam Kotian
-	email = gautam.kotian@gmail.com
+    name  = Gautam Kotian
+    email = gautam.kotian@gmail.com
 
 [giggle]
-	main-window-maximized       = true
-	main-window-geometry        = 700x550+1+80
-	file-view-vpane-position    = 468
-	main-window-view            = FileView
-	history-view-vpane-position = 288
+    main-window-maximized       = true
+    main-window-geometry        = 700x550+1+80
+    file-view-vpane-position    = 468
+    main-window-view            = FileView
+    history-view-vpane-position = 288
 
 [core]
-	deltaBaseCacheLimit = 1G
+    deltaBaseCacheLimit = 1G
 
 [color]
-	diff   = auto
-	status = auto
-	branch = auto
+    diff   = auto
+    status = auto
+    branch = auto
     ui     = auto
 
 [core]
-	whitespace   = tab-in-indent red reverse
-	excludesfile = /home/gautam/.gitignore_global
+    whitespace   = tab-in-indent red reverse
+    excludesfile = /home/gautam/.gitignore_global
 
 [color "diff"]
-	whitespace = red reverse
+    whitespace = red reverse
 
 [giggle]
-	main-window-maximized = false
-	main-window-geometry  = 1298x1417+1440+936
-	main-window-view      = FileView
+    main-window-maximized = false
+    main-window-geometry  = 1298x1417+1440+936
+    main-window-view      = FileView
 
 [rerere]
-	enable = true
+    enable = true
 
 [push]
-	default = current
+    default = current
 
 [pull]
-	rebase = true
+    rebase = true
 
 [diff]
     algorithm = patience
-	submodule = log
-	tool = meld
+    submodule = log
+    tool = meld
 
 [log]
-	submodule = log
+    submodule = log
 
 [merge]
-	tool = kdiff3
+    tool = kdiff3
 
 [branch "master"]
-	rebase = true
+    rebase = true
 
 [git]
-	rebase = true
+    rebase = true
 
 [init]
-	templatedir = /home/gautam/.git_template_dir
+    templatedir = /home/gautam/.git_template_dir
 
 [rebase]
-	autosquash = true
+    autosquash = true
