@@ -129,8 +129,9 @@ do
 done
 
 echo "Changing default shell to zsh... "
-echo "    (enter ${THE_USER}'s password if asked for)"
-sudo -u ${THE_USER} chsh -s /bin/zsh
+# echo "    (enter ${THE_USER}'s password if asked for)"
+# sudo -u ${THE_USER} chsh -s /bin/zsh
+chsh -s /bin/zsh ${THE_USER}
 echo "Done!"
 
 echo -n "Setting up ssh to access GitHub... "
@@ -382,6 +383,13 @@ additional window)"
 sudo -u ${THE_USER} gsettings set org.gnome.desktop.background show-desktop-icons false
 echo "Done!"
 echo ""
+
+echo "Add gpg signing for commits"
+
+echo "Check if the keepassx version is ok via `apt-cache policy keepassx`"
+echo "If it is <2.x.x, then remove it via `sudo apt-get remove --purge keepassx`"
+echo "go to `https://www.keepassx.org/downloads`, download source and build it"
+echo "using `cmake -DCMAKE_INSTALL_PREFIX=/usr/local; sudo make install`"
 
 echo "You're all set. Congratulations!!"
 

@@ -30,8 +30,8 @@ alias ol='one_line'
 
 
 # alias l='less -j 4' # always display the search term on the 4th line from top
-alias less=$PAGER
 alias zless=$PAGER
+alias p='python'
 alias x='exit'
 alias rm='rm -i' # Prompt before every removal
 alias mv='mv -i' # Prompt before overwriting
@@ -51,6 +51,8 @@ alias rmouse='xmodmap -e "pointer = 1 2 3"'
 alias lmouse='xmodmap -e "pointer = 3 2 1"'
 alias umlauts='echo "ä    ö    ü    ß    €"'
 alias kbus='setxkbmap us'
+
+alias v1='v /tmp/1'
 alias vall='v `ls **/*.d | one_line`'
 
 
@@ -82,6 +84,7 @@ alias reviewChanges='for file in `svn status -q | awk '\''{print \$NF}'\''`; do 
 alias rc='reviewChanges'
 alias reviewBranch='$PLAY_DIR/git_scripts/review_branch.sh'
 alias rb='reviewBranch'
+# alias rsync='rsync -P'
 alias fb='filesInBranch'
 alias mb='mergeBranch'
 alias ldpwd='export LD_LIBRARY_PATH=$PWD'

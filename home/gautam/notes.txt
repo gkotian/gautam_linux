@@ -62,6 +62,18 @@ is:
 
 ---------------------------------------------------------------------------------------------------
 
+copy contents of a file into the clipboard:
+-------------------------------------------
+    ⁠⁠⁠⁠cat file | xclip -selection coard
+
+---------------------------------------------------------------------------------------------------
+
+list files with blank lines at the end:
+---------------------------------------
+    for F in `ls {src,test}/**/*.d`; do S=$(tail -1 ${F}); [ -z ${S} ] && echo ${F}; done
+
+---------------------------------------------------------------------------------------------------
+
 To get the sizes of files (without an overwhelming amount of output), use:
     du -ckhs *
     (I don't yet know the reason for the 'k', as 'du -chs *' seems to give the same output)
@@ -147,7 +159,7 @@ To cherry-pick all commits on a branch on top of another branch:
            (commit Cx will not be picked - only commits Cy & Cz will be picked and applied above
            commit C6)
            (if instead of source_branch, only the commit hash was used, i.e. Cz, then source_branch
-           will not be moved from it's original location)
+           will not be moved from its original location)
 
 ---------------------------------------------------------------------------------------------------
 

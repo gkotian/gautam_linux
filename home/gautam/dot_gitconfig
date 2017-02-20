@@ -9,6 +9,9 @@
     main-window-view            = FileView
     history-view-vpane-position = 288
 
+[commit]
+    verbose = true
+
 [core]
     deltaBaseCacheLimit = 1G
 
@@ -29,6 +32,9 @@
     main-window-maximized = false
     main-window-geometry  = 1298x1417+1440+936
     main-window-view      = FileView
+
+[gpg]
+    program = gpg2
 
 [rerere]
     enable = true

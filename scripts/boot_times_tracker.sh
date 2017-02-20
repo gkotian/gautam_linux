@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TRACKING_FILE=/home/gautam/tmp/BOOT_TIMES.txt
+TRACKING_FILE=/home/gautam/tmp_home/BOOT_TIMES.txt
 
 echo "Current timestamp:" >> $TRACKING_FILE
 echo "------------------" >> $TRACKING_FILE
@@ -19,4 +19,3 @@ echo "" >> $TRACKING_FILE
 
 echo "=======================================================" >> $TRACKING_FILE
 echo "" >> $TRACKING_FILE
-

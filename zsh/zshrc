@@ -4,6 +4,8 @@ export WORK_DIR=$HOME/work
 # Path to the gautam_linux directory.
 export GL_DIR=$PLAY_DIR/gautam_linux
 
+export LC_ALL=en_US.utf8
+
 # (place the variables file first so that variables declared in it can be used in other files)
 FILES_TO_SOURCE=($GL_DIR/home/gautam/g_variables
                  $GL_DIR/home/gautam/g_aliases
@@ -16,6 +18,11 @@ do
         source "$FILE"
     fi
 done
+
+if [ "$COLORTERM" = "gnome-terminal" ]
+then
+    export TERM=xterm-256color
+fi
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -73,7 +80,11 @@ ZSH_CUSTOM=$GL_DIR/zsh/customizations
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-navigation-tools gautam)
+plugins=(git zsh-navigation-tools)
+
+# Add the gautam plugin last so that my symbols override those defined in other
+# plugins (if/when there is a conflict)
+plugins+=(gautam)
 
 source $ZSH/oh-my-zsh.sh
 
