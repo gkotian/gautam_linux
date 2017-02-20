@@ -11,4 +11,3 @@ echo $PATH | tr ':' '\n' | uniq | sed 's#$#/#' | # List directories in $PATH
     xargs ls -lu --time-style=+%s |              # Add atime epoch
     awk '/^(-|l)/ { print $6, $7 }' |            # Only print timestamp and name
              sort -rn | cut -d' ' -f 2
-

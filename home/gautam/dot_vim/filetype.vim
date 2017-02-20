@@ -10,4 +10,3 @@ augroup filetypedetect
     " Treat *.md files as markdown instead of modula2
     au BufNewFile,BufRead *.md  setf markdown
 augroup END
-
