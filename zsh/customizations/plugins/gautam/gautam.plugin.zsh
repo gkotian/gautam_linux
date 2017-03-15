@@ -1,9 +1,3 @@
-################################################################################
-#
-#         git related customizations
-#
-################################################################################
-
 #
 # Functions
 #
@@ -112,6 +106,8 @@ function gtb() {
 # Aliases
 # (sorted alphabetically)
 #
+
+alias cdo='cd ${PLAY_DIR}/ocean'
 
 alias gbd='git branch -d'
 alias gbD='git branch -D'
