@@ -148,6 +148,7 @@ assign [class="^Thunderbird$"]   → 7
 assign [class="^Slack$"]         → 7
 assign [class="^Chrome$"]        → 8
 assign [class="^google-chrome$"] → 8
+assign [class="^Google-chrome$"] → 8
 assign [class="^Firefox$"]       → 8
 assign [class="^Skype$"]         → 9
 assign [class="^Xchat$"]         → 9
