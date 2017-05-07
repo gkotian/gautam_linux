@@ -156,6 +156,11 @@ sudo -u ${THE_USER} mkdir $PLAY_DIR
 echo "Done!"
 echo ""
 
+echo -n "Creating directory: '/home/$THE_USER/tmp_home'... "
+sudo -u ${THE_USER} mkdir /home/$THE_USER/tmp_home
+echo "Done!"
+echo ""
+
 echo "In the other terminal/tab run the following command:"
 echo "    git clone git@github.com:gkotian/gautam_linux.git $PLAY_DIR/gautam_linux"
 waitForConfirmation
