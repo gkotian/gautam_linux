@@ -261,6 +261,11 @@ rm -f /usr/bin/dmenu_path
 sudo ln -s $GL_DIR/scripts/dmenu_path.sh /usr/bin/dmenu_path
 echo "Done!"
 
+echo -n "    PyPI config file... "
+rm -f /home/$THE_USER/.pypirc
+sudo -u ${THE_USER} ln -s $GL_DIR/misc/pypi_config /home/$THE_USER/.pypirc
+echo "Done!"
+
 # Create the sock directory in ~/.ssh to allow ssh to re-use existing
 # connections. This makes connecting super fast after the first time.
 sudo -u ${THE_USER} mkdir /home/$THE_USER/.ssh/sock
@@ -313,6 +318,10 @@ do
     echo "    git clone git@$GITHUB_HOST:gkotian/$PROJECT.git $PLAY_DIR/$PROJECT"
     waitForConfirmation
 done
+
+echo "In the other terminal/tab, open the '/home/$THE_USER/.pypirc' file"
+echo "and replace both occurrences of PASSWORD with the PyPI password."
+waitForConfirmation
 
 echo "Installing vimpager..."
 echo "In the other terminal/tab run the following command:"
