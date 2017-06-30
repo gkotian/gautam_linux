@@ -328,6 +328,17 @@ sudo -u ${THE_USER} mv $PLAY_DIR/gkotian.github.io $PLAY_DIR/website
 echo "Done!"
 echo ""
 
+# Make selecting file names in the gitk diff view easier, by providing visual
+# highlighting
+echo -n "Removing 'filesep' from gitk... "
+cp /usr/bin/gitk /usr/bin/gitk.orig
+sed -i 's/^\(.*"\$pad \$fname \$pad"\) filesep$/\1/g' /usr/bin/gitk
+echo "Done!"
+echo "(you may want to check that ^ was done correctly by running:"
+echo "    meld /usr/bin/gitk.orig /usr/bin/gitk"
+echo "in the other terminal/tab, and/or by launching gitk in any of the existing repos)"
+echo ""
+
 echo "gnome-terminal setup"
 echo "--------------------"
 echo "    Open a gnome-terminal"
