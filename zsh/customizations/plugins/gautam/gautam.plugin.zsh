@@ -107,6 +107,7 @@ function gtb() {
 # (sorted alphabetically)
 #
 
+alias bat='upower -i $(upower -e | grep "BAT") | grep -E "state|time\ to|percentage"'
 alias cdo='cd ${PLAY_DIR}/ocean'
 
 alias gbd='git branch -d'
