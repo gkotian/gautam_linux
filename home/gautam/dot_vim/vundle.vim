@@ -15,6 +15,7 @@ Plugin 'gmarik/vundle'
 "     Installed plugins
 " -------------------------
 Plugin 'airblade/vim-gitgutter'
+Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'ervandew/supertab'
 Plugin 'JesseKPhillips/d.vim'
 Plugin 'mhinz/vim-startify'
