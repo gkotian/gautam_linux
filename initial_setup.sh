@@ -9,7 +9,7 @@ GITHUB_USERNAME="gkotian"
 
 PACKAGES_LIST=(exuberant-ctags git gitk git-gui git-man gthumb i3 kdiff3
     keepassx meld pdftk pyrenamer python-pip ruby-full silversearcher-ag
-    suckless-tools vim vlc xchat zsh)
+    suckless-tools vim volumeicon-alsa vlc xchat zsh)
 
 PYTHON_PACKAGES_LIST=(pyenchant)
 

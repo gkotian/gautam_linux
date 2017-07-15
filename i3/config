@@ -163,6 +163,7 @@ exec /home/gautam/play/gautam_linux/scripts/g_startup.sh
 exec chrome
 exec thunderbird
 exec /usr/bin/skype
+exec volumeicon
 
 # Set the desired layouts for specific workspaces
 #exec --no-startup-id i3-msg "workspace 6; layout tabbed"
