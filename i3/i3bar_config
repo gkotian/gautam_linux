@@ -1,32 +1,40 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
 general {
-        colors = true
-        interval = 5
+    colors = true
+    interval = 5
 }
 
 # order += "ipv6"
 # order += "disk /"
 # order += "run_watch DHCP"
 # order += "run_watch VPN"
-# order += "wireless wlan0"
-order += "ethernet eth0"
-# order += "battery 0"
+order += "wireless _first_"
+# order += "ethernet _first_"
+order += "battery all"
 # order += "cpu_temperature 0"
 # order += "load"
 order += "time"
 
-wireless wlan0 {
-    format_up = "W: (%quality at %essid) %ip"
+wireless _first_ {
+    format_up = "W: (%essid)"
     format_down = "W: down"
 }
 
-ethernet eth0 {
+ethernet _first_ {
     # if you use %speed, i3status requires root privileges
-    format_up = "%ip"
+    format_up = "E: %ip"
     format_down = "E: down"
 }
 
-battery 0 {
-    format = "%status %percentage %remaining"
+battery all {
+    format = "%status %percentage"
 }
 
 run_watch DHCP {
@@ -39,7 +47,7 @@ run_watch VPN {
 
 time {
     # format = "%Y-%m-%d %H:%M:%S"
-    format = "%a %d %b %Y, %I:%M %p"
+    format = "%a, %d %b %Y, %H:%M"
 }
 
 load {
@@ -51,5 +59,5 @@ cpu_temperature 0 {
 }
 
 disk "/" {
-    format = "%free free"
+    format = "%avail available, %free free"
 }
