@@ -220,16 +220,6 @@ rm -f /etc/resolvconf/resolv.conf.d/head
 ln -s $GL_DIR/misc/resolv_conf_head /etc/resolvconf/resolv.conf.d/head
 echo "Done!"
 
-# echo -n "    .xmonad... "
-# rm -f /home/$THE_USER/.xmonad
-# sudo -u ${THE_USER} ln -s $GL_DIR/home/gautam/dot_xmonad /home/$THE_USER/.xmonad
-# echo "Done!"
-
-# echo -n "    .xmobarrc... "
-# rm -f /home/$THE_USER/.xmobarrc
-# sudo -u ${THE_USER} ln -s $GL_DIR/home/gautam/dot_xmobarrc /home/$THE_USER/.xmobarrc
-# echo "Done!"
-
 echo -n "    .i3/config... "
 if [ ! -d "/home/$THE_USER/.i3" ]; then
     sudo -u ${THE_USER} mkdir /home/$THE_USER/.i3
@@ -239,7 +229,7 @@ sudo -u ${THE_USER} ln -s $GL_DIR/i3/config /home/$THE_USER/.i3/config
 echo "Done!"
 
 # For using the compose key and defining custom key-mappings
-# (haven't yet figured out how to make it work with xmonad)
+# (TODO: check if this still really works)
 echo -n "    .XCompose... "
 rm -f /home/$THE_USER/.XCompose
 sudo -u ${THE_USER} ln -s $GL_DIR/home/gautam/dot_XCompose /home/$THE_USER/.XCompose
