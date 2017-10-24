@@ -1,0 +1,11 @@
+set history save on
+set history filename ~/.gdb_history
+set history size 1000
+
+# When displaying a pointer to an object, identify the actual (derived) type of
+# the object rather than the declared type, using the virtual function table.
+set print object on
+
+# Don't stop when D's garbage collector kicks in.
+handle SIGUSR1 nostop
+handle SIGUSR2 nostop
