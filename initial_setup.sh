@@ -228,6 +228,11 @@ rm -f /home/$THE_USER/.i3/config
 sudo -u ${THE_USER} ln -s $GL_DIR/i3/config /home/$THE_USER/.i3/config
 echo "Done!"
 
+echo -n "    .gdbinit... "
+rm -f /home/$THE_USER/.gdbinit
+sudo -u ${THE_USER} ln -s $GL_DIR/misc/gdbinit /home/$THE_USER/.gdbinit
+echo "Done!"
+
 # For using the compose key and defining custom key-mappings
 # (TODO: check if this still really works)
 echo -n "    .XCompose... "
