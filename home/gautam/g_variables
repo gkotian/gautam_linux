@@ -4,9 +4,6 @@
 # For the D garbage collector
 export D_GC=cdgc
 
-# For vimpager
-export PAGER=/usr/local/bin/vimpager
-
 # For custom scripts
 export PATH=${PATH}:${PLAY_DIR}/awk_scripts:${PLAY_DIR}/git_scripts:${PLAY_DIR}/python_scripts:${PLAY_DIR}/kelp
 
