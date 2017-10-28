@@ -323,15 +323,6 @@ echo "In the other terminal/tab, open the '/home/$THE_USER/.pypirc' file"
 echo "and replace both occurrences of PASSWORD with the PyPI password."
 waitForConfirmation
 
-echo "Installing vimpager..."
-echo "In the other terminal/tab run the following command:"
-echo "    git clone git://github.com/rkitover/vimpager $PLAY_DIR/vimpager"
-waitForConfirmation
-cd $PLAY_DIR/vimpager
-make install
-echo "Done!"
-echo ""
-
 echo -n "Renaming '$PLAY_DIR/gkotian.github.io' to '$PLAY_DIR/website'... "
 sudo -u ${THE_USER} mv $PLAY_DIR/gkotian.github.io $PLAY_DIR/website
 echo "Done!"
