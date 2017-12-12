@@ -150,7 +150,6 @@ assign [class="^Chrome$"]        → 8
 assign [class="^google-chrome$"] → 8
 assign [class="^Google-chrome$"] → 8
 assign [class="^Firefox$"]       → 8
-assign [class="^Skype$"]         → 9
 assign [class="^Xchat$"]         → 9
 
 # Certain windows should always be floating
@@ -162,7 +161,6 @@ for_window [class="Nautilus" instance="file_progress"] floating enable
 exec /home/gautam/play/gautam_linux/scripts/g_startup.sh
 exec chrome
 exec thunderbird
-exec /usr/bin/skype
 exec volumeicon
 
 # Set the desired layouts for specific workspaces
