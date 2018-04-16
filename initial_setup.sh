@@ -201,7 +201,7 @@ echo "Done!"
 
 echo -n "    .gitignore_global... "
 rm -f /home/$THE_USER/.gitignore_global
-sudo -u ${THE_USER} ln -s $GL_DIR/home/gautam/dot_gitignore_global /home/$THE_USER/.gitignore_global
+sudo -u ${THE_USER} ln -s $GL_DIR/git/gitignore_global /home/$THE_USER/.gitignore_global
 echo "Done!"
 
 echo -n "    .git_template_dir... "
