@@ -235,11 +235,6 @@ rm -f /home/$THE_USER/.XCompose
 sudo -u ${THE_USER} ln -s $GL_DIR/home/gautam/dot_XCompose /home/$THE_USER/.XCompose
 echo "Done!"
 
-echo -n "    .gnomerc... "
-rm -f /home/$THE_USER/.gnomerc
-sudo -u ${THE_USER} ln -s $GL_DIR/home/gautam/dot_gnomerc /home/$THE_USER/.gnomerc
-echo "Done!"
-
 echo -n "    /usr/bin/chrome... "
 rm -f /usr/bin/chrome
 ln -s /usr/bin/google-chrome /usr/bin/chrome
