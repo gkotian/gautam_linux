@@ -1,8 +1,8 @@
 # A default i3 config file can be generated using:
 #    $> i3-config-wizard
 
-# Use 'Alt' as the mod key
-set $mod Mod1
+# Use 'Super' as the mod key
+set $mod Mod4
 
 # font for window titles. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
