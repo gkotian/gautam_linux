@@ -196,7 +196,7 @@ echo "Done!"
 
 echo -n "    .gitconfig... "
 rm -f /home/$THE_USER/.gitconfig
-sudo -u ${THE_USER} ln -s $GL_DIR/home/gautam/dot_gitconfig /home/$THE_USER/.gitconfig
+sudo -u ${THE_USER} ln -s $GL_DIR/git/gitconfig_global /home/$THE_USER/.gitconfig
 echo "Done!"
 
 echo -n "    .gitignore_global... "
