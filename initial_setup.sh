@@ -228,13 +228,6 @@ rm -f /home/$THE_USER/.gdbinit
 sudo -u ${THE_USER} ln -s $GL_DIR/misc/gdbinit /home/$THE_USER/.gdbinit
 echo "Done!"
 
-# For using the compose key and defining custom key-mappings
-# (TODO: check if this still really works)
-echo -n "    .XCompose... "
-rm -f /home/$THE_USER/.XCompose
-sudo -u ${THE_USER} ln -s $GL_DIR/home/gautam/dot_XCompose /home/$THE_USER/.XCompose
-echo "Done!"
-
 echo -n "    /usr/bin/chrome... "
 rm -f /usr/bin/chrome
 ln -s /usr/bin/google-chrome /usr/bin/chrome

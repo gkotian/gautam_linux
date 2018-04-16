@@ -35,19 +35,6 @@ location of the newly installed modules using,
 
 ---------------------------------------------------------------------------------------------------
 
-Extra characters (e.g. German umlauts, rupee sign, euro sign etc.)
-------------------------------------------------------------------
-    Linux Mint -> Preferences -> Region & Language -> Layouts -> Options
-    under "Compose key position", choose a compose key (maybe right Alt)
-    open a text editor and test "Compose Key + s" followed by "s", and see if ß appears
-    to change key bindings, edit the .XCompose file in the home directory
-
-references:
-    http://fsymbols.com/keyboard/linux/choosers/
-    https://help.ubuntu.com/community/ComposeKey
-
----------------------------------------------------------------------------------------------------
-
 To cut the last field (using space as delimiter):
     awk -F" " '{print $NF}'
         OR
