@@ -7,7 +7,7 @@ export GL_DIR=$PLAY_DIR/gautam_linux
 export LC_ALL=en_US.utf8
 
 # (place the variables file first so that variables declared in it can be used in other files)
-FILES_TO_SOURCE=($GL_DIR/home/gautam/g_variables
+FILES_TO_SOURCE=($GL_DIR/misc/g_variables
                  $GL_DIR/misc/g_aliases
                  $GL_DIR/misc/g_functions
                  $WORK_DIR/rnd/g_sociomantic)
