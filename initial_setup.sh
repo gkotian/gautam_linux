@@ -175,11 +175,6 @@ rm -f /home/$THE_USER/.ssh/config
 sudo -u ${THE_USER} ln -s $GL_DIR/misc/ssh_config /home/$THE_USER/.ssh/config
 echo "Done!"
 
-echo -n "    .bashrc... "
-rm -f /home/$THE_USER/.bashrc
-sudo -u ${THE_USER} ln -s $GL_DIR/home/gautam/dot_bashrc /home/$THE_USER/.bashrc
-echo "Done!"
-
 echo -n "    zsh theme... "
 sudo -u ${THE_USER} ln -s $GL_DIR/zsh/customizations/themes/gautam.zsh-theme $PLAY_DIR/oh-my-zsh/themes/gautam.zsh-theme
 echo "Done!"
