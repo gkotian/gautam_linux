@@ -176,29 +176,6 @@ set sts=0 sw=4 ts=4
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Taglist plugin related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Move the cursor to the taglist window when it is opened using ":TlistToggle"
-let Tlist_GainFocus_On_ToggleOpen=1
-
-" Automatically close the taglist window when a tag or file is selected
-let Tlist_Close_On_Select=1
-
-" Exit vim if only the taglist window is remaining
-let Tlist_Exit_OnlyWindow=1
-
-" Show the taglist window on the right side of the Vim window
-let Tlist_Use_Right_Window=1
-
-" Don't display the fold column in the taglist window
-let Tlist_Enable_Fold_Column=0
-
-" Display the current tag name in the title bar
-set title titlestring=%<%f\ %([%{Tlist_Get_Tagname_By_Line()}]%)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Navigation related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Move between split windows with Ctrl+Arrow instead of Ctrl+w+Arrow
