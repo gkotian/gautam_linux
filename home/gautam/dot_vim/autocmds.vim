@@ -25,11 +25,6 @@ if has("autocmd")
         autocmd FileType help nnoremap <buffer><cr> <c-]>
         autocmd FileType help nnoremap <buffer><bs> <c-T>
         autocmd FileType help nnoremap <buffer>q :q<CR>
-
-        " Turn off syntax highlighting for Benu's cmd files.
-        " now obsolete
-        "autocmd BufEnter *.cmd syntax off
-        "autocmd BufLeave *.cmd syntax on
     augroup END
 endif
 
