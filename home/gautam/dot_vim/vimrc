@@ -117,6 +117,18 @@ nmap <leader>p :set invpaste paste?<CR>
 " Map '\r' to refresh all open buffers
 nmap <leader>r :windo e!<CR>
 
+" Map '\sb' to show a bar at line length & '\hb' to remove it
+" (sb => show bar, hb => hide bar)
+nnoremap <silent> <Leader>sb :call ShowBar()<CR>
+nnoremap <silent> <Leader>hb :set colorcolumn=<CR>
+
+" Map '\st' to show tabs and trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+nnoremap <Leader>st :match ExtraWhitespace /\s\+$\<Bar>\t/<CR>
+
+" Map '\h' to hide all matches
+nnoremap <Leader>h  :match<CR>
+
 " Map '\t' to toggle display of invisible characters (tabs & newlines).
 " Tabs are shown as '^I' & newlines are shown as '$'. To change this, or to
 " display other invisible characters - :help listchars
@@ -130,6 +142,10 @@ nmap <leader>ul YpVr-
 
 " Map '\v' to open the vimrc
 nmap <leader>v :e $MYVIMRC<CR>
+
+" Map '\ws' to insert 'Stdout.formatln("'
+nnoremap <Leader>ws iStdout.formatln("
+inoremap <Leader>ws Stdout.formatln("
 
 " Use my colorscheme
 colorscheme googie_colors
@@ -196,37 +212,6 @@ set laststatus=2
 
 set statusline=%t%m%r\ %{fugitive#statusline()}\ [b%n]%=[line\ %l\ of\ %L,\ col\ %c]
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Define necessary highlight groups
-highlight ExtraWhitespace ctermbg=red guibg=red
-highlight LineTooLong     ctermbg=red ctermfg=white
-
-" Map '\st' to show tabs and trailing whitespace
-nnoremap <Leader>st :match ExtraWhitespace /\s\+$\<Bar>\t/<CR>
-
-" Map '\sl' to show too long lines
-nnoremap <Leader>sl :match LineTooLong     /\%100v.\+/<CR>
-
-" Map '\h' to hide all matches
-nnoremap <Leader>h  :match<CR>
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Map '\sb' to show a bar at line length & '\hb' to remove it
-" (sb => show bar, hb => hide bar)
-nnoremap <silent> <Leader>sb :call ShowBar()<CR>
-nnoremap <silent> <Leader>hb :set colorcolumn=<CR>
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Custom leader maps to insert commonly used stuff in code
-nnoremap <Leader>ws iStdout.formatln("
-inoremap <Leader>ws Stdout.formatln("
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
