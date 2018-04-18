@@ -24,17 +24,20 @@ set incsearch
 " Enable search highlighting
 set hlsearch
 
-" Case insensitive searching
+" Enable case insensitive searching
 set ignorecase
-set smartcase " case-sensitive if search contains an uppercase character
-              " (valid only when 'ignorecase' is on)
+
+" Enable case-sensitive if search contains an uppercase character
+" (valid only when 'ignorecase' is on)
+set smartcase
 
 " Set the shift width for indentations ('>>' & '<<')
 set shiftwidth=4
 
-" Set scroll offset to 'n' so that there are always 'n' lines above and below the cursor (the
-" cursor will reach the top or bottom only at the beginning or end of the file respectively).
-" Setting scroll offset to 999 will make the cursor always remain in the middle.
+" Set scroll offset to 'n' so that there are always 'n' lines above and below
+" the cursor (the cursor will reach the top or bottom only at the beginning or
+" end of the file respectively). Setting scroll offset to 999 will make the
+" cursor always remain in the middle.
 set scrolloff=3
 
 " Set the number of characters per line
@@ -47,7 +50,10 @@ set tags=./tags;
 " Options to format comments
 set formatoptions=tcqor
 
-set ofu=syntaxcomplete#Complete
+" Turn on omni completion. This provides smart autocompletion for programs, so
+" that when invoked, the text before the cursor is inspected to guess what might
+" follow.
+set omnifunc=syntaxcomplete#Complete
 
 " Open new horizontal splits below.
 " set splitbelow
@@ -55,8 +61,8 @@ set ofu=syntaxcomplete#Complete
 " Open new vertical splits on the right.
 " set splitright
 
-" Instead of entering Ex mode (:help Q), make 'Q' turn off highlighting and clear any message
-" already displayed.
+" Instead of entering Ex mode (:help Q), make 'Q' turn off highlighting and
+" clear any message already displayed.
 nnoremap <silent> Q :nohlsearch<Bar>:echo<CR>
 
 " Map F1 to save the current file
@@ -81,8 +87,8 @@ imap <F7> <C-o>:bp<CR>
 map  <F8> :bn<CR>
 imap <F8> <C-o>:bn<CR>
 
-" Map function keys F9 to F12 to play whatever has been recorded into 'q', 'w', 'e' & 'r'
-" respectively
+" Map function keys F9 to F12 to play whatever has been recorded into 'q', 'w',
+" 'e' & 'r' respectively
 map <F9>  @q
 map <F10> @w
 map <F11> @e
@@ -118,6 +124,7 @@ nmap <leader>iot oimport ocean.transition;<ESC>
 " line. This is just a hack until I find a better syntax mapping.
 nmap <leader>l i<CR><ESC><UP><HOME><DOWN>dw>>
 
+" Map '\n' to toggle line numbers
 nmap <leader>n :set invnumber<CR>
 
 " Map '\o' to instantly obfuscate stuff
@@ -165,19 +172,19 @@ source ~/.vim/vim-startify.vim
 " For the NERDTree plugin
 source ~/.vim/NERDTree.vim
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " D related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Entered by Joe at
 " https://github.com/sociomantic/backend/wiki/Getting-Friendly-with-D
 set sts=0 sw=4
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Navigation related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Move between split windows with Ctrl+Arrow instead of Ctrl+w+Arrow
 nmap <silent> <C-Left>       :wincmd h<CR>
 nmap <silent> <C-Down>       :wincmd j<CR>
@@ -188,12 +195,12 @@ imap <silent> <C-Left>  <C-o>:wincmd h<CR>
 imap <silent> <C-Down>  <C-o>:wincmd j<CR>
 imap <silent> <C-Up>    <C-o>:wincmd k<CR>
 imap <silent> <C-Right> <C-o>:wincmd l<CR>
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Statusbar related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 'laststatus' controls when the status bar is displayed
 "     0 => never displayed
 "     1 => displayed only when there is more than one window
@@ -204,6 +211,7 @@ set laststatus=2
 "     %t => only the file name
 "     %m => file modified flag
 "     %r => read only flag
+"     %n => buffer number
 "     %= => left/right separator
 "     %l => cursor line number
 "     %L => total number of lines
@@ -216,10 +224,10 @@ set laststatus=2
 
 set statusline=%t%m%r\ %{fugitive#statusline()}\ [b%n]%=[line\ %l\ of\ %L,\ col\ %c]
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Define necessary highlight groups
 highlight ExtraWhitespace ctermbg=red guibg=red
 highlight LineTooLong     ctermbg=red ctermfg=white
@@ -232,28 +240,28 @@ nnoremap <Leader>sl :match LineTooLong     /\%100v.\+/<CR>
 
 " Map '\h' to hide all matches
 nnoremap <Leader>h  :match<CR>
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map '\sb' to show a bar at line length & '\hb' to remove it
 " (sb => show bar, hb => hide bar)
 nnoremap <silent> <Leader>sb :call ShowBar()<CR>
 nnoremap <silent> <Leader>hb :set colorcolumn=<CR>
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom leader maps to insert commonly used stuff in code
 nnoremap <Leader>ws iStdout.formatln("
 inoremap <Leader>ws Stdout.formatln("
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search visually selected text using '*' or '#'
 " (http://vim.wikia.com/wiki/Search_for_visually_selected_text)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 vnoremap <silent> * :<C-U>
     \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
     \gvy/<C-R><C-R>=substitute(escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
@@ -263,7 +271,7 @@ vnoremap <silent> # :<C-U>
     \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
     \gvy?<C-R><C-R>=substitute(escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
     \gV:call setreg('"', old_reg, old_regtype)<CR>
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 " Temporary
