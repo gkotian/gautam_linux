@@ -170,7 +170,7 @@ source ~/.vim/NERDTree.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Entered by Joe at
 " https://github.com/sociomantic/backend/wiki/Getting-Friendly-with-D
-set sts=0 sw=4 ts=4
+set sts=0 sw=4
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
