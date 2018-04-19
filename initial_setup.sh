@@ -186,12 +186,12 @@ echo "Done!"
 
 echo -n "    .vim... "
 rm -rf /home/$THE_USER/.vim
-sudo -u ${THE_USER} ln -s $GL_DIR/home/gautam/dot_vim /home/$THE_USER/.vim
+sudo -u ${THE_USER} ln -s $GL_DIR/vim/dot_vim /home/$THE_USER/.vim
 echo "Done!"
 
 echo -n "    .vimrc... "
 rm -f /home/$THE_USER/.vimrc
-sudo -u ${THE_USER} ln -s $GL_DIR/home/gautam/dot_vim/vimrc /home/$THE_USER/.vimrc
+sudo -u ${THE_USER} ln -s $GL_DIR/vim/vimrc /home/$THE_USER/.vimrc
 echo "Done!"
 
 echo -n "    .gitconfig... "
