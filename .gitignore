@@ -1,10 +1,3 @@
 .gitignore
 .netrwhist
-home/gautam/dot_vim/bundle/*
-xmonad.errors
-xmonad.hi
-xmonad.o
-xmonad-x86_64-linux
-g_sociomantic
-g_startup_sociomantic
-
+vim/dot_vim/bundle/*
