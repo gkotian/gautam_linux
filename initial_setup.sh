@@ -373,6 +373,11 @@ sudo -u ${THE_USER} gsettings set org.gnome.desktop.background show-desktop-icon
 echo "Done!"
 echo ""
 
+echo "Installing gopass"
+echo "Go to https://golang.org/dl/ and download the tar.gz file for Linux"
+echo "Run 'tar -C /usr/local -xzf /path/to/downloaded/tar.gz'"
+echo "Run '/usr/local/go/bin/go get -u github.com/justwatchcom/gopass'"
+
 echo "Add gpg signing for commits"
 
 echo "Check if the keepassx version is ok via `apt-cache policy keepassx`"

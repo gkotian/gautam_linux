@@ -30,6 +30,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to the oh-my-zsh installation.
 export ZSH=$PLAY_DIR/oh-my-zsh
 
+export GOPATH=$HOME/go
+
 # Characters that are to be considered as being part of a word
 WORDCHARS='*?-[]~=&;!#$%^(){}<>'
 
