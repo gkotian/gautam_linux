@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+DOCKER_IMG_NAME=$(basename ${PWD})
+
+DOCKERFILE="/home/gautam/play/gautam_linux/docker/${DOCKER_IMG_NAME}/Dockerfile"
+
+if [ ! -e ${DOCKERFILE} ]
+then
+    echo "'${DOCKERFILE}' not found. Aborting."
+    exit 1
+fi
+
+docker build -t ${DOCKER_IMG_NAME} $(dirname ${DOCKERFILE})
+
+exec docker run --rm -it \
+    -v ${PWD}:/project \
+    -w /project \
+    ${DOCKER_IMG_NAME} \
+    /bin/bash
