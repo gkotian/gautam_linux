@@ -139,3 +139,13 @@ Setting date from the command-line:
 
 ---------------------------------------------------------------------------------------------------
 
+Expandable GitHub comments:
+
+<details>
+  <summary>Click to expand</summary>
+                                             <--- this blank line is necessary for proper formatting
+  whatever
+</details>
+
+---------------------------------------------------------------------------------------------------
+
