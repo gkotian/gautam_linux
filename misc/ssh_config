@@ -1,35 +1,57 @@
 # When adding remotes to a git repository, add them as:
 #     git remote add upstream git@Host:path/to/repository.git
-# where 'Host' is one of those given below depending on the type of the repository
+# where 'Host' is one of those given below depending on the type of the
+# repository
 # (http://code.tutsplus.com/tutorials/how-to-work-with-github-and-multiple-accounts--net-22574)
 
-# The 'IdentitiesOnly yes' line is needed because without this, the ssh agent will only offer the
-# first key, which will gain you access to GitHub, but not to the repository itself.
+# The 'IdentitiesOnly yes' line is needed because without this, the ssh agent
+# will only offer the first key, which will gain you access to GitHub, but not
+# to the repository itself.
 
 # Personal Github account
-Host github-PERSONAL github.com
+Host github-PLAY
     HostName github.com
     User git
-    IdentityFile ~/.ssh/id_rsa_personal
+    IdentityFile ~/.ssh/id_rsa_play
     IdentitiesOnly yes
+
+# # Jana's hacktoberfest Github account
+# Host github-JTRESTIK
+#     HostName github.com
+#     User git
+#     IdentityFile ~/.ssh/id_rsa_jtrestik
+#     IdentitiesOnly yes
 
 # Work Github account
 Host github-WORK
     HostName github.com
     User git
-    IdentityFile ~/.ssh/id_rsa_sociomantic
+    IdentityFile ~/.ssh/id_rsa_work
     IdentitiesOnly yes
 
 # Sociomantic servers
-Host *.sociomantic.com
-    HostName %h
-    User developer
-    IdentityFile ~/.ssh/id_rsa_sociomantic
+Host ap-* cn-* eu-* us-*
+    User gautam.kotian
+    IdentityFile ~/.ssh/id_rsa_work
+    Port 2222
     IdentitiesOnly yes
     ForwardAgent yes
+    Compression yes
+    VerifyHostKeyDNS yes
 
-# Let ssh re-use existing connections, making connecting super fast after the first time
-Host *
-ControlPath ~/.ssh/sock/%r@%h:%p
-ControlMaster auto
-ControlPersist yes
+# For CN servers that don't have a public IP address, use one with a public IP
+# address to jump to the others.
+Host cn-7 cn-13 cn-14 cn-15 cn-16
+    ProxyCommand ssh -q cn-1 nc -q0 %h 22
+
+# For CN servers that have a public IP address, using a server in AP/US to jump
+# to it has been thought to improve speeds.
+Host cn-1 cn-2 cn-3 cn-4
+    ProxyCommand ssh -q us-169 nc -q0 %h 22
+
+# Let ssh re-use existing connections, making connecting super fast after the
+# first time
+# Host *
+# ControlPath ~/.ssh/sock/%r@%h:%p
+# ControlMaster auto
+# ControlPersist yes
