@@ -29,4 +29,4 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 #           42 => green,  46 => cyan,       102 => light green,  106 => light cyan,
 #           43 => yellow, 47 => light gray, 103 => light yellow, 107 => white
 #           49 => default background colour
-export LS_COLORS='no=00;39:fi=00:di=00;34:ln=04;36:or=04;93;41:pi=40;33:so=01;35:bd=40;33;01:ex=00;91'
+export LS_COLORS='no=00;39:fi=00:di=00;34:ln=04;36:or=04;93;41:pi=40;33:so=01;35:bd=40;33;01:ex=00;31'
