@@ -4,7 +4,12 @@ set -e
 
 DOCKER_IMG_NAME=$(basename ${PWD})
 
-DOCKERFILE="/home/gautam/play/gautam_linux/docker/${DOCKER_IMG_NAME}/Dockerfile"
+if [ "${#}" = "1" ]
+then
+    DOCKERFILE=${1}
+else
+    DOCKERFILE="/home/gautam/play/gautam_linux/docker/${DOCKER_IMG_NAME}/Dockerfile"
+fi
 
 if [ ! -e ${DOCKERFILE} ]
 then
