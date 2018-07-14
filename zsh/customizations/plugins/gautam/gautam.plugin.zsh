@@ -128,9 +128,10 @@ alias gk='\gitk --all --branches&'
 # git latest tag
 alias glt='git tag --list "v*" --sort=v:refname | tail -1'
 
+alias gpf='git push fork'
+alias gpff='git push fork -f'
 alias gpo='git push origin'
-alias gpod='git push origin --delete'
-alias gpof='git push -f origin'
+alias gpof='git push origin -f'
 
 alias gr='git rebase -i HEAD~'
 alias gra='git rebase --abort'
