@@ -50,6 +50,8 @@ alias lmouse='xmodmap -e "pointer = 3 2 1"'
 alias umlauts='echo "ä    ö    ü    ß    €    ₹"'
 alias kbus='setxkbmap us'
 
+alias c1='cat /tmp/1'
+
 alias v1='v /tmp/1'
 alias vall='v `ls **/*.d | one_line`'
 
