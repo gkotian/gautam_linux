@@ -11,10 +11,6 @@ while :; do
     then
         echo "[${NOW}] sending message to plug-in charger"
         xmessage "You should probably plug-in the charger now!"
-    elif [ "${BATTERY_STATE}" = "fully-charged" ]
-    then
-        echo "[${NOW}] sending message to unplug charger"
-        xmessage "You can unplug the charger now."
     else
         echo "[${NOW}] Nothing to do, battery ${BATTERY_STATE}, level ${BATTERY_PERCENTAGE}%"
     fi
