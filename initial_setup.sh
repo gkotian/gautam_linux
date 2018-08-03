@@ -156,6 +156,11 @@ sudo -u ${THE_USER} mkdir $PLAY_DIR
 echo "Done!"
 echo ""
 
+echo -n "Creating directory: '/home/$THE_USER/bin'... "
+sudo -u ${THE_USER} mkdir /home/$THE_USER/bin
+echo "Done!"
+echo ""
+
 echo -n "Creating directory: '/home/$THE_USER/tmp_home'... "
 sudo -u ${THE_USER} mkdir /home/$THE_USER/tmp_home
 echo "Done!"
@@ -218,6 +223,10 @@ rm -f /home/$THE_USER/.i3/config
 sudo -u ${THE_USER} ln -s $GL_DIR/i3/config /home/$THE_USER/.i3/config
 echo "Done!"
 
+echo -n "    calc... "
+sudo -u ${THE_USER} ln -s $GL_DIR/scripts/calc.sh /home/$THE_USER/bin/calc
+echo "Done!"
+
 echo -n "    .gdbinit... "
 rm -f /home/$THE_USER/.gdbinit
 sudo -u ${THE_USER} ln -s $GL_DIR/misc/gdbinit /home/$THE_USER/.gdbinit
@@ -267,15 +276,6 @@ echo '#!/bin/bash' > $TMP_FILE
 echo "zenity --calendar" >> $TMP_FILE
 mv $TMP_FILE /usr/local/bin/cal
 chmod 775 /usr/local/bin/cal
-echo "Done!"
-echo ""
-
-echo -n "Setting up 'c' to launch calculator... "
-# single quotes are needed to echo '!'
-echo '#!/bin/bash' > $TMP_FILE
-echo "gnome-calculator" >> $TMP_FILE
-chmod +x $TMP_FILE
-mv $TMP_FILE /usr/local/bin/c
 echo "Done!"
 echo ""
 
