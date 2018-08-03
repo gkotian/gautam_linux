@@ -4,7 +4,6 @@ THE_USER=${SUDO_USER:-${USERNAME:-unknown}}
 PLAY_DIR="/home/$THE_USER/play"
 GL_DIR="$PLAY_DIR/gautam_linux"
 
-GITHUB_HOST="github-PERSONAL"
 GITHUB_USERNAME="gkotian"
 
 PACKAGES_LIST=(exuberant-ctags git gitk git-gui git-man gthumb i3 kdiff3
@@ -259,14 +258,14 @@ sudo -u ${THE_USER} mkdir /home/$THE_USER/.ssh/sock
 
 echo ""
 
-# Now that the ssh config file has been linked, 'github-PERSONAL' can be used
+# Now that the ssh config file has been linked, 'github-PLAY' can be used
 # in the remote URLs of cloned repositories. Change the remote URLs accordingly
 # for repositories that were created with 'github.com'.
 cd $PLAY_DIR/gautam_linux
-sudo -u ${THE_USER} git remote set-url origin git@github-PERSONAL:gkotian/gautam_linux.git
+sudo -u ${THE_USER} git remote set-url origin git@github-PLAY:gkotian/gautam_linux.git
 
 cd $PLAY_DIR/oh-my-zsh
-sudo -u ${THE_USER} git remote set-url origin git@github-PERSONAL:robbyrussell/oh-my-zsh.git
+sudo -u ${THE_USER} git remote set-url origin git@github-PLAY:robbyrussell/oh-my-zsh.git
 
 cd
 
@@ -281,7 +280,7 @@ echo ""
 
 if [ -d "/home/$THE_USER/.vim" ]; then
     echo "In the other terminal/tab run the following command:"
-    echo "    git clone git@$GITHUB_HOST:gmarik/Vundle.vim.git /home/$THE_USER/.vim/bundle/vundle"
+    echo "    git clone git@github-PLAY:gmarik/Vundle.vim.git /home/$THE_USER/.vim/bundle/vundle"
     waitForConfirmation
 
     echo -n "Installing all Vim plugins... "
@@ -293,7 +292,7 @@ echo ""
 for PROJECT in ${MY_PROJECTS_LIST[@]}
 do
     echo "In the other terminal/tab run the following command:"
-    echo "    git clone git@$GITHUB_HOST:gkotian/$PROJECT.git $PLAY_DIR/$PROJECT"
+    echo "    git clone git@github-PLAY:gkotian/$PROJECT.git $PLAY_DIR/$PROJECT"
     waitForConfirmation
 done
 
