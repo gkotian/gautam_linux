@@ -270,12 +270,12 @@ sudo -u ${THE_USER} git remote set-url origin git@github-PERSONAL:robbyrussell/o
 
 cd
 
-echo -n "Setting up 'cal' to launch calendar... "
+echo -n "Setting up 'c' to launch calendar... "
 # single quotes are needed to echo '!'
 echo '#!/bin/bash' > $TMP_FILE
 echo "zenity --calendar" >> $TMP_FILE
-mv $TMP_FILE /usr/local/bin/cal
-chmod 775 /usr/local/bin/cal
+chmod +rx $TMP_FILE
+mv $TMP_FILE /usr/local/bin/c
 echo "Done!"
 echo ""
 
