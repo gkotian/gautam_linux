@@ -46,54 +46,6 @@ function custom-git-cherry-pick() {
     done
 }
 
-# gsf => git show file
-# NEEDS MORE WORK
-function gsf() {
-    # Confirm that we are in a git repository
-    GIT_TOP=$(git rev-parse --show-toplevel)
-    RC=$?
-    if [ $RC != "0" ]
-    then
-        return $RC
-    fi
-
-    # Confirm exact number of arguments
-    if [ $# -ne 2 ]
-    then
-        echo "Need exactly two arguments (commit hash & file). Aborting."
-        return 1
-    fi
-
-    COMMIT=$1
-    FILE=$2
-
-    # Validate the given commit
-    DUMMY=$(git rev-parse --quiet --short --verify ${COMMIT})
-    if [ $? != "0" ]
-    then
-        echo "'${COMMIT}' is not a valid git object. Aborting."
-        return 1
-    fi
-
-    # First try a file glob to see if the given file exists.
-    # Do it under the 'src' directory so that files in submodules are not
-    # considered (the unfortunate side-effect of this is that files at the
-    # top-level, e.g. Build.mak get skipped). If needed, it should be possible
-    # to make a more intelligent glob using 'setopt extendedglob', but that
-    # optimization is probably not needed currently.
-    # If the file doesn't exist, it may still be ok; as it may exist in the
-    # commit being checked (in this case of course, the proper file path becomes
-    # necessary).
-    GLOB_RESULT=$(ls ${GIT_TOP}/src/**/${FILE})
-    if [ $? == "0" ]
-    then
-        FILE=${GLOB_RESULT}
-    fi
-
-    echo "git show ${COMMIT}:${FILE}"
-    # git show ${COMMIT}:${FILE}
-}
-
 # gtb => git test branch
 # This is not just an alias as I sometimes need to pass arguments to
 # 'git-test-branch'
