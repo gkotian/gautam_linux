@@ -110,9 +110,6 @@ function gtb() {
 alias bat='upower -i $(upower -e | grep "BAT") | grep -E "state|time\ to|percentage"'
 alias cdo='cd ${PLAY_DIR}/ocean'
 
-alias gbd='git branch -d'
-alias gbD='git branch -D'
-
 alias gc='git commit --verbose -S'
 alias gca='git commit --amend --no-edit -S'
 alias gcae='git commit --amend --verbose -S'
