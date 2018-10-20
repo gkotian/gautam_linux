@@ -1,6 +1,7 @@
 [user]
     name  = Gautam Kotian
-    email = gautam.kotian@gmail.com
+    ; email = <always added locally in each repo>
+    ; signingkey = <always added locally in each repo>
 
 [giggle]
     main-window-maximized       = true
