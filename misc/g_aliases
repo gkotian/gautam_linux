@@ -51,8 +51,10 @@ alias umlauts='echo "ä    ö    ü    ß    €    ₹"'
 alias kbus='setxkbmap us'
 
 alias c1='cat /tmp/1'
+alias c2='cat /tmp/2'
 
 alias v1='v /tmp/1'
+alias v2='v /tmp/2'
 alias vall='v `ls **/*.d | one_line`'
 
 
@@ -91,14 +93,4 @@ alias rsync='rsync -zP'
 alias fb='filesInBranch'
 alias mb='mergeBranch'
 alias ldpwd='export LD_LIBRARY_PATH=$PWD'
-
-# Aliases to directories
-alias ..='cd ..'
-alias pd='cd -'
-
-# Aliases to SVN commands
-alias s='svn st -q'
-alias list_conflicts='svn status | \grep -P "^(?=.{0,6}C)"'
-
-# Temporary aliases
-
+alias yes='echo "trust me, you do not want to do that." && return 1'
