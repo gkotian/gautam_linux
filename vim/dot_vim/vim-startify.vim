@@ -2,6 +2,12 @@
 " vim-startify plugin related
 " (https://github.com/mhinz/vim-startify)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:startify_bookmarks = [ '~/.vimrc',
+\                            '~/.zshrc',
+\                            '~/play/gautam_linux/misc/g_aliases' ]
+
+let g:startify_change_to_vcs_root = 1
+
 let g:startify_custom_header = []
 "let g:startify_custom_header = [
 "\ '      ________               __                    ____  __       __   __               ',
@@ -13,11 +19,7 @@ let g:startify_custom_header = []
 "\ '',
 "\]
 
-let g:startify_files_number = 25
-
-let g:startify_bookmarks = [ '~/.vimrc',
-\                            '~/.bashrc',
-\                            '~/play/gautam_linux/misc/g_aliases' ]
+let g:startify_files_number = 30
 
 let g:startify_skiplist = [ 'COMMIT_EDITMSG',
 \                           'HUB_EDITMSG',
