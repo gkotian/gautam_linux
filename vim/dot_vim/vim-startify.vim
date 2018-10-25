@@ -2,7 +2,8 @@
 " vim-startify plugin related
 " (https://github.com/mhinz/vim-startify)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:startify_custom_header = [
+let g:startify_custom_header = []
+"let g:startify_custom_header = [
 "\ '      ________               __                    ____  __       __   __               ',
 "\ '     /  _____/_____   __ ___/  |______    _____   |    |/ _|_____/  |_|__|____    ____  ',
 "\ '    /   \  ___\__  \ |  |  \   __\__  \  /     \  |      < /  _ \   __\  \__  \  /    \ ',
@@ -10,7 +11,7 @@ let g:startify_custom_header = [
 "\ '     \______  (____  /____/ |__| (____  /__|_|  / |____|__ \____/|__| |__(____  /___|  /',
 "\ '            \/     \/                 \/      \/          \/                  \/     \/ ',
 "\ '',
-\]
+"\]
 
 let g:startify_files_number = 25
 
