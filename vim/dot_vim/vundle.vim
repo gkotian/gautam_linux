@@ -18,6 +18,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'ervandew/supertab'
 Plugin 'JesseKPhillips/d.vim'
+Plugin 'junegunn/fzf.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
@@ -28,4 +29,3 @@ Plugin 'tpope/vim-fugitive'
 "     Plugins to try
 " ----------------------
 "Plugin 'vim-scripts/Smart-Tabs' Do I need this?
-
