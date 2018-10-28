@@ -93,15 +93,27 @@ hex()
     printf "0x%X\n" $1
 }
 
+stopwatch_interrupt()
+{
+    echo -ne "\rstopwatch complete: $(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\n"
+    exit 0
+}
+
 stopwatch()
 {
-    date1=`date +%s`; 
+    (
+        date1=`date +%s`
 
-    while true
-    do 
-        echo -ne "$(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r"; 
-        sleep 0.1
-    done
+        echo -e "Press Ctrl-C to stop, Enter to split"
+
+        trap stopwatch_interrupt SIGINT
+
+        while true
+        do
+            echo -ne "$(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r"
+            sleep 0.1
+        done
+    )
 }
 
 show_line()
