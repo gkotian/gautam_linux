@@ -134,12 +134,12 @@ chsh -s /bin/zsh ${THE_USER}
 echo "Done!"
 
 echo -n "Setting up ssh to access GitHub... "
-sudo -u ${THE_USER} ssh-keygen -f /home/$THE_USER/.ssh/id_rsa_personal
+sudo -u ${THE_USER} ssh-keygen -f /home/$THE_USER/.ssh/id_rsa_play
 
 echo "Now log in to GitHub -> Settings -> SSH and GPG keys -> New SSH key"
 echo "In 'Title' enter some text to identify this computer"
 echo "In 'Key' paste the following:"
-cat /home/$THE_USER/.ssh/id_rsa_personal.pub
+cat /home/$THE_USER/.ssh/id_rsa_play.pub
 echo ""
 waitForConfirmation
 
@@ -208,11 +208,10 @@ rm -f /home/$THE_USER/.gitignore_global
 sudo -u ${THE_USER} ln -s $GL_DIR/git/gitignore_global /home/$THE_USER/.gitignore_global
 echo "Done!"
 
-# For using Google's public DNS servers
-echo -n "    /etc/resolvconf/resolv.conf.d/head... "
-rm -f /etc/resolvconf/resolv.conf.d/head
-ln -s $GL_DIR/misc/resolv_conf_head /etc/resolvconf/resolv.conf.d/head
-echo "Done!"
+# Open the NetworkManager gui, or nm-connection-editor, choose the connection of
+# interest, go to the 'IPv4 Settings' and under "Additional DNS servers" add
+# '1.1.1.1, 8.8.8.8'
+# if there is a way to do this via nmcli we could automate this
 
 echo -n "    .i3/config... "
 if [ ! -d "/home/$THE_USER/.i3" ]; then
@@ -229,11 +228,6 @@ echo "Done!"
 echo -n "    .gdbinit... "
 rm -f /home/$THE_USER/.gdbinit
 sudo -u ${THE_USER} ln -s $GL_DIR/misc/gdbinit /home/$THE_USER/.gdbinit
-echo "Done!"
-
-echo -n "    /usr/bin/chrome... "
-rm -f /usr/bin/chrome
-ln -s /usr/bin/google-chrome /usr/bin/chrome
 echo "Done!"
 
 # Other lists can be created as needed by linking to the same dmenu_list script
@@ -350,10 +344,12 @@ echo "google-chrome setup"
 echo "-------------------"
 echo "    Go to 'https://www.google.com/chrome/browser/desktop/index.html', download and install chrome"
 waitForConfirmation
+ln -s /usr/bin/google-chrome /usr/bin/chrome
 echo "    Launch google-chrome, lock it to launcher and set it as the default browser"
 echo "    Go to 'chrome://settings', scroll down to the end and click on 'Show advanced settings...'"
 echo "    Scroll down further to 'Downloads'"
 echo "    Edit the default path there to '/tmp' and check 'Ask where to save each file before downloading'"
+echo "    also disable third-party tracking"
 waitForConfirmation
 
 echo "default applications setup"
