@@ -315,6 +315,14 @@ echo "    meld /usr/bin/gitk.orig /usr/bin/gitk"
 echo "in the other terminal/tab, and/or by launching gitk in any of the existing repos)"
 echo ""
 
+echo "gopass setup"
+echo "------------"
+echo "In the other terminal/tab run the following commands:"
+echo "    git clone git@gitlab-PLAY:gkotian/pass.git ${PLAY_DIR}/pass"
+echo "    ln -srf ${PLAY_DIR}/pass/store ${HOME}/.password-store"
+echo "    docker build -t gopass github.com/gopasspw/gopass#master"
+waitForConfirmation
+
 echo "gnome-terminal setup"
 echo "--------------------"
 echo "    Open a gnome-terminal"
