@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Add the necessary passphrases to ssh agent
-ssh-add ~/.ssh/id_rsa_personal
+ssh-add ~/.ssh/id_rsa_play
 
 # Launch gitk for commonly monitored projects
 cd /home/gautam/play/gautam_linux   && gitk --all&
