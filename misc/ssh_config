@@ -8,9 +8,16 @@
 # will only offer the first key, which will gain you access to GitHub, but not
 # to the repository itself.
 
-# Personal Github account
+# Personal GitHub account
 Host github-PLAY
     HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_play
+    IdentitiesOnly yes
+
+# Personal GitLab account
+Host gitlab-PLAY
+    HostName gitlab.com
     User git
     IdentityFile ~/.ssh/id_rsa_play
     IdentitiesOnly yes
