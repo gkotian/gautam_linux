@@ -91,6 +91,9 @@ map <F12> @r
 map <HOME> ^
 imap <HOME> <C-o>^
 
+" Map '\8' to search for the word under cursor
+nnoremap <leader>8 :exe 'Ag!' expand('<cword>')<CR>
+
 " Map '\d' to show a quick diff of unsaved changes made in the current buffer
 nnoremap <silent> <Leader>d :w !diff % -<CR>
 
@@ -100,6 +103,7 @@ nmap <leader>fh i    /<ESC>75a*<ESC>o<CR>  TODO: Does what?<CR><CR>Params:<ESC>>
 " Mappings for commonly used import statements
 nmap <leader>ios oimport ocean.io.Stdout;<ESC>
 nmap <leader>iot oimport ocean.transition;<ESC>
+nmap <leader>iol <ESC>gg/^module<CR>wyt;Goimport ocean.util.log.Logger;<CR>static private Logger log;<CR>static this ()<CR>{<CR>log = Log.lookup("<ESC>pa");<CR>}<ESC>Q
 
 " Map '\l' to split a line and a keep a four-space indent over the preceding
 " line. This is just a hack until I find a better syntax mapping.

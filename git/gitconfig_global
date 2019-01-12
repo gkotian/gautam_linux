@@ -60,8 +60,10 @@
 [git]
     rebase = true
 
-[init]
-    templatedir = /home/gautam/.git_template_dir
-
 [rebase]
     autosquash = true
+
+[alias]
+    ; prune-tags first deletes all local tags, and then fetches all tags from
+    ; the remote
+    prune-tags = !git tag -l | xargs git tag -d && git fetch -t

@@ -20,6 +20,9 @@ if has("autocmd")
         " (only for files with specified file extensions)
         autocmd BufWritePre *.d,*.sh,*.txt :%s/\s\+$//e
 
+        " Avoid storing temporary files when editing secrets
+        autocmd BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
+
         " Help mode bindings
         " <enter> to follow tag, <bs> to go back, and q to quit.
         autocmd FileType help nnoremap <buffer><cr> <c-]>
