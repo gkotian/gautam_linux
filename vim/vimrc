@@ -122,13 +122,6 @@ nmap <leader>r :windo e!<CR>
 nnoremap <silent> <Leader>sb :call ShowBar()<CR>
 nnoremap <silent> <Leader>hb :set colorcolumn=<CR>
 
-" Map '\st' to show tabs and trailing whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
-nnoremap <Leader>st :match ExtraWhitespace /\s\+$\<Bar>\t/<CR>
-
-" Map '\h' to hide all matches
-nnoremap <Leader>h  :match<CR>
-
 " Map '\t' to toggle display of invisible characters (tabs & newlines).
 " Tabs are shown as '^I' & newlines are shown as '$'. To change this, or to
 " display other invisible characters - :help listchars
