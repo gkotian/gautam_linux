@@ -319,6 +319,8 @@ echo "gopass setup"
 echo "------------"
 echo "In the other terminal/tab run the following commands:"
 echo "    git clone git@gitlab-PLAY:gkotian/pass.git ${PLAY_DIR}/pass"
+echo "    mkdir -p ${HOME}/.config/gopass"
+echo "    ln -srf ${PLAY_DIR}/pass/config.yml ${HOME}/.config/gopass/config.yml"
 echo "    ln -srf ${PLAY_DIR}/pass/store ${HOME}/.password-store"
 echo "    docker build -t gopass github.com/gopasspw/gopass#master"
 waitForConfirmation
