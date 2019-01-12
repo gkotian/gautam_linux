@@ -325,6 +325,20 @@ echo "    ln -srf ${PLAY_DIR}/pass/store ${HOME}/.password-store"
 echo "    docker build -t gopass github.com/gopasspw/gopass#master"
 waitForConfirmation
 
+echo "fzf setup"
+echo "---------"
+echo "In the other terminal/tab run the following commands:"
+echo "    if ubuntu:"
+echo "        git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf"
+echo "        ~/.fzf/install"
+echo "            - Choose yes for enabling fuzzy auto-completion"
+echo "            - Choose yes for enabling key bindings"
+echo "            - Choose no for updating shell configuration files"
+echo "        rm -f ${HOME}/.fzf.bash"
+echo "    elsif arch:"
+echo "        sudo pacman -S fzf"
+waitForConfirmation
+
 echo "gnome-terminal setup"
 echo "--------------------"
 echo "    Open a gnome-terminal"

@@ -231,4 +231,23 @@ vnoremap <silent> # :<C-U>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fzf related
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Map '\\' to open the fzf file chooser
+nnoremap <silent> <Leader>\ :FZF<CR>
+
+" Map '\b' to show open buffers using fzf.vim
+nnoremap <silent> <leader>b :Buffers<CR>
+
+" Map '\h' to show files from history
+nnoremap <silent> <Leader>h :History<CR>
+
+" Map '\m' to show current used mappings in vim
+nnoremap <silent> <Leader>m :Maps<CR>
+
+" Add fzf to the runtimepath
+set rtp+=~/.fzf
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Temporary
