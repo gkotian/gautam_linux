@@ -335,8 +335,6 @@ echo "            - Choose yes for enabling fuzzy auto-completion"
 echo "            - Choose yes for enabling key bindings"
 echo "            - Choose no for updating shell configuration files"
 echo "        rm -f ${HOME}/.fzf.bash"
-echo "    elsif arch:"
-echo "        sudo pacman -S fzf"
 waitForConfirmation
 
 echo "gnome-terminal setup"
