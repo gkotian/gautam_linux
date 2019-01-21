@@ -374,6 +374,14 @@ echo "    Edit the default path there to '/tmp' and check 'Ask where to save eac
 echo "    also disable third-party tracking"
 waitForConfirmation
 
+echo "firefox setup"
+echo "-------------"
+echo "    log in to firefox so that things get synced"
+echo "    don't save logins"
+echo "    set download location to /tmp"
+echo "    ask where to download every time"
+waitForConfirmation
+
 echo "default applications setup"
 echo "--------------------------"
 echo "    System Settings -> Details -> Default Applications"
