@@ -220,7 +220,7 @@ rm -f /home/$THE_USER/.i3/config
 sudo -u ${THE_USER} ln -s $GL_DIR/i3/config /home/$THE_USER/.i3/config
 echo "Done!"
 
-echo -n "    calc... "
+echo -n "    calc (calculator)... "
 sudo -u ${THE_USER} ln -s $GL_DIR/scripts/calc.sh /home/$THE_USER/bin/calc
 echo "Done!"
 
