@@ -16,7 +16,6 @@ RUBY_PACKAGES_LIST=(jekyll)
 
 MY_PROJECTS_LIST=(git_scripts gkotian.github.io python_scripts)
 
-TMP_FILE=$(mktemp)
 START_TIMESTAMP=$(date +%s)
 
 function waitForConfirmation
@@ -225,6 +224,10 @@ echo -n "    calc... "
 sudo -u ${THE_USER} ln -s $GL_DIR/scripts/calc.sh /home/$THE_USER/bin/calc
 echo "Done!"
 
+echo -n "    c (calendar)... "
+sudo -u ${THE_USER} ln -s $GL_DIR/scripts/calendar.sh /home/$THE_USER/bin/c
+echo "Done!"
+
 echo -n "    .gdbinit... "
 rm -f /home/$THE_USER/.gdbinit
 sudo -u ${THE_USER} ln -s $GL_DIR/misc/gdbinit /home/$THE_USER/.gdbinit
@@ -262,15 +265,6 @@ cd $PLAY_DIR/oh-my-zsh
 sudo -u ${THE_USER} git remote set-url origin git@github-PLAY:robbyrussell/oh-my-zsh.git
 
 cd
-
-echo -n "Setting up 'c' to launch calendar... "
-# single quotes are needed to echo '!'
-echo '#!/bin/bash' > $TMP_FILE
-echo "zenity --calendar" >> $TMP_FILE
-chmod +rx $TMP_FILE
-mv $TMP_FILE /usr/local/bin/c
-echo "Done!"
-echo ""
 
 if [ -d "/home/$THE_USER/.vim" ]; then
     echo "In the other terminal/tab run the following command:"
