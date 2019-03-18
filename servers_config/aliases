@@ -1,0 +1,15 @@
+alias c1='cat /tmp/1'
+alias c2='cat /tmp/2'
+alias r1='rm -f /tmp/1'
+alias r2='rm -f /tmp/2'
+alias v1='v /tmp/1'
+alias v2='v /tmp/2'
+
+alias cda='...'
+alias cdb='...'
+
+alias ps='ps -eo pid,comm,lstart,etime,time,args'
+
+alias v='vim'
+alias x='exit'
+alias yes='echo "trust me, you do not want to do that." && return 1'

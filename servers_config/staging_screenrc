@@ -1,0 +1,24 @@
+# On the server where you want to create the staging screen, make a sym link as
+# follows:
+#     $> ln -s /path/to/staging_screenrc ~/.screenrc
+
+# the following two lines give a two-line status, with the current window highlighted
+# hardstatus alwayslastline
+# hardstatus string '%{= kG}[%{G}%H%? %1`%?%{g}][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][%{B}%m/%d %{W}%C%A%{g}]'
+
+# huge scrollback buffer
+defscrollback 5000
+
+# no welcome message
+startup_message off
+
+# 256 colors
+attrcolor b ".I"
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+defbce on
+
+screen -t aap1
+stuff "cd ~/staging/app1^M"
+
+screen -t app2
+stuff "cd ~/staging/app2^M"
