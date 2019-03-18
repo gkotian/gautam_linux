@@ -1,19 +1,22 @@
 #!/bin/sh
 
+# Save a log file to analyse if something goes wrong
+exec 1>/var/tmp/g_startup.log 2>&1
+
+MACHINE_TYPE="WORK"
+IS_LAPTOP="NO"
+
 PLAY_DIR=/home/gautam/play
 GL_DIR=$PLAY_DIR/gautam_linux
-TODO_FILE=/home/gautam/tmp/TODO.txt
 
-# Play machine specific startup
-FILE=$GL_DIR/scripts/g_startup_play.sh
-if [ -f $FILE ]; then
-    $FILE &
+if [ $MACHINE_TYPE = "PLAY" ]; then
+    STARTUP_FILE=$GL_DIR/scripts/g_startup_play.sh
+else
+    STARTUP_FILE=/path/to/g_startup_work.sh
 fi
 
-# Sociomantic specific startup.
-FILE=$GL_DIR/g_startup_sociomantic
-if [ -f $FILE ]; then
-    $FILE &
+if [ -f $STARTUP_FILE ]; then
+    $STARTUP_FILE &
 fi
 
 # Log latest boot time info.
@@ -22,8 +25,7 @@ if [ -f $FILE ]; then
     $FILE &
 fi
 
-# Open the todo file, if it exists.
-if [ -f $TODO_FILE ]; then
-    gedit $TODO_FILE &
+if [ ${IS_LAPTOP} = "YES" ]; then
+    BATTERY_CHECKER=${GL_DIR}/scripts/check_battery.sh
+    [ -f ${BATTERY_CHECKER} ] && ${BATTERY_CHECKER} &
 fi
-
