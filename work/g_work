@@ -1,0 +1,46 @@
+export PATH=$PATH:/other/paths/as/necessary
+
+alias ag='ag --ignore-dir submodules'
+
+alias d2_try='make clean && make d2conv && make all test DVER=2 DC=dmd-transitional; alert "d2_try done"'
+alias docker_d2_try='dockerrun make clean && dockerrun make d2conv && dockerrun make all test DVER=2 DC=dmd-transitional; alert "d2_try done"'
+alias d2_reset='git submodule foreach git checkout . && git checkout . && make clean'
+alias docker_d2_reset='git submodule foreach git checkout . && git checkout . && dockerrun make clean'
+
+alias mc='make clean'
+alias mcm='make clean && make; alert "make done"'
+alias mct='make clean && make all test V=1; alert "mct done"'
+alias mt='mt1'
+alias mt1='make all test V=1; alert "mt1 done"'
+alias mt2='make all test V=2; alert "mt2 done"'
+
+#===============================================================================
+
+AP()
+{
+    server_connection "ap" $1 $2
+}
+
+EU()
+{
+    server_connection "eu" $1 $2
+}
+
+US()
+{
+    server_connection "us" $1 $2
+}
+
+server_connection()
+{
+    REGION=$1
+    SERVER_NUM=$2
+    CONN_TYPE=$3
+
+    if [ -z ${CONN_TYPE} ]
+    then
+        CONN_TYPE="mosh"
+    fi
+
+    ${CONN_TYPE} ${REGION}-${SERVER_NUM}
+}

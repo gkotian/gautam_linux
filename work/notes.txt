@@ -1,0 +1,77 @@
+A quick way of determining whether there was a stack overflow:
+$ print (char*) ($sp -64)
+
+If there was a stack overflow you will typically get this displayed:
+"END OF STACK -- END OF STACK -- "
+
+================================================================================
+
+List global/static variables, variables on the stack, or arguments:
+`$ info variables`
+`$ info locals`
+`$ info args`
+
+Show which assembly instruction is being executed:
+`$ disassemble`
+
+================================================================================
+
+Popular locations where breakpoints are often set
+
++-----------------------------------------+-----------------+---------------+
+|              Where? / Why?              |    How?         |     dmd2      |
++:---------------------------------------:+:---------------:+:-------------:+
+| the D exception handler                 | _d_throwc       | _d_throwdwarf |
++-----------------------------------------+-----------------+---------------+
+| to find out where an allocation happens | gc_malloc &     |               |
+|                                         | gc_calloc &     |               |
+|                                         | gc_realloc &    |               |
+|                                         | gc_qalloc       |               |
++-----------------------------------------+-----------------+---------------+
+| assert failure                          | _d_assert &     |               |
+|                                         | _d_assert_msg   |               |
++-----------------------------------------+-----------------+---------------+
+| array out of bounds exception           | _d_array_bounds |               |
++-----------------------------------------+-----------------+---------------+
+
+================================================================================
+
+If a production binary crashes and generates a core file, then you'll discover
+that the core file is pretty useless as it is devoid of all debug symbols. But
+all is not lost. You just need to generate the debug symbols separately and use
+that to analyse the core file. You'll need to do these:
+
+1. Find the version of the binary that produced the core file, and check out
+   that commit
+1. Build (make sure to use `F=production`)
+1. `objcopy --only-keep-debug build/production/bin/app /tmp/app.debug`
+1. Copy the `/tmp/app.debug` file containing all the debug symbols to the
+   location of the core file
+1. `gdb -c <core_file> <debug_symbols_file>`
+
+gdb should now be able to read the debug symbols and help you analyse the core
+file better.
+
+================================================================================
+
+to print the backtrace of a running process:
+--------------------------------------------
+    sudo gdb --batch -ex bt -ex "quit" --quiet /path/to/app <pid>
+
+    (need to do `stty sane` afterwards to fix the broken terminal)
+
+================================================================================
+
+saving cores from inside docker container:
+------------------------------------------
+    ulimit -c unlimited
+    echo '/project/core.%e.%t' | sudo tee /proc/sys/kernel/core_pattern
+
+    the core file should then be saved in the current directory (which gets
+    mounted as /project in the container)
+
+================================================================================
+
+formatting an XML file:
+-----------------------
+xmllint --format --recover ${FILE} > ${NEW_FILE}

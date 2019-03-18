@@ -1,0 +1,72 @@
+# PACKAGES_LIST=(libbz2-dev libebtree6-dev libgcrypt11-dev libglib2.0-dev libgomp1
+#     libice-dev libjpeg8-dev liblcms1-dev liblzo2-dev libpcre3-dev libpng12-dev
+#     libreadline-dev libsm-dev libssl-dev libx11-dev libxext-dev libxml2-dev
+#     libxslt-dev mosh zlib1g-dev)
+
+mkdir ~/bin
+
+sudo apt install mosh
+
+Go to https://slack.com/downloads/linux, download the .deb file and install it
+using sudo dpkg -i. If there were any missing dependencies, they can be
+installed later using 'sudo apt install -f'
+
+set up docker:
+--------------
+    follow the steps in https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository
+    they should be the following:
+        sudo apt remove docker docker-engine docker.io
+        sudo apt update
+        sudo apt install apt-transport-https ca-certificates curl software-properties-common
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+        sudo apt-key fingerprint 0EBFCD88
+        sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+        sudo apt update
+        sudo apt-get install docker-ce
+        sudo usermod -aG docker $USER
+    log out and log back in
+
+ln -sf /path/to/scripts/dockerrun /home/gautam/bin/dockerrun
+
+install cssh:
+-------------
+    sudo apt install cssh
+        OR if that fails:
+            cd play
+            git clone git@github-PERSONAL:duncs/clusterssh.git
+            cd clusterssh
+            perl Build.PL
+                should say dependencies are missing
+            sudo perl Build installdeps
+                might say something to the effect of "not installing unless force is used"
+            sudo cpan
+                force install Tk
+                ^D
+            sudo perl Build installdeps
+                should now say "All prerequisites satisfied"
+            perl Build.PL
+            ./Build
+            ./Build test
+            sudo ./Build install
+
+    create links to the clusters & config files:
+        ln -s ~/work/rnd/cssh/clusters ~/.clusterssh/clusters
+        ln -s ~/work/rnd/cssh/config ~/.clusterssh/config
+
+configure cpan:
+---------------
+    cpan
+        Choose the default 'yes' for "Would you like to configure as much as possible automatically?"
+        Choose the default 'local::lib' for "What approach do you want?"
+        (log out and log back in)
+    cpan install Log::Log4perl
+
+to create a new SSH key:
+------------------------
+    ssh-keygen -b 4096
+        use path /home/gautam/.ssh/id_rsa_work
+    ssh-keygen -l -f /home/gautam/.ssh/id_rsa_work.pub
+    check that it has 4096 in the beginning
+    cat /home/gautam/.ssh/id_rsa_work.pub
+        add that in GitHub under Settings -> SSH and GPG keys as "Work Desktop"
+    check using ssh -T git@github-WORK
