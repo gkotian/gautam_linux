@@ -159,7 +159,8 @@ for_window [class="Nautilus" instance="file_progress"] floating enable
 
 # Automatically launch certain applications at startup
 exec /home/gautam/play/gautam_linux/scripts/g_startup.sh
-exec chrome
+exec firefox
+exec slack
 exec thunderbird
 exec volumeicon
 
