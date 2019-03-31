@@ -228,6 +228,10 @@ echo -n "    c (calendar)... "
 sudo -u ${THE_USER} ln -s $GL_DIR/scripts/calendar.sh /home/$THE_USER/bin/c
 echo "Done!"
 
+echo -n "    umlauts... "
+sudo -u ${THE_USER} ln -s $GL_DIR/scripts/umlauts.sh /home/$THE_USER/bin/umlauts
+echo "Done!"
+
 echo -n "    .gdbinit... "
 rm -f /home/$THE_USER/.gdbinit
 sudo -u ${THE_USER} ln -s $GL_DIR/misc/gdbinit /home/$THE_USER/.gdbinit

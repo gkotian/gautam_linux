@@ -47,7 +47,6 @@ alias SGF='source $GL_DIR/misc/g_functions'
 alias SGV='source $GL_DIR/misc/g_variables'
 alias rmouse='xmodmap -e "pointer = 1 2 3"'
 alias lmouse='xmodmap -e "pointer = 3 2 1"'
-alias umlauts='echo "ä    ö    ü    ß    €    ₹"'
 alias kbus='setxkbmap us'
 
 alias c1='cat /tmp/1'
