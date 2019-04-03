@@ -21,7 +21,6 @@ Plugin 'JesseKPhillips/d.vim'
 Plugin 'junegunn/fzf.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'rking/ag.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 
