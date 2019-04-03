@@ -7,7 +7,7 @@ GL_DIR="$PLAY_DIR/gautam_linux"
 GITHUB_USERNAME="gkotian"
 
 PACKAGES_LIST=(exuberant-ctags git gitk git-gui git-man gthumb i3 kdiff3
-    keepassx meld pdftk pyrenamer python-pip ruby-full silversearcher-ag
+    meld pdftk pyrenamer python-pip ruby-full silversearcher-ag
     ssh-askpass suckless-tools vim volumeicon-alsa vlc xchat zsh)
 
 PYTHON_PACKAGES_LIST=(pyenchant)
@@ -407,11 +407,6 @@ echo "Run 'tar -C /usr/local -xzf /path/to/downloaded/tar.gz'"
 echo "Run '/usr/local/go/bin/go get -u github.com/justwatchcom/gopass'"
 
 echo "Add gpg signing for commits"
-
-echo "Check if the keepassx version is ok via `apt-cache policy keepassx`"
-echo "If it is <2.x.x, then remove it via `sudo apt-get remove --purge keepassx`"
-echo "go to `https://www.keepassx.org/downloads`, download source and build it"
-echo "using `cmake -DCMAKE_INSTALL_PREFIX=/usr/local; sudo make install`"
 
 echo "You're all set. Congratulations!!"
 
