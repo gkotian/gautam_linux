@@ -313,6 +313,11 @@ echo "    meld /usr/bin/gitk.orig /usr/bin/gitk"
 echo "in the other terminal/tab, and/or by launching gitk in any of the existing repos)"
 echo ""
 
+echo "docker setup"
+echo "------------"
+echo "Follow instructions in: https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository"
+waitForConfirmation
+
 echo "gopass setup"
 echo "------------"
 echo "In the other terminal/tab run the following commands:"
@@ -321,6 +326,9 @@ echo "    mkdir -p ${HOME}/.config/gopass"
 echo "    ln -srf ${PLAY_DIR}/pass/config.yml ${HOME}/.config/gopass/config.yml"
 echo "    ln -srf ${PLAY_DIR}/pass/store ${HOME}/.password-store"
 echo "    docker build -t gopass github.com/gopasspw/gopass#master"
+echo "    run 'gopass' to see if the credentials tree is shown"
+echo "    import the GPG key from another trusted machine"
+echo "    run 'gopass firefox' to see if the credentials can be correctly decrypted"
 waitForConfirmation
 
 echo "fzf setup"
@@ -378,6 +386,7 @@ echo "    log in to firefox so that things get synced"
 echo "    don't save logins"
 echo "    set download location to /tmp"
 echo "    ask where to download every time"
+echo "    disable third-party tracking"
 waitForConfirmation
 
 echo "default applications setup"
@@ -390,21 +399,11 @@ echo "        Video  : VLC media player"
 echo "        Photos : gThumb"
 waitForConfirmation
 
-echo "dropbox setup"
-echo "-------------"
-echo "    Install using the ubuntu-software-center"
-waitForConfirmation
-
 echo "Disabling icons on Desktop (or else launching nautilus in i3 will open an
 additional window)"
 sudo -u ${THE_USER} gsettings set org.gnome.desktop.background show-desktop-icons false
 echo "Done!"
 echo ""
-
-echo "Installing gopass"
-echo "Go to https://golang.org/dl/ and download the tar.gz file for Linux"
-echo "Run 'tar -C /usr/local -xzf /path/to/downloaded/tar.gz'"
-echo "Run '/usr/local/go/bin/go get -u github.com/justwatchcom/gopass'"
 
 echo "Add gpg signing for commits"
 
