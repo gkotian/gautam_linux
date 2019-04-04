@@ -9,8 +9,7 @@ export LC_ALL=en_US.utf8
 # (place the variables file first so that variables declared in it can be used in other files)
 FILES_TO_SOURCE=($GL_DIR/misc/g_variables
                  $GL_DIR/misc/g_aliases
-                 $GL_DIR/misc/g_functions
-                 $WORK_DIR/rnd/g_sociomantic)
+                 $GL_DIR/misc/g_functions)
 
 for FILE in ${FILES_TO_SOURCE[@]}
 do
@@ -29,8 +28,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to the oh-my-zsh installation.
 export ZSH=$PLAY_DIR/oh-my-zsh
-
-export GOPATH=$HOME/go
 
 # Characters that are to be considered as being part of a word
 WORDCHARS='*?-[]~=&;!#$%^(){}<>'
