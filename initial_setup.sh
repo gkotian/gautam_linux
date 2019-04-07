@@ -407,6 +407,8 @@ echo ""
 
 echo "Add gpg signing for commits"
 
+echo "Set the variables 'MACHINE_TYPE' & 'IS_LAPTOP' in '${GL_DIR}/scripts/g_startup.sh' as appropriate"
+
 echo "You're all set. Congratulations!!"
 
 END_TIMESTAMP=$(date +%s)
