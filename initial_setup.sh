@@ -221,7 +221,7 @@ sudo -u ${THE_USER} ln -s $GL_DIR/i3/config /home/$THE_USER/.i3/config
 echo "Done!"
 
 echo -n "    calc (calculator)... "
-sudo -u ${THE_USER} ln -s $GL_DIR/scripts/calc.sh /home/$THE_USER/bin/calc
+sudo -u ${THE_USER} ln -s $GL_DIR/scripts/calculator.sh /home/$THE_USER/bin/calc
 echo "Done!"
 
 echo -n "    c (calendar)... "
