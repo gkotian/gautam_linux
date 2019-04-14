@@ -1,3 +1,13 @@
+Adding a new entry in gopass:
+-----------------------------
+(because the "regular" methods don't work in my setup)
+    $> gopass insert Category/EntryName
+    (enter some dummy password, I simply use `a` as the password in this step)
+    $> gopass edit Category/EntryName
+    (now change the entry as necessary, then save and quit)
+
+---------------------------------------------------------------------------------------------------
+
 Additional softwares after a fresh Linux installation:
 
     super-boot-manager (http://www.sourceslist.eu/projects/super-boot-manager)
