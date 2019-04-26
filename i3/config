@@ -127,7 +127,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Lock screen
-bindsym $mod+Control+l exec slock
+bindsym $mod+Control+l exec i3lock -c 000000
 
 # Get rid of the title-bar
 new_window 1pixel
@@ -151,11 +151,14 @@ assign [class="^google-chrome$"] →  8
 assign [class="^Google-chrome$"] →  8
 assign [class="^Firefox$"]       →  8
 assign [class="^Signal$"]        → 10
+
+# AirVPN is title-based, why?
 assign [title="^AirVPN"]         → 10
 
 # Certain windows should always be floating
 for_window [class="Gcalctool"] floating enable
 for_window [class="Gnome-calculator"] floating enable
+for_window [class="XCalc"] floating enable
 for_window [class="Gnome-screenshot"] floating enable
 for_window [class="Nautilus" instance="file_progress"] floating enable
 

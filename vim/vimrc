@@ -141,8 +141,8 @@ nmap <leader>ul YpVr-
 nmap <leader>v :e $MYVIMRC<CR>
 
 " Map '\ws' to insert 'Stdout.formatln("'
-nnoremap <Leader>ws iStdout.formatln("
-inoremap <Leader>ws Stdout.formatln("
+nnoremap <Leader>ws istderr.writefln!"%s"(
+inoremap <Leader>ws stderr.writefln!"%s"(
 
 " Use my colorscheme
 colorscheme googie_colors
