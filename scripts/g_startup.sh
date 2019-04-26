@@ -19,6 +19,12 @@ if [ -f $STARTUP_FILE ]; then
     $STARTUP_FILE &
 fi
 
+# The following are common to both WORK & PLAY machines
+
+# Launch the signal messenger
+# (assumes that the signal docker image has already been built)
+docker run --rm -d -v /tmp/.X11-unix/:/tmp/.X11-unix -v ${HOME}/play/docker-signal/state:/root -e DISPLAY -e XAUTHORITY -v $XAUTHORITY:$XAUTHORITY --net=host signal
+
 # Log latest boot time info.
 FILE=$GL_DIR/scripts/boot_times_tracker.sh
 if [ -f $FILE ]; then

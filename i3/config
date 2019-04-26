@@ -150,6 +150,7 @@ assign [class="^Chrome$"]        →  8
 assign [class="^google-chrome$"] →  8
 assign [class="^Google-chrome$"] →  8
 assign [class="^Firefox$"]       →  8
+assign [class="^Signal$"]        → 10
 assign [title="^AirVPN"]         → 10
 
 # Certain windows should always be floating

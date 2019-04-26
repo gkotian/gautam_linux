@@ -389,6 +389,13 @@ echo "    ask where to download every time"
 echo "    disable third-party tracking"
 waitForConfirmation
 
+echo "signal messenger setup"
+echo "----------------------"
+echo "    git clone git@github-PLAY:joshbressers/docker-signal.git ${PLAY_DIR}/docker-signal"
+echo "    docker build -t signal ${PLAY_DIR}/docker-signal/signal"
+echo "    mkdir ${PLAY_DIR}/docker-signal/state"
+waitForConfirmation
+
 echo "default applications setup"
 echo "--------------------------"
 echo "    System Settings -> Details -> Default Applications"
