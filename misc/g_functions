@@ -159,6 +159,22 @@ del_line()
     echo $LINE_TO_DELETE
 }
 
+# Open vim at a specific line, and place the line at the top of the editor
+# Usage:
+#     $> vl <file-name> [<line-number>]
+vl()
+{
+    if [ $# -eq 0 ]; then
+        echo "Usage: vl <file-name> [<line-number>]"
+        return
+    fi
+
+    FILE="$1"
+    LINE_NUM="$2"
+
+    vim +${LINE_NUM} ${FILE} -c 'normal zt'
+}
+
 # Notes:
 # The current value of IFS (Internal Field Separator) may be viewed using the following pipeline:
 #
