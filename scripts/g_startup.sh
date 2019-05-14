@@ -3,8 +3,8 @@
 # Save a log file to analyse if something goes wrong
 exec 1>/var/tmp/g_startup.log 2>&1
 
-MACHINE_TYPE="WORK"
-IS_LAPTOP="NO"
+MACHINE_TYPE="PLAY"
+IS_LAPTOP="YES"
 
 PLAY_DIR=/home/gautam/play
 GL_DIR=$PLAY_DIR/gautam_linux
