@@ -228,6 +228,10 @@ echo -n "    c (calendar)... "
 sudo -u ${THE_USER} ln -s $GL_DIR/scripts/calendar.sh /home/$THE_USER/bin/c
 echo "Done!"
 
+echo -n "    img (image viewer)... "
+sudo -u ${THE_USER} ln -s $GL_DIR/scripts/image_viewer.sh /home/$THE_USER/bin/img
+echo "Done!"
+
 echo -n "    umlauts... "
 sudo -u ${THE_USER} ln -s $GL_DIR/scripts/umlauts.sh /home/$THE_USER/bin/umlauts
 echo "Done!"
