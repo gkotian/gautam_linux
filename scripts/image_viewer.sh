@@ -1,6 +1,6 @@
 #!/bin/bash
 
-POTENTIAL_IMAGE_VIEWERS=(eog ristretto feh gthumb)
+POTENTIAL_IMAGE_VIEWERS=(eog feh gthumb ristretto shotwell)
 
 for C in ${POTENTIAL_IMAGE_VIEWERS[@]}
 do
