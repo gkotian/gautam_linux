@@ -4,8 +4,8 @@
 
 # Rebase interactively
 function reb() {
-    AUTHOR_EMAIL=$($_omz_git_git_cmd config user.email)
-    $_omz_git_git_cmd rebase --gpg-sign=${AUTHOR_EMAIL} -i HEAD~$1
+    AUTHOR_EMAIL=$(git config user.email)
+    git rebase --gpg-sign=${AUTHOR_EMAIL} -i HEAD~$1
 }
 
 # Git cherry-pick one or more commits
