@@ -98,11 +98,18 @@ nnoremap <leader>8 :exe 'Ag!' expand('<cword>')<CR>
 nnoremap <silent> <Leader>d :w !diff % -<CR>
 
 " Map '\fh' to automatically insert a function header comment.
-nmap <leader>fh i    /<ESC>75a*<ESC>o<CR>  TODO: Does what?<CR><CR>Params:<ESC>>>>>o    TODO<CR><CR><BS><BS><BS><BS>Returns:<CR>    TODO<CR><CR><ESC>i    <ESC>75a*<ESC>a/<ESC>
+"nmap <leader>fh i    /<ESC>75a*<ESC>o<CR>  TODO: Does what?<CR><CR>Params:<ESC>>>>>o    TODO<CR><CR><BS><BS><BS><BS>Returns:<CR>    TODO<CR><CR><ESC>i    <ESC>75a*<ESC>a/<ESC>
+nmap <leader>fh <DOWN>0f(y%O<ESC>i    /<ESC>75a*<ESC>o<CR>  TODO: Does what?<CR><CR>Params:<ESC>>>>>o    <ESC>p%o<CR><ESC>iReturns:<ESC>>>>>o    TODO<CR><CR><ESC>i    <ESC>75a*<ESC>a/<CR><ESC>
+
+" Map '\fj' to format JSON
+nmap <leader>fj :%!python -m json.tool<CR>
+
+" Map '\fx' to format XML
+nmap <leader>fx :%!xmllint --format -<CR>
 
 " Mappings for commonly used import statements
-nmap <leader>ios oimport ocean.io.Stdout;<ESC>
-nmap <leader>iot oimport ocean.transition;<ESC>
+nnoremap <leader>is oimport std.stdio: writefln;<ESC>
+inoremap <leader>is import std.stdio: writefln;<CR><ESC>
 nmap <leader>iol <ESC>gg/^module<CR>wyt;Goimport ocean.util.log.Logger;<CR>static private Logger log;<CR>static this ()<CR>{<CR>log = Log.lookup("<ESC>pa");<CR>}<ESC>Q
 
 " Map '\l' to split a line and a keep a four-space indent over the preceding
@@ -120,6 +127,10 @@ nmap <leader>p :set invpaste paste?<CR>
 
 " Map '\r' to refresh all open buffers
 nmap <leader>r :windo e!<CR>
+
+" Map '\s' to save all open buffers
+nnoremap <silent> <Leader>s :wall<CR>
+imap <Leader>s <C-o>:wall<CR>
 
 " Map '\sb' to show a bar at line length & '\hb' to remove it
 " (sb => show bar, hb => hide bar)
@@ -140,9 +151,12 @@ nmap <leader>ul YpVr-
 " Map '\v' to open the vimrc
 nmap <leader>v :e $MYVIMRC<CR>
 
-" Map '\ws' to insert 'Stdout.formatln("'
-nnoremap <Leader>ws istderr.writefln!"%s"(
-inoremap <Leader>ws stderr.writefln!"%s"(
+" Map '\ws' to quickly insert debugging helper prints
+nnoremap <Leader>ws writefln!"%s"(
+inoremap <Leader>ws writefln!"%s"(
+
+nnoremap <Leader>pv yiwo<ESC>iwritefln!"<C-o>p = %s"(<C-o>p);<ESC>
+inoremap <Leader>pv <C-o>yiwo<ESC>iwritefln!"<C-o>p = %s"(<C-o>p);<ESC>
 
 " Use my colorscheme
 colorscheme googie_colors

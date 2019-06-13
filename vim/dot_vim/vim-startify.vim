@@ -25,8 +25,5 @@ let g:startify_skiplist = [ 'COMMIT_EDITMSG',
 \                           'HUB_EDITMSG',
 \                           $VIMRUNTIME .'/doc' ]
 
-" Shortcut to open the startify screen
-nnoremap <silent> <Leader>s :Startify<CR>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
