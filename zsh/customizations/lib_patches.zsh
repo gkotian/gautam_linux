@@ -16,6 +16,8 @@ function tounixtime () {
 }
 
 function fromunixtime () {
+    # To keep converting, use:
+    #     while 1; do echo -n "Enter timestamp to convert: "; read TS; fromunixtime ${TS}; done
     if [ $# -eq 0 ]; then
         date -u
     else
