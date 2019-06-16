@@ -1,15 +1,13 @@
-" Vim color file
-" Maintainer: Gautam "Googie" Kotian <gthm159@gmail.com>
-" Original creator: Bram Moolenaar <Bram@vim.org>
-" Last Change: 2007 Mar 22
+" Vim colour file
 
-" This color scheme contains colors used by Googie, built upon the default color scheme.
-" It doesn't define the normal highlighting, it uses whatever colors used to be.
+" This colour scheme is built upon the default colour scheme. It doesn't define
+" the normal highlighting, but uses whatever colors used to be.
 
-" For color codes, refer:
+" For color codes, refer to:
 "     http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
 
-" Set 'background' back to the default. The value can't always be estimated and is then guessed.
+" Set 'background' back to the default. The value can't always be estimated and
+" is then guessed.
 hi clear Normal
 set bg&
 
@@ -23,16 +21,14 @@ endif
 
 let colors_name = "googie_colors"
 
-" Uncomment any one section below depending on the terminal type (and comment the other two)
-" (determining what your terminal type is may involve some trial-and-error)
+" Uncomment any one section below depending on the terminal type, and comment
+" the other two (determining the terminal type may involve some trial-and-error)
 
-" I have commented out lines where I like the default coloring scheme as it is. If you want to
-" change the color of something, you may have to first look for the correct identifier and
-" uncomment that line.
+" Commented lines use the default colour scheme.
 
-"==================================================================================================
+"===============================================================================
 "     Section 1: cterm colors
-"==================================================================================================
+"===============================================================================
   " for syntax highlighting
   " -----------------------
     "hi Comment              ctermfg=DarkBlue
@@ -77,9 +73,9 @@ let colors_name = "googie_colors"
     "hi lCursor 
     "hi Match ,reverse       ctermfg=Blue        ctermbg=Yellow      cterm=bold,reverse
 
-"==================================================================================================
+"===============================================================================
 "     Section 1: gui colors
-"==================================================================================================
+"===============================================================================
   " for syntax highlighting
   " -----------------------
     " TODO
@@ -88,9 +84,9 @@ let colors_name = "googie_colors"
   " ---------------
     " TODO
 
-"==================================================================================================
+"===============================================================================
 "     Section 1: term colors
-"==================================================================================================
+"===============================================================================
   " for syntax highlighting
   " -----------------------
     " TODO
@@ -100,4 +96,3 @@ let colors_name = "googie_colors"
     " TODO
 
   " vim: sw=2
-
