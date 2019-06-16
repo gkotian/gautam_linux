@@ -59,7 +59,7 @@ let colors_name = "googie_colors"
     "hi StatusLineNC                                                 cterm=reverse
     "hi VertSplit                                                    cterm=reverse
     "hi Title                ctermfg=DarkMagenta
-    "hi Visual                                                       cterm=reverse
+     hi Visual               ctermfg=White       ctermbg=Black       cterm=reverse
     "hi VisualNOS ,underline                                         cterm=bold,underline
     "hi WarningMsg           ctermfg=DarkRed
     "hi WildMenu             ctermfg=Black       ctermbg=DarkYellow
