@@ -158,8 +158,8 @@ inoremap <Leader>ws writefln!"%s"(
 nnoremap <Leader>pv yiwo<ESC>iwritefln!"<C-o>p = %s"(<C-o>p);<ESC>
 inoremap <Leader>pv <C-o>yiwo<ESC>iwritefln!"<C-o>p = %s"(<C-o>p);<ESC>
 
-" Use my colorscheme
-colorscheme googie_colors
+" Set the colorscheme
+colorscheme gautam_colors
 
 " Augment existing editor commands.
 " The "!" (bang attribute) after the keyword 'command' tells vim to redefine

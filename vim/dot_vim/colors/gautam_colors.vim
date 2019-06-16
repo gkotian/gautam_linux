@@ -19,7 +19,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let colors_name = "googie_colors"
+let colors_name = "gautam_colors"
 
 " Uncomment any one section below depending on the terminal type, and comment
 " the other two (determining the terminal type may involve some trial-and-error)
