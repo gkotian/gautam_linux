@@ -6,9 +6,21 @@ GL_DIR="$PLAY_DIR/gautam_linux"
 
 GITHUB_USERNAME="gkotian"
 
-PACKAGES_LIST=(exuberant-ctags git gitk git-gui git-man gthumb i3 kdiff3
-    meld pdftk pyrenamer python-pip ruby-full silversearcher-ag
-    ssh-askpass suckless-tools vim volumeicon-alsa vlc xclip zsh)
+PACKAGES_LIST=(
+    git
+    gitk
+    git-man
+    i3
+    kdiff3
+    meld
+    silversearcher-ag
+    ssh-askpass
+    suckless-tools
+    vim
+    vlc
+    xclip
+    zsh
+)
 
 PYTHON_PACKAGES_LIST=(pyenchant)
 
