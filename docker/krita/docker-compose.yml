@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+    krita:
+        build:
+            context: .
+            args:
+                - USERNAME
+                - USERID
+        environment:
+            - DISPLAY
+            - LD_LIBRARY_PATH=/usr/local/lib/
+        volumes:
+            - /tmp/.X11-unix/:/tmp/.X11-unix
+            - /home/gautam/tmp_home/krita:/project
