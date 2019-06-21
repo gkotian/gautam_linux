@@ -108,7 +108,7 @@ nmap <leader>fj :%!python -m json.tool<CR>
 nmap <leader>fx :%!xmllint --format -<CR>
 
 " Mappings for commonly used import statements
-nnoremap <leader>is oimport std.stdio: writefln;<ESC>
+nnoremap <leader>is o<ESC>iimport std.stdio: writefln;<ESC>
 inoremap <leader>is import std.stdio: writefln;<CR><ESC>
 nmap <leader>iol <ESC>gg/^module<CR>wyt;Goimport ocean.util.log.Logger;<CR>static private Logger log;<CR>static this ()<CR>{<CR>log = Log.lookup("<ESC>pa");<CR>}<ESC>Q
 
@@ -152,7 +152,7 @@ nmap <leader>ul YpVr-
 nmap <leader>v :e $MYVIMRC<CR>
 
 " Map '\ws' to quickly insert debugging helper prints
-nnoremap <Leader>ws writefln!"%s"(
+nnoremap <Leader>ws o<ESC>iwritefln!"%s"(
 inoremap <Leader>ws writefln!"%s"(
 
 nnoremap <Leader>pv yiwo<ESC>iwritefln!"<C-o>p = %s"(<C-o>p);<ESC>
