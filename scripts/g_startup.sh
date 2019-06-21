@@ -7,15 +7,19 @@ MACHINE_TYPE="PLAY"
 IS_LAPTOP="YES"
 
 PLAY_DIR=/home/gautam/play
+WORK_DIR=/home/gautam/work
 GL_DIR=$PLAY_DIR/gautam_linux
 
 if [ $MACHINE_TYPE = "PLAY" ]; then
     STARTUP_FILE=$GL_DIR/scripts/g_startup_play.sh
+    echo "selecting play startup file '${STARTUP_FILE}'"
 else
-    STARTUP_FILE=/path/to/g_startup_work.sh
+    STARTUP_FILE=${WORK_DIR}/meta/work_startup.sh
+    echo "selecting work startup file '${STARTUP_FILE}'"
 fi
 
 if [ -f $STARTUP_FILE ]; then
+    echo "startup file exists"
     $STARTUP_FILE &
 fi
 
