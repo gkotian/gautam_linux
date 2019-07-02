@@ -244,6 +244,10 @@ echo -n "    img (image viewer)... "
 sudo -u ${THE_USER} ln -s $GL_DIR/scripts/image_viewer.sh /home/$THE_USER/bin/img
 echo "Done!"
 
+echo -n "    screenshot... "
+sudo -u ${THE_USER} ln -s $GL_DIR/scripts/screenshot.sh /home/$THE_USER/bin/screenshot
+echo "Done!"
+
 echo -n "    umlauts... "
 sudo -u ${THE_USER} ln -s $GL_DIR/scripts/umlauts.sh /home/$THE_USER/bin/umlauts
 echo "Done!"
