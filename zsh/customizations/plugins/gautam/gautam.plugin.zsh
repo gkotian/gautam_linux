@@ -54,6 +54,20 @@ function gtb() {
     alert "git test-branch done"
 }
 
+# de => docker exec
+function de() {
+    CONTAINER_NAME=${1}
+
+    if [ $# -eq 2 ]
+    then
+        CMD=${2}
+    else
+        CMD="bash"
+    fi
+
+    docker exec -it ${CONTAINER_NAME} ${CMD}
+}
+
 #
 # Aliases
 # (sorted alphabetically)
