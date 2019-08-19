@@ -190,6 +190,11 @@ rm -f /home/$THE_USER/.ssh/config
 sudo -u ${THE_USER} ln -s $GL_DIR/misc/ssh_config /home/$THE_USER/.ssh/config
 echo "Done!"
 
+echo -n "    GPG agent config file... "
+sudo -u ${THE_USER} mkdir -p /home/$THE_USER/.gnupg
+sudo -u ${THE_USER} ln -sf $GL_DIR/misc/gpg_agent_config /home/$THE_USER/.gnupg/gpg-agent.conf
+echo "Done!"
+
 echo -n "    zsh theme... "
 sudo -u ${THE_USER} ln -s $GL_DIR/zsh/customizations/themes/gautam.zsh-theme $PLAY_DIR/oh-my-zsh/themes/gautam.zsh-theme
 echo "Done!"
