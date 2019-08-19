@@ -186,42 +186,37 @@ waitForConfirmation
 
 echo "Creating symbolic links for:"
 echo -n "    SSH config file... "
-rm -f /home/$THE_USER/.ssh/config
-sudo -u ${THE_USER} ln -s $GL_DIR/misc/ssh_config /home/$THE_USER/.ssh/config
+sudo -u ${THE_USER} mkdir -p /home/$THE_USER/.ssh
+sudo -u ${THE_USER} ln -srf $GL_DIR/misc/ssh_config /home/$THE_USER/.ssh/config
 echo "Done!"
 
 echo -n "    GPG agent config file... "
 sudo -u ${THE_USER} mkdir -p /home/$THE_USER/.gnupg
-sudo -u ${THE_USER} ln -sf $GL_DIR/misc/gpg_agent_config /home/$THE_USER/.gnupg/gpg-agent.conf
+sudo -u ${THE_USER} ln -srf $GL_DIR/misc/gpg_agent_config /home/$THE_USER/.gnupg/gpg-agent.conf
 echo "Done!"
 
 echo -n "    zsh theme... "
-sudo -u ${THE_USER} ln -s $GL_DIR/zsh/customizations/themes/gautam.zsh-theme $PLAY_DIR/oh-my-zsh/themes/gautam.zsh-theme
+sudo -u ${THE_USER} ln -srf $GL_DIR/zsh/customizations/themes/gautam.zsh-theme $PLAY_DIR/oh-my-zsh/themes/gautam.zsh-theme
 echo "Done!"
 
 echo -n "    .zshrc... "
-rm -f /home/$THE_USER/.zshrc
-sudo -u ${THE_USER} ln -s $GL_DIR/zsh/zshrc /home/$THE_USER/.zshrc
+sudo -u ${THE_USER} ln -srf $GL_DIR/zsh/zshrc /home/$THE_USER/.zshrc
 echo "Done!"
 
 echo -n "    .vim... "
-rm -rf /home/$THE_USER/.vim
-sudo -u ${THE_USER} ln -s $GL_DIR/vim/dot_vim /home/$THE_USER/.vim
+sudo -u ${THE_USER} ln -srf $GL_DIR/vim/dot_vim /home/$THE_USER/.vim
 echo "Done!"
 
 echo -n "    .vimrc... "
-rm -f /home/$THE_USER/.vimrc
-sudo -u ${THE_USER} ln -s $GL_DIR/vim/vimrc /home/$THE_USER/.vimrc
+sudo -u ${THE_USER} ln -srf $GL_DIR/vim/vimrc /home/$THE_USER/.vimrc
 echo "Done!"
 
 echo -n "    .gitconfig... "
-rm -f /home/$THE_USER/.gitconfig
-sudo -u ${THE_USER} ln -s $GL_DIR/git/gitconfig_global /home/$THE_USER/.gitconfig
+sudo -u ${THE_USER} ln -srf $GL_DIR/git/gitconfig_global /home/$THE_USER/.gitconfig
 echo "Done!"
 
 echo -n "    .gitignore_global... "
-rm -f /home/$THE_USER/.gitignore_global
-sudo -u ${THE_USER} ln -s $GL_DIR/git/gitignore_global /home/$THE_USER/.gitignore_global
+sudo -u ${THE_USER} ln -srf $GL_DIR/git/gitignore_global /home/$THE_USER/.gitignore_global
 echo "Done!"
 
 # Open the NetworkManager gui, or nm-connection-editor, choose the connection of
@@ -230,36 +225,37 @@ echo "Done!"
 # if there is a way to do this via nmcli we could automate this
 
 echo -n "    .i3/config... "
-if [ ! -d "/home/$THE_USER/.i3" ]; then
-    sudo -u ${THE_USER} mkdir /home/$THE_USER/.i3
-fi
-rm -f /home/$THE_USER/.i3/config
-sudo -u ${THE_USER} ln -s $GL_DIR/i3/config /home/$THE_USER/.i3/config
+sudo -u ${THE_USER} mkdir -p /home/$THE_USER/.i3
+sudo -u ${THE_USER} ln -srf $GL_DIR/i3/config /home/$THE_USER/.i3/config
 echo "Done!"
 
 echo -n "    calc (calculator)... "
-sudo -u ${THE_USER} ln -s $GL_DIR/scripts/calculator.sh /home/$THE_USER/bin/calc
+sudo -u ${THE_USER} mkdir -p /home/$THE_USER/bin
+sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/calculator.sh /home/$THE_USER/bin/calc
 echo "Done!"
 
 echo -n "    c (calendar)... "
-sudo -u ${THE_USER} ln -s $GL_DIR/scripts/calendar.sh /home/$THE_USER/bin/c
+sudo -u ${THE_USER} mkdir -p /home/$THE_USER/bin
+sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/calendar.sh /home/$THE_USER/bin/c
 echo "Done!"
 
 echo -n "    img (image viewer)... "
-sudo -u ${THE_USER} ln -s $GL_DIR/scripts/image_viewer.sh /home/$THE_USER/bin/img
+sudo -u ${THE_USER} mkdir -p /home/$THE_USER/bin
+sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/image_viewer.sh /home/$THE_USER/bin/img
 echo "Done!"
 
 echo -n "    screenshot... "
-sudo -u ${THE_USER} ln -s $GL_DIR/scripts/screenshot.sh /home/$THE_USER/bin/screenshot
+sudo -u ${THE_USER} mkdir -p /home/$THE_USER/bin
+sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/screenshot.sh /home/$THE_USER/bin/screenshot
 echo "Done!"
 
 echo -n "    umlauts... "
-sudo -u ${THE_USER} ln -s $GL_DIR/scripts/umlauts.sh /home/$THE_USER/bin/umlauts
+sudo -u ${THE_USER} mkdir -p /home/$THE_USER/bin
+sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/umlauts.sh /home/$THE_USER/bin/umlauts
 echo "Done!"
 
 echo -n "    .gdbinit... "
-rm -f /home/$THE_USER/.gdbinit
-sudo -u ${THE_USER} ln -s $GL_DIR/misc/gdbinit /home/$THE_USER/.gdbinit
+sudo -u ${THE_USER} ln -srf $GL_DIR/misc/gdbinit /home/$THE_USER/.gdbinit
 echo "Done!"
 
 echo -n "    /usr/bin/dmenu_path... "
@@ -268,8 +264,7 @@ sudo ln -s $GL_DIR/scripts/dmenu_path.sh /usr/bin/dmenu_path
 echo "Done!"
 
 echo -n "    PyPI config file... "
-rm -f /home/$THE_USER/.pypirc
-sudo -u ${THE_USER} ln -s $GL_DIR/misc/pypi_config /home/$THE_USER/.pypirc
+sudo -u ${THE_USER} ln -srf $GL_DIR/misc/pypi_config /home/$THE_USER/.pypirc
 echo "Done!"
 
 # Create the sock directory in ~/.ssh to allow ssh to re-use existing
