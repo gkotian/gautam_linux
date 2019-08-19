@@ -262,12 +262,6 @@ rm -f /home/$THE_USER/.gdbinit
 sudo -u ${THE_USER} ln -s $GL_DIR/misc/gdbinit /home/$THE_USER/.gdbinit
 echo "Done!"
 
-# Other lists can be created as needed by linking to the same dmenu_list script
-echo -n "    /usr/local/bin/todo... "
-rm -f /usr/local/bin/todo
-ln -s $GL_DIR/scripts/dmenu_list.sh /usr/local/bin/todo
-echo "Done!"
-
 echo -n "    /usr/bin/dmenu_path... "
 rm -f /usr/bin/dmenu_path
 sudo ln -s $GL_DIR/scripts/dmenu_path.sh /usr/bin/dmenu_path
