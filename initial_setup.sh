@@ -161,18 +161,21 @@ echo "You should get the following output:"
 echo "    Hi $GITHUB_USERNAME! You've successfully authenticated, but GitHub does not provide shell access."
 waitForConfirmation
 
-echo -n "Creating directory: '$PLAY_DIR'... "
-sudo -u ${THE_USER} mkdir $PLAY_DIR
-echo "Done!"
-echo ""
+DIRECTORIES_TO_PRECREATE=(
+    ${PLAY_DIR}
+    /home/${THE_USER}/.gnupg
+    /home/${THE_USER}/.i3
+    /home/${THE_USER}/.ssh
+    /home/${THE_USER}/bin
+    /home/${THE_USER}/tmp_home
+)
 
-echo -n "Creating directory: '/home/$THE_USER/bin'... "
-sudo -u ${THE_USER} mkdir /home/$THE_USER/bin
-echo "Done!"
-echo ""
-
-echo -n "Creating directory: '/home/$THE_USER/tmp_home'... "
-sudo -u ${THE_USER} mkdir /home/$THE_USER/tmp_home
+echo "Creating directories:"
+for DIR in ${DIRECTORIES_TO_PRECREATE[@]}
+do
+    echo "    ${DIR}"
+    sudo -u ${THE_USER} mkdir -p ${DIR}
+done
 echo "Done!"
 echo ""
 
@@ -186,12 +189,10 @@ waitForConfirmation
 
 echo "Creating symbolic links for:"
 echo -n "    SSH config file... "
-sudo -u ${THE_USER} mkdir -p /home/$THE_USER/.ssh
 sudo -u ${THE_USER} ln -srf $GL_DIR/misc/ssh_config /home/$THE_USER/.ssh/config
 echo "Done!"
 
 echo -n "    GPG agent config file... "
-sudo -u ${THE_USER} mkdir -p /home/$THE_USER/.gnupg
 sudo -u ${THE_USER} ln -srf $GL_DIR/misc/gpg_agent_config /home/$THE_USER/.gnupg/gpg-agent.conf
 echo "Done!"
 
@@ -225,32 +226,26 @@ echo "Done!"
 # if there is a way to do this via nmcli we could automate this
 
 echo -n "    .i3/config... "
-sudo -u ${THE_USER} mkdir -p /home/$THE_USER/.i3
 sudo -u ${THE_USER} ln -srf $GL_DIR/i3/config /home/$THE_USER/.i3/config
 echo "Done!"
 
 echo -n "    calc (calculator)... "
-sudo -u ${THE_USER} mkdir -p /home/$THE_USER/bin
 sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/calculator.sh /home/$THE_USER/bin/calc
 echo "Done!"
 
 echo -n "    c (calendar)... "
-sudo -u ${THE_USER} mkdir -p /home/$THE_USER/bin
 sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/calendar.sh /home/$THE_USER/bin/c
 echo "Done!"
 
 echo -n "    img (image viewer)... "
-sudo -u ${THE_USER} mkdir -p /home/$THE_USER/bin
 sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/image_viewer.sh /home/$THE_USER/bin/img
 echo "Done!"
 
 echo -n "    screenshot... "
-sudo -u ${THE_USER} mkdir -p /home/$THE_USER/bin
 sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/screenshot.sh /home/$THE_USER/bin/screenshot
 echo "Done!"
 
 echo -n "    umlauts... "
-sudo -u ${THE_USER} mkdir -p /home/$THE_USER/bin
 sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/umlauts.sh /home/$THE_USER/bin/umlauts
 echo "Done!"
 
@@ -266,10 +261,6 @@ echo "Done!"
 echo -n "    PyPI config file... "
 sudo -u ${THE_USER} ln -srf $GL_DIR/misc/pypi_config /home/$THE_USER/.pypirc
 echo "Done!"
-
-# Create the sock directory in ~/.ssh to allow ssh to re-use existing
-# connections. This makes connecting super fast after the first time.
-sudo -u ${THE_USER} mkdir /home/$THE_USER/.ssh/sock
 
 echo ""
 
@@ -407,7 +398,7 @@ echo "signal messenger setup"
 echo "----------------------"
 echo "    git clone git@github-PLAY:joshbressers/docker-signal.git ${PLAY_DIR}/docker-signal"
 echo "    docker build -t signal ${PLAY_DIR}/docker-signal/signal"
-echo "    mkdir ${PLAY_DIR}/docker-signal/state"
+echo "    mkdir -p ${PLAY_DIR}/docker-signal/state"
 waitForConfirmation
 
 echo "default applications setup"
