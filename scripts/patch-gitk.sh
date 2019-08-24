@@ -12,10 +12,6 @@ fi
 # Save a copy of the original
 cp /usr/bin/gitk /usr/bin/gitk.orig
 
-# Make selecting file names in the gitk diff view easier, by providing visual
-# highlighting
-sed -i 's/^\(.*"\$pad \$fname \$pad"\) filesep$/\1/g' /usr/bin/gitk
-
 # Use 5 instead of <Shift-F5> to reload commits
 sed -i 's/bindmodfunctionkey Shift 5 reloadcommits$/bindkey 5 reloadcommits/g' /usr/bin/gitk
 
