@@ -68,6 +68,13 @@ function de() {
     docker exec -it ${CONTAINER_NAME} ${CMD}
 }
 
+# dcipaddr => docker container IP address
+function dcipaddr() {
+    CONTAINER_NAME=${1}
+
+    docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ${CONTAINER_NAME}
+}
+
 #
 # Aliases
 # (sorted alphabetically)
