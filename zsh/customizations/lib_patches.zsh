@@ -5,7 +5,7 @@ alias -g .........='../../../../../../../..'
 alias -g ..........='../../../../../../../../..'
 
 # Alias to go to the root directory of the current git repository
-alias cdr='cd $(git rev-parse --show-toplevel || echo ".")'
+alias cdroot='cd $(git rev-parse --show-toplevel || echo ".")'
 
 function tounixtime () {
     if [ $# -eq 0 ]; then
