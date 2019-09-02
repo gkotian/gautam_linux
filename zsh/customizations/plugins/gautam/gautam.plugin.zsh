@@ -46,6 +46,40 @@ function custom-git-cherry-pick() {
     done
 }
 
+# TODO: figure out why 'gd' still points to the 'git difftool --no-prompt' alias
+# and not this function.
+function gd () {
+    if [ $# -lt 2 ]
+    then
+        echo "Too few arguments"
+        return 1
+    elif [ $# -gt 3 ]
+    then
+        echo "Too many arguments"
+        return 1
+    fi
+
+    REF1=${1}
+    REF2=${2}
+
+    if [ $# -eq 3 ]
+    then
+        if [ ${3} != "copy" ]
+        then
+            echo "If present, the third argument can only be 'copy'"
+        else
+            COPY=true
+        fi
+    fi
+
+    git difftool --no-prompt ${REF1} ${REF2}
+
+    if [ ${COPY} = true ]
+    then
+        git diff ${REF1} ${REF2} | github-diff
+    fi
+}
+
 # gtb => git test branch
 # This is not just an alias as I sometimes need to pass arguments to
 # 'git-test-branch'
