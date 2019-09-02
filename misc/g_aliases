@@ -66,7 +66,6 @@ alias fd='finddef'
 alias meld='meld 2>/dev/null' # just preventing 'meld' from throwing errors
 alias lock='gnome-screensaver-command --lock'
 alias kd='kdiff3 > /dev/null 2>&1'
-alias gd='git difftool --no-prompt'
 alias gk='gitk --all&'
 alias gt='git tree'
 alias gcum='git checkout upstream/master'
