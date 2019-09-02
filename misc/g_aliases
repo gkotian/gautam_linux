@@ -33,7 +33,6 @@ alias ol='one_line'
 alias zless=$PAGER
 alias p='python'
 alias x='exit'
-alias rm='rm -i' # Prompt before every removal
 alias mv='mv -i' # Prompt before overwriting
 alias ls='ls --classify'
 alias grep='grep -n --color=auto'
