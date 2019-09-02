@@ -1,0 +1,15 @@
+version: "3.5"
+
+services:
+    signal:
+        image: signal
+        build:
+            context: .
+        container_name: signal
+        environment:
+            - DISPLAY
+            - XAUTHORITY
+        volumes:
+            - ${HOME}/.signal-state:/root
+            - /tmp/.X11-unix/:/tmp/.X11-unix
+            - ${XAUTHORITY}:${XAUTHORITY}

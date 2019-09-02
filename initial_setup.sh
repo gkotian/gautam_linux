@@ -396,9 +396,8 @@ waitForConfirmation
 
 echo "signal messenger setup"
 echo "----------------------"
-echo "    git clone git@github-PLAY:joshbressers/docker-signal.git ${PLAY_DIR}/docker-signal"
-echo "    docker build -t signal ${PLAY_DIR}/docker-signal/signal"
-echo "    mkdir -p ${PLAY_DIR}/docker-signal/state"
+echo "    mkdir ${HOME}/.signal-state"
+echo "    docker-compose -f ${GL_DIR}/docker/signal/docker-compose.yml build"
 waitForConfirmation
 
 echo "default applications setup"

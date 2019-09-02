@@ -27,7 +27,7 @@ fi
 
 # Launch the signal messenger
 # (assumes that the signal docker image has already been built)
-docker run --rm -d -v /tmp/.X11-unix/:/tmp/.X11-unix -v ${HOME}/play/docker-signal/state:/root -e DISPLAY -e XAUTHORITY -v $XAUTHORITY:$XAUTHORITY --net=host signal
+docker-compose -f ${GL_DIR}/docker/signal/docker-compose.yml up -d
 
 # Log latest boot time info.
 FILE=$GL_DIR/scripts/boot_times_tracker.sh
