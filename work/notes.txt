@@ -75,3 +75,170 @@ saving cores from inside docker container:
 formatting an XML file:
 -----------------------
 xmllint --format --recover ${FILE} > ${NEW_FILE}
+
+================================================================================
+
+Cleaning up the saved logs:
+---------------------------
+
+1. Get rid of the systemd added prefix
+   (non-app logs, e.g. systemd logs will be replaced with blank lines)
+```
+perl -i.bak -lane 'print /^.*appname\[.*\]: (.*)$/' 01-SystemdRaw.txt
+mv 01-SystemdRaw.txt 02-WithoutSystemdPrefix.txt
+mv 01-SystemdRaw.txt.bak 01-SystemdRaw.txt
+```
+
+2. Get rid of debugging logs
+```
+perl -i.bak -lane 'print if /^2019/' 02-WithoutSystemdPrefix.txt
+mv 02-WithoutSystemdPrefix.txt 03-OnlyPublishDeliver.txt
+mv 02-WithoutSystemdPrefix.txt.bak 02-WithoutSystemdPrefix.txt
+```
+
+Creating a 'Request-Response Table' to post in GitHub:
+------------------------------------------------------
+
+1. Run:
+    `for CID in 0000000000000001 0000000000000002 0000000000000003 0000000000000004 0000000000000005 0000000000000006 0000000000000007 0000000000000008 0000000000000009 000000000000000A 000000000000000B 000000000000000C 000000000000000D 000000000000000E 000000000000000F; do echo -n "${CID},"; grep ${CID} 03-OnlyPublishDeliver.txt | perl -lane 'my ($TAG) = $F[-1] =~ /^.*<\/(.*)>$/; printf $TAG . " "'; echo ""; done`
+2. Copy lines having stuff beyond the correlation ID into a temp file
+    (if there are no blank correlation IDs, then increase the number of IDs used so that we get all of them for sure)
+3. Open the temp file in vim and run: `RemoveTrailingWhiteSpace`
+4. Replace all spaces in the file with commas using: `%s/ /,/g`
+5. Write the following header line at the top of the file:
+    Correlation ID,Sent via `publish`,Received via `deliver`
+6. Save the temp file
+7. Go to `https://www.tablesgenerator.com/text_tables`
+    `File -> Import CSV file...`
+    `Choose File` and select the temp file
+    Click `Import`
+    Click `Copy to clipboard`
+8. Go back to the temp file, clear its contents, and paste into it the generate ascii table (now in the clipboard)
+9. Put the following lines at the top:
+
+<details>
+<summary>Request-Response Table</summary>
+
+```diff
+
+10. Put the following lines at the bottom:
+
+```
+</details>
+
+11. Save and close the temp file, then run `clipcopy /path/to/temp/file`
+12. Paste into GitHub
+
+================================================================================
+
+One way to get the current time at a particular timezone:
+---------------------------------------------------------
+    import core.time : dur;
+    import std.datetime.systime : SysTime, Clock;
+    import std.datetime.timezone : SimpleTimeZone;
+
+    auto offset_from_utc = dur!"hours"(2);
+    auto tz_name = "CEST";
+
+    immutable tz = new SimpleTimeZone(offset_from_utc, tz_name);
+    SysTime cur_time_at_tz = Clock.currTime(tz);
+
+================================================================================
+
+To see debug prints when using unit-threaded:
+---------------------------------------------
+    in the unit test block, `import unit_threaded.io;`
+    then use `stderr/stdout` or simply `writelnUt`
+    run `dub test` and see what it's trying to run after the second `Linking...`
+        ```
+        ...
+        ...
+        unit-threaded 0.9.3: building configuration "gen_ut_main"...
+        Linking...
+        To force a rebuild of up-to-date targets, run again with --force.
+        Running ../home/gautam/.dub/packages/unit-threaded-0.9.3/unit-threaded/gen_ut_main -f build/ut.d
+        Linking...
+        To force a rebuild of up-to-date targets, run again with --force.
+        Running ./build/appname
+        ...
+        ...
+        ```
+    here, it's trying to run `./build/appname`
+    so to see the debug prints, we need to run `./build/appname -d`
+
+================================================================================
+
+systemd paths:
+--------------
+First place the `appname.service` file in `/lib/systemd/system`. Then use
+commands like:
+    systemctl [status|start|stop] appname.service
+
+To enable auto-starting of the app on system boot, use:
+    systemctl enable appname.service
+
+Use `journalctl` commands to look at the app's logs.
+
+================================================================================
+
+Grafana setup:
+--------------
+    enabling GitHub auth:
+        1. Go to https://github.com/organizations/<company-github-org>/settings/profile
+        2. `Developer settings -> OAuth Apps` in the left pane
+        3. `New OAuth App`
+        4. `Application name`: Grafana
+           `Homepage URL`: http://server.company.io
+           `Authorization callback URL`: http://server.company.io:3000/login/github
+        5. Copy the `Client ID` & `Client Secret`
+        6. On the server:
+               a) cd /opt/monitoring
+               b) Add the following to the docker-compose file under the `grafana` service:
+                  ```
+                  environment:
+                      - "GF_SERVER_ROOT_URL=http://server.company.io:3000"
+                      - "GF_AUTH_GITHUB_ENABLED=true"
+                      - "GF_AUTH_GITHUB_CLIENT_ID=<client-ID-copied-earlier>"
+                      - "GF_AUTH_GITHUB_CLIENT_SECRET=<client-secret-copied-earlier>"
+                      - "GF_AUTH_GITHUB_ALLOWED_ORGANIZATIONS=company-github-org"
+                  ```
+               c) docker-compose down
+               d) docker-compose up -d
+        7. A new "Sign-up using GitHub" button should now be available
+           (and only accounts belonging to the organization should be able to sign up)
+
+    default configuration properties: https://github.com/grafana/grafana/blob/master/conf/defaults.ini
+
+================================================================================
+
+When a person leaves:
+    - remove their GitHub account from the company-github-org organization
+    - remove them from Grafana users
+
+================================================================================
+
+Telegraf setup:
+---------------
+    apt-get update
+    apt-get install telegraf
+    foreach app that is a systemd service:
+        create an app.conf file in the format:
+        ```
+        [[inputs.procstat]]
+          systemd_unit = "appname.service"
+        ```
+        and then place that app.conf file in `/etc/telegraf/telegraf.d`
+        (all config files present in /etc/telegraf/telegraf.d are combined with
+        the default config file /etc/telegraf/telegraf.conf and the result is
+        used as the final telegraf configuration)
+    service telegraf start
+
+Influxdb view records:
+----------------------
+    docker exec -it influxdb influx
+    this should put you in an influxQL prompt
+        SHOW DATABASES // optional
+        use telegraf
+        SELECT * FROM "procstat" WHERE ("systemd_unit" = 'appname.service') LIMIT 5;
+
+================================================================================
