@@ -237,6 +237,10 @@ echo -n "    c (calendar)... "
 sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/calendar.sh /home/$THE_USER/bin/c
 echo "Done!"
 
+echo -n "    clone... "
+sudo -u ${THE_USER} ln -srf ${PLAY_DIR}/python_scripts/clone.py /home/$THE_USER/bin/clone
+echo "Done!"
+
 echo -n "    img (image viewer)... "
 sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/image_viewer.sh /home/$THE_USER/bin/img
 echo "Done!"
@@ -346,6 +350,11 @@ echo "            - Choose yes for enabling fuzzy auto-completion"
 echo "            - Choose yes for enabling key bindings"
 echo "            - Choose no for updating shell configuration files"
 echo "        rm -f ${HOME}/.fzf.bash"
+waitForConfirmation
+
+echo "clone.py setup"
+echo "--------------"
+echo "Create the clone.py config file (format present at the top of ${PLAY_DIR}/python_scripts/clone.py)"
 waitForConfirmation
 
 echo "gnome-terminal setup"
