@@ -1,0 +1,13 @@
+version: "3.5"
+
+services:
+    exiftool:
+        image: exiftool
+        container_name: exiftool
+        build:
+            context: .
+            args:
+                - USERNAME
+                - USERID
+        volumes:
+            - ${PWD}:/exiftool
