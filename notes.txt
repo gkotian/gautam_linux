@@ -154,8 +154,8 @@ Expandable GitHub comments:
 Installing a package on Arch Linux from AUR:
 --------------------------------------------
     - download the package archive from AUR ("Download snapshot" link in the
-      "Package Actions" box on the right)
-    - extract the archive
+      "Package Actions" box on the right) to `~/aur`
+    - extract the archive, then delete it
     - cd to the extracted directory
     - makepkg -Acs
     - sudo pacman -U <tar.xz>
