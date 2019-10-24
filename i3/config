@@ -150,6 +150,8 @@ assign [class="^Chrome$"]        →  8
 assign [class="^google-chrome$"] →  8
 assign [class="^Google-chrome$"] →  8
 assign [class="^Firefox$"]       →  8
+assign [class="^firefox$"]       →  8
+assign [class="^Navigator$"]     →  8
 assign [class="^Signal$"]        → 10
 
 # AirVPN is title-based, why?
