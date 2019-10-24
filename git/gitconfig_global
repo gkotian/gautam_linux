@@ -3,6 +3,9 @@
     ; email = <always added locally in each repo>
     ; signingkey = <always added locally in each repo>
 
+[advice]
+    detachedHead = false
+
 [giggle]
     main-window-maximized       = true
     main-window-geometry        = 700x550+1+80
