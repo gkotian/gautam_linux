@@ -154,6 +154,7 @@ assign [class="^Signal$"]        → 10
 
 # AirVPN is title-based, why?
 assign [title="^AirVPN"]         → 10
+assign [title="^Eddie"]          → 10
 
 # Certain windows should always be floating
 for_window [class="Gcalctool"] floating enable
