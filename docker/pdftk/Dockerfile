@@ -1,6 +1,18 @@
 FROM ubuntu:16.04
 
-RUN apt-get update && apt-get -y install \
-    pdftk
+ARG USERNAME
+ARG USERID
 
-ENV IN_DOCKER_CONTAINER True
+ARG TOP_LEVEL_DIR="pdftk"
+
+RUN apt-get update && \
+    apt-get -y install \
+        pdftk && \
+    useradd -u ${USERID} -m ${USERNAME} && \
+    mkdir -p /${TOP_LEVEL_DIR} && \
+    chown ${USERNAME} /${TOP_LEVEL_DIR}
+
+USER ${USERNAME}
+WORKDIR /${TOP_LEVEL_DIR}
+
+CMD [ "/bin/bash" ]
