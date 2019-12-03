@@ -145,7 +145,7 @@ chsh -s /bin/zsh ${THE_USER}
 echo "Done!"
 
 echo -n "Setting up ssh to access GitHub... "
-sudo -u ${THE_USER} ssh-keygen -t rsa -b 4096 -f /home/$THE_USER/.ssh/id_rsa_play
+sudo -u ${THE_USER} ssh-keygen -t ed25519 -f /home/$THE_USER/.ssh/id_ed25519_play
 
 echo "Now log in to GitHub -> Settings -> SSH and GPG keys -> New SSH key"
 echo "In 'Title' enter some text to identify this computer"
