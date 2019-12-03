@@ -5,8 +5,6 @@ ARG USERID
 
 ARG TOP_LEVEL_DIR="exiftool"
 
-WORKDIR /project
-
 RUN apt-get update && \
     apt-get -y install \
         libimage-exiftool-perl && \
