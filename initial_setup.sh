@@ -307,15 +307,7 @@ echo "Done!"
 echo ""
 
 echo "Patching gitk... "
-cp /usr/bin/gitk /usr/bin/gitk.orig
-# Make selecting file names in the gitk diff view easier, by providing visual
-# highlighting
-echo -n "    removing 'filesep'... "
-sed -i 's/^\(.*"\$pad \$fname \$pad"\) filesep$/\1/g' /usr/bin/gitk
-echo "Done!"
-# Use 5 instead of <Shift-F5> to reload commits
-echo -n "    changing reload key to 5... "
-sed -i 's/bindmodfunctionkey Shift 5 reloadcommits$/bindkey 5 reloadcommits/g' /usr/bin/gitk
+sed -i".orig" "s/bindmodfunctionkey Shift 5 reloadcommits$/bindkey 5 reloadcommits/g" /usr/bin/gitk
 echo "Done!"
 echo "(you may want to check that gitk was patched correctly by running:"
 echo "    meld /usr/bin/gitk.orig /usr/bin/gitk"
