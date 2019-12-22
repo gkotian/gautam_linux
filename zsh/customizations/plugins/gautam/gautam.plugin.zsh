@@ -4,8 +4,7 @@
 
 # Rebase interactively
 function reb() {
-    AUTHOR_EMAIL=$(git config user.email)
-    git rebase --gpg-sign=${AUTHOR_EMAIL} -i HEAD~$1
+    git rebase -i HEAD~${1}
 }
 
 # Git cherry-pick one or more commits
@@ -37,7 +36,7 @@ function custom-git-cherry-pick() {
 
     for COMMIT in "$@"
     do
-        git cherry-pick --gpg-sign=$(git config user.email) ${COMMIT}
+        git cherry-pick ${COMMIT}
         if [ $? != "0" ]
         then
             echo "That cherry-pick failed. Aborting."
@@ -117,12 +116,11 @@ function dcipaddr() {
 alias bat='upower -i $(upower -e | grep "BAT") | grep -E "state|time\ to|percentage"'
 alias cdo='cd ${PLAY_DIR}/ocean'
 
-alias gc='git commit --verbose -S'
-alias gca='git commit --amend --no-edit -S'
-alias gcae='git commit --amend --verbose -S'
-alias gcf='git commit -S --fixup'
+alias gca='git commit --amend --no-edit'
+alias gcae='git commit --amend --verbose'
+alias gcf='git commit --fixup'
 alias gcp='custom-git-cherry-pick'
-alias gct='git commit -m "tmp" -S'
+alias gct='git commit -m "tmp"'
 
 alias gd='git difftool --no-prompt'
 alias gd_cl='PAGER= git diff'
@@ -149,7 +147,7 @@ alias groot='cd $(git rev-parse --show-toplevel || echo ".")'
 alias grs='git rebase --skip'
 alias grsh='git reset HEAD'
 alias grshh='git reset HEAD --hard'
-alias grum='git rebase --gpg-sign=$(git config user.email) upstream/master'
+alias grum='git rebase upstream/master'
 
 alias gs='git status -s'
 alias gss='git submodules-status; alert "git submodules-status done"'

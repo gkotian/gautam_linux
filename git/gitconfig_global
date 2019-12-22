@@ -15,6 +15,7 @@
 
 [commit]
     verbose = true
+    gpgsign = true
 
 [core]
     deltaBaseCacheLimit = 1G
