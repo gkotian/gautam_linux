@@ -4,6 +4,9 @@ source ~/.vim/vundle.vim
 " Automatically detect file types. (must turn on after Vundle)
 filetype plugin indent on
 
+" Always show syntax highlighting
+syntax on
+
 " Set textwidth to 80 by default for all files
 " (can be overridden in .vim/after/ftplugin/*.vim)
 set tw=80
