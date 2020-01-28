@@ -411,6 +411,12 @@ echo "        Video  : VLC media player"
 echo "        Photos : gThumb"
 waitForConfirmation
 
+echo "kdiff3 setup"
+echo "------------"
+echo "    launch kdiff3, go to Settings -> Directory"
+echo "    uncheck 'Backup files (.orig)'"
+waitForConfirmation
+
 echo "Disabling icons on Desktop (or else launching nautilus in i3 will open an
 additional window)"
 sudo -u ${THE_USER} gsettings set org.gnome.desktop.background show-desktop-icons false
