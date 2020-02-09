@@ -114,7 +114,12 @@ function dcipaddr() {
 #
 
 alias bat='upower -i $(upower -e | grep "BAT") | grep -E "state|time\ to|percentage"'
+
 alias cdo='cd ${PLAY_DIR}/ocean'
+
+alias dcu='docker-compose up'
+alias dils='docker image ls'
+alias dps='docker ps'
 
 alias gca='git commit --amend --no-edit'
 alias gcae='git commit --amend --verbose'
@@ -129,6 +134,8 @@ alias gk='\gitk --all --branches&'
 
 # git latest tag
 alias glt='git tag --list "v*" --sort=v:refname | tail -1'
+
+alias gofmt='docker run --rm -it -v "${PWD}:/go/src" golang:alpine3.11 /bin/sh -c "cd /go/src && gofmt -s -w ."'
 
 alias gpf='git push fork'
 alias gpff='git push fork -f'
