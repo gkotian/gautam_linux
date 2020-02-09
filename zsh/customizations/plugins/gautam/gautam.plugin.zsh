@@ -136,6 +136,7 @@ alias gk='\gitk --all --branches&'
 alias glt='git tag --list "v*" --sort=v:refname | tail -1'
 
 alias gofmt='docker run --rm -it -v "${PWD}:/go/src" golang:alpine3.11 /bin/sh -c "cd /go/src && gofmt -s -w ."'
+alias gopass='docker run --rm -it -v ${HOME}:/root gopass'
 
 alias gpf='git push fork'
 alias gpff='git push fork -f'

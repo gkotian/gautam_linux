@@ -52,8 +52,6 @@ alias kbus='setxkbmap us'
 alias c1='cat /tmp/1'
 alias c2='cat /tmp/2'
 
-alias gopass='docker run --rm -ti -v ${HOME}:/root gopass'
-
 alias v1='v /tmp/1'
 alias v2='v /tmp/2'
 alias vall='v `ls **/*.d | one_line`'
