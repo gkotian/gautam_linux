@@ -259,7 +259,7 @@ echo "Done!"
 
 echo -n "    /usr/bin/dmenu_path... "
 rm -f /usr/bin/dmenu_path
-sudo ln -s $GL_DIR/scripts/dmenu_path.sh /usr/bin/dmenu_path
+ln -s $GL_DIR/scripts/dmenu_path.sh /usr/bin/dmenu_path
 echo "Done!"
 
 echo -n "    PyPI config file... "
