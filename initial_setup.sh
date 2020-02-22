@@ -417,6 +417,13 @@ echo "    launch kdiff3, go to Settings -> Directory"
 echo "    uncheck 'Backup files (.orig)'"
 waitForConfirmation
 
+echo "lightdm setup"
+echo "-------------"
+echo "    make sure lightdm is installed"
+echo "    make sure lightdm-slick-greeter is installed"
+echo "    follow the steps in ${GL_DIR}/lightdm/README.md"
+waitForConfirmation
+
 echo "Disabling icons on Desktop (or else launching nautilus in i3 will open an
 additional window)"
 sudo -u ${THE_USER} gsettings set org.gnome.desktop.background show-desktop-icons false
