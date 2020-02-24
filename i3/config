@@ -129,6 +129,9 @@ bindsym $mod+r mode "resize"
 # Lock screen
 bindsym $mod+Control+l exec i3lock -c 000000
 
+# Mouse pointer locator
+bindsym $mod+m exec yad --timeout=1 --width=70 --height=70 --no-buttons --mouse --picture --filename=/home/gautam/play/gautam_linux/misc/fading_fangs.gif 
+
 # Get rid of the title-bar
 new_window 1pixel
 
@@ -162,6 +165,7 @@ assign [title="^Eddie"]          → 10
 for_window [class="Gcalctool"] floating enable
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="XCalc"] floating enable
+for_window [class="Yad"] floating enable
 for_window [class="Gnome-screenshot"] floating enable
 for_window [class="Nautilus" instance="file_progress"] floating enable
 
@@ -183,4 +187,3 @@ exec --no-startup-id xsetroot -solid "#555555"
 bar {
         status_command i3status -c /home/gautam/play/gautam_linux/i3/i3bar_config
 }
-
