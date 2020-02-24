@@ -162,3 +162,25 @@ Installing a package on Arch Linux from AUR:
 
 ---------------------------------------------------------------------------------------------------
 
+If you need to use different GitHub accounts on the same computer:
+------------------------------------------------------------------
+    The idea is to present different ssh keys to GitHub for the different
+    accounts.
+
+    - use different git remote URLs of the form:
+          git@github-BLAH:...
+          (where BLAH is a decent descriptive string)
+    - add a section in `~/.ssh/config` of the form:
+      ```
+      Host github-BLAH
+          Hostname github.com
+          User git
+          IdentityFile ~/.ssh/id_ed25519_blah   <-- path to proper ssh key
+          IdentitiesOnly yes
+      ```
+
+    This may be helpful if you run into problems:
+    http://code.tutsplus.com/tutorials/how-to-work-with-github-and-multiple-accounts--net-22574
+
+---------------------------------------------------------------------------------------------------
+
