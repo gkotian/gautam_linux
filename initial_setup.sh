@@ -266,6 +266,10 @@ rm -f /usr/bin/dmenu_path
 ln -s $GL_DIR/scripts/dmenu_path.sh /usr/bin/dmenu_path
 echo "Done!"
 
+echo -n "    monitor-hotplug.rules... "
+ln -sf ${GL_DIR}/misc/95-monitor-hotplug.rules /etc/udev/rules.d/95-monitor-hotplug.rules
+echo "Done!"
+
 echo ""
 
 # Now that the ssh config file has been linked, 'github-PLAY' can be used
@@ -422,6 +426,13 @@ echo "-------------"
 echo "    make sure lightdm is installed"
 echo "    make sure lightdm-slick-greeter is installed"
 echo "    follow the steps in ${GL_DIR}/lightdm/README.md"
+waitForConfirmation
+
+echo "monitors setup"
+echo "--------------"
+echo "    cat /etc/udev/rules.d/95-monitor-hotplug.rules and confirm:"
+echo "        - that the path to .Xauthority is correct"
+echo "        - that the path to setup-monitors.sh is correct"
 waitForConfirmation
 
 echo "Disabling icons on Desktop (or else launching nautilus in i3 will open an
