@@ -401,8 +401,8 @@ waitForConfirmation
 
 echo "signal messenger setup"
 echo "----------------------"
-echo "    mkdir ${HOME}/.signal-state"
-echo "    docker-compose -f ${GL_DIR}/docker/signal/docker-compose.yml build"
+echo "    launch signal-desktop"
+echo "    open signal on the phone, go to Settings -> Linked devices, and add a new device"
 waitForConfirmation
 
 echo "default applications setup"

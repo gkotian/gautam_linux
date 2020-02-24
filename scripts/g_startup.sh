@@ -25,10 +25,6 @@ fi
 
 # The following are common to both WORK & PLAY machines
 
-# Launch the signal messenger
-# (assumes that the signal docker image has already been built)
-docker-compose -f ${GL_DIR}/docker/signal/docker-compose.yml up -d
-
 # Log latest boot time info.
 FILE=$GL_DIR/scripts/boot_times_tracker.sh
 if [ -f $FILE ]; then
