@@ -173,8 +173,6 @@ for_window [class="Nautilus" instance="file_progress"] floating enable
 exec /home/gautam/play/gautam_linux/scripts/g_startup.sh
 exec firefox
 exec slack
-exec thunderbird
-exec volumeicon
 
 # Set the desktop background to a solid colour
 exec --no-startup-id xsetroot -solid "#555555"
