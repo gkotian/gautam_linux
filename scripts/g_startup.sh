@@ -1,37 +1,22 @@
 #!/bin/sh
 
-# Save a log file to analyse if something goes wrong
-exec 1>/var/tmp/g_startup.log 2>&1
-
-MACHINE_TYPE="PLAY"
 IS_LAPTOP="YES"
 
-PLAY_DIR=/home/gautam/play
-WORK_DIR=/home/gautam/work
-GL_DIR=$PLAY_DIR/gautam_linux
+GL_DIR=/home/gautam/play/gautam_linux
 
-if [ $MACHINE_TYPE = "PLAY" ]; then
-    STARTUP_FILE=$GL_DIR/scripts/g_startup_play.sh
-    echo "selecting play startup file '${STARTUP_FILE}'"
-else
-    STARTUP_FILE=${WORK_DIR}/meta/work_startup.sh
-    echo "selecting work startup file '${STARTUP_FILE}'"
-fi
+# Load the SSH passphrase onto the ssh-agent.
+ssh-add ~/.ssh/id_ed25519
 
-if [ -f $STARTUP_FILE ]; then
-    echo "startup file exists"
-    $STARTUP_FILE &
-fi
-
-# The following are common to both WORK & PLAY machines
-
-# Log latest boot time info.
-FILE=$GL_DIR/scripts/boot_times_tracker.sh
-if [ -f $FILE ]; then
-    $FILE &
-fi
+# Launch gitk for commonly monitored projects
+# cd /home/gautam/play/gautam_linux && gitk --all&
 
 if [ ${IS_LAPTOP} = "YES" ]; then
     BATTERY_CHECKER=${GL_DIR}/scripts/check_battery.sh
     [ -f ${BATTERY_CHECKER} ] && ${BATTERY_CHECKER} &
+fi
+
+# Log latest boot time info.
+FILE=${GL_DIR}/scripts/boot_times_tracker.sh
+if [ -f ${FILE} ]; then
+    ${FILE} &
 fi

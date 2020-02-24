@@ -443,7 +443,7 @@ echo ""
 
 echo "Add gpg signing for commits"
 
-echo "Set the variables 'MACHINE_TYPE' & 'IS_LAPTOP' in '${GL_DIR}/scripts/g_startup.sh' as appropriate"
+echo "Set the 'IS_LAPTOP' variable in '${GL_DIR}/scripts/g_startup.sh' as appropriate"
 
 echo "You're all set. Congratulations!!"
 
