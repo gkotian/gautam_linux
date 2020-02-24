@@ -79,7 +79,7 @@ ZSH_CUSTOM=$GL_DIR/zsh/customizations
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-navigation-tools)
+plugins=(git gpg-agent zsh-navigation-tools)
 
 # Add the gautam plugin last so that my symbols override those defined in other
 # plugins (if/when there is a conflict)
