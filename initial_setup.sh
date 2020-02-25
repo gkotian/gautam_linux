@@ -435,6 +435,14 @@ echo "        - that the path to .Xauthority is correct"
 echo "        - that the path to setup-monitors.sh is correct"
 waitForConfirmation
 
+echo "dmenu PATH setup"
+echo "----------------"
+echo "    launch dmenu (mod+d), and write 'echo \$PATH > /tmp/path'"
+echo "    cat /tmp/path to see if it contains \$HOME/bin"
+echo "    if not, try doing: (see script)"
+#             echo 'export PATH="$HOME/bin:$PATH"' > ~/.profile
+waitForConfirmation
+
 echo "Disabling icons on Desktop (or else launching nautilus in i3 will open an
 additional window)"
 sudo -u ${THE_USER} gsettings set org.gnome.desktop.background show-desktop-icons false
