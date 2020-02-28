@@ -1,0 +1,14 @@
+version: "3.5"
+
+services:
+    pdftk:
+        image: pdftk
+        container_name: pdftk
+        build:
+            context: .
+            args:
+                - USERNAME
+                - USERID
+        volumes:
+            - ${PWD}:/pdftk
+        tty: true
