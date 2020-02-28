@@ -184,3 +184,29 @@ If you need to use different GitHub accounts on the same computer:
 
 ---------------------------------------------------------------------------------------------------
 
+Run gofmt:
+    docker run --rm -it -v "${PWD}:/go/src" golang:alpine3.11 /bin/sh -c 'cd /go/src && gofmt -s -w .'
+
+---------------------------------------------------------------------------------------------------
+
+To run an SFTP server in a docker container:
+--------------------------------------------
+    USERNAME="user"
+    PASSWORD="password"
+    HOST_DIR_TO_SHARE="/path/to/shared/directory"
+    DIR_IN_CONTAINER="/home/${USERNAME}/share"
+
+    docker run -d -v "${HOST_DIR_TO_SHARE}:${DIR_IN_CONTAINER}" -p "2222:22" atmoz/sftp:alpine ${USERNAME}:${PASSWORD}:1001
+
+    testing:
+        confirm the container is running and get its name using `docker ps`
+        CONTAINER_NAME="..."
+        IP_ADDR=$(dcipaddr ${CONTAINER_NAME})
+        sftp ${USERNAME}@${IP_ADDR}
+        enter ${PASSWORD} when prompted
+        ls, get etc.
+
+    if you want other options e.g. logging in with SSH keys only etc., check out https://hub.docker.com/r/atmoz/sftp
+
+---------------------------------------------------------------------------------------------------
+
