@@ -16,6 +16,9 @@ PACMAN_PKGS_FILE="arch-linux-packages/pacman-packages.txt"
 
 TMPFILE=$(mktemp)
 
+NO_CHANGES_1="false"
+NO_CHANGES_2="false"
+
 # First deal with the foreign packages
 pacman -Qqm > ${TMPFILE}
 OUTPUT=$(diff -u ${FOREIGN_PKGS_FILE} ${TMPFILE})
@@ -29,6 +32,7 @@ if [ -n "${OUTPUT}" ]; then
     echo "\`\`\`"
 else
     echo "No changes to the foreign packages list."
+    NO_CHANGES_1="true"
 fi
 
 # Then deal with the explicitly installed packages. These will contain some of
@@ -43,6 +47,12 @@ if [ -n "${OUTPUT}" ]; then
     echo "\`\`\`"
 else
     echo "No changes to the pacman packages list."
+    NO_CHANGES_2="true"
+fi
+
+if [ ${NO_CHANGES_1} = "true" ] && [ ${NO_CHANGES_2} = "true" ]; then
+    echo "-------------------------------------------------------------------------"
+    exit 0
 fi
 
 # Add an autocommit if either of the package lists are modified. But only
