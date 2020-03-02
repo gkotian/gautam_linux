@@ -1,0 +1,1 @@
+Linux medusa 5.5.6-arch1-1 #1 SMP PREEMPT Mon, 24 Feb 2020 12:20:16 +0000 x86_64 GNU/Linux
