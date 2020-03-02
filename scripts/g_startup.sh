@@ -40,12 +40,7 @@ if [ ${IS_LAPTOP} = "YES" ]; then
     [ -f ${BATTERY_CHECKER} ] && ${BATTERY_CHECKER} &
 fi
 
-# Log latest boot time info.
-FILE=${GL_DIR}/scripts/boot_times_tracker.sh
-if [ -f ${FILE} ]; then
-    ${FILE} &
-fi
-
 launch_one_shot_scripts ${GL_DIR}/arch-linux-packages/update-packages-lists.sh
+launch_one_shot_scripts ${GL_DIR}/scripts/boot_times_tracker.sh
 
 echo "-------------------------------------------------------------------------"
