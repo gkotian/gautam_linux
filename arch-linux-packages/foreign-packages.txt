@@ -1,8 +1,0 @@
-authenticator
-lightdm-slick-greeter
-python-iniherit
-python-pyfavicon
-python-yoyo-migrations
-pyzbar
-slack-desktop
-yay

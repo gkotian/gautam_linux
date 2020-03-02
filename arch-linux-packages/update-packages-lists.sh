@@ -7,12 +7,35 @@ exec 1>>/var/tmp/update-packages-lists.log 2>&1
 
 echo "[`date`]"
 
+MACHINE_ID=$(cat /var/lib/dbus/machine-id)
+if [ -z "${MACHINE_ID}" ]; then
+    echo "Unable to get a machine ID. Aborting."
+    exit 1
+else
+    echo "Using machine ID '${MACHINE_ID}'."
+fi
+
 # cd to the 'gautam_linux' directory and only work with relative paths from
 # there. This makes it is easier to add an autocommit later if necessary.
 cd /home/gautam/play/gautam_linux
 
-FOREIGN_PKGS_FILE="arch-linux-packages/foreign-packages.txt"
-PACMAN_PKGS_FILE="arch-linux-packages/pacman-packages.txt"
+PKGS_DIR="arch-linux-packages/${MACHINE_ID}"
+
+# Create the directory to store this computer's packages.
+mkdir -p ${PKGS_DIR}
+
+UNAME_FILE="${PKGS_DIR}/uname.txt"
+FOREIGN_PKGS_FILE="${PKGS_DIR}/foreign-packages.txt"
+PACMAN_PKGS_FILE="${PKGS_DIR}/pacman-packages.txt"
+
+# If the files don't already exist (e.g. first run on a new computer), then we
+# need to do an initial 'git add' so the files start getting tracked. An
+# additional '--intent-to-add' flag is passed so that the files don't get staged
+# immediately. This is necessary because the autocommit at the end will not work
+# if there are any staged files.
+[ -e "${UNAME_FILE}" ] || uname -a > ${UNAME_FILE} && git add --intent-to-add ${UNAME_FILE}
+[ -e "${FOREIGN_PKGS_FILE}" ] || touch ${FOREIGN_PKGS_FILE} && git add --intent-to-add ${FOREIGN_PKGS_FILE}
+[ -e "${PACMAN_PKGS_FILE}" ] || touch ${PACMAN_PKGS_FILE} && git add --intent-to-add ${PACMAN_PKGS_FILE}
 
 TMPFILE=$(mktemp)
 
@@ -60,15 +83,10 @@ fi
 # auto-committing something unrelated.
 git diff --cached --quiet
 if [ $? -eq 0 ]; then
-    git diff --exit-code --no-patch ${FOREIGN_PKGS_FILE}
-    if [ $? -ne 0 ]; then
-        git add ${FOREIGN_PKGS_FILE}
-    fi
-
-    git diff --exit-code --no-patch ${PACMAN_PKGS_FILE}
-    if [ $? -ne 0 ]; then
-        git add ${PACMAN_PKGS_FILE}
-    fi
+    # At this point, it is guaranteed that at least one of the files in
+    # 'PKGS_DIR' is modified, so we can simply run 'git add' on the whole
+    # directory.
+    git add -A ${PKGS_DIR}
 
     git commit --no-gpg-sign \
         --message="[AUTOCOMMIT] update lists of installed packages"
