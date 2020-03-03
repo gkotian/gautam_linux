@@ -27,9 +27,6 @@ launch_one_shot_scripts() {
     echo "One-shot script '`basename ${FILE}`' ran successfully."
 }
 
-echo "Loading '~/.ssh/id_ed25519' onto the ssh-agent."
-ssh-add ~/.ssh/id_ed25519
-
 # Launch gitk for commonly monitored projects
 # cd /home/gautam/play/gautam_linux && gitk --all&
 
