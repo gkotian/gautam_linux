@@ -24,7 +24,7 @@ launch_one_shot_scripts() {
         return ${RET_CODE}
     fi
 
-    echo "One-shot script '`basename ${FILE}`' ran successfully"
+    echo "One-shot script '`basename ${FILE}`' ran successfully."
 }
 
 echo "Loading '~/.ssh/id_ed25519' onto the ssh-agent."

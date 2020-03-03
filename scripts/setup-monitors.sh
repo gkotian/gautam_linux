@@ -7,7 +7,7 @@
 
 exec 1>>/var/tmp/setup-monitors.log 2>&1
 
-echo "[`date`] setup-monitors.sh triggered"
+echo "[`date`]"
 
 if xrandr | grep "HDMI-1 disconnected"; then
     # Disconnecting triggers a message automatically, so we don't need an
@@ -47,5 +47,4 @@ else
     i3-msg --quiet '[workspace=8] move workspace to output HDMI-1'
 fi
 
-echo "done"
 echo "-------------------------------------------------------------------------"

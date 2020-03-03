@@ -1,6 +1,8 @@
 #!/bin/bash
 
-exec 1>/var/tmp/check_battery.log 2>&1
+exec 1>>/var/tmp/check_battery.log 2>&1
+
+echo "-------------------------------------------------------------------------"
 
 while :; do
     NOW=$(date)

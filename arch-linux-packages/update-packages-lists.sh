@@ -12,7 +12,7 @@ if [ -z "${MACHINE_ID}" ]; then
     echo "Unable to get a machine ID. Aborting."
     exit 1
 else
-    echo "Using machine ID '${MACHINE_ID}'."
+    echo "Machine ID: ${MACHINE_ID}"
 fi
 
 # cd to the 'gautam_linux' directory and only work with relative paths from
