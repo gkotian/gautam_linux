@@ -175,7 +175,7 @@ alias gs='git status -s'
 alias gss='git submodules-status; alert "git submodules-status done"'
 alias gst='git stash'
 alias gsta='git stash apply'
-alias gstd='git stash drop stash@{0}'
+alias gstd='ask-for-confirmation "git stash drop stash@{0}" "Are you sure you want to drop the most recent stash?"'
 alias gsui='git submodule update --init'
 alias gsuir='git submodule update --init --recursive'
 
