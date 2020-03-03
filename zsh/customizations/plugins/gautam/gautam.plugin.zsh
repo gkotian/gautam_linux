@@ -2,6 +2,20 @@
 # Functions
 #
 
+# Ask for confirmation before running a command.
+function ask-for-confirmation() {
+    readonly CMD=${1:?"A command must be specified."}
+    readonly PROMPT_STR="${2:-Are you sure?}"
+
+    read "RESPONSE?${PROMPT_STR} [y/N] "
+
+    if [[ "${RESPONSE}" =~ ^[Yy]$ ]]; then
+        eval ${CMD}
+    else
+        echo "Aborted."
+    fi
+}
+
 # Rebase interactively
 function reb() {
     git rebase -i HEAD~${1}
