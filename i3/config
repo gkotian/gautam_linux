@@ -146,20 +146,20 @@ workspace 6 output DP-2
 workspace 7 output DP-2
 
 # Assign specific workspaces to certain applications
-assign [class="^Gitk$"]          →  5
-assign [class="^Thunderbird$"]   →  7
-assign [class="^Slack$"]         →  7
-assign [class="^Chrome$"]        →  8
-assign [class="^google-chrome$"] →  8
-assign [class="^Google-chrome$"] →  8
-assign [class="^Firefox$"]       →  8
-assign [class="^firefox$"]       →  8
-assign [class="^Navigator$"]     →  8
-assign [class="^Signal$"]        → 10
+assign [class="^Gitk$"]            →  5
+assign [class="^Slack$"]           →  7
+assign [class="^Thunderbird$"]     →  7
+assign [class="^Chrome$"]          →  8
+assign [class="^firefox$"]         →  8
+assign [class="^Firefox$"]         →  8
+assign [class="^google-chrome$"]   →  8
+assign [class="^Google-chrome$"]   →  8
+assign [class="^Navigator$"]       →  8
+assign [class="^Signal$"]          → 10
 
 # AirVPN is title-based, why?
-assign [title="^AirVPN"]         → 10
-assign [title="^Eddie"]          → 10
+assign [title="^AirVPN"]           → 10
+assign [title="^Eddie"]            → 10
 
 # Certain windows should always be floating
 for_window [class="Gcalctool"] floating enable
