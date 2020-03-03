@@ -156,6 +156,7 @@ assign [class="^google-chrome$"]   →  8
 assign [class="^Google-chrome$"]   →  8
 assign [class="^Navigator$"]       →  8
 assign [class="^Signal$"]          → 10
+assign [class="^TelegramDesktop$"] → 10
 
 # AirVPN is title-based, why?
 assign [title="^AirVPN"]           → 10
@@ -174,6 +175,7 @@ exec /home/gautam/play/gautam_linux/scripts/g_startup.sh
 exec firefox
 exec signal-desktop
 exec slack
+exec telegram-desktop
 
 # Set the desktop background to a solid colour
 exec --no-startup-id xsetroot -solid "#555555"
