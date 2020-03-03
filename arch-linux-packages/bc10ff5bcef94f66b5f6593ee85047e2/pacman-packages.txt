@@ -53,6 +53,7 @@ telegram-desktop
 texinfo
 the_silver_searcher
 tk
+unzip
 vim
 vlc
 which
