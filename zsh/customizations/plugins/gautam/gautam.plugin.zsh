@@ -164,3 +164,7 @@ alias gsta='git stash apply'
 alias gstd='git stash drop stash@{0}'
 alias gsui='git submodule update --init'
 alias gsuir='git submodule update --init --recursive'
+
+alias poweroff='echo "This command is disabled. Please run it with sudo." && return 1'
+
+alias reboot='echo "This command is disabled. Please run it with sudo." && return 1'
