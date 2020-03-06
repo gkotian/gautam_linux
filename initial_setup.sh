@@ -443,6 +443,12 @@ echo "    if not, try doing: (see script)"
 #             echo 'export PATH="$HOME/bin:$PATH"' > ~/.profile
 waitForConfirmation
 
+echo "Sorting pacman mirrors by speed"
+echo "-------------------------------"
+echo "    sudo pacman -S reflector"
+echo "    sudo reflector --verbose --latest 100 --sort rate --country Germany --country Czechia --country Poland --save /etc/pacman.d/mirrorlist"
+waitForConfirmation
+
 echo "Disabling icons on Desktop (or else launching nautilus in i3 will open an
 additional window)"
 sudo -u ${THE_USER} gsettings set org.gnome.desktop.background show-desktop-icons false
