@@ -18,6 +18,7 @@ fzf
 gcc
 git
 gnome-terminal
+go
 groff
 htop
 i3-gaps
@@ -37,6 +38,7 @@ m4
 make
 man-db
 meld
+mlocate
 nautilus
 networkmanager
 openssh
