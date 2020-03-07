@@ -55,6 +55,7 @@ telegram-desktop
 texinfo
 the_silver_searcher
 tk
+ttf-jetbrains-mono
 unzip
 vim
 vlc
