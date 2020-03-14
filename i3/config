@@ -80,6 +80,7 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+bindsym $mod+Control+t workspace t
 
 # move focused container to workspace
 bindsym $mod+Shift+exclam move container to workspace 1
@@ -127,7 +128,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Lock screen
-bindsym $mod+Control+l exec i3lock -c 000000
+bindsym $mod+Control+l exec i3lock --tiling --image=/home/gautam/play/gautam_linux/misc/images/archlinux/arch07.png
 
 # Mouse pointer locator
 bindsym $mod+m exec yad --timeout=1 --width=70 --height=70 --no-buttons --mouse --picture --filename=/home/gautam/play/gautam_linux/misc/fading_fangs.gif 
@@ -136,14 +137,12 @@ bindsym $mod+m exec yad --timeout=1 --width=70 --height=70 --no-buttons --mouse 
 new_window 1pixel
 
 # Assign specific monitors to certain workspaces
-workspace 2 output DP-1
-workspace 8 output DP-1
-workspace 9 output DP-1
-
-workspace 1 output DP-2
-workspace 5 output DP-2
-workspace 6 output DP-2
-workspace 7 output DP-2
+workspace 1 output HDMI-1
+workspace 2 output HDMI-1
+workspace 5 output HDMI-1
+workspace 7 output HDMI-1
+workspace 8 output HDMI-1
+workspace 10 output HDMI-1
 
 # Assign specific workspaces to certain applications
 assign [class="^Gitk$"]            →  5
@@ -163,8 +162,10 @@ assign [title="^AirVPN"]           → 10
 assign [title="^Eddie"]            → 10
 
 # Certain windows should always be floating
+for_window [class="Authenticator"] floating enable
 for_window [class="Gcalctool"] floating enable
 for_window [class="Gnome-calculator"] floating enable
+for_window [class="Qalculate"] floating enable
 for_window [class="XCalc"] floating enable
 for_window [class="Yad"] floating enable
 for_window [class="Gnome-screenshot"] floating enable
