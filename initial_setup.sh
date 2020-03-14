@@ -220,11 +220,6 @@ echo -n "    .gitignore_global... "
 sudo -u ${THE_USER} ln -srf $GL_DIR/git/gitignore_global /home/$THE_USER/.gitignore_global
 echo "Done!"
 
-# Open the NetworkManager gui, or nm-connection-editor, choose the connection of
-# interest, go to the 'IPv4 Settings' and under "Additional DNS servers" add
-# '1.1.1.1, 8.8.8.8'
-# if there is a way to do this via nmcli we could automate this
-
 echo -n "    .i3/config... "
 sudo -u ${THE_USER} ln -srf $GL_DIR/i3/config /home/$THE_USER/.i3/config
 echo "Done!"
@@ -447,6 +442,14 @@ echo "Sorting pacman mirrors by speed"
 echo "-------------------------------"
 echo "    sudo pacman -S reflector"
 echo "    sudo reflector --verbose --latest 100 --sort rate --country Germany --country Czechia --country Poland --save /etc/pacman.d/mirrorlist"
+waitForConfirmation
+
+echo "Specifying DNS servers"
+echo "----------------------"
+echo "    Get the connection name (under column NAME on running 'nmcli con')"
+echo "    nmcli con mod <connection-name> ipv4.dns '1.1.1.1 1.0.0.1 8.8.8.8 8.8.4.4'"
+echo "    nmcli con mod <connection-name> ipv4.ignore-auto-dns yes"
+echo "    (note that this needs to be done separately for each new connection)"
 waitForConfirmation
 
 echo "Disabling icons on Desktop (or else launching nautilus in i3 will open an
