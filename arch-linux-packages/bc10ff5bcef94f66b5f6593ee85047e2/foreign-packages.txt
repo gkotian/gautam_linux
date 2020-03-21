@@ -6,3 +6,4 @@ python-yoyo-migrations
 pyzbar
 slack-desktop
 yay
+zoom
