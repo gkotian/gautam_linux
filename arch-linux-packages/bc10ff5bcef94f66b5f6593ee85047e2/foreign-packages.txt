@@ -1,4 +1,5 @@
 authenticator
+google-chrome
 lightdm-slick-greeter
 python-iniherit
 python-pyfavicon
