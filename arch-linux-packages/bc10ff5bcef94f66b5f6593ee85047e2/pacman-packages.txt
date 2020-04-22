@@ -63,6 +63,7 @@ unzip
 vim
 vlc
 which
+wireshark-qt
 xclip
 xorg-xmessage
 yad
