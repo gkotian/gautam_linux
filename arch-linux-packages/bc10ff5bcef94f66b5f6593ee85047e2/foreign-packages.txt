@@ -1,6 +1,7 @@
 authenticator
 google-chrome
 lightdm-slick-greeter
+networkmanager-l2tp
 python-iniherit
 python-pyfavicon
 python-yoyo-migrations

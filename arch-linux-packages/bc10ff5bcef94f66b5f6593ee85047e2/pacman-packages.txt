@@ -40,13 +40,15 @@ man-db
 meld
 mlocate
 nautilus
+network-manager-applet
 networkmanager
+networkmanager-strongswan
 openssh
 patch
 pkgconf
 qalculate-gtk
 redshift
-refind-efi
+refind
 reflector
 signal-desktop
 sudo
