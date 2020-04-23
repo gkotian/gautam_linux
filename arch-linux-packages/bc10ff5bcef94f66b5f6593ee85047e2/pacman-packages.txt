@@ -42,7 +42,6 @@ mlocate
 nautilus
 network-manager-applet
 networkmanager
-networkmanager-strongswan
 openssh
 patch
 pkgconf
