@@ -1,11 +1,11 @@
 authenticator
 google-chrome
 lightdm-slick-greeter
-openswan
 python-iniherit
 python-pyfavicon
 python-yoyo-migrations
 pyzbar
+skypeforlinux-stable-bin
 slack-desktop
 yay
 zoom
