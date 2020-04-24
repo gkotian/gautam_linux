@@ -98,8 +98,8 @@ bindsym $mod+Shift+parenright move container to workspace 10
 bindsym $mod+Shift+C reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+R restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+E exit
+# Shows a dialog with various exit options
+bindsym $mod+Shift+E exec ~/play/gautam_linux/scripts/closer.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
