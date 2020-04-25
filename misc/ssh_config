@@ -1,1 +1,16 @@
-AddKeysToAgent  yes
+AddKeysToAgent yes
+
+Host github.com
+    PubkeyAuthentication yes
+    IdentityFile ~/.ssh/id_ed25519_github
+
+Host gitlab.com
+    PubkeyAuthentication yes
+    IdentityFile ~/.ssh/id_ed25519_gitlab
+
+Host *.compute.amazonaws.com
+    PubkeyAuthentication yes
+
+Host *
+    PubkeyAuthentication no
+    IdentitiesOnly yes

@@ -5,6 +5,7 @@ PLAY_DIR="/home/$THE_USER/play"
 GL_DIR="$PLAY_DIR/gautam_linux"
 
 GITHUB_USERNAME="gkotian"
+GITLAB_USERNAME="gkotian"
 
 PACKAGES_LIST=(
     git
@@ -145,20 +146,37 @@ chsh -s /bin/zsh ${THE_USER}
 echo "Done!"
 
 echo -n "Setting up ssh to access GitHub... "
-sudo -u ${THE_USER} ssh-keygen -t ed25519 -f /home/$THE_USER/.ssh/id_ed25519_play
+sudo -u ${THE_USER} ssh-keygen -t ed25519 -f /home/${THE_USER}/.ssh/id_ed25519_github
 
 echo "Now log in to GitHub -> Settings -> SSH and GPG keys -> New SSH key"
-echo "In 'Title' enter some text to identify this computer"
+echo "In 'Title' enter some text to uniquely identify this computer"
 echo "In 'Key' paste the following:"
-cat /home/$THE_USER/.ssh/id_rsa_play.pub
+cat /home/${THE_USER}/.ssh/id_ed25519_github.pub
 echo ""
 waitForConfirmation
 
 echo "In the other terminal/tab run the following command:"
 echo "    ssh -T git@github.com"
-echo "(if a password is asked for, enter the passphrase used above while creating the public/private rsa key pair)"
+echo "(when a password is asked for, enter the passphrase used above while creating the key)"
 echo "You should get the following output:"
-echo "    Hi $GITHUB_USERNAME! You've successfully authenticated, but GitHub does not provide shell access."
+echo "    Hi ${GITHUB_USERNAME}! You've successfully authenticated, but GitHub does not provide shell access."
+waitForConfirmation
+
+echo -n "Setting up ssh to access GitLab... "
+sudo -u ${THE_USER} ssh-keygen -t ed25519 -f /home/${THE_USER}/.ssh/id_ed25519_gitlab
+
+echo "Now log in to GitLab -> Settings -> SSH Keys"
+echo "In 'Title' enter some text to uniquely identify this computer"
+echo "In 'Key' paste the following:"
+cat /home/${THE_USER}/.ssh/id_ed25519_gitlab.pub
+echo ""
+waitForConfirmation
+
+echo "In the other terminal/tab run the following command:"
+echo "    ssh -T git@gitlab.com"
+echo "(when a password is asked for, enter the passphrase used above while creating the key)"
+echo "You should get the following output:"
+echo "    Welcome to GitLab, @${GITLAB_USERNAME}!"
 waitForConfirmation
 
 DIRECTORIES_TO_PRECREATE=(
@@ -267,20 +285,9 @@ echo "Done!"
 
 echo ""
 
-# Now that the ssh config file has been linked, 'github-PLAY' can be used
-# in the remote URLs of cloned repositories. Change the remote URLs accordingly
-# for repositories that were created with 'github.com'.
-cd $PLAY_DIR/gautam_linux
-sudo -u ${THE_USER} git remote set-url origin git@github-PLAY:gkotian/gautam_linux.git
-
-cd $PLAY_DIR/oh-my-zsh
-sudo -u ${THE_USER} git remote set-url origin git@github-PLAY:robbyrussell/oh-my-zsh.git
-
-cd
-
 if [ -d "/home/$THE_USER/.vim" ]; then
     echo "In the other terminal/tab run the following command:"
-    echo "    git clone git@github-PLAY:gmarik/Vundle.vim.git /home/$THE_USER/.vim/bundle/vundle"
+    echo "    git clone git@github.com:gmarik/Vundle.vim.git /home/$THE_USER/.vim/bundle/vundle"
     waitForConfirmation
 
     echo -n "Installing all Vim plugins... "
@@ -292,7 +299,7 @@ echo ""
 for PROJECT in ${MY_PROJECTS_LIST[@]}
 do
     echo "In the other terminal/tab run the following command:"
-    echo "    git clone git@github-PLAY:gkotian/$PROJECT.git $PLAY_DIR/$PROJECT"
+    echo "    git clone git@github.com:gkotian/$PROJECT.git $PLAY_DIR/$PROJECT"
     waitForConfirmation
 done
 
@@ -321,7 +328,7 @@ waitForConfirmation
 echo "gopass setup"
 echo "------------"
 echo "In the other terminal/tab run the following commands:"
-echo "    git clone git@gitlab-PLAY:gkotian/pass.git ${PLAY_DIR}/pass"
+echo "    git clone git@gitlab.com:gkotian/pass.git ${PLAY_DIR}/pass"
 echo "    mkdir -p ${HOME}/.config/gopass"
 echo "    ln -srf ${PLAY_DIR}/pass/config.yml ${HOME}/.config/gopass/config.yml"
 echo "    ln -srf ${PLAY_DIR}/pass/store ${HOME}/.password-store"
