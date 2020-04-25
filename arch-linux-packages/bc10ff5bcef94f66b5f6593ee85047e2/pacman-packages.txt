@@ -51,6 +51,7 @@ redshift
 refind
 reflector
 signal-desktop
+strongswan
 sudo
 system-config-printer
 systemd-swap
