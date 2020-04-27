@@ -45,6 +45,7 @@ network-manager-applet
 networkmanager
 openssh
 patch
+pdftk
 pkgconf
 qalculate-gtk
 redshift
