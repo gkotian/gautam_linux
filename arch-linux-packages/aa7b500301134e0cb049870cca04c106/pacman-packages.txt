@@ -94,6 +94,7 @@ s-nail
 sed
 shadow
 slock
+strongswan
 sudo
 syncthing
 sysfsutils
