@@ -108,6 +108,7 @@ the_silver_searcher
 thunar
 thunderbird
 tk
+ttf-jetbrains-mono
 unzip
 usbutils
 util-linux
