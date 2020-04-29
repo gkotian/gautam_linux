@@ -44,6 +44,8 @@ nautilus
 network-manager-applet
 networkmanager
 openssh
+oracle-instantclient-basic
+oracle-instantclient-sqlplus
 patch
 pdftk
 pkgconf
