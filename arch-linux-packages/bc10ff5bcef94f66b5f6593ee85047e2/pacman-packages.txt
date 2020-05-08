@@ -46,6 +46,7 @@ networkmanager
 openssh
 oracle-instantclient-basic
 oracle-instantclient-sqlplus
+oracle-sqldeveloper
 patch
 pdftk
 pkgconf
