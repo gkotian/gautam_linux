@@ -1,4 +1,5 @@
 authenticator
+authy
 google-chrome
 lightdm-slick-greeter
 python-iniherit

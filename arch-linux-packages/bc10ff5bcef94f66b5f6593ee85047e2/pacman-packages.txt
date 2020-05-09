@@ -7,7 +7,7 @@ bind-tools
 binutils
 bison
 cups
-deepin-screenshot
+deepin-screen-recorder
 dmenu
 docker
 eog
