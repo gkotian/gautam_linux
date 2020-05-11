@@ -10,6 +10,7 @@ cups
 deepin-screen-recorder
 dmenu
 docker
+docker-compose
 eog
 evince
 fakeroot
