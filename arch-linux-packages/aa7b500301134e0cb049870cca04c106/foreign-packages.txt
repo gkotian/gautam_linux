@@ -15,4 +15,5 @@ postman
 qt4
 skypeforlinux-stable-bin
 slack-desktop
+sqlcl
 tor-browser
