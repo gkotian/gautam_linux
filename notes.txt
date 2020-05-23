@@ -210,3 +210,19 @@ To run an SFTP server in a docker container:
 
 ---------------------------------------------------------------------------------------------------
 
+Installing the Tela grub theme:
+-------------------------------
+
+This is needed only if you use grub as the bootloader. You'd use grub as the
+bootloader only if EFI isn't supported (because otherwise you'd simply use
+rEFInd).
+
+1. Go to https://www.gnome-look.org/p/1307852/
+1. Go to the `Files` tab and download `Tela-1080p.tar.xz`
+1. extract Tela-1080p.tar.xz
+1. cd Tela-1080p
+1. sudo ./install.sh
+1. reboot
+
+---------------------------------------------------------------------------------------------------
+
