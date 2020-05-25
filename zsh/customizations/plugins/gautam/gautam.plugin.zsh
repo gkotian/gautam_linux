@@ -134,6 +134,7 @@ alias cdo='cd ${PLAY_DIR}/ocean'
 alias dcu='docker-compose up'
 alias dils='docker image ls'
 alias dps='docker ps'
+alias dpsa='docker ps -a'
 
 alias gca='git commit --amend --no-edit'
 alias gcae='git commit --amend --verbose'
