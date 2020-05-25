@@ -226,3 +226,35 @@ rEFInd).
 
 ---------------------------------------------------------------------------------------------------
 
+## To give SSH access from outside the home network
+
+1. Set up dyn-dns so the remote end doesn't need to always know the present
+   public IP address
+1. Enable port-forwarding on the router (SSH uses port 22)
+1. Set up a guest account
+1. sudo systemctl start sshd
+1. Connect from outside using `ssh guest@<dyn-dns-domain>`
+
+---------------------------------------------------------------------------------------------------
+
+## Enabling port-forwarding on the router
+
+1. Login to router
+1. Left column -> Internet -> Freigaben
+1. Click the button `Gerät für Freigaben hinzufügen`
+1. If the device exists under `Gerät`, choose it and confirm the IP address; if
+   it doesn't choose `IP Adresse manuell eingeben` and manually enter the IP
+   address
+1. Click the button `Neue Freigabe` on the bottom right
+1. Under Anwendung, choose `Andere Anwendung`
+1. Under Bezeichnung, enter `SSH`
+1. Under Protokoll, choose `TCP`
+1. Under Port an Gerät, enter von 22 bis 22
+1. Under Port extern gewünscht, also enter 22
+1. Confirm that `Freigabe aktivieren` is checked, and select
+   `Internetzugriff über IPv4 und IPv6`
+1. Click OK
+1. Again click OK
+
+---------------------------------------------------------------------------------------------------
+
