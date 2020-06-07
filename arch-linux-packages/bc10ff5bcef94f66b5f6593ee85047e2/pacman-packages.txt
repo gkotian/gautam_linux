@@ -19,6 +19,7 @@ flex
 fzf
 gcc
 git
+gnome-calculator
 gnome-terminal
 go
 groff
@@ -51,7 +52,6 @@ oracle-sqldeveloper
 patch
 pdftk
 pkgconf
-qalculate-gtk
 redshift
 refind
 reflector
