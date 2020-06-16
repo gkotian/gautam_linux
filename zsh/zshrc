@@ -130,8 +130,9 @@ bindkey '^xe' edit-command-line
 # As of this writing, the fzf plugin doesn't really offer me much. All it allows
 # is setting a custom fzf installation directory, disabling fuzzy completion and
 # disabling all key bindings; so I've chosen not to use it.
-if [ -f ~/.fzf.zsh ]; then
-    source ~/.fzf.zsh
+if [ -d /usr/share/fzf/ ]; then
+    source /usr/share/fzf/key-bindings.zsh
+    source /usr/share/fzf/completion.zsh
 
     # Bind '\\' also to show the files selector (in addition to the default
     # Ctrl-T). This is to make the files selector consistent with how I use it
