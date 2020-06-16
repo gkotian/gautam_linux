@@ -49,6 +49,7 @@ openssh
 oracle-instantclient-basic
 oracle-instantclient-sqlplus
 oracle-sqldeveloper
+pacman-contrib
 patch
 pdftk
 pkgconf
