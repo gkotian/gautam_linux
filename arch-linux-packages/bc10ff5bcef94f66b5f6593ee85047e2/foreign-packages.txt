@@ -9,5 +9,6 @@ pyzbar
 skypeforlinux-stable-bin
 slack-desktop
 sqlcl
+xorg-font-utils
 yay
 zoom
