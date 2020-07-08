@@ -15,6 +15,7 @@ eog
 evince
 fakeroot
 firefox
+flashplugin
 flex
 fzf
 gcc
@@ -52,6 +53,7 @@ oracle-sqldeveloper
 pacman-contrib
 patch
 pdftk
+pepper-flash
 pkgconf
 redshift
 refind
