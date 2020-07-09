@@ -9,6 +9,8 @@ pyzbar
 skypeforlinux-stable-bin
 slack-desktop
 sqlcl
+vmware-horizon-client
+vmware-keymaps
 xorg-font-utils
 yay
 zoom
