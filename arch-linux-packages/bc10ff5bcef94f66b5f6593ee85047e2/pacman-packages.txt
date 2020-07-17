@@ -58,6 +58,7 @@ pkgconf
 redshift
 refind
 reflector
+scrot
 signal-desktop
 strongswan
 sudo
