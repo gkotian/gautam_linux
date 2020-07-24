@@ -78,4 +78,5 @@ xclip
 xorg-xmessage
 yad
 zenity
+zip
 zsh
