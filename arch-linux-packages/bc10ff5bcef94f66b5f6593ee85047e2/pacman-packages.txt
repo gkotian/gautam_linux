@@ -43,6 +43,7 @@ man-db
 meld
 mlocate
 nautilus
+ncdu
 network-manager-applet
 networkmanager
 openssh
