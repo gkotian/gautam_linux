@@ -3,6 +3,7 @@ arandr
 autoconf
 automake
 base
+bind
 binutils
 bison
 cups

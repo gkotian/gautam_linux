@@ -1,6 +1,5 @@
 authenticator
 authy
-bind-tools
 google-chrome
 lightdm-slick-greeter
 python-iniherit
