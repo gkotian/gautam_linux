@@ -73,6 +73,7 @@ ttf-jetbrains-mono
 unzip
 vim
 vlc
+wget
 which
 wireshark-qt
 xclip
