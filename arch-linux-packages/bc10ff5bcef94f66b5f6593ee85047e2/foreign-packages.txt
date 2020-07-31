@@ -6,6 +6,7 @@ python-iniherit
 python-pyfavicon
 python-yoyo-migrations
 pyzbar
+sky
 skypeforlinux-stable-bin
 slack-desktop
 sqlcl
