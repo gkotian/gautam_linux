@@ -43,6 +43,7 @@ make
 man-db
 meld
 mlocate
+mtr
 nautilus
 ncdu
 network-manager-applet
