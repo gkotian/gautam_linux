@@ -56,6 +56,7 @@ pacman-contrib
 patch
 pdftk
 pepper-flash
+pgadmin4
 pkgconf
 redshift
 refind

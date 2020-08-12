@@ -10,6 +10,7 @@ sky
 skypeforlinux-stable-bin
 slack-desktop
 sqlcl
+teams
 vmware-horizon-client
 vmware-keymaps
 xorg-font-utils
