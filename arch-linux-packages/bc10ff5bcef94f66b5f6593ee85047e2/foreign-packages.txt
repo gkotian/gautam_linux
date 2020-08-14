@@ -11,6 +11,7 @@ skypeforlinux-stable-bin
 slack-desktop
 sqlcl
 teams
+teamviewer-beta
 vmware-horizon-client
 vmware-keymaps
 xorg-font-utils

@@ -61,6 +61,7 @@ pkgconf
 redshift
 refind
 reflector
+remmina
 scrot
 signal-desktop
 strongswan
