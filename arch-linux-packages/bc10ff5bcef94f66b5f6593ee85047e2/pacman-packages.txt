@@ -6,6 +6,7 @@ base
 bind
 binutils
 bison
+ctags
 cups
 deepin-screen-recorder
 dmenu
