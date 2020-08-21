@@ -18,7 +18,7 @@ if has("autocmd")
 
         " Remove trailing whitespace whenever a buffer is saved
         " (only for files with specified file extensions)
-        autocmd BufWritePre *.d,*.sh,*.txt :%s/\s\+$//e
+        autocmd BufWritePre *.d,*.sh,*.txt,*.py :%s/\s\+$//e
 
         " Avoid storing temporary files when editing secrets
         autocmd BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
