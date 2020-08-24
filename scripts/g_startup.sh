@@ -41,6 +41,19 @@ launch_all_gitk() {
     done
 }
 
+create_tags_files() {
+    TAGS_PROJECTS=(
+        ${HOME}/work/enercity/dashboard
+        ${HOME}/work/enercity/db_checker
+    )
+
+    for P in ${TAGS_PROJECTS[@]}
+    do
+        echo "Generating tags for ${P}"
+        cd ${P} && ctags -R
+    done
+}
+
 GL_DIR=/home/gautam/play/gautam_linux
 
 if [ ${IS_LAPTOP} = "YES" ]; then
@@ -51,5 +64,6 @@ fi
 launch_one_shot_scripts ${GL_DIR}/arch-linux-packages/update-packages-lists.sh
 launch_one_shot_scripts ${GL_DIR}/scripts/boot_times_tracker.sh
 launch_all_gitk
+create_tags_files
 
 echo "-------------------------------------------------------------------------"
