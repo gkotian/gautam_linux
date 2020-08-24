@@ -3,3 +3,6 @@
 
 # Backup files created by kdiff3.
 *.orig
+
+# Tags files created by universal-ctags.
+tags
