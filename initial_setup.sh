@@ -29,6 +29,15 @@ RUBY_PACKAGES_LIST=(jekyll)
 
 MY_PROJECTS_LIST=(git_scripts gkotian.github.io python_scripts)
 
+DIRECTORIES_TO_PRECREATE=(
+    ${PLAY_DIR}
+    /home/${THE_USER}/.gnupg
+    /home/${THE_USER}/.i3
+    /home/${THE_USER}/.ssh
+    /home/${THE_USER}/bin
+    /home/${THE_USER}/tmp_home
+)
+
 START_TIMESTAMP=$(date +%s)
 
 function waitForConfirmation
@@ -81,6 +90,15 @@ if [ "${THE_USER}" == "unknown" ]; then
     exit 3
 fi
 echo "$THE_USER"
+
+echo "Creating directories:"
+for DIR in ${DIRECTORIES_TO_PRECREATE[@]}
+do
+    echo "    ${DIR}"
+    sudo -u ${THE_USER} mkdir -p ${DIR}
+done
+echo "Done!"
+echo ""
 
 echo -n "Enabling all the Ubuntu repositories... "
 add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
@@ -178,24 +196,6 @@ echo "(when a password is asked for, enter the passphrase used above while creat
 echo "You should get the following output:"
 echo "    Welcome to GitLab, @${GITLAB_USERNAME}!"
 waitForConfirmation
-
-DIRECTORIES_TO_PRECREATE=(
-    ${PLAY_DIR}
-    /home/${THE_USER}/.gnupg
-    /home/${THE_USER}/.i3
-    /home/${THE_USER}/.ssh
-    /home/${THE_USER}/bin
-    /home/${THE_USER}/tmp_home
-)
-
-echo "Creating directories:"
-for DIR in ${DIRECTORIES_TO_PRECREATE[@]}
-do
-    echo "    ${DIR}"
-    sudo -u ${THE_USER} mkdir -p ${DIR}
-done
-echo "Done!"
-echo ""
 
 echo "In the other terminal/tab run the following command:"
 echo "    git clone git@github.com:gkotian/gautam_linux.git $PLAY_DIR/gautam_linux"
