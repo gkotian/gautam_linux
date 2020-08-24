@@ -157,7 +157,7 @@ do
     fi
 done
 
-echo "Changing default shell to zsh... "
+echo -n "Changing default shell to zsh... "
 # echo "    (enter ${THE_USER}'s password if asked for)"
 # sudo -u ${THE_USER} chsh -s /bin/zsh
 chsh -s /bin/zsh ${THE_USER}
