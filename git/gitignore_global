@@ -1,2 +1,5 @@
+# Vim swap files.
 *.swp
+
+# Backup files created by kdiff3.
 *.orig
