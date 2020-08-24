@@ -27,8 +27,19 @@ launch_one_shot_scripts() {
     echo "One-shot script '`basename ${FILE}`' ran successfully."
 }
 
-# Launch gitk for commonly monitored projects
-# cd /home/gautam/play/gautam_linux && gitk --all&
+# Launches gitk for commonly monitored projects.
+launch_all_gitk() {
+    GITK_PROJECTS=(
+        ${HOME}/work/enercity/dashboard
+        ${HOME}/work/enercity/db_checker
+    )
+
+    for P in ${GITK_PROJECTS[@]}
+    do
+        echo "Launching gitk for ${P}"
+        cd ${P} && gitk --all&
+    done
+}
 
 GL_DIR=/home/gautam/play/gautam_linux
 
@@ -39,5 +50,6 @@ fi
 
 launch_one_shot_scripts ${GL_DIR}/arch-linux-packages/update-packages-lists.sh
 launch_one_shot_scripts ${GL_DIR}/scripts/boot_times_tracker.sh
+launch_all_gitk
 
 echo "-------------------------------------------------------------------------"
