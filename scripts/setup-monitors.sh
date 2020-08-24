@@ -13,7 +13,7 @@ if xrandr | grep "HDMI-1 disconnected"; then
     # Disconnecting triggers a message automatically, so we don't need an
     # explicit one here.
 
-    xrandr --output eDP-1  --mode 1920x1080 --pos 0x379  --rotate normal --primary \
+    xrandr --output eDP-1  --mode 1920x1080 --rotate normal --pos 0x0 --primary \
            --output HDMI-1 --off \
            --output DP-1   --off \
            --output HDMI-2 --off
@@ -33,8 +33,8 @@ if xrandr | grep "HDMI-1 disconnected"; then
 else
     echo "HDMI-1 connected"
 
-    xrandr --output eDP-1  --mode 1920x1080 --pos 0x379  --rotate normal --primary \
-           --output HDMI-1 --mode 1920x1080 --pos 1920x0 --rotate normal \
+    xrandr --output eDP-1  --mode 1920x1080 --rotate normal --pos 0x549 --primary \
+           --output HDMI-1 --mode 1920x1080 --rotate normal --pos 1920x0      \
            --output DP-1   --off \
            --output HDMI-2 --off
 
