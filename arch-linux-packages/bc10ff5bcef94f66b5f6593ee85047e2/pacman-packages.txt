@@ -79,6 +79,7 @@ vim
 vlc
 wget
 which
+wireguard-tools
 wireshark-qt
 xclip
 xorg-xmessage
