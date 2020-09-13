@@ -49,6 +49,7 @@ nautilus
 ncdu
 network-manager-applet
 networkmanager
+networkmanager-openvpn
 openresolv
 openssh
 oracle-instantclient-basic
