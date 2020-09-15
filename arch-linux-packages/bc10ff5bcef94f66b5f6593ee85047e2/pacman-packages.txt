@@ -61,6 +61,7 @@ pdftk
 pepper-flash
 pgadmin4
 pkgconf
+qt5ct
 redshift
 refind
 reflector
