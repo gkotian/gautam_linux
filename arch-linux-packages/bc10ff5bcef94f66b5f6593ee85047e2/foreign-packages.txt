@@ -2,6 +2,7 @@ authenticator
 authy
 google-chrome
 lightdm-slick-greeter
+postman-bin
 python-iniherit
 python-pyfavicon
 python-yoyo-migrations
