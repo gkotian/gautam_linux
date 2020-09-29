@@ -38,6 +38,7 @@ libtool
 lightdm
 linux
 linux-firmware
+lsof
 lxinput
 m4
 make
