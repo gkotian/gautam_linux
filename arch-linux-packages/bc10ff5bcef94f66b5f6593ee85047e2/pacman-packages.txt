@@ -66,6 +66,7 @@ redshift
 refind
 reflector
 remmina
+rsync
 scrot
 signal-desktop
 strongswan
