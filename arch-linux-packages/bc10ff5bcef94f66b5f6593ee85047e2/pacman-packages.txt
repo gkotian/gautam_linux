@@ -48,6 +48,7 @@ mlocate
 mtr
 nautilus
 ncdu
+net-tools
 network-manager-applet
 networkmanager
 networkmanager-openvpn
