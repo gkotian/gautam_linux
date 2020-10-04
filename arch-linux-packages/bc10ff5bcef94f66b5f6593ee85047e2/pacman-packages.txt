@@ -23,6 +23,7 @@ gcc
 git
 gnome-calculator
 gnome-terminal
+gnu-netcat
 go
 groff
 htop
