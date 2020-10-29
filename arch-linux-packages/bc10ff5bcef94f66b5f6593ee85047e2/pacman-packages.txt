@@ -31,6 +31,7 @@ i3-gaps
 i3blocks
 i3lock
 i3status
+jq
 kate
 kdiff3
 krita
