@@ -6,6 +6,8 @@ base
 bind
 binutils
 bison
+blueberry
+bluez-utils
 ctags
 cups
 deepin-screen-recorder
