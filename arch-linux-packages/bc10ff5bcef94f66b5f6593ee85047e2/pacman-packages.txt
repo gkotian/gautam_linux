@@ -86,6 +86,7 @@ tk
 ttf-jetbrains-mono
 unzip
 vim
+vimpager
 vlc
 wget
 which
