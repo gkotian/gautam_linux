@@ -1,4 +1,5 @@
-airvpn-bin
+eddie-ui
+electron4
 gamin
 gconf
 gksu
@@ -15,5 +16,6 @@ postman
 qt4
 skypeforlinux-stable-bin
 slack-desktop
-sqlcl
 tor-browser
+xorg-font-utils
+yay

@@ -52,7 +52,6 @@ jfsutils
 kdiff3
 krita
 kubectl
-kubectx
 less
 libreoffice-still
 libtool
@@ -80,6 +79,7 @@ networkmanager
 openssh
 openvpn
 pacman
+pacman-contrib
 patch
 pciutils
 perl
@@ -117,6 +117,7 @@ vim
 vlc
 wget
 which
+wireguard-tools
 wpa_supplicant
 xclip
 xf86-video-intel
