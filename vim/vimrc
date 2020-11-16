@@ -183,6 +183,9 @@ source ~/.vim/vim-startify.vim
 " For the NERDTree plugin
 source ~/.vim/NERDTree.vim
 
+" For vimpager
+source ~/.vim/vimpager.vim
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Navigation related

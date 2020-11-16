@@ -180,6 +180,8 @@ alias gstd='ask-for-confirmation "git stash drop stash@{0}" "Are you sure you wa
 alias gsui='git submodule update --init'
 alias gsuir='git submodule update --init --recursive'
 
+alias less='vimpager'
+
 alias poweroff='echo "This command is disabled. Please run it with sudo." && return 1'
 
 alias reboot='echo "This command is disabled. Please run it with sudo." && return 1'
