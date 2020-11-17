@@ -1,5 +1,6 @@
 eddie-ui
 electron4
+electron7
 gamin
 gconf
 gksu
