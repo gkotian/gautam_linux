@@ -1,5 +1,6 @@
 authenticator
 authy
+eddie-ui
 google-chrome
 lightdm-slick-greeter
 postman-bin
