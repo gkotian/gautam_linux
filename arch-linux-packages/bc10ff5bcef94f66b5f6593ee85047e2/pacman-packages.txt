@@ -68,6 +68,7 @@ pdftk
 pepper-flash
 pgadmin4
 pkgconf
+pv
 qt5ct
 redshift
 refind
