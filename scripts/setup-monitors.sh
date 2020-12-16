@@ -33,8 +33,15 @@ if xrandr | grep "HDMI-1 disconnected"; then
 else
     echo "HDMI-1 connected"
 
-    xrandr --output eDP-1  --mode 1920x1080 --rotate normal --pos 0x549 --primary \
-           --output HDMI-1 --mode 1920x1080 --rotate normal --pos 1920x0      \
+    # Laptop on left side
+    # xrandr --output eDP-1  --mode 1920x1080 --rotate normal --pos 0x550 --primary \
+    #        --output HDMI-1 --mode 1920x1080 --rotate normal --pos 1920x0 \
+    #        --output DP-1   --off \
+    #        --output HDMI-2 --off
+
+    # Laptop on right side
+    xrandr --output eDP-1  --mode 1920x1080 --rotate normal --pos 1920x550 --primary \
+           --output HDMI-1 --mode 1920x1080 --rotate normal --pos 0x0 \
            --output DP-1   --off \
            --output HDMI-2 --off
 
