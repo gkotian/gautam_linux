@@ -5,6 +5,8 @@
 # following content:
 # KERNEL=="card0", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/path/to/.Xauthority", RUN+="/path/to/setup-monitors.sh"
 
+LAPTOP_SIDE=right
+
 exec 1>>/var/tmp/setup-monitors.log 2>&1
 
 echo "[`date`]"
@@ -33,15 +35,16 @@ if xrandr | grep "HDMI-1 disconnected"; then
 else
     echo "HDMI-1 connected"
 
-    # Laptop on left side
-    # xrandr --output eDP-1  --mode 1920x1080 --rotate normal --pos 0x550 --primary \
-    #        --output HDMI-1 --mode 1920x1080 --rotate normal --pos 1920x0 \
-    #        --output DP-1   --off \
-    #        --output HDMI-2 --off
+    if [ "${LAPTOP_SIDE}" = "right" ]; then
+        LAPTOP_POS=1920x550
+        MONITOR_POS=0x0
+    else
+        LAPTOP_POS=0x550
+        MONITOR_POS=1920x0
+    fi
 
-    # Laptop on right side
-    xrandr --output eDP-1  --mode 1920x1080 --rotate normal --pos 1920x550 --primary \
-           --output HDMI-1 --mode 1920x1080 --rotate normal --pos 0x0 \
+    xrandr --output eDP-1  --mode 1920x1080 --rotate normal --pos ${LAPTOP_POS} --primary \
+           --output HDMI-1 --mode 1920x1080 --rotate normal --pos ${MONITOR_POS} \
            --output DP-1   --off \
            --output HDMI-2 --off
 
