@@ -7,6 +7,8 @@ gksu
 google-chrome
 google-cloud-sdk
 js
+js52
+js60
 keepassx2
 libgcj17-bin
 libgksu
