@@ -10,6 +10,7 @@ blueberry
 bluez-utils
 ctags
 cups
+dconf-editor
 deepin-screen-recorder
 dmenu
 docker
@@ -84,6 +85,7 @@ systemd-swap
 telegram-desktop
 texinfo
 the_silver_searcher
+tilix
 tk
 ttf-jetbrains-mono
 unzip
