@@ -185,3 +185,14 @@ alias less='vimpager'
 alias poweroff='echo "This command is disabled. Please run it with sudo." && return 1'
 
 alias reboot='echo "This command is disabled. Please run it with sudo." && return 1'
+
+# Three special things are done when playing sounds:
+#   1. 'stderr' is redirected to /dev/null to suppress aplay's output.
+#   2. The process is started in the background (using '&') so that control
+#      returns immediately to the command prompt (the delay becomes noticeable
+#      when playing longer sounds of ~1s duration).
+#   3. Parentheses are used to start the process in a subshell, in order to
+#      suppress printing the PID (and also later on the "done" message) when the
+#      process is sent to the background.
+alias sound-drop='(aplay ~/play/gautam_linux/misc/sounds/drop.wav 2>/dev/null &)'
+alias sound-complete='(aplay ~/play/gautam_linux/misc/sounds/complete.wav 2>/dev/null &)'
