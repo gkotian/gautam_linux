@@ -11,7 +11,7 @@ bluez-utils
 ctags
 cups
 dconf-editor
-deepin-screen-recorder
+deepin-screenshot
 dmenu
 docker
 docker-compose
