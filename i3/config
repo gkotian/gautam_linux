@@ -131,7 +131,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Control+l exec i3lock --tiling --image=/home/gautam/play/gautam_linux/misc/images/archlinux/arch07.png
 
 # Mouse pointer locator
-bindsym $mod+m exec yad --timeout=1 --width=70 --height=70 --no-buttons --mouse --picture --filename=/home/gautam/play/gautam_linux/misc/fading_fangs.gif 
+bindsym $mod+m exec yad --timeout=1 --width=70 --height=70 --no-buttons --mouse --picture --filename=/home/gautam/play/gautam_linux/misc/images/fading_fangs.gif 
 
 # Get rid of the title-bar
 new_window 1pixel
