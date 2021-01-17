@@ -9,6 +9,7 @@ postman-bin
 python-iniherit
 python-pyfavicon
 python-yoyo-migrations
+python2-gobject2
 pyzbar
 sky
 skypeforlinux-stable-bin
