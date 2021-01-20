@@ -3,6 +3,7 @@ authy
 eddie-ui
 google-chrome
 gscreenshot
+insync
 js60
 lightdm-slick-greeter
 postman-bin
