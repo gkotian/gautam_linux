@@ -19,7 +19,6 @@ eog
 evince
 fakeroot
 firefox
-flashplugin
 flex
 fzf
 gcc
@@ -66,7 +65,6 @@ p7zip
 pacman-contrib
 patch
 pdftk
-pepper-flash
 pgadmin4
 pkgconf
 pv

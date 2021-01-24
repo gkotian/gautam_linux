@@ -1,11 +1,13 @@
 authenticator
 authy
 eddie-ui
+flashplugin
 google-chrome
 gscreenshot
 insync
 js60
 lightdm-slick-greeter
+pepper-flash
 postman-bin
 python-iniherit
 python-pyfavicon
