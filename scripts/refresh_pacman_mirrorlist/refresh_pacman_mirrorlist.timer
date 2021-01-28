@@ -1,0 +1,8 @@
+[Unit]
+Description=Timer to run refresh_pacman_mirrorlist.service
+
+[Timer]
+OnCalendar=Mon *-*-* 14:00:00
+
+[Install]
+WantedBy=timers.target
