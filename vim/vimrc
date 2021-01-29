@@ -90,6 +90,9 @@ map <F12> @r
 map <HOME> ^
 imap <HOME> <C-o>^
 
+" Define space as an alternative leader.
+nmap <SPACE> <leader>
+
 " Map '\8' to search for the word under cursor
 nnoremap <leader>8 :exe 'Ag!' expand('<cword>')<CR>
 
