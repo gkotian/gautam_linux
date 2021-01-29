@@ -93,6 +93,9 @@ imap <HOME> <C-o>^
 " Define space as an alternative leader.
 nmap <SPACE> <leader>
 
+" Saves the current file.
+nnoremap <LEADER><SPACE> :w<CR>
+
 " Map '\8' to search for the word under cursor
 nnoremap <leader>8 :exe 'Ag!' expand('<cword>')<CR>
 
