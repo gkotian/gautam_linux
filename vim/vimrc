@@ -163,6 +163,7 @@ inoremap <Leader>pv <C-o>yiwo<ESC>iwritefln!"<C-o>p = %s"(<C-o>p);<ESC>
 
 " Set the colorscheme
 colorscheme gautam_colors
+" colorscheme obsidian
 
 " Augment existing editor commands.
 " The "!" (bang attribute) after the keyword 'command' tells vim to redefine
