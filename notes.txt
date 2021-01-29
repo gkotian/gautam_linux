@@ -258,3 +258,83 @@ rEFInd).
 
 ---------------------------------------------------------------------------------------------------
 
+## Accessing a hard-disk connected to the router
+
+1. Login to router
+1. Left column -> Heimnetz -> Speicher (NAS)
+1. Under `Speicher (NAS) aktiv`, click on `USB-Speicher`
+1. Click on the hard-disk folder (which should be the last entry on the page)
+
+## To stream a video
+
+1. Find the video you want to stream
+1. Right-click -> Freigeben
+1. Copy the download link
+1. Open VLC media player
+1. Media -> Open Network Stream
+1. Paste the link
+1. It may show some errors about invalid certificate, which you can safely
+ignore
+1. Enjoy
+
+---------------------------------------------------------------------------------------------------
+
+bash script confirmation:
+-------------------------
+
+empty means "No":
+    read -p "Continue? (y/N): " YES_OR_NO
+    [ -z "${YES_OR_NO}" ] || [[ "${YES_OR_NO}" != [yY] ]] && echo "Canceled." && exit 1
+
+empty means "Yes":
+    read -p "Continue? (Y/n): " YES_OR_NO
+    if [ ! -z "${YES_OR_NO}" ]; then
+        [[ "${YES_OR_NO}" != [yY] ]] && echo "Canceled." && exit 1
+    fi
+
+In zsh scripts, change `read -p "Continue? ...` to `read "?Continue? ...`
+IOW, remove the `-p` option, and prefix a `?` to the prompt.
+
+---------------------------------------------------------------------------------------------------
+
+DEPRECATED: use `make update-dependency-files` instead
+to apply go.mod/go.sum patches:
+-------------------------------
+1. Save the entire patch (without the ``` lines) to say `/tmp/patch.patch`
+2. Remove the `.orig` extension from the file name in the first line of the patch
+   ```
+   ➜  sed -i '1 s/\.orig//g' /tmp/patch.patch
+   ```
+3. Go to the directory containing the go.mod/go.sum file and apply the patch
+   ```
+   ➜  patch < /tmp/patch.patch
+   ```
+
+---------------------------------------------------------------------------------------------------
+
+truncating long strings in a Go program:
+----------------------------------------
+trunc := func(s string, max int) string {
+    if len(s) <= max {
+        return s
+    }
+
+    delta := len(s) - max
+    suffix := "s"
+    if delta == 1 {
+        suffix = ""
+    }
+
+    // Note: The "plus N more characters" suffix that is added when truncating
+    // the string causes the final string to not really respect the specified
+    // maximum limit. This should be properly handled if this ever becomes a
+    // first-class utility function.
+    return fmt.Sprintf("%s <plus %d more character%s>", s[:max], delta, suffix)
+}
+
+str := "... a really long string ..."
+truncateTo := 100
+fmt.Println(trunc(str, truncateTo))
+
+---------------------------------------------------------------------------------------------------
+

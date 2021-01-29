@@ -25,13 +25,9 @@ function fromunixtime () {
     fi
 }
 
-# Removes the *.orig files left by kdiff3 -- probably not needed anymore
+# Removes the *.orig files left by kdiff3
 function rmorig () {
-    # If there is a 'src' directory in the current working directory, then
-    # restrict searching within that.
-    SEARCH_DIR=$([ -d "${PWD}/src" ] && echo "src" || echo ".")
-
-    ORIG_FILES=(`find ${SEARCH_DIR} -name "*.orig"`)
+    ORIG_FILES=(`find . -name "*.orig"`)
     NUM_ORIG_FILES=${#ORIG_FILES[@]}
 
     if [ ${NUM_ORIG_FILES} -eq 0 ]
@@ -49,15 +45,10 @@ function rmorig () {
         echo "    ${ORIG_FILES[$i]}"
     done
 
-    echo -n "Proceed (y/n): "
-
-    read YES_OR_NO
-    if [ ${YES_OR_NO} != "y" ] && [ ${YES_OR_NO} != "Y" ]; then
-        return
+    read "?Continue? (Y/n): " YES_OR_NO
+    if [ ! -z "${YES_OR_NO}" ]; then
+        [[ "${YES_OR_NO}" != [yY] ]] && echo "Canceled." && return
     fi
 
-    for ((i = 1; i <= ${#ORIG_FILES[@]}; i+=1))
-    do
-        rm -f ${ORIG_FILES[$i]}
-    done
+    rm -f ${ORIG_FILES}
 }

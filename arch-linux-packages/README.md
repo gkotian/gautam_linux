@@ -1,3 +1,7 @@
+## Current system's machine ID
+
+cat /var/lib/dbus/machine-id
+
 ## Steps to restore packages
 
 1. cat pacman-packages.txt | xargs sudo pacman -S --needed --noconfirm
