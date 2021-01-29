@@ -166,8 +166,6 @@ source ~/.vim/functions.vim
 source ~/.vim/autocmds.vim
 
 " Plugin specific stuff
-source ~/.vim/vim-rooter.vim
-source ~/.vim/vim-session.vim
 source ~/.vim/vim-startify.vim
 source ~/.vim/NERDTree.vim
 source ~/.vim/vimpager.vim
