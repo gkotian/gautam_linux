@@ -102,24 +102,11 @@ nnoremap <leader>8 :exe 'Ag!' expand('<cword>')<CR>
 " Map '\d' to show a quick diff of unsaved changes made in the current buffer
 nnoremap <silent> <Leader>d :w !diff % -<CR>
 
-" Map '\fh' to automatically insert a function header comment.
-"nmap <leader>fh i    /<ESC>75a*<ESC>o<CR>  TODO: Does what?<CR><CR>Params:<ESC>>>>>o    TODO<CR><CR><BS><BS><BS><BS>Returns:<CR>    TODO<CR><CR><ESC>i    <ESC>75a*<ESC>a/<ESC>
-nmap <leader>fh <DOWN>0f(y%O<ESC>i    /<ESC>75a*<ESC>o<CR>  TODO: Does what?<CR><CR>Params:<ESC>>>>>o    <ESC>p%o<CR><ESC>iReturns:<ESC>>>>>o    TODO<CR><CR><ESC>i    <ESC>75a*<ESC>a/<CR><ESC>
-
 " Map '\fj' to format JSON
 nmap <leader>fj :%!python -m json.tool<CR>
 
 " Map '\fx' to format XML
 nmap <leader>fx :%!xmllint --format -<CR>
-
-" Mappings for commonly used import statements
-nnoremap <leader>is o<ESC>iimport std.stdio: writefln;<ESC>
-inoremap <leader>is import std.stdio: writefln;<CR><ESC>
-nmap <leader>iol <ESC>gg/^module<CR>wyt;Goimport ocean.util.log.Logger;<CR>static private Logger log;<CR>static this ()<CR>{<CR>log = Log.lookup("<ESC>pa");<CR>}<ESC>Q
-
-" Map '\l' to split a line and a keep a four-space indent over the preceding
-" line. This is just a hack until I find a better syntax mapping.
-nmap <leader>l i<CR><ESC><UP><HOME><DOWN>dw>>
 
 " Map '\n' to toggle line numbers
 nmap <leader>n :set invnumber<CR>
@@ -159,9 +146,6 @@ nmap <leader>v :e $MYVIMRC<CR>
 " Map '\ws' to quickly insert debugging helper prints
 nnoremap <Leader>ws o<ESC>iwritefln!"%s"(
 inoremap <Leader>ws writefln!"%s"(
-
-nnoremap <Leader>pv yiwo<ESC>iwritefln!"<C-o>p = %s"(<C-o>p);<ESC>
-inoremap <Leader>pv <C-o>yiwo<ESC>iwritefln!"<C-o>p = %s"(<C-o>p);<ESC>
 
 " Set the colorscheme
 colorscheme gautam_colors
