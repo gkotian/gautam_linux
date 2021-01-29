@@ -155,6 +155,7 @@ colorscheme gautam_colors
 " The "!" (bang attribute) after the keyword 'command' tells vim to redefine
 " the command everytime vimrc is sourced. Otherwise the new command would get
 " appended to list of existing commands.
+command! RemoveBlankLines g/^$/d
 command! RemoveMultipleBlankLines %s/^\_s\+\n/\r
 command! RemoveTrailingWhiteSpace %s/\s\+$//
 
@@ -164,13 +165,11 @@ source ~/.vim/functions.vim
 " Auto commands.
 source ~/.vim/autocmds.vim
 
-" For the vim-startify plugin
+" Plugin specific stuff
+source ~/.vim/vim-rooter.vim
+source ~/.vim/vim-session.vim
 source ~/.vim/vim-startify.vim
-
-" For the NERDTree plugin
 source ~/.vim/NERDTree.vim
-
-" For vimpager
 source ~/.vim/vimpager.vim
 
 
