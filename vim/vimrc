@@ -61,10 +61,6 @@ set omnifunc=syntaxcomplete#Complete
 " clear any message already displayed.
 nnoremap <silent> Q :nohlsearch<Bar>:echo<CR>
 
-" Map F1 to save the current file
-map <F1>  :w<CR>
-imap <F1> <C-o>:w<CR>
-
 " Map F2 to change to the previously opened file
 map <F2>  :e#<CR>
 
