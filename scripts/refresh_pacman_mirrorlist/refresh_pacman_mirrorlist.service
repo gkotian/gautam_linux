@@ -3,4 +3,4 @@ Description=Job to run the script which refreshes the pacman mirrorlist
 
 [Service]
 Type=oneshot
-ExecStart=/home/gautam/play/gautam_linux/refresh_pacman_mirrorlist.sh
+ExecStart=/home/gautam/play/gautam_linux/scripts/refresh_pacman_mirrorlist/refresh_pacman_mirrorlist.sh
