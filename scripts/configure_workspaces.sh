@@ -4,7 +4,7 @@
 
 # This value should match the number of entries in the 'GITK_PROJECTS' array in
 # the 'launch_all_gitk()' function in 'g_startup.sh'.
-NUM_GITK_WINDOWS=2
+NUM_GITK_WINDOWS=0
 
 exec 1>>/var/tmp/configure_workspaces.log 2>&1
 

@@ -32,8 +32,6 @@ launch_all_gitk() {
     # When modifying this array, make sure to also set the value of
     # 'NUM_GITK_WINDOWS' appropriately in 'configure_workspaces.sh'.
     GITK_PROJECTS=(
-        ${HOME}/work/enercity/dashboard
-        ${HOME}/work/enercity/db_checker
     )
 
     for P in ${GITK_PROJECTS[@]}
@@ -45,8 +43,6 @@ launch_all_gitk() {
 
 create_tags_files() {
     TAGS_PROJECTS=(
-        ${HOME}/work/enercity/dashboard
-        ${HOME}/work/enercity/db_checker
     )
 
     for P in ${TAGS_PROJECTS[@]}
