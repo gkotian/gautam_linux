@@ -69,6 +69,7 @@ if [ -n "${OUTPUT}" ]; then
     echo "${OUTPUT}"
     echo "\`\`\`"
 else
+    rm -f ${TMPFILE}
     echo "No changes to the pacman packages list."
     NO_CHANGES_2="true"
 fi
