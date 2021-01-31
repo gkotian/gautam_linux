@@ -30,7 +30,7 @@ launch_one_shot_scripts() {
 # Launches gitk for commonly monitored projects.
 launch_all_gitk() {
     # When modifying this array, make sure to also set the value of
-    # 'NUM_GITK_WINDOWS' appropriately in 'set_workspace_layouts.sh'.
+    # 'NUM_GITK_WINDOWS' appropriately in 'configure_workspaces.sh'.
     GITK_PROJECTS=(
         ${HOME}/work/enercity/dashboard
         ${HOME}/work/enercity/db_checker
