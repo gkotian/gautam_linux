@@ -192,6 +192,3 @@ exec /home/gautam/play/gautam_linux/scripts/configure_workspaces.sh
 bar {
         status_command i3status -c /home/gautam/play/gautam_linux/i3/i3bar_config
 }
-
-# Script to automatically set the layouts of various workspaces
-exec_always ~/.i3/per-workspace-layout.pl

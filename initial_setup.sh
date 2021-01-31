@@ -163,14 +163,6 @@ echo -n "Changing default shell to zsh... "
 chsh -s /bin/zsh ${THE_USER}
 echo "Done!"
 
-echo -n "Downloading the script to manage i3 workspace layouts... "
-sudo -u ${THE_USER} curl --silent --fail --output /home/${THE_USER}/.i3/per-workspace-layout.pl https://raw.githubusercontent.com/i3/i3/next/contrib/per-workspace-layout.pl
-if [[ $? -ne 0 ]]; then
-    echo "Failed."
-else
-    echo "Done!"
-fi
-
 echo -n "Setting up ssh to access GitHub... "
 sudo -u ${THE_USER} ssh-keygen -t ed25519 -f /home/${THE_USER}/.ssh/id_ed25519_github
 
@@ -340,11 +332,6 @@ echo "(you may want to check that gitk was patched correctly by running:"
 echo "    meld /usr/bin/gitk.orig /usr/bin/gitk"
 echo "in the other terminal/tab, and/or by launching gitk in any of the existing repos)"
 echo ""
-
-echo "i3 setup"
-echo "--------"
-echo "open ~/.i3/per-workspace-layout.pl, and set the layouts as necessary"
-waitForConfirmation
 
 echo "docker setup"
 echo "------------"
