@@ -29,6 +29,8 @@ launch_one_shot_scripts() {
 
 # Launches gitk for commonly monitored projects.
 launch_all_gitk() {
+    # When modifying this array, make sure to also set the value of
+    # 'NUM_GITK_WINDOWS' appropriately in 'set_workspace_layouts.sh'.
     GITK_PROJECTS=(
         ${HOME}/work/enercity/dashboard
         ${HOME}/work/enercity/db_checker
@@ -61,9 +63,9 @@ if [ ${IS_LAPTOP} = "YES" ]; then
     [ -f ${BATTERY_CHECKER} ] && ${BATTERY_CHECKER} &
 fi
 
-launch_one_shot_scripts ${GL_DIR}/arch-linux-packages/update-packages-lists.sh
-launch_one_shot_scripts ${GL_DIR}/scripts/boot_times_tracker.sh
 launch_all_gitk
 create_tags_files
+launch_one_shot_scripts ${GL_DIR}/arch-linux-packages/update-packages-lists.sh
+launch_one_shot_scripts ${GL_DIR}/scripts/boot_times_tracker.sh
 
 echo "-------------------------------------------------------------------------"
