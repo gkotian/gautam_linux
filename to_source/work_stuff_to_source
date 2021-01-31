@@ -1,10 +1,5 @@
 # This file is sourced from ~/.zshrc
 
-alias ag='ag --ignore-dir submodules --ignore-dir testing'
-
 alias cda='cd ~/work/appname'
 
-alias dcu-appname='docker-compose -f ~/work/meta/test-setup/docker-compose-appname.yml up'
-
-alias de-appname='docker exec -it testsetup_appname_1 bash'
-alias de-redis='docker exec -it testsetup_redis_1 redis-cli'
+alias tun-client='make -f /path/to/vpn/Makefile tunnel-client'

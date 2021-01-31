@@ -129,7 +129,7 @@ function dcipaddr() {
 
 alias bat='upower -i $(upower -e | grep "BAT") | grep -E "state|time\ to|percentage"'
 
-alias cdo='cd ${PLAY_DIR}/ocean'
+alias cdt='cd /tmp'
 
 alias dcu='docker-compose up'
 alias dils='docker image ls'
@@ -137,7 +137,7 @@ alias dps='docker ps'
 alias dpsa='docker ps -a'
 
 alias gca='git commit --amend --no-edit'
-alias gcae='git commit --amend --verbose'
+alias gcae='git commit --amend'
 alias gcf='git commit --fixup'
 alias gcp='custom-git-cherry-pick'
 alias gct='git commit -m "tmp"'
