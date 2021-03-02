@@ -2,6 +2,7 @@ alsa-utils
 arandr
 autoconf
 automake
+aws-cli
 base
 bind
 binutils
