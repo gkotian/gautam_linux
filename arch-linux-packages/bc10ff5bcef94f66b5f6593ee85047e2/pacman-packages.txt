@@ -57,6 +57,7 @@ net-tools
 network-manager-applet
 networkmanager
 networkmanager-openvpn
+opendoas
 openresolv
 openssh
 oracle-instantclient-basic
