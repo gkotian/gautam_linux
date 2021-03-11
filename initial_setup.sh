@@ -91,6 +91,10 @@ if [ "${THE_USER}" == "unknown" ]; then
 fi
 echo "$THE_USER"
 
+echo -n "Adding user '${THE_USER}' to the 'wheel' group... "
+usermod -aG wheel ${THE_USER}
+echo "Done!"
+
 echo "Creating directories:"
 for DIR in ${DIRECTORIES_TO_PRECREATE[@]}
 do
