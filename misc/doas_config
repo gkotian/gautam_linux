@@ -1,0 +1,1 @@
+permit persist setenv { DISPLAY } :wheel as root

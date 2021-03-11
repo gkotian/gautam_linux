@@ -278,6 +278,10 @@ echo -n "    PyPI config file... "
 sudo -u ${THE_USER} ln -srf $GL_DIR/misc/pypi_config /home/$THE_USER/.pypirc
 echo "Done!"
 
+echo -n "    doas config file... "
+ln -sf ${GL_DIR}/misc/doas_config /etc/doas.conf
+echo "Done!"
+
 echo -n "    /usr/bin/dmenu_path... "
 rm -f /usr/bin/dmenu_path
 ln -s $GL_DIR/scripts/dmenu_path.sh /usr/bin/dmenu_path
