@@ -12,6 +12,7 @@ coreutils
 cryptsetup
 cups
 dconf-editor
+deepin-screenshot
 device-mapper
 dhcpcd
 dialog
@@ -76,6 +77,7 @@ ncdu
 netctl
 network-manager-applet
 networkmanager
+opendoas
 openssh
 openvpn
 pacman
@@ -115,6 +117,7 @@ usbutils
 util-linux
 vi
 vim
+vimpager
 vlc
 wget
 which
@@ -123,7 +126,6 @@ wpa_supplicant
 xclip
 xf86-video-intel
 xf86-video-vesa
-xfce4-screenshooter
 xfce4-terminal
 xfsprogs
 xorg-server
