@@ -13,6 +13,7 @@ keepassx2
 libgcj17-bin
 libgksu
 libnm-gtk
+mozilla-common
 pcmciautils
 pdftk-bin
 postman
