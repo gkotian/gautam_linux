@@ -70,7 +70,7 @@ echo "Starting script at: `date +%H:%M:%S`"
 echo ""
 
 echo -n "Checking internet connectivity... "
-wget -q --tries=10 --timeout=20 --spider http://google.com
+wget --quiet --tries=10 --timeout=20 --spider http://google.com
 if [[ $? -ne 0 ]]; then
     echo "Not connected to the Internet. Aborting." 1>&2
     exit 1
