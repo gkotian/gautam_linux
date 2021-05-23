@@ -378,30 +378,12 @@ echo "--------------"
 echo "Create the clone.py config file (format present at the top of ${PLAY_DIR}/python_scripts/clone.py)"
 waitForConfirmation
 
-echo "gnome-terminal setup"
-echo "--------------------"
-echo "    Open a gnome-terminal"
-echo "    Edit -> profile preferences"
-echo "        Tab General"
-echo "            uncheck 'Use the system fixed width font'"
-echo "            choose 'Jetbrains Mono Regular' as the font, and '13' as font size"
-echo "            uncheck 'Terminal bell'"
-echo "            Select-by-word characters -> remove ':' '='"
-echo "                (it may not be there due to:"
-echo "                 https://bugs.launchpad.net/ubuntu/+source/gnome-terminal/+bug/1401207)"
-echo "        Tab Colors"
-echo "            uncheck 'use colors from system theme', under 'Built-in schemes' choose custom"
-echo "            text black (#000000), background gray (#B0B0B0)"
-echo "        Tab Scrolling"
-echo "            uncheck 'Limit scrollback to ...'"
-echo "    Terminal -> preferences"
-echo "        Tab General"
-echo "            uncheck 'Show menubar by default in new terminals'"
-echo "            uncheck 'Enable the menu accelerator key (F10 by default)'"
-echo "        Tab Shortcuts"
-echo "            under 'Shortcut keys -> View', disable full screen"
-echo "            under 'Shortcut keys -> Help', disable contents"
-waitForConfirmation
+# echo "tilix setup"
+# echo "-----------"
+# mkdir -p ~/.config/tilix/schemes
+# wget -qO ${HOME}/.config/tilix/schemes/gruvbox-dark-medium.json https://git.io/Jt6gP
+# also get light theme this way
+# preferences -> shortcuts -> session -> Edit the session name = Ctrl+Alt+T
 
 echo "google-chrome setup"
 echo "-------------------"
