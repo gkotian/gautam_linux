@@ -467,12 +467,6 @@ echo "    first open a new terminal and simply run flake8. If it works, then it'
 echo "    If not, find out where it's installed using https://stackoverflow.com/a/45956582/793930,"
 echo "    and then update ~/.profile as appropriate."
 
-echo "Sorting pacman mirrors by speed"
-echo "-------------------------------"
-echo "    sudo pacman -S reflector"
-echo "    sudo reflector --verbose --latest 100 --sort rate --country Germany --country Czechia --country Poland --save /etc/pacman.d/mirrorlist"
-waitForConfirmation
-
 echo "Specifying DNS servers"
 echo "----------------------"
 echo "    Get the connection name (under column NAME on running 'nmcli con')"
