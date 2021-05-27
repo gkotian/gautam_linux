@@ -63,6 +63,7 @@ launch_all_gitk
 create_tags_files
 launch_one_shot_scripts ${GL_DIR}/arch-linux-packages/update-packages-lists.sh
 launch_one_shot_scripts ${GL_DIR}/scripts/boot_times_tracker.sh
+launch_one_shot_scripts ${GL_DIR}/scripts/refresh_pacman_mirrorlist.sh
 
 docker system prune --force
 
