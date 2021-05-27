@@ -291,20 +291,7 @@ echo -n "    monitor-hotplug.rules... "
 ln -sf ${GL_DIR}/misc/95-monitor-hotplug.rules /etc/udev/rules.d/95-monitor-hotplug.rules
 echo "Done!"
 
-echo -n "    script to periodically refresh the pacman mirrorlist... "
-ln -sf ${GL_DIR}/scripts/refresh_pacman_mirrorlist/refresh_pacman_mirrorlist.service /etc/systemd/system/refresh_pacman_mirrorlist.service
-ln -sf ${GL_DIR}/scripts/refresh_pacman_mirrorlist/refresh_pacman_mirrorlist.timer /etc/systemd/system/refresh_pacman_mirrorlist.timer
-echo "Done!"
-
 echo ""
-
-echo -n "Reloading systemd to make it aware of newly installed services & timers... "
-systemctl daemon-reload
-echo "Done!"
-
-echo -n "Enabling newly installed systemd services... "
-systemctl enable refresh_pacman_mirrorlist.timer
-echo "Done!"
 
 if [ -d "/home/$THE_USER/.vim" ]; then
     echo "In the other terminal/tab run the following command:"
