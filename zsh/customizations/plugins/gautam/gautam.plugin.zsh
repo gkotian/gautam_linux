@@ -93,6 +93,24 @@ function gd () {
     fi
 }
 
+function gofmt() {
+    GOLANG_IMG=$(docker image ls | grep -w "^golang" | head -1)
+
+    if [ -z "${GOLANG_IMG}" ]; then
+        echo "No golang docker image found. Aborting."
+        return 1
+    fi
+
+    VER=$(echo ${GOLANG_IMG} | awk '{ print $2 }')
+    FINAL_IMAGE=golang:${VER}
+
+    docker run --rm --tty \
+        --mount "type=bind,source=${PWD},target=/go/src" \
+		--workdir /go/src \
+        ${FINAL_IMAGE} \
+            /bin/sh -c "gofmt -s -w ."
+}
+
 # gtb => git test branch
 # This is not just an alias as I sometimes need to pass arguments to
 # 'git-test-branch'
@@ -150,7 +168,6 @@ alias gk='\gitk --all --branches&'
 # git latest tag
 alias glt='git tag --list "v*" --sort=v:refname | tail -1'
 
-alias gofmt='docker run --rm -it -v "${PWD}:/go/src" golang:alpine3.11 /bin/sh -c "cd /go/src && gofmt -s -w ."'
 alias gopass='docker run --rm -it -v ${HOME}:/root gopass'
 
 alias gpf='git push fork'
