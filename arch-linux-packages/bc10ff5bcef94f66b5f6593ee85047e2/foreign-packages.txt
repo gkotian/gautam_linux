@@ -19,6 +19,7 @@ slack-desktop
 sqlcl
 teams
 teamviewer-beta
+timecamp-bin
 vmware-horizon-client
 vmware-keymaps
 xorg-font-utils

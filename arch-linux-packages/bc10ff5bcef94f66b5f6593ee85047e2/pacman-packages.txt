@@ -21,6 +21,7 @@ evince
 fakeroot
 firefox
 flex
+fuse2
 fzf
 gcc
 git
