@@ -9,7 +9,6 @@ cat /var/lib/dbus/machine-id
 1. git clone https://aur.archlinux.org/yay.git /tmp/yay
 1. cd /tmp/yay
 1. makepkg --syncdeps --install --clean
-1. doas pacman -U <tar.zst>
 1. Open foreign-packages.txt and remove from it:
      - `yay` (as we already installed it above)
      - all packages that you don't recognize/need
