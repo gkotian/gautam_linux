@@ -110,6 +110,7 @@ texinfo
 the_silver_searcher
 thunar
 thunderbird
+tilix
 tk
 ttf-jetbrains-mono
 unzip
