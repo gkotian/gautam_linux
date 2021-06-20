@@ -173,7 +173,6 @@ for_window [class="Nautilus" instance="file_progress"] floating enable
 
 # Automatically launch certain applications at startup
 exec --no-startup-id i3-msg --quiet 'workspace 1; exec i3-sensible-terminal'
-exec --no-startup-id i3-msg --quiet 'workspace 2; exec i3-sensible-terminal'
 exec /home/gautam/play/gautam_linux/scripts/g_startup.sh
 exec firefox
 exec redshift -l 52.52:13.40
