@@ -1,3 +1,4 @@
+export TERMINAL=tilix
 export PLAY_DIR=$HOME/play
 export WORK_DIR=$HOME/work
 
