@@ -328,6 +328,10 @@ echo "    meld /usr/bin/gitk.orig /usr/bin/gitk"
 echo "in the other terminal/tab, and/or by launching gitk in any of the existing repos)"
 echo ""
 
+echo "Changing ownership of the doas config file... "
+chown root:root ${GL_DIR}/misc/doas_config
+echo "Done!"
+
 echo "docker setup"
 echo "------------"
 echo "Follow instructions in: https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository"
