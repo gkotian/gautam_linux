@@ -371,6 +371,7 @@ waitForConfirmation
 
 # echo "tilix setup"
 # echo "-----------"
+# echo "TERMINAL=tilix" >> /etc/environment
 # mkdir -p ~/.config/tilix/schemes
 # wget -qO ${HOME}/.config/tilix/schemes/gruvbox-dark-medium.json https://git.io/Jt6gP
 # also get light theme this way
