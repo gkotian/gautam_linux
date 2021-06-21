@@ -2,7 +2,9 @@
 
 # Refreshes the Arch Linux mirrorlist if it hasn't been updated for over a week.
 
-exec 1>>/var/tmp/refresh_arch_linux_mirrorlist.log 2>&1
+SCRIPT_NAME=$(basename ${0})
+LOG_FILE=/var/tmp/${SCRIPT_NAME%.sh}.log
+exec 1>>${LOG_FILE} 2>&1
 
 echo "[`date`]"
 
