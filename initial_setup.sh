@@ -364,6 +364,13 @@ echo "        - fix the paths in the two 'source' lines"
 echo "    rm -f ${HOME}/.fzf.bash"
 waitForConfirmation
 
+echo "Arch Linux mirrorlist setup"
+echo "---------------------------"
+echo "In the other terminal/tab run the following commands:"
+echo "    doas rm /etc/pacman.d/mirrorlist"
+echo "    doas ln -s ${HOME}/.config/arch_linux_mirrorlist /etc/pacman.d/mirrorlist"
+waitForConfirmation
+
 echo "clone.py setup"
 echo "--------------"
 echo "Create the clone.py config file (format present at the top of ${PLAY_DIR}/python_scripts/clone.py)"

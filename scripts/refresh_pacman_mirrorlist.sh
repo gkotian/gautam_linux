@@ -1,23 +1,29 @@
 #!/bin/sh
 
-# Refreshes the pacman mirrorlist if it hasn't been updated for over a week.
+# Refreshes the Arch Linux mirrorlist if it hasn't been updated for over a week.
 
-exec 1>>/var/tmp/refresh_pacman_mirrorlist.log 2>&1
+exec 1>>/var/tmp/refresh_arch_linux_mirrorlist.log 2>&1
 
 echo "[`date`]"
 
-OLD_REFRESH_TIME=$(grep When /etc/pacman.d/mirrorlist | cut -d":" -f2-)
-echo "Old mirrorlist refresh time: ${OLD_REFRESH_TIME}"
+MIRRORLIST=${HOME}/.config/arch_linux_mirrorlist
 
-OLD_REFRESH_TS=$(date -d "${OLD_REFRESH_TIME}" +%s)
-NOW_TS=$(date +%s)
-TS_DIFFERENCE="$((${NOW_TS}-${OLD_REFRESH_TS}))"
-echo "Last mirrorlist refresh was ${TS_DIFFERENCE} seconds ago"
+if [ -f "${MIRRORLIST}" ]; then
+    OLD_REFRESH_TIME=$(grep When ${MIRRORLIST} | cut -d":" -f2-)
+    echo "Old mirrorlist refresh time: ${OLD_REFRESH_TIME}"
 
-SECONDS_IN_ONE_WEEK=604800
-if [ ${TS_DIFFERENCE} -lt ${SECONDS_IN_ONE_WEEK} ]; then
-    echo "Will not update the mirrorlist"
-    exit 0
+    OLD_REFRESH_TS=$(date -d "${OLD_REFRESH_TIME}" +%s)
+    NOW_TS=$(date +%s)
+    TS_DIFFERENCE="$((${NOW_TS}-${OLD_REFRESH_TS}))"
+    echo "Last mirrorlist refresh was ${TS_DIFFERENCE} seconds ago"
+
+    SECONDS_IN_ONE_WEEK=604800
+    if [ ${TS_DIFFERENCE} -lt ${SECONDS_IN_ONE_WEEK} ]; then
+        echo "Will not update the mirrorlist"
+        exit 0
+    fi
+else
+    echo "Mirrorlist file '${MIRRORLIST}' not found"
 fi
 
 echo "Will update the mirrorlist"
@@ -40,9 +46,9 @@ reflector \
     --sort rate \
     --protocol https \
     --country Germany,Austria,Belgium,Czechia,Denmark,France,Luxembourg,Netherlands,Poland,Sweden,Switzerland \
-    --save /etc/pacman.d/mirrorlist
+    --save ${MIRRORLIST}
 
-NEW_REFRESH_TIME=$(grep When /etc/pacman.d/mirrorlist | cut -d":" -f2-)
+NEW_REFRESH_TIME=$(grep When ${MIRRORLIST} | cut -d":" -f2-)
 echo "New mirrorlist refresh time: ${NEW_REFRESH_TIME}"
 
 echo "-------------------------------------------------------------------------"
