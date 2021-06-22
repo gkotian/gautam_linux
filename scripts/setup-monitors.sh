@@ -5,11 +5,24 @@
 # following content:
 # KERNEL=="card0", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/path/to/.Xauthority", RUN+="/path/to/setup-monitors.sh"
 
-LAPTOP_SIDE=right
-
 exec 1>>/var/tmp/setup-monitors.log 2>&1
 
 echo "[`date`]"
+
+DEFAULT_LAPTOP_SIDE=right
+
+if [ $# -eq 0 ]; then
+    echo "No laptop side specified"
+    echo "Will use the default of '${DEFAULT_LAPTOP_SIDE}'"
+    LAPTOP_SIDE=${DEFAULT_LAPTOP_SIDE}
+elif [ "${1}" != "left" ] && [ "${1}" != "right" ]; then
+    echo "Invalid laptop side specified, expected 'left' or 'right', got '${1}'"
+    echo "Will use the default of '${DEFAULT_LAPTOP_SIDE}'"
+    LAPTOP_SIDE=${DEFAULT_LAPTOP_SIDE}
+else
+    echo "Using laptop side '${1}' as specified"
+    LAPTOP_SIDE=${1}
+fi
 
 if xrandr | grep "HDMI-1 disconnected"; then
     # Disconnecting triggers a message automatically, so we don't need an
