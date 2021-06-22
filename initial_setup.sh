@@ -376,13 +376,34 @@ echo "--------------"
 echo "Create the clone.py config file (format present at the top of ${PLAY_DIR}/python_scripts/clone.py)"
 waitForConfirmation
 
-# echo "tilix setup"
-# echo "-----------"
-# echo "TERMINAL=tilix" >> /etc/environment
-# mkdir -p ~/.config/tilix/schemes
-# wget -qO ${HOME}/.config/tilix/schemes/gruvbox-dark-medium.json https://git.io/Jt6gP
-# also get light theme this way
-# preferences -> shortcuts -> session -> Edit the session name = Ctrl+Alt+T
+echo "tilix setup"
+echo "-----------"
+echo "In the other terminal/tab run the following commands:"
+echo "    doas sh -c 'echo \"TERMINAL=tilix\" >> /etc/environment'"
+waitForConfirmation
+echo "Launch tilix, go to Preferences and make the following changes:"
+echo "    Global:"
+echo "        Check 'Focus a terminal when the mouse moves over it'"
+echo "    Appearance:"
+echo "        Window style -> Disable CSD, hide toolbar"
+echo "        Theme variant -> Dark"
+echo "        Uncheck 'Show the terminal title even if it's the only terminal'"
+echo "    Shortcuts:"
+echo "        Session -> Edit the session name -> Ctrl+Alt+T"
+echo "    Profiles:"
+echo "        Default:"
+echo "            Tab General:"
+echo "                Profile name -> Dark"
+echo "                Check 'Custom font', and then select 'JetBrains Mono NL Medium, size 14'"
+echo "                Word-wise select chars -> remove ':' & add '~'"
+echo "                Notification -> Terminal bell -> None"
+echo "            Tab Color:"
+echo "                Color palette -> Foreground -> click the light green box"
+echo "                    then click '+' under 'Custom' -> #EBDBB2"
+echo "                Options -> uncheck 'Use theme colors for foreground/background'"
+echo "            Tab Scrolling:"
+echo "                Uncheck 'Limit scrollback to ...'"
+waitForConfirmation
 
 echo "google-chrome setup"
 echo "-------------------"
