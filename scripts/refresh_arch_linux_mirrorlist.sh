@@ -22,6 +22,7 @@ if [ -f "${MIRRORLIST}" ]; then
     SECONDS_IN_ONE_WEEK=604800
     if [ ${TS_DIFFERENCE} -lt ${SECONDS_IN_ONE_WEEK} ]; then
         echo "Will not update the mirrorlist"
+        echo "-------------------------------------------------------------------------"
         exit 0
     fi
 else
@@ -38,6 +39,7 @@ echo -n "Checking if the internet is reachable... "
 wget --quiet --tries=10 --timeout=20 --spider archlinux.org
 if [[ $? -ne 0 ]]; then
     echo "NO"
+    echo "-------------------------------------------------------------------------"
     exit 1
 fi
 echo "YES"
