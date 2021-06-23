@@ -11,6 +11,7 @@ blueberry
 bluez-utils
 ctags
 cups
+dbus-broker
 dconf-editor
 deepin-screenshot
 dmenu
