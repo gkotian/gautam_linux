@@ -20,7 +20,6 @@ pcmciautils
 pdftk-bin
 postman
 qt4
-skypeforlinux-stable-bin
 slack-desktop
 tor-browser
 xorg-font-utils
