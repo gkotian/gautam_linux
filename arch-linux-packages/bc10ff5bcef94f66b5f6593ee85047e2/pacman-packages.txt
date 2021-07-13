@@ -38,6 +38,7 @@ i3blocks
 i3lock
 i3status
 jq
+jre11-openjdk
 kate
 kdiff3
 krita

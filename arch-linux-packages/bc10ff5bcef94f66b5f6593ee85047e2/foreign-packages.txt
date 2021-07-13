@@ -1,4 +1,5 @@
 authy
+bisq
 eddie-ui
 flashplugin
 google-chrome
