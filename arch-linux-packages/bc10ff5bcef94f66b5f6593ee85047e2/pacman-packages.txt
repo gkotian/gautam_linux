@@ -87,6 +87,7 @@ sudo
 system-config-printer
 systemd-swap
 telegram-desktop
+terraform
 texinfo
 the_silver_searcher
 tilix
