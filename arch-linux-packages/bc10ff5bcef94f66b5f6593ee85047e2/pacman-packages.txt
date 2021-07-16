@@ -11,6 +11,7 @@ blueberry
 bluez-utils
 ctags
 cups
+dbeaver
 dbus-broker
 dconf-editor
 deepin-screenshot
@@ -71,7 +72,6 @@ p7zip
 pacman-contrib
 patch
 pdftk
-pgadmin4
 pkgconf
 pv
 qt5ct
@@ -79,7 +79,6 @@ redis
 redshift
 refind
 reflector
-remmina
 rsync
 scrot
 signal-desktop
