@@ -1,4 +1,5 @@
 authy
+aws-cli-v2-bin
 bisq
 eddie-ui
 flashplugin
