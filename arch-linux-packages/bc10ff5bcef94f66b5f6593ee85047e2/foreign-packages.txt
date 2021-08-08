@@ -7,6 +7,7 @@ google-chrome
 gscreenshot
 insync
 js60
+libopenaptx
 lightdm-slick-greeter
 pepper-flash
 postman-bin
