@@ -39,8 +39,9 @@ else
         echo "Laptop position not specified"
         echo "Will use the default of '${DEFAULT_LAPTOP_POSITION}'"
         LAPTOP_POSITION=${DEFAULT_LAPTOP_POSITION}
-    elif [ "${1}" != "left" ] && [ "${1}" != "right" ]; then
-        echo "Invalid laptop position specified, must be one of 'left' or 'right', got '${1}'"
+    elif [ "${1}" != "left" ] && [ "${1}" != "right" ] && [ "${1}" != "bottom" ]; then
+        echo "Invalid laptop position '${1}'"
+        echo "(must be one of 'left', 'right' or 'bottom')"
         echo "Will use the default of '${DEFAULT_LAPTOP_POSITION}'"
         LAPTOP_POSITION=${DEFAULT_LAPTOP_POSITION}
     else
@@ -51,9 +52,12 @@ else
     if [ "${LAPTOP_POSITION}" = "right" ]; then
         LAPTOP_COORDINATES=1920x550
         MONITOR_COORDINATES=0x0
-    else
+    elif [ "${LAPTOP_POSITION}" = "left" ]; then
         LAPTOP_COORDINATES=0x550
         MONITOR_COORDINATES=1920x0
+    else
+        LAPTOP_COORDINATES=0x1080
+        MONITOR_COORDINATES=0x0
     fi
 
     xrandr --output eDP-1  --mode 1920x1080 --rotate normal --pos ${LAPTOP_COORDINATES} --primary \
@@ -61,13 +65,17 @@ else
            --output DP-1   --off \
            --output HDMI-2 --off
 
-    echo "Moving selected workspaces to the monitor"
+    echo "Moving all workspaces except 10 to the monitor"
 
     i3-msg --quiet '[workspace=1] move workspace to output HDMI-1'
     i3-msg --quiet '[workspace=2] move workspace to output HDMI-1'
+    i3-msg --quiet '[workspace=3] move workspace to output HDMI-1'
+    i3-msg --quiet '[workspace=4] move workspace to output HDMI-1'
     i3-msg --quiet '[workspace=5] move workspace to output HDMI-1'
+    i3-msg --quiet '[workspace=6] move workspace to output HDMI-1'
     i3-msg --quiet '[workspace=7] move workspace to output HDMI-1'
     i3-msg --quiet '[workspace=8] move workspace to output HDMI-1'
+    i3-msg --quiet '[workspace=9] move workspace to output HDMI-1'
 fi
 
 echo "-------------------------------------------------------------------------"
