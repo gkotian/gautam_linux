@@ -9,21 +9,6 @@ exec 1>>/var/tmp/setup-monitors.log 2>&1
 
 echo "[`date`]"
 
-DEFAULT_LAPTOP_POSITION=right
-
-if [ $# -eq 0 ]; then
-    echo "Laptop position not specified"
-    echo "Will use the default of '${DEFAULT_LAPTOP_POSITION}'"
-    LAPTOP_POSITION=${DEFAULT_LAPTOP_POSITION}
-elif [ "${1}" != "left" ] && [ "${1}" != "right" ]; then
-    echo "Invalid laptop position specified, must be one of 'left' or 'right', got '${1}'"
-    echo "Will use the default of '${DEFAULT_LAPTOP_POSITION}'"
-    LAPTOP_POSITION=${DEFAULT_LAPTOP_POSITION}
-else
-    echo "Using laptop position '${1}' as specified"
-    LAPTOP_POSITION=${1}
-fi
-
 if xrandr | grep "HDMI-1 disconnected"; then
     # Disconnecting triggers a message automatically, so we don't need an
     # explicit one here.
@@ -47,6 +32,21 @@ if xrandr | grep "HDMI-1 disconnected"; then
     i3-msg --quiet '[workspace=10] move workspace to output eDP-1'
 else
     echo "HDMI-1 connected"
+
+    DEFAULT_LAPTOP_POSITION=right
+
+    if [ $# -eq 0 ]; then
+        echo "Laptop position not specified"
+        echo "Will use the default of '${DEFAULT_LAPTOP_POSITION}'"
+        LAPTOP_POSITION=${DEFAULT_LAPTOP_POSITION}
+    elif [ "${1}" != "left" ] && [ "${1}" != "right" ]; then
+        echo "Invalid laptop position specified, must be one of 'left' or 'right', got '${1}'"
+        echo "Will use the default of '${DEFAULT_LAPTOP_POSITION}'"
+        LAPTOP_POSITION=${DEFAULT_LAPTOP_POSITION}
+    else
+        echo "Using laptop position '${1}' as specified"
+        LAPTOP_POSITION=${1}
+    fi
 
     if [ "${LAPTOP_POSITION}" = "right" ]; then
         LAPTOP_COORDINATES=1920x550
