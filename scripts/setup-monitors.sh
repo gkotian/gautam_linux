@@ -9,19 +9,19 @@ exec 1>>/var/tmp/setup-monitors.log 2>&1
 
 echo "[`date`]"
 
-DEFAULT_LAPTOP_SIDE=right
+DEFAULT_LAPTOP_POSITION=right
 
 if [ $# -eq 0 ]; then
-    echo "No laptop side specified"
-    echo "Will use the default of '${DEFAULT_LAPTOP_SIDE}'"
-    LAPTOP_SIDE=${DEFAULT_LAPTOP_SIDE}
+    echo "Laptop position not specified"
+    echo "Will use the default of '${DEFAULT_LAPTOP_POSITION}'"
+    LAPTOP_POSITION=${DEFAULT_LAPTOP_POSITION}
 elif [ "${1}" != "left" ] && [ "${1}" != "right" ]; then
-    echo "Invalid laptop side specified, expected 'left' or 'right', got '${1}'"
-    echo "Will use the default of '${DEFAULT_LAPTOP_SIDE}'"
-    LAPTOP_SIDE=${DEFAULT_LAPTOP_SIDE}
+    echo "Invalid laptop position specified, must be one of 'left' or 'right', got '${1}'"
+    echo "Will use the default of '${DEFAULT_LAPTOP_POSITION}'"
+    LAPTOP_POSITION=${DEFAULT_LAPTOP_POSITION}
 else
-    echo "Using laptop side '${1}' as specified"
-    LAPTOP_SIDE=${1}
+    echo "Using laptop position '${1}' as specified"
+    LAPTOP_POSITION=${1}
 fi
 
 if xrandr | grep "HDMI-1 disconnected"; then
@@ -48,16 +48,16 @@ if xrandr | grep "HDMI-1 disconnected"; then
 else
     echo "HDMI-1 connected"
 
-    if [ "${LAPTOP_SIDE}" = "right" ]; then
-        LAPTOP_POS=1920x550
-        MONITOR_POS=0x0
+    if [ "${LAPTOP_POSITION}" = "right" ]; then
+        LAPTOP_COORDINATES=1920x550
+        MONITOR_COORDINATES=0x0
     else
-        LAPTOP_POS=0x550
-        MONITOR_POS=1920x0
+        LAPTOP_COORDINATES=0x550
+        MONITOR_COORDINATES=1920x0
     fi
 
-    xrandr --output eDP-1  --mode 1920x1080 --rotate normal --pos ${LAPTOP_POS} --primary \
-           --output HDMI-1 --mode 1920x1080 --rotate normal --pos ${MONITOR_POS} \
+    xrandr --output eDP-1  --mode 1920x1080 --rotate normal --pos ${LAPTOP_COORDINATES} --primary \
+           --output HDMI-1 --mode 1920x1080 --rotate normal --pos ${MONITOR_COORDINATES} \
            --output DP-1   --off \
            --output HDMI-2 --off
 
