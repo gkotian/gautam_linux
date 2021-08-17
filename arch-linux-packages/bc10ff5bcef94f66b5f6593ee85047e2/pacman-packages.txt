@@ -103,6 +103,7 @@ wireshark-qt
 xclip
 xorg-xmessage
 yad
+yarn
 zenity
 zip
 zsh
