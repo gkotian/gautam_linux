@@ -26,6 +26,7 @@ fuse2
 fzf
 gcc
 git
+git-delta
 gnome-calculator
 gnome-terminal
 gnu-netcat
