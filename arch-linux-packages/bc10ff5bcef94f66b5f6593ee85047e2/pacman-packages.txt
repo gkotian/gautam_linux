@@ -3,6 +3,7 @@ arandr
 autoconf
 automake
 base
+bat
 bind
 binutils
 bison
@@ -95,7 +96,6 @@ tk
 ttf-jetbrains-mono
 unzip
 vim
-vimpager
 vlc
 wget
 which

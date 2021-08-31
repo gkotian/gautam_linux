@@ -17,7 +17,6 @@ python-yoyo-migrations
 python2-gobject2
 pyzbar
 sky
-skypeforlinux-stable-bin
 slack-desktop
 sqlcl
 teams
