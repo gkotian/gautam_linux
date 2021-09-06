@@ -47,6 +47,7 @@ krita
 libreoffice-fresh
 libtool
 lightdm
+lightdm-slick-greeter
 linux
 linux-firmware
 lsof
