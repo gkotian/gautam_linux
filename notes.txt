@@ -210,6 +210,20 @@ To run an SFTP server in a docker container:
 
 ---------------------------------------------------------------------------------------------------
 
+To create a password protected archive:
+---------------------------------------
+1. Generate a password (e.g. using `gopass generate -p tmp`)
+1. Create a file (say `/tmp/password.txt`) containing the following line
+   ```
+   PASSWORD=<the-generated-password>
+   ```
+1. export $(xargs < /tmp/password.txt)
+1. 7z a archive_name.7z * -p${PASSWORD}
+   (here `*` makes all files in the directory to be added to the archive.
+   Individual file names can also be specified if necessary.)
+
+---------------------------------------------------------------------------------------------------
+
 Installing the Tela grub theme:
 -------------------------------
 
@@ -336,5 +350,27 @@ str := "... a really long string ..."
 truncateTo := 100
 fmt.Println(trunc(str, truncateTo))
 
+---------------------------------------------------------------------------------------------------
+
+printing an io.Reader in a Go program:
+--------------------------------------
+buf := new(strings.Builder)
+io.Copy(buf, reqBody) // reqBody is an io.Reader
+fmt.Println(buf.String())
+
+---------------------------------------------------------------------------------------------------
+
+Converting wav files to mp3 (ripping a cd):
+--------------------------------------------
+    1. Plug-in the CD drive containing the CD
+    2. Open a terminal at that location
+           a simple way would be to open the directory in nautilus, right-click -> Open in Terminal
+           (the last time the path was `/run/user/1000/gvfs/cdda:host=sr0`)
+    3. Create a temporary directory to save the output files - `D=$(mktemp -d)`
+    4. for F in *.wav; do ffmpeg -i ${F} -vn -ar 44100 -ac 2 -b:a 192k ${D}/${F%.wav}.mp3; done
+    5. cd ${D}
+    6. [Optional] Convert spaces in filenames to underscores
+       for F in *; do NEW_NAME=$(echo ${F} | sed 's/\s/_/g'); mv ${F} ${NEW_NAME}; done
+    7. Play the files saved in $D to check if they're OK
 ---------------------------------------------------------------------------------------------------
 

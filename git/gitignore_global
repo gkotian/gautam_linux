@@ -6,3 +6,9 @@
 
 # Tags files created by universal-ctags.
 tags
+
+# Python bytecode-compiled files.
+__pycache__/
+
+# Python virtualenv directories.
+venv/

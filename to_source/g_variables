@@ -1,11 +1,17 @@
 # Environment variables (passed to all child processes as well)
 #--------------------------------------------------------------
 
-# For the D garbage collector
-export D_GC=cdgc
+# By default, bat uses less as the pager with the options '-R' & '-F'. While
+# '-R' is needed to interpret ANSI colors correctly, '-F' causes less to exit
+# immediately if the file is shorter than the height of the terminal (meaning
+# short files get dumped to stdout without passing through the pager). I don't
+# like this behaviour, as I feel that it partially defeats the purpose of using
+# bat. Besides having syntax highlighting, I also want my console window to not
+# get cluttered with the file contents. Therefore, specify the pager command
+# explicitly passing only the '-R' option.
+export BAT_PAGER="less -R"
 
-# For custom scripts
-export PATH=${PATH}:${PLAY_DIR}/awk_scripts:${PLAY_DIR}/git_scripts:${PLAY_DIR}/python_scripts:${PLAY_DIR}/kelp:/usr/local/go/bin:${GOPATH}/bin
+export PATH=${PATH}:${PLAY_DIR}/awk_scripts:${PLAY_DIR}/git_scripts:${PLAY_DIR}/python_scripts:/usr/local/go/bin:${GOPATH}/bin
 
 export VISUAL=/usr/bin/vim
 export EDITOR="$VISUAL"
@@ -16,6 +22,3 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM=auto,svn,verbose
-
-# Temporary variables
-#--------------------

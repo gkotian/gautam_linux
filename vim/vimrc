@@ -7,6 +7,9 @@ filetype plugin indent on
 " Always show syntax highlighting
 syntax on
 
+" Automatically reload files that have been changed outside vim
+set autoread
+
 " Set textwidth to 80 by default for all files
 " (can be overridden in .vim/after/ftplugin/*.vim)
 set tw=80
@@ -94,7 +97,13 @@ imap <HOME> <C-o>^
 nmap <SPACE> <leader>
 
 " Saves the current file.
-nnoremap <LEADER><SPACE> :w<CR>
+nnoremap <SPACE><SPACE> :w<CR>
+
+" Opens the alternate file
+nnoremap <SPACE>e :e#<CR>
+
+" Quits
+nnoremap <SPACE>q :q<CR>
 
 " Map '\8' to search for the word under cursor
 nnoremap <leader>8 :exe 'Ag!' expand('<cword>')<CR>
@@ -166,6 +175,7 @@ source ~/.vim/functions.vim
 source ~/.vim/autocmds.vim
 
 " Plugin specific stuff
+source ~/.vim/govim.vim
 source ~/.vim/vim-startify.vim
 source ~/.vim/NERDTree.vim
 

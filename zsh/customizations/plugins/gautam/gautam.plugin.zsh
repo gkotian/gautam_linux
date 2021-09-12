@@ -93,21 +93,34 @@ function gd () {
     fi
 }
 
-function gofmt() {
-    GOLANG_IMG=$(docker image ls | grep -w "^golang" | head -1)
+function get_docker_image() {
+    local REPOSITORY=${1}
 
-    if [ -z "${GOLANG_IMG}" ]; then
+    IMG=$(docker image ls | grep -w "^${REPOSITORY}" | head -1)
+    if [ -z "${IMG}" ]; then
+        echo ""
+        return
+    fi
+
+    TAG=$(echo ${IMG} | awk '{ print $2 }')
+
+    IMG_WITH_TAG=${REPOSITORY}:${TAG}
+
+    echo ${IMG_WITH_TAG}
+}
+
+function gofmt() {
+    local IMAGE=$(get_docker_image golang)
+
+    if [ -z "${IMAGE}" ]; then
         echo "No golang docker image found. Aborting."
         return 1
     fi
 
-    VER=$(echo ${GOLANG_IMG} | awk '{ print $2 }')
-    FINAL_IMAGE=golang:${VER}
-
     docker run --rm --tty \
         --mount "type=bind,source=${PWD},target=/go/src" \
 		--workdir /go/src \
-        ${FINAL_IMAGE} \
+        ${IMAGE} \
             /bin/sh -c "gofmt -s -w ."
 }
 
@@ -145,7 +158,8 @@ function dcipaddr() {
 # (sorted alphabetically)
 #
 
-alias bat='upower -i $(upower -e | grep "BAT") | grep -E "state|time\ to|percentage"'
+alias b='bat'
+alias batttery='upower -i $(upower -e | grep "BAT") | grep -E "state|time\ to|percentage"'
 
 alias cdt='cd /tmp'
 
@@ -160,8 +174,7 @@ alias gcf='git commit --fixup'
 alias gcp='custom-git-cherry-pick'
 alias gct='git commit -m "tmp"'
 
-alias gd='git difftool --no-prompt'
-alias gd_cl='PAGER= git diff'
+alias gd_gui='git difftool --no-prompt'
 
 alias gk='\gitk --all --branches&'
 
@@ -183,11 +196,11 @@ alias grma='git remote add'
 alias grmr='git remote remove'
 alias grmset='git remote set-url'
 alias grmu='git remote update -p'
+alias grom='git rebase origin/master'
 alias groot='cd $(git rev-parse --show-toplevel || echo ".")'
 alias grs='git rebase --skip'
 alias grsh='git reset HEAD'
 alias grshh='git reset HEAD --hard'
-alias grum='git rebase upstream/master'
 
 alias gs='git status -s'
 alias gss='git submodules-status; alert "git submodules-status done"'
@@ -197,9 +210,9 @@ alias gstd='ask-for-confirmation "git stash drop stash@{0}" "Are you sure you wa
 alias gsui='git submodule update --init'
 alias gsuir='git submodule update --init --recursive'
 
+alias laptop_bottom='~/play/gautam_linux/scripts/setup-monitors.sh bottom'
 alias laptop_left='~/play/gautam_linux/scripts/setup-monitors.sh left'
 alias laptop_right='~/play/gautam_linux/scripts/setup-monitors.sh right'
-alias less='vimpager'
 
 alias poweroff='echo "This command is disabled. Please run it with sudo." && return 1'
 
@@ -215,3 +228,5 @@ alias reboot='echo "This command is disabled. Please run it with sudo." && retur
 #      process is sent to the background.
 alias sound-drop='(aplay ~/play/gautam_linux/misc/sounds/drop.wav 2>/dev/null &)'
 alias sound-complete='(aplay ~/play/gautam_linux/misc/sounds/complete.wav 2>/dev/null &)'
+
+alias uuid='/usr/bin/uuidgen'

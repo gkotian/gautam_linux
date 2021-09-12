@@ -27,7 +27,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias one_line='awk '\''{printf "%s ", $1} END {printf "\n"}'\'''
 alias ol='one_line'
 
-alias patch-gitk='sudo sed -i".orig" "s/bindmodfunctionkey Shift 5 reloadcommits$/bindkey 5 reloadcommits/g" /usr/bin/gitk'
+alias patch-gitk='doas sed -i".orig" "s/bindmodfunctionkey Shift 5 reloadcommits$/bindkey 5 reloadcommits/g" /usr/bin/gitk'
 
 
 # alias l='less -j 4' # always display the search term on the 4th line from top
@@ -51,10 +51,19 @@ alias kbus='setxkbmap us'
 
 alias c1='cat /tmp/1'
 alias c2='cat /tmp/2'
+alias c3='cat /tmp/3'
+
+alias cc1='clipcopy /tmp/1'
+alias cc2='clipcopy /tmp/2'
+alias cc3='clipcopy /tmp/3'
+
+alias m12='meld /tmp/1 /tmp/2'
 
 alias v1='v /tmp/1'
 alias v2='v /tmp/2'
-alias vall='v `ls **/*.d | one_line`'
+alias v3='v /tmp/3'
+alias vgoall='v `ls **/*.go | one_line`'
+alias vpyall='v `ls **/*.py | one_line`'
 
 
 # Aliases to commands

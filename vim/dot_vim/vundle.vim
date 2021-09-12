@@ -11,13 +11,10 @@ call vundle#rc()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle'
 
-" -------------------------
-"     Installed plugins
-" -------------------------
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'ervandew/supertab'
-Plugin 'JesseKPhillips/d.vim'
+Plugin 'govim/govim'
 Plugin 'junegunn/fzf.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'rking/ag.vim'
