@@ -41,17 +41,6 @@ launch_all_gitk() {
     done
 }
 
-create_tags_files() {
-    TAGS_PROJECTS=(
-    )
-
-    for P in ${TAGS_PROJECTS[@]}
-    do
-        echo "Generating tags for ${P}"
-        cd ${P} && ctags -R
-    done
-}
-
 GL_DIR=/home/gautam/play/gautam_linux
 
 if [ ${IS_LAPTOP} = "YES" ]; then
@@ -60,7 +49,6 @@ if [ ${IS_LAPTOP} = "YES" ]; then
 fi
 
 launch_all_gitk
-create_tags_files
 launch_one_shot_scripts ${GL_DIR}/arch-linux-packages/update-packages-lists.sh
 launch_one_shot_scripts ${GL_DIR}/scripts/boot_times_tracker.sh
 launch_one_shot_scripts ${GL_DIR}/scripts/refresh_arch_linux_mirrorlist.sh
