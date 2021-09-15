@@ -120,6 +120,7 @@ vi
 vim
 vimpager
 vlc
+vnstat
 wget
 which
 wireguard-tools
