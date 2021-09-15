@@ -98,6 +98,7 @@ ttf-jetbrains-mono
 unzip
 vim
 vlc
+vnstat
 wget
 which
 wireguard-tools
