@@ -96,6 +96,7 @@ the_silver_searcher
 tilix
 tk
 ttf-jetbrains-mono
+unrar
 unzip
 vim
 vlc
