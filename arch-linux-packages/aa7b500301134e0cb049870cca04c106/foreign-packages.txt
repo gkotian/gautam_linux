@@ -16,6 +16,7 @@ libgksu
 libnm-glib
 libnm-gtk
 mozilla-common
+opencolorio1
 pcmciautils
 pdftk-bin
 postman
