@@ -8,6 +8,7 @@ gscreenshot
 insync
 js60
 libopenaptx
+opencolorio1
 pepper-flash
 postman-bin
 python-iniherit
