@@ -85,6 +85,7 @@ reflector
 rsync
 scrot
 signal-desktop
+staticcheck
 strongswan
 sudo
 system-config-printer
