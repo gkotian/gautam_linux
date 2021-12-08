@@ -11,6 +11,7 @@ libopenaptx
 opencolorio1
 pepper-flash
 postman-bin
+python-flask-script
 python-iniherit
 python-pyfavicon
 python-yoyo-migrations
