@@ -62,6 +62,7 @@ mtr
 nautilus
 ncdu
 net-tools
+nethogs
 network-manager-applet
 networkmanager
 networkmanager-openvpn
