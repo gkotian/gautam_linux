@@ -5,8 +5,10 @@ eddie-ui
 flashplugin
 google-chrome
 gscreenshot
+i3-gaps
 insync
 js60
+js68
 libopenaptx
 opencolorio1
 pepper-flash
