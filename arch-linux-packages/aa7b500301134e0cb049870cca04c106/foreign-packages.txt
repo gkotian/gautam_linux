@@ -10,6 +10,7 @@ google-cloud-sdk
 js
 js52
 js60
+js68
 keepassx2
 libgcj17-bin
 libgksu
