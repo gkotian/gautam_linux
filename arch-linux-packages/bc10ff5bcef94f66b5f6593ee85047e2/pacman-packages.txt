@@ -35,6 +35,7 @@ go
 groff
 htop
 httrack
+i3-gaps
 i3blocks
 i3lock
 i3status
