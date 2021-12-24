@@ -9,6 +9,7 @@ insync
 js60
 js68
 libopenaptx
+liquibase
 opencolorio1
 pepper-flash
 postman-bin
