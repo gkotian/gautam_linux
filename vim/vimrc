@@ -149,9 +149,6 @@ nmap <leader>t :set list!<CR>
 " Map '\ul' to underline the current line
 nmap <leader>ul YpVr-
 
-" Map '\v' to open the vimrc
-nmap <leader>v :e $MYVIMRC<CR>
-
 " Map '\ws' to quickly insert debugging helper prints
 nnoremap <Leader>ws o<ESC>iwritefln!"%s"(
 inoremap <Leader>ws writefln!"%s"(
