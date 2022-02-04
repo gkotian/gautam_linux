@@ -53,7 +53,9 @@ is:
 
 copy contents of a file into the clipboard:
 -------------------------------------------
-    ⁠⁠⁠⁠cat file | xclip -selection coard
+    cat file | xclip -in -selection clipboard     // puts into the Ctrl+Shift+V clipboard
+        OR
+    cat file | xclip                              // puts into the Shift+Insert (middle mouse-button clipboard)
 
 ---------------------------------------------------------------------------------------------------
 
@@ -184,11 +186,6 @@ If you need to use different GitHub accounts on the same computer:
 
 ---------------------------------------------------------------------------------------------------
 
-Run gofmt:
-    docker run --rm -it -v "${PWD}:/go/src" golang:alpine3.11 /bin/sh -c 'cd /go/src && gofmt -s -w .'
-
----------------------------------------------------------------------------------------------------
-
 To run an SFTP server in a docker container:
 --------------------------------------------
     USERNAME="user"
@@ -237,6 +234,14 @@ rEFInd).
 1. cd Tela-1080p
 1. sudo ./install.sh
 1. reboot
+
+---------------------------------------------------------------------------------------------------
+
+Workaround for journalctl not accepting ISO8601 times:
+------------------------------------------------------
+
+    ➜ SINCE=$(date -d '2021-01-01T13:00:00' +%s)
+    ➜ sudo journalctl --since=@${SINCE} --unit=whatever.service
 
 ---------------------------------------------------------------------------------------------------
 
@@ -311,21 +316,6 @@ IOW, remove the `-p` option, and prefix a `?` to the prompt.
 
 ---------------------------------------------------------------------------------------------------
 
-DEPRECATED: use `make update-dependency-files` instead
-to apply go.mod/go.sum patches:
--------------------------------
-1. Save the entire patch (without the ``` lines) to say `/tmp/patch.patch`
-2. Remove the `.orig` extension from the file name in the first line of the patch
-   ```
-   ➜  sed -i '1 s/\.orig//g' /tmp/patch.patch
-   ```
-3. Go to the directory containing the go.mod/go.sum file and apply the patch
-   ```
-   ➜  patch < /tmp/patch.patch
-   ```
-
----------------------------------------------------------------------------------------------------
-
 truncating long strings in a Go program:
 ----------------------------------------
 trunc := func(s string, max int) string {
@@ -360,6 +350,16 @@ fmt.Println(buf.String())
 
 ---------------------------------------------------------------------------------------------------
 
+when dealing with Go channels:
+------------------------------
+. when declaring/passing channels, always specify whether it'll be used for
+  reading/writing
+. the function writing into a channel should be responsible for closing it
+  (because only the writer knows when it is done writing)
+. when reading from a channel, prefer to use `for r := range channelNameCh { ... }`
+
+---------------------------------------------------------------------------------------------------
+
 Converting wav files to mp3 (ripping a cd):
 --------------------------------------------
     1. Plug-in the CD drive containing the CD
@@ -372,5 +372,37 @@ Converting wav files to mp3 (ripping a cd):
     6. [Optional] Convert spaces in filenames to underscores
        for F in *; do NEW_NAME=$(echo ${F} | sed 's/\s/_/g'); mv ${F} ${NEW_NAME}; done
     7. Play the files saved in $D to check if they're OK
+
+---------------------------------------------------------------------------------------------------
+
+Using grep in a shell script with 'set -euo pipefail':
+------------------------------------------------------
+In a shell script that uses 'set -euo pipefail', some extra work needs to be
+done when using grep (in cases where the pattern being searched for not existing
+is not an error condition). Or else, the script would immediately exit if the
+pattern being searched for doesn't exist in the file.
+
+In this case, a '||' is used after the grep command so that the line as a whole
+always succeeds. The status of the grep command is later checked to determine
+the next course of action.
+
+According to
+https://pubs.opengroup.org/onlinepubs/9699919799/utilities/grep.html#tag_20_55_14,
+grep's status codes have the following meaning:
+    0  => pattern was found
+    1  => pattern was not found
+    >1 => some error occurred
+
+Here's a sample code snippet:
+
+    GREP_STATUS=-1
+    grep --silent pattern file || GREP_STATUS=$?
+    if [ ${GREP_STATUS} -eq 1 ]; then
+        # Do whatever needs to be done if the pattern was not found
+    elif [ ${GREP_STATUS} -gt 1 ]; then
+        exit ${GREP_STATUS}
+    fi
+    # Do whatever needs to be done if the pattern was found
+
 ---------------------------------------------------------------------------------------------------
 
