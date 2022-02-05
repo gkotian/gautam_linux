@@ -3,6 +3,7 @@ arandr
 autoconf
 automake
 bash
+bat
 binutils
 bison
 blueberry
