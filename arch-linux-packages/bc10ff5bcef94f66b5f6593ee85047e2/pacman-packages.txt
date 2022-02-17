@@ -61,6 +61,7 @@ mlocate
 mtr
 nautilus
 ncdu
+neovim
 net-tools
 nethogs
 network-manager-applet
