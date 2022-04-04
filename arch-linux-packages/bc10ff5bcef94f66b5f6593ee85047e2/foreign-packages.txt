@@ -3,6 +3,9 @@ aws-cli-v2-bin
 bisq
 eddie-ui
 flashplugin
+giblib
+gnome-icon-theme
+gnome-icon-theme-symbolic
 google-chrome
 gscreenshot
 insync
