@@ -29,6 +29,7 @@ gcc
 git
 git-delta
 gnome-calculator
+gnome-disk-utility
 gnome-terminal
 gnu-netcat
 go
