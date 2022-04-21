@@ -59,6 +59,7 @@ man-db
 meld
 miniupnpc
 mlocate
+mosh
 mtr
 nautilus
 ncdu
