@@ -7,7 +7,6 @@ bat
 bind
 binutils
 bison
-blackbox
 blueberry
 bluez-utils
 ctags
@@ -112,6 +111,7 @@ which
 wireguard-tools
 wireshark-qt
 xclip
+xfwm4
 xorg-xmessage
 yad
 yarn
