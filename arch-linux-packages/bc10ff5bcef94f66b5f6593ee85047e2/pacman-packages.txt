@@ -111,7 +111,6 @@ which
 wireguard-tools
 wireshark-qt
 xclip
-xfwm4
 xorg-xmessage
 yad
 yarn
