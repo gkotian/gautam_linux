@@ -59,6 +59,7 @@ man-db
 meld
 miniupnpc
 mlocate
+monero
 mosh
 mtr
 nautilus
