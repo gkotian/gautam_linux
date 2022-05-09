@@ -90,6 +90,7 @@ reflector
 rsync
 scrot
 signal-desktop
+simplescreenrecorder
 staticcheck
 strongswan
 sudo
