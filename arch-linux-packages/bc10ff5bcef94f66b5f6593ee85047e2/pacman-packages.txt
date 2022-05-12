@@ -18,6 +18,7 @@ deepin-screenshot
 dmenu
 docker
 docker-compose
+dunst
 eog
 evince
 fakeroot
