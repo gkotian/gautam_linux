@@ -62,6 +62,7 @@ miniupnpc
 mlocate
 monero
 mosh
+mpv
 mtr
 nautilus
 ncdu
