@@ -20,6 +20,7 @@ python-flask-script
 python-iniherit
 python-pyfavicon
 python-yoyo-migrations
+python2-gobject
 python2-gobject2
 pyzbar
 sky
