@@ -86,6 +86,7 @@ pacman-contrib
 patch
 pciutils
 perl
+polkit-gnome
 procps-ng
 psmisc
 python
