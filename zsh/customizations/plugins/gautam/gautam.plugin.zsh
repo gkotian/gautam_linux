@@ -210,7 +210,7 @@ alias gstd='ask-for-confirmation "git stash drop stash@{0}" "Are you sure you wa
 alias gsui='git submodule update --init'
 alias gsuir='git submodule update --init --recursive'
 
-alias laptop_bottom='~/play/gautam_linux/scripts/setup-monitors.sh bottom'
+alias laptop_down='~/play/gautam_linux/scripts/setup-monitors.sh down'
 alias laptop_left='~/play/gautam_linux/scripts/setup-monitors.sh left'
 alias laptop_right='~/play/gautam_linux/scripts/setup-monitors.sh right'
 

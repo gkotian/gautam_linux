@@ -39,9 +39,9 @@ else
         echo "Laptop position not specified"
         echo "Will use the default of '${DEFAULT_LAPTOP_POSITION}'"
         LAPTOP_POSITION=${DEFAULT_LAPTOP_POSITION}
-    elif [ "${1}" != "left" ] && [ "${1}" != "right" ] && [ "${1}" != "bottom" ]; then
+    elif [ "${1}" != "left" ] && [ "${1}" != "right" ] && [ "${1}" != "down" ]; then
         echo "Invalid laptop position '${1}'"
-        echo "(must be one of 'left', 'right' or 'bottom')"
+        echo "(must be one of 'left', 'right' or 'down')"
         echo "Will use the default of '${DEFAULT_LAPTOP_POSITION}'"
         LAPTOP_POSITION=${DEFAULT_LAPTOP_POSITION}
     else
