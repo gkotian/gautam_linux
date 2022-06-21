@@ -71,6 +71,7 @@ mate-calc
 mdadm
 meld
 mono
+mpv
 mtr
 nano
 nautilus
@@ -98,6 +99,7 @@ rsync
 s-nail
 sed
 shadow
+simplescreenrecorder
 slock
 strongswan
 sudo
