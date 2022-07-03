@@ -21,6 +21,7 @@ pcmciautils
 pdftk-bin
 postman
 qt4
+rpi-imager-bin
 slack-desktop
 tor-browser
 xorg-font-utils
