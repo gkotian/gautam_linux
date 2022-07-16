@@ -116,6 +116,7 @@ which
 wireguard-tools
 wireshark-qt
 xclip
+xorg-xauth
 xorg-xmessage
 yad
 yarn
