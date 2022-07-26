@@ -1,6 +1,7 @@
 authy
 aws-cli-v2-bin
 bisq
+celt
 eddie-ui
 flashplugin
 giblib
