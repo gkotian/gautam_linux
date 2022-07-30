@@ -1,4 +1,5 @@
 authy
+celt
 eddie-ui
 electron4
 electron7
