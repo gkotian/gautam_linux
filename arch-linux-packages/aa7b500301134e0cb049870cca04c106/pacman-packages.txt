@@ -11,6 +11,7 @@ bluez-tools
 bzip2
 coreutils
 cryptsetup
+ctags
 cups
 dconf-editor
 deepin-screenshot
