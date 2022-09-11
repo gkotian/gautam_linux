@@ -42,6 +42,9 @@ To cut the last field (using space as delimiter):
         OR
     rev | cut -d" " -f1 | rev
 
+To print the 3rd field using awk:
+    echo "a b c d e" | awk '{print $3}'
+
 ---------------------------------------------------------------------------------------------------
 
 Alternative way to do:
@@ -205,6 +208,16 @@ To run an SFTP server in a docker container:
 
     if you want other options e.g. logging in with SSH keys only etc., check out https://hub.docker.com/r/atmoz/sftp
 
+---------------------------------------------------------------------------------------------------
+
+Check in Makefile if docker container is already running:
+---------------------------------------------------------
+check:
+	@set -e; \
+	CONTAINER_NAME=blah; \
+	if [ `docker ps --quiet --filter status=running --filter name=$${CONTAINER_NAME}` ]; then \
+		echo "Container '$${CONTAINER_NAME}' is running." && false; \
+	fi
 ---------------------------------------------------------------------------------------------------
 
 To create a password protected archive:
