@@ -59,6 +59,22 @@ function custom-git-cherry-pick() {
     done
 }
 
+function dcinspect() {
+    if [ $# -ne 1 ]; then
+        echo "Expected exactly one argument (the container name), got $#"
+        return 1
+    fi
+    docker container inspect ${1} | bat
+}
+
+function dninspect() {
+    if [ $# -ne 1 ]; then
+        echo "Expected exactly one argument (the network name), got $#"
+        return 1
+    fi
+    docker network inspect ${1} | bat
+}
+
 # TODO: figure out why 'gd' still points to the 'git difftool --no-prompt' alias
 # and not this function.
 function gd () {
@@ -150,7 +166,18 @@ function de() {
 function dcipaddr() {
     CONTAINER_NAME=${1}
 
-    docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ${CONTAINER_NAME}
+    docker container inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ${CONTAINER_NAME}
+}
+
+# dcexecsh => docker container exec shell
+function dcexecsh() {
+    CONTAINER_NAME=${1}
+
+    # First try 'bash' as the shell, and if it doesn't exist, try 'sh'.
+    docker container exec --interactive --tty ${CONTAINER_NAME} bash
+    if [ "$?" != "0" ]; then
+        docker container exec --interactive --tty ${CONTAINER_NAME} sh
+    fi
 }
 
 #
