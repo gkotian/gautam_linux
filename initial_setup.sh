@@ -34,7 +34,6 @@ DIRECTORIES_TO_PRECREATE=(
     /home/${THE_USER}/.gnupg
     /home/${THE_USER}/.i3
     /home/${THE_USER}/.ssh
-    /home/${THE_USER}/.vim/syntax
     /home/${THE_USER}/bin
     /home/${THE_USER}/tmp_home
 )
@@ -303,18 +302,6 @@ if [ -d "/home/$THE_USER/.vim" ]; then
     sudo -u ${THE_USER} vim +PluginInstall +qall
     echo "Done!"
 fi
-echo ""
-
-echo "Getting syntax files that aren't among the default vim ones:"
-NUM_FILES=$(find /usr/share/vim -name nginx.vim | wc -l)
-if [ "${NUM_FILES}" -eq 0 ]; then
-    sudo -u ${THE_USER} wget \
-        --quiet \
-        --no-clobber \
-        --output-document=/home/${THE_USER}/.vim/syntax/nginx.vim \
-        https://raw.githubusercontent.com/nginx/nginx/master/contrib/vim/syntax/nginx.vim
-fi
-echo "Done!"
 echo ""
 
 for PROJECT in ${MY_PROJECTS_LIST[@]}
