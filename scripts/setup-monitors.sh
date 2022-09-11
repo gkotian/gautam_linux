@@ -1,9 +1,18 @@
 #!/bin/sh
 
-# Sets up the display(s) as necessary. In order for this script to be called
-# automatically, create '/etc/udev/rules.d/95-monitor-hotplug.rules' with the
-# following content:
+# Sets up the display(s) as necessary. It is possible to set things up so that
+# this script is called automatically by creating
+# '/etc/udev/rules.d/95-monitor-hotplug.rules' with the following content:
 # KERNEL=="card0", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/path/to/.Xauthority", RUN+="/path/to/setup-monitors.sh"
+# While this worked beautifully for a while, at some point it stopped, and I had
+# to resort to calling this script manually from the command-line. Still later,
+# the laptop began freezing when connecting/disconnecting the HDMI cable, so I
+# decided to remove the automatic mechanism altogether.
+
+# TODO: Use `xrandr --auto` first so that all connected displays are activated,
+# then use `xrandr --listmonitors` and get the names of the displays. Finally,
+# use those names in the script instead of hard-coding the names as `eDP-1` &
+# `HDMI-1`.
 
 exec 1>>/var/tmp/setup-monitors.log 2>&1
 
