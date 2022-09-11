@@ -163,10 +163,18 @@ alias batttery='upower -i $(upower -e | grep "BAT") | grep -E "state|time\ to|pe
 
 alias cdt='cd /tmp'
 
-alias dcu='docker-compose up'
+alias dclogs='docker container logs'
+alias dcexec='docker container exec'
+alias dcps='docker container ps'
+alias dcpsa='docker container ps -a'
+alias dcrm='docker container rm'
+alias dcrun='docker container run'
+alias dcstop='docker container stop'
 alias dils='docker image ls'
-alias dps='docker ps'
-alias dpsa='docker ps -a'
+alias dirm='docker image rm'
+alias dncreate='docker network create'
+alias dnls='docker network ls'
+alias dnrm='docker network rm'
 
 alias gca='git commit --amend --no-edit'
 alias gcae='git commit --amend'
@@ -210,13 +218,15 @@ alias gstd='ask-for-confirmation "git stash drop stash@{0}" "Are you sure you wa
 alias gsui='git submodule update --init'
 alias gsuir='git submodule update --init --recursive'
 
+alias ist='TZ=Asia/Kolkata date'
+
 alias laptop_down='~/play/gautam_linux/scripts/setup-monitors.sh down'
 alias laptop_left='~/play/gautam_linux/scripts/setup-monitors.sh left'
 alias laptop_right='~/play/gautam_linux/scripts/setup-monitors.sh right'
 
-alias poweroff='echo "This command is disabled. Please run it with sudo." && return 1'
+alias poweroff='echo "This command is intentionally disabled. (It can only be run as root.)" && return 1'
 
-alias reboot='echo "This command is disabled. Please run it with sudo." && return 1'
+alias reboot='echo "This command is intentionally disabled. (It can only be run as root.)" && return 1'
 
 # Three special things are done when playing sounds:
 #   1. 'stderr' is redirected to /dev/null to suppress aplay's output.
@@ -229,4 +239,5 @@ alias reboot='echo "This command is disabled. Please run it with sudo." && retur
 alias sound-drop='(aplay ~/play/gautam_linux/misc/sounds/drop.wav 2>/dev/null &)'
 alias sound-complete='(aplay ~/play/gautam_linux/misc/sounds/complete.wav 2>/dev/null &)'
 
+alias utc='date -u'
 alias uuid='/usr/bin/uuidgen'
