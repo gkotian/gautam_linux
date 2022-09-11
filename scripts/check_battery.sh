@@ -12,7 +12,7 @@ while :; do
     if [ "${BATTERY_STATE}" = "discharging" ] && [ "${BATTERY_PERCENTAGE}" -lt 20 ]
     then
         echo "[${NOW}] sending message to plug-in charger"
-        xmessage "You should probably plug-in the charger now!"
+        notify-send --urgency=critical "Low Battery"
     else
         echo "[${NOW}] Nothing to do, battery ${BATTERY_STATE}, level ${BATTERY_PERCENTAGE}%"
     fi
