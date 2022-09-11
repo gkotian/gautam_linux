@@ -79,6 +79,7 @@ ncdu
 netctl
 network-manager-applet
 networkmanager
+notification-daemon
 opendoas
 openssh
 openvpn
