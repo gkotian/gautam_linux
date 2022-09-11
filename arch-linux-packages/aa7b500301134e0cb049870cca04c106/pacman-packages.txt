@@ -21,6 +21,7 @@ diffutils
 dmenu
 docker
 docker-compose
+dunst
 e2fsprogs
 eog
 evince
@@ -79,7 +80,6 @@ ncdu
 netctl
 network-manager-applet
 networkmanager
-notification-daemon
 opendoas
 openssh
 openvpn
