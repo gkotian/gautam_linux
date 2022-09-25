@@ -21,6 +21,7 @@ opencolorio1
 pcmciautils
 pdftk-bin
 postman
+python2
 qt4
 slack-desktop
 tor-browser
