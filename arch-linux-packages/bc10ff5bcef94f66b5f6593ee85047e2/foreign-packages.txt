@@ -13,6 +13,7 @@ insync
 js60
 js68
 libopenaptx
+libvterm01
 libxcomp
 liquibase
 nxproxy
@@ -28,7 +29,6 @@ python2-gobject
 python2-gobject2
 pyzbar
 sky
-slack-desktop
 sqlcl
 teams
 timecamp-bin
