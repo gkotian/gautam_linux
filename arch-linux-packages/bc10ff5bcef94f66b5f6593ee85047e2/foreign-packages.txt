@@ -16,6 +16,7 @@ libopenaptx
 libvterm01
 libxcomp
 liquibase
+mpack
 nxproxy
 opencolorio1
 pepper-flash
