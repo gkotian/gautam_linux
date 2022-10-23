@@ -35,7 +35,6 @@ teams
 timecamp-bin
 vmware-horizon-client
 vmware-keymaps
-x2goclient
 xorg-font-utils
 yay
 zoom
