@@ -14,6 +14,7 @@ js68
 keepassx2
 libgcj17-bin
 libgksu
+libgweather
 libnm-glib
 libnm-gtk
 mozilla-common
@@ -25,5 +26,7 @@ python2
 qt4
 slack-desktop
 tor-browser
+tracker
+tracker-miners
 xorg-font-utils
 yay
