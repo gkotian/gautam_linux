@@ -29,6 +29,7 @@ python2
 python2-gobject
 python2-gobject2
 pyzbar
+qt5-webkit
 sky
 sqlcl
 teams
