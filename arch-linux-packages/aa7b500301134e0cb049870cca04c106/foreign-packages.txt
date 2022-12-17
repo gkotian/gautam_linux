@@ -18,6 +18,7 @@ libgweather
 libnm-glib
 libnm-gtk
 mozilla-common
+nordvpn-bin
 opencolorio1
 pcmciautils
 pdftk-bin
