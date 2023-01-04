@@ -7,6 +7,7 @@ gamin
 gconf
 gksu
 google-chrome
+i3-gaps
 js
 js52
 js60
@@ -20,6 +21,7 @@ libnm-gtk
 mozilla-common
 nordvpn-bin
 opencolorio1
+openssl-1.0
 pcmciautils
 pdftk-bin
 postman
