@@ -2,6 +2,7 @@ alsa-utils
 arandr
 autoconf
 automake
+aws-cli-v2
 base
 bat
 bind
