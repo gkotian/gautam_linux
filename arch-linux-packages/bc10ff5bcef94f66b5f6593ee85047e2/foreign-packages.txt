@@ -4,6 +4,7 @@ celt
 eddie-ui
 flashplugin
 giblib
+globalprotect-openconnect-git
 gnome-icon-theme
 gnome-icon-theme-symbolic
 google-chrome
