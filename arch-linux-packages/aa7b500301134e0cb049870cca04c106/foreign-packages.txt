@@ -7,7 +7,6 @@ gamin
 gconf
 gksu
 google-chrome
-i3-gaps
 js
 js52
 js60
