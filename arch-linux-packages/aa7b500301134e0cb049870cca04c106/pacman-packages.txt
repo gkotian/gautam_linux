@@ -111,6 +111,7 @@ system-config-printer
 systemd
 systemd-sysvcompat
 tar
+tcpdump
 terminus-font
 texinfo
 the_silver_searcher
