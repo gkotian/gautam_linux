@@ -93,6 +93,7 @@ redis
 redshift
 refind
 reflector
+remmina
 rsync
 scrot
 signal-desktop
