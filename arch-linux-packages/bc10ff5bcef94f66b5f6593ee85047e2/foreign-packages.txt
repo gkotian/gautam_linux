@@ -1,4 +1,5 @@
 authy
+azure-cli
 bisq
 celt
 eddie-ui
