@@ -45,6 +45,12 @@ To cut the last field (using space as delimiter):
 To print the 3rd field using awk:
     echo "a b c d e" | awk '{print $3}'
 
+To remove leading whitespace:
+    echo "   	   blah" | awk '{$1=$1};1'
+
+To squeeze/compress multiple spaces into one:
+    echo "hey     there" | tr --squeeze-repeats " "
+
 ---------------------------------------------------------------------------------------------------
 
 Alternative way to do:
@@ -371,6 +377,11 @@ when dealing with Go channels:
   (because only the writer knows when it is done writing)
 . when reading from a channel, prefer to use `for r := range channelNameCh { ... }`
 
+    * send to nil channel         --> blocks forever
+    * receive from nil channel    --> blocks forever
+    * send to closed channel      --> panic
+    * receive from closed channel --> immediately returns zero value
+
 ---------------------------------------------------------------------------------------------------
 
 Converting wav files to mp3 (ripping a cd):
@@ -416,6 +427,11 @@ Here's a sample code snippet:
         exit ${GREP_STATUS}
     fi
     # Do whatever needs to be done if the pattern was found
+
+---------------------------------------------------------------------------------------------------
+
+RabbitMQ general info:
+    https://stackoverflow.com/a/48770082/793930
 
 ---------------------------------------------------------------------------------------------------
 
