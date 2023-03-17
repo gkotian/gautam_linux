@@ -32,6 +32,7 @@ python2-gobject
 python2-gobject2
 pyzbar
 qt5-webkit
+rancher-cli-bin
 sky
 sqlcl
 teams

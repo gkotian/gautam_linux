@@ -10,6 +10,7 @@ binutils
 bison
 blueberry
 bluez-utils
+cifs-utils
 ctags
 cups
 dbeaver
@@ -26,6 +27,7 @@ evince
 fakeroot
 firefox
 flex
+freerdp
 fuse2
 fzf
 gcc
@@ -95,6 +97,7 @@ refind
 reflector
 remmina
 rsync
+samba
 scrot
 signal-desktop
 simplescreenrecorder
