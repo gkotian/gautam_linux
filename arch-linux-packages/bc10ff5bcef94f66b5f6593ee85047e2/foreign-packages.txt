@@ -21,7 +21,6 @@ mpack
 nxproxy
 opencolorio1
 pepper-flash
-postman-bin
 python-flask-script
 python-iniherit
 python-pep517
