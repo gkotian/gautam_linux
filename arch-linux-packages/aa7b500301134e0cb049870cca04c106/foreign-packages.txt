@@ -1,5 +1,6 @@
 authy
 celt
+deepin-wayland
 eddie-ui
 electron4
 electron7
