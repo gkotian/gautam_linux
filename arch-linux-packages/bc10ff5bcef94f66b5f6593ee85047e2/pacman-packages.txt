@@ -100,7 +100,6 @@ rsync
 samba
 scrot
 signal-desktop
-simplescreenrecorder
 staticcheck
 strongswan
 sudo

@@ -2,6 +2,7 @@ authy
 azure-cli
 bisq
 celt
+deepin-wayland
 eddie-ui
 flashplugin
 giblib
@@ -24,6 +25,7 @@ pepper-flash
 python-flask-script
 python-iniherit
 python-pep517
+python-progress
 python-pyfavicon
 python-yoyo-migrations
 python2
@@ -32,6 +34,7 @@ python2-gobject2
 pyzbar
 qt5-webkit
 rancher-cli-bin
+simplescreenrecorder
 sky
 sqlcl
 teams
