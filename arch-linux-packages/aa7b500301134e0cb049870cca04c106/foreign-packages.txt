@@ -27,6 +27,7 @@ pdftk-bin
 postman
 python2
 qt4
+simplescreenrecorder
 slack-desktop
 tor-browser
 tracker

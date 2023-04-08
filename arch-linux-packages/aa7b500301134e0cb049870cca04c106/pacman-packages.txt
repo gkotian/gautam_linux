@@ -101,7 +101,6 @@ rsync
 s-nail
 sed
 shadow
-simplescreenrecorder
 slock
 strongswan
 sudo
