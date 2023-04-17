@@ -18,7 +18,9 @@ libopenaptx
 libvterm01
 libxcomp
 liquibase
+mongodb-compass
 mpack
+nvm
 nxproxy
 opencolorio1
 pepper-flash
@@ -34,6 +36,7 @@ python2-gobject2
 pyzbar
 qt5-webkit
 rancher-cli-bin
+redisinsight
 simplescreenrecorder
 sky
 sqlcl

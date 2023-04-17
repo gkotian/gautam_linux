@@ -1,5 +1,6 @@
 alsa-utils
 arandr
+aspnet-runtime
 autoconf
 automake
 aws-cli-v2
@@ -11,6 +12,7 @@ bison
 blueberry
 bluez-utils
 cifs-utils
+code
 ctags
 cups
 dbeaver
@@ -20,6 +22,8 @@ deepin-screenshot
 dmenu
 docker
 docker-compose
+dotnet-runtime
+dotnet-sdk
 dpkg
 dunst
 eog
