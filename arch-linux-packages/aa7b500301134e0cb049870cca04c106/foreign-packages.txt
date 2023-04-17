@@ -24,7 +24,6 @@ opencolorio1
 openssl-1.0
 pcmciautils
 pdftk-bin
-postman
 python2
 qt4
 simplescreenrecorder
