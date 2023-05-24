@@ -81,6 +81,7 @@ ncdu
 netctl
 network-manager-applet
 networkmanager
+ntp
 opendoas
 openssh
 openvpn
