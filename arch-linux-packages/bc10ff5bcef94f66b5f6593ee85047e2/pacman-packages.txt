@@ -55,6 +55,7 @@ jre11-openjdk
 kate
 kdiff3
 krita
+kubectl
 libreoffice-fresh
 libtool
 lightdm
