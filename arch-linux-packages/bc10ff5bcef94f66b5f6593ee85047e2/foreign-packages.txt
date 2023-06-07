@@ -17,6 +17,7 @@ gscreenshot
 insync
 js60
 js68
+js78
 libopenaptx
 libvterm01
 libxcomp
