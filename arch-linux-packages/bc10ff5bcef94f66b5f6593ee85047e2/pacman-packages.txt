@@ -71,6 +71,7 @@ meld
 miniupnpc
 mlocate
 monero
+mono-msbuild
 mosh
 mpv
 mtr
