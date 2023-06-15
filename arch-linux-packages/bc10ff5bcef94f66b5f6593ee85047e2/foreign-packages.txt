@@ -4,7 +4,6 @@ azure-cli
 azure-functions-core-tools-bin
 bisq
 celt
-deepin-wayland
 downgrade
 eddie-ui
 flashplugin
@@ -15,11 +14,6 @@ gnome-icon-theme-symbolic
 google-chrome
 gscreenshot
 insync
-js60
-js68
-js78
-libopenaptx
-libvterm01
 libxcomp
 mongodb-compass
 mpack
@@ -28,9 +22,7 @@ nxproxy
 opencolorio1
 pepper-flash
 powershell
-python-flask-script
 python-iniherit
-python-pep517
 python-progress
 python-pyfavicon
 python-yoyo-migrations
@@ -45,8 +37,6 @@ simplescreenrecorder
 sky
 teams
 timecamp-bin
-tracker
-tracker-miners
 vmware-keymaps
 xorg-font-utils
 yay
