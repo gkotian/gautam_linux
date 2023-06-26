@@ -12,7 +12,6 @@ bison
 blueberry
 bluez-utils
 cifs-utils
-code
 ctags
 cups
 dbeaver
@@ -50,6 +49,7 @@ i3-wm
 i3blocks
 i3lock
 i3status
+iftop
 jq
 jre11-openjdk
 kate
@@ -129,6 +129,7 @@ wireguard-tools
 wireshark-qt
 xclip
 xorg-xauth
+xorg-xev
 xorg-xmessage
 yad
 yarn

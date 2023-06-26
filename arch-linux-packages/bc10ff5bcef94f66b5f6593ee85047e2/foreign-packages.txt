@@ -37,6 +37,7 @@ simplescreenrecorder
 sky
 teams
 timecamp-bin
+visual-studio-code-bin
 vmware-keymaps
 xorg-font-utils
 yay
