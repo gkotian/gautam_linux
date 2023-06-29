@@ -12,6 +12,7 @@ js
 js52
 js60
 js68
+js78
 keepassx2
 libgcj17-bin
 libgksu
