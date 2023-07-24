@@ -21,6 +21,7 @@ nvm
 nxproxy
 opencolorio1
 pepper-flash
+postman-bin
 powershell
 python-iniherit
 python-progress

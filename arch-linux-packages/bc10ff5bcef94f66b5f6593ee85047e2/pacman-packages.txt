@@ -21,6 +21,7 @@ deepin-screenshot
 dmenu
 docker
 docker-compose
+dos2unix
 dotnet-runtime
 dotnet-sdk
 dpkg
