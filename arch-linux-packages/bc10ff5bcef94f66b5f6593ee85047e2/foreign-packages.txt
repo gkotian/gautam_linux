@@ -2,7 +2,6 @@ atomicwallet
 authy
 azure-cli
 azure-functions-core-tools-bin
-bisq
 celt
 downgrade
 eddie-ui
