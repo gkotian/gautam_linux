@@ -16,6 +16,7 @@ insync
 libxcomp
 mongodb-compass
 mpack
+nordvpn-bin
 nvm
 nxproxy
 opencolorio1
