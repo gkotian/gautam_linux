@@ -3,11 +3,16 @@
 # When opening a file is a matter of simply passing the file name as a command
 # line argument to the app.
 declare -A EXTENSION_APP_MAPPINGS=(
+    ["csv"]="bat"
     ["go"]="bat"
+    ["json"]="bat"
+    ["log"]="bat"
     ["pl"]="bat"
     ["py"]="bat"
     ["sh"]="bat"
     ["txt"]="bat"
+    ["yaml"]="bat"
+    ["yml"]="bat"
 
     ["pdf"]="evince"
 
