@@ -22,7 +22,6 @@ nxproxy
 opencolorio1
 pepper-flash
 postman-bin
-powershell
 python-iniherit
 python-progress
 python-pyfavicon
@@ -35,7 +34,6 @@ qt5-webkit
 rancher-cli-bin
 redisinsight
 simplescreenrecorder
-sky
 teams
 timecamp-bin
 visual-studio-code-bin

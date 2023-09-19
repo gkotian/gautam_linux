@@ -30,6 +30,7 @@ eog
 evince
 fakeroot
 firefox
+flatpak
 flex
 freerdp
 fuse2
@@ -129,6 +130,7 @@ which
 wireguard-tools
 wireshark-qt
 xclip
+xdotool
 xorg-xauth
 xorg-xev
 xorg-xmessage
