@@ -90,7 +90,6 @@ openresolv
 openssh
 oracle-instantclient-basic
 oracle-instantclient-sqlplus
-oracle-sqldeveloper
 p7zip
 pacman-contrib
 patch
@@ -112,9 +111,7 @@ staticcheck
 strongswan
 sudo
 system-config-printer
-systemd-swap
 telegram-desktop
-terraform
 texinfo
 the_silver_searcher
 tilix

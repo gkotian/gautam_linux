@@ -5,6 +5,7 @@ azure-functions-core-tools-bin
 celt
 downgrade
 eddie-ui
+electron19
 flashplugin
 giblib
 globalprotect-openconnect-git
@@ -22,6 +23,7 @@ nxproxy
 opencolorio1
 pepper-flash
 postman-bin
+python-anytree
 python-iniherit
 python-progress
 python-pyfavicon
@@ -34,6 +36,7 @@ qt5-webkit
 rancher-cli-bin
 redisinsight
 simplescreenrecorder
+systemd-swap
 teams
 timecamp-bin
 visual-studio-code-bin
