@@ -132,6 +132,7 @@ xorg-xauth
 xorg-xev
 xorg-xmessage
 yad
+yamllint
 yarn
 zenity
 zip
