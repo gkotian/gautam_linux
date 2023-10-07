@@ -29,7 +29,6 @@ python-anytree
 python2
 qt4
 simplescreenrecorder
-slack-desktop
 tor-browser
 tracker
 tracker-miners
