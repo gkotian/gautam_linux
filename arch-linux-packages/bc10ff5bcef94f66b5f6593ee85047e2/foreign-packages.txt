@@ -3,10 +3,13 @@ authy
 azure-cli
 azure-functions-core-tools-bin
 celt
+deepin-screenshot
 downgrade
+dtkwm
 eddie-ui
 electron19
 flashplugin
+gconf
 giblib
 globalprotect-openconnect-git
 gnome-icon-theme
@@ -36,6 +39,7 @@ qt5-webkit
 rancher-cli-bin
 redisinsight
 simplescreenrecorder
+superproductivity-bin
 systemd-swap
 teams
 timecamp-bin

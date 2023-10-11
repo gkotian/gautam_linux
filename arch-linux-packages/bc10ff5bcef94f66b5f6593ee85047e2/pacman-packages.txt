@@ -17,7 +17,6 @@ cups
 dbeaver
 dbus-broker
 dconf-editor
-deepin-screenshot
 dmenu
 docker
 docker-compose
@@ -40,6 +39,7 @@ git
 git-delta
 gnome-calculator
 gnome-disk-utility
+gnome-screenshot
 gnome-terminal
 gnu-netcat
 go
@@ -94,7 +94,6 @@ p7zip
 pacman-contrib
 patch
 pdftk
-pkgconf
 polkit-gnome
 pv
 qt5ct
