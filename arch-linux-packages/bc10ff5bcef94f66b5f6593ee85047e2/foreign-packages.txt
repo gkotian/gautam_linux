@@ -3,7 +3,6 @@ authy
 azure-cli
 azure-functions-core-tools-bin
 celt
-deepin-screenshot
 downgrade
 dtkwm
 eddie-ui

@@ -17,6 +17,7 @@ cups
 dbeaver
 dbus-broker
 dconf-editor
+deepin-screen-recorder
 dmenu
 docker
 docker-compose
