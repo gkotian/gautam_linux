@@ -1,6 +1,8 @@
 authy
 celt
+deepin-screenshot
 deepin-wayland
+dtkwm
 eddie-ui
 electron4
 electron7

@@ -14,7 +14,6 @@ cryptsetup
 ctags
 cups
 dconf-editor
-deepin-screenshot
 device-mapper
 dhcpcd
 dialog
