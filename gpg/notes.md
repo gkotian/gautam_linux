@@ -6,8 +6,11 @@
    ```
 1. Run `make backup`.
 
-## Steps after restoring a backed-up GPG key
+## Steps to restore a backed-up GPG key
 
+1. Select the directory from which the key needs to be restored (generally the
+   one with the latest date).
+1. Run `make restore`.
 1. Check whether the restored key exists.
    ```
    ➜ gpg --list-secret-keys --keyid-format LONG
@@ -43,6 +46,9 @@
    ```
 1. Follow the steps in the `Steps to backup a GPG key` section and then save the
    directory containing the newly backed-up files in a secure location.
+1. Also copy the directory containing the newly backed-up files to all other
+   devices where this GPG key is used and run the steps in the `Steps to restore
+   a backed-up GPG key` section.
 
 ## Credits
 
