@@ -24,6 +24,7 @@ nxproxy
 opencolorio1
 pepper-flash
 postman-bin
+python-docker-pycreds
 python-iniherit
 python-progress
 python-pyfavicon
