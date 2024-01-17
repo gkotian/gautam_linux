@@ -131,6 +131,7 @@ xdotool
 xorg-xauth
 xorg-xev
 xorg-xmessage
+xorg-xsetroot
 yad
 yamllint
 yarn
