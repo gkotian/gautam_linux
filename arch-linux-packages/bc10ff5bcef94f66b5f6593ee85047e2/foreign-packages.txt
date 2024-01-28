@@ -15,6 +15,7 @@ gnome-icon-theme-symbolic
 google-chrome
 gscreenshot
 insync
+libhandy0
 libxcomp
 mongodb-compass
 mpack
