@@ -1,7 +1,9 @@
 atomicwallet
 authy
+authy-debug
 azure-cli
 azure-functions-core-tools-bin
+azure-functions-core-tools-bin-debug
 celt
 downgrade
 eddie-ui
@@ -18,8 +20,10 @@ insync
 libhandy0
 libxcomp
 mongodb-compass
+mongodb-compass-debug
 mpack
 nordvpn-bin
+nordvpn-bin-debug
 nvm
 nxproxy
 opencolorio1
@@ -40,6 +44,7 @@ systemd-swap
 teams
 timecamp-bin
 visual-studio-code-bin
+visual-studio-code-bin-debug
 vmware-keymaps
 xorg-font-utils
 yay
