@@ -18,6 +18,8 @@ google-chrome
 gscreenshot
 insync
 libhandy0
+libmongocrypt
+libmongocrypt-debug
 libxcomp
 mongodb-compass
 mongodb-compass-debug
