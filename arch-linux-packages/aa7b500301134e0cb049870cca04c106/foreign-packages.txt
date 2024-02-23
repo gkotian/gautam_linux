@@ -1,4 +1,5 @@
 authy
+authy-debug
 celt
 deepin-screenshot
 deepin-wayland
@@ -22,6 +23,7 @@ libnm-glib
 libnm-gtk
 mozilla-common
 nordvpn-bin
+nordvpn-bin-debug
 opencolorio1
 openssl-1.0
 pcmciautils
@@ -34,3 +36,4 @@ tracker
 tracker-miners
 xorg-font-utils
 yay
+yay-debug
