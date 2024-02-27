@@ -35,6 +35,8 @@ python-docker-pycreds
 python-iniherit
 python-progress
 python-pyfavicon
+python-pytoml
+python-sysv_ipc
 python-yoyo-migrations
 pyzbar
 qt5-webkit
@@ -50,4 +52,5 @@ visual-studio-code-bin-debug
 vmware-keymaps
 xorg-font-utils
 yay
+yay-debug
 zoom
