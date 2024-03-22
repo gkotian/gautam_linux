@@ -4,6 +4,7 @@ aspnet-runtime
 autoconf
 automake
 aws-cli-v2
+azure-cli
 base
 bat
 bind
