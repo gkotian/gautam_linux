@@ -6,6 +6,7 @@ automake
 aws-cli-v2
 azure-cli
 base
+base-devel
 bat
 bind
 binutils
@@ -17,6 +18,7 @@ ctags
 cups
 dbus-broker
 dconf-editor
+debugedit
 deepin-screen-recorder
 dmenu
 docker

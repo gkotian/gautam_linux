@@ -9,7 +9,6 @@ compiler-rt15
 downgrade
 eddie-ui
 electron19
-electron25
 flashplugin
 gconf
 giblib
@@ -40,7 +39,6 @@ python-docker-pycreds
 python-iniherit
 python-progress
 python-pyfavicon
-python-pytoml
 python-sysv_ipc
 python-yoyo-migrations
 pyzbar
