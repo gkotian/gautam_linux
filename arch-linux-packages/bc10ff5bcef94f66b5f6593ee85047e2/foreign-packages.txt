@@ -45,6 +45,7 @@ pyzbar
 qt5-webkit
 rancher-cli-bin
 redisinsight
+redisinsight-debug
 simplescreenrecorder
 snapd-glib
 systemd-swap

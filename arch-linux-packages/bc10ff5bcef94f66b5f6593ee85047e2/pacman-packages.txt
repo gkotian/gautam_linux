@@ -56,7 +56,6 @@ i3lock
 i3status
 iftop
 jq
-jre11-openjdk
 kate
 kdiff3
 krita
@@ -91,8 +90,6 @@ networkmanager-openvpn
 opendoas
 openresolv
 openssh
-oracle-instantclient-basic
-oracle-instantclient-sqlplus
 p7zip
 pacman-contrib
 patch
