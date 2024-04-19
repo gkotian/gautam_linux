@@ -1,6 +1,8 @@
 authy
 authy-debug
 celt
+clang15
+compiler-rt15
 deepin-screenshot
 deepin-wayland
 dtkwm
@@ -21,6 +23,7 @@ libgksu
 libgweather
 libnm-glib
 libnm-gtk
+llvm15-libs
 mozilla-common
 nordvpn-bin
 nordvpn-bin-debug
