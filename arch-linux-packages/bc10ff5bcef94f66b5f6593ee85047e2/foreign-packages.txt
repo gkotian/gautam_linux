@@ -1,6 +1,7 @@
 atomicwallet
 authy
 authy-debug
+aws-cli-v2
 azure-functions-core-tools-bin
 azure-functions-core-tools-bin-debug
 celt
