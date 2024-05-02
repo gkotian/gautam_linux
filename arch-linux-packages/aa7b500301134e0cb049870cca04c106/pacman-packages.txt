@@ -2,6 +2,7 @@ alsa-utils
 arandr
 autoconf
 automake
+base-devel
 bash
 bat
 binutils

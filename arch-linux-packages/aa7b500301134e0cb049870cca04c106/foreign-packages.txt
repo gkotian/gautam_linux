@@ -6,7 +6,6 @@ compiler-rt15
 deepin-screenshot
 deepin-wayland
 dtkwm
-eddie-ui
 electron4
 electron7
 gamin
