@@ -38,10 +38,10 @@ pepper-flash
 postman-bin
 python-contextlib2
 python-docker-pycreds
+python-dockerpty
 python-iniherit
 python-progress
 python-pyfavicon
-python-sysv_ipc
 python-yoyo-migrations
 pyzbar
 qt5-webkit
@@ -50,7 +50,6 @@ redisinsight
 redisinsight-debug
 simplescreenrecorder
 snapd-glib
-systemd-swap
 teams
 timecamp-bin
 visual-studio-code-bin
