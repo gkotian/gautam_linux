@@ -4,6 +4,7 @@ authy-debug
 aws-cli-v2
 azure-functions-core-tools-bin
 azure-functions-core-tools-bin-debug
+byzanz
 celt
 clang15
 compiler-rt15
