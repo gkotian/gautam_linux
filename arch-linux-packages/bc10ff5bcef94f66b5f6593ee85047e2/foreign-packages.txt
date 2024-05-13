@@ -20,6 +20,7 @@ gnome-icon-theme-symbolic
 google-chrome
 gscreenshot
 insync
+libcroco
 libhandy0
 libmongocrypt
 libmongocrypt-debug
