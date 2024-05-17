@@ -31,6 +31,7 @@ MY_PROJECTS_LIST=(git_scripts gkotian.github.io python_scripts)
 
 DIRECTORIES_TO_PRECREATE=(
     ${PLAY_DIR}
+    /home/${THE_USER}/.config/gkotian
     /home/${THE_USER}/.gnupg
     /home/${THE_USER}/.i3
     /home/${THE_USER}/.ssh
@@ -244,6 +245,10 @@ echo "Done!"
 
 echo -n "    .i3/config... "
 sudo -u ${THE_USER} ln -srf $GL_DIR/i3/config /home/$THE_USER/.i3/config
+echo "Done!"
+
+echo -n "    extras.Makefile... "
+sudo -u ${THE_USER} ln -srf $GL_DIR/misc/extras.Makefile /home/$THE_USER/.config/gkotian/extras.Makefile
 echo "Done!"
 
 echo -n "    calc (calculator)... "
