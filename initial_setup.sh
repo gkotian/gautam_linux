@@ -262,6 +262,10 @@ echo -n "    img (image viewer)... "
 sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/image_viewer.sh /home/$THE_USER/bin/img
 echo "Done!"
 
+echo -n "    o (opener)... "
+sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/opener.sh /home/$THE_USER/bin/o
+echo "Done!"
+
 echo -n "    screenshot... "
 sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/screenshot.sh /home/$THE_USER/bin/screenshot
 echo "Done!"
