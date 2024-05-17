@@ -382,7 +382,7 @@ waitForConfirmation
 
 echo "tilix setup"
 echo "-----------"
-echo "In the other terminal/tab run the following commands:"
+echo "In the other terminal/tab run the following command:"
 echo "    doas sh -c 'echo \"TERMINAL=tilix\" >> /etc/environment'"
 waitForConfirmation
 echo "Launch tilix, go to Preferences and make the following changes:"
