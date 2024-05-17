@@ -105,6 +105,11 @@ done
 echo "Done!"
 echo ""
 
+echo "Ensuring correct permissions for the newly created directories:"
+chmod go-rx /home/${THE_USER}/.gnupg
+echo "Done!"
+echo ""
+
 echo -n "Enabling all the Ubuntu repositories... "
 add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
 if [[ $? -ne 0 ]]; then
