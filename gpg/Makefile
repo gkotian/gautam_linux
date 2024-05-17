@@ -5,6 +5,10 @@ MAKEFILE_DIR := $(patsubst %/,%,$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 
 # ---- Targets -----------------------------------------------------------------
 
+## Lists all locally available GPG keys
+list:
+	@gpg --list-secret-keys --keyid-format=long
+
 ## Makes a fresh backup of a GPG key
 backup:
 	@set -e; \
@@ -21,13 +25,13 @@ backup:
 ## Restore a GPG key previously backed-up using this Makefile
 restore:
 	@set -e; \
-	read -p "Enter the directory to use for restoring the GPG key: " DIR; \
-	RESTORE_DIR=${MAKEFILE_DIR}/$${DIR}
+	read -p "Enter the full path of the directory to use for restoring the GPG key: " RESTORE_DIR; \
 	gpg --import $${RESTORE_DIR}/secret-gpg.key; \
 	gpg --import-ownertrust $${RESTORE_DIR}/ownertrust-gpg.txt; \
 	echo "Restore complete (check the notes.md file to verify if everything went well)"
 
-.PHONY: backup \
+.PHONY: list \
+	backup \
 	restore
 
 

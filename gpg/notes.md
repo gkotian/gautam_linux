@@ -1,19 +1,19 @@
 ## Steps to backup a GPG key
 
-1. Get the ID of the key to backup.
+1. List all locally available GPG keys.
    ```
-   ➜ gpg --list-secret-keys --keyid-format=long
+   ➜ make list
    ```
-1. Run `make backup`.
+1. Make note of the ID of the key to be backed up.
+1. Run `make backup` and pass the ID of the key to be backed up.
 
 ## Steps to restore a backed-up GPG key
 
-1. Select the directory from which the key needs to be restored (generally the
-   one with the latest date).
-1. Run `make restore`.
+1. Run `make restore` and pass it the full path of the directory from which the
+   key needs to be restored.
 1. Check whether the restored key exists.
    ```
-   ➜ gpg --list-secret-keys --keyid-format LONG
+   ➜ make list
    ```
 1. If it says "unknown" in the "uid" line, try the following.
    ```
@@ -25,10 +25,11 @@
 
 ## Steps to extend the expiration date of a GPG key
 
-1. Get the ID of the key.
+1. List all locally available GPG keys.
    ```
-   ➜ gpg --list-secret-keys --keyid-format=long
+   ➜ make list
    ```
+1. Make note of the ID of the key whose expiration date needs to be extended.
 1. Open the GPG key editing interface.
    ```
    ➜ gpg --edit-key <key-id>
