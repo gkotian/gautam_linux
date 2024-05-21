@@ -17,6 +17,7 @@ js52
 js60
 js68
 js78
+libcroco
 libgcj17-bin
 libgksu
 libgweather
@@ -30,6 +31,7 @@ opencolorio1
 openssl-1.0
 pcmciautils
 pdftk-bin
+python-cached-property
 python-docker-pycreds
 qt4
 simplescreenrecorder
