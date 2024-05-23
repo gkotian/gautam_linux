@@ -384,6 +384,21 @@ when dealing with Go channels:
 
 ---------------------------------------------------------------------------------------------------
 
+when dealing with Goroutines:
+-----------------------------
+. telling a goroutine to finish up:
+      if the goroutine is already reading from a channel:
+          simply close the channel
+      else:
+          give the goroutine a done channel, and close that
+. when a goroutine finishes, it needs to signal its completion
+      if the goroutine is already writing into a channel:
+          simply close the channel
+      else:
+          defer wg.Done() (or defer doneFn())
+
+---------------------------------------------------------------------------------------------------
+
 Converting wav files to mp3 (ripping a cd):
 --------------------------------------------
     1. Plug-in the CD drive containing the CD
@@ -432,6 +447,19 @@ Here's a sample code snippet:
 
 RabbitMQ general info:
     https://stackoverflow.com/a/48770082/793930
+
+---------------------------------------------------------------------------------------------------
+
+On Microsoft SQL Server database:
+---------------------------------
+To check what the next ID will be:
+    SELECT IDENT_CURRENT('<TABLE_NAME>') + IDENT_INCR('<TABLE_NAME>') AS NextIdentityValue;
+
+To set the next ID:
+    DBCC CHECKIDENT ('<TABLE_NAME>', RESEED, <N>);
+                                              |
+                                              └-> current max ID
+                                                  (so a row with this ID should already exist)
 
 ---------------------------------------------------------------------------------------------------
 
