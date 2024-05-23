@@ -351,6 +351,11 @@ echo "------------"
 echo "Follow instructions in: https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository"
 waitForConfirmation
 
+echo "GPG keys setup"
+echo "--------------"
+echo "refer to the notes in gautam_linux/gpg"
+waitForConfirmation
+
 echo "gopass setup"
 echo "------------"
 echo "In the other terminal/tab run the following commands:"
