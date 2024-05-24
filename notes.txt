@@ -452,14 +452,18 @@ RabbitMQ general info:
 
 On Microsoft SQL Server database:
 ---------------------------------
+
+To find the current max ID:
+    SELECT MAX([Id]) FROM <TABLE_NAME>
+
 To check what the next ID will be:
     SELECT IDENT_CURRENT('<TABLE_NAME>') + IDENT_INCR('<TABLE_NAME>') AS NextIdentityValue;
+    (if you get NULL, check if you've inserted the correct table name in both places)
 
 To set the next ID:
-    DBCC CHECKIDENT ('<TABLE_NAME>', RESEED, <N>);
-                                              |
-                                              └-> current max ID
-                                                  (so a row with this ID should already exist)
+    DBCC CHECKIDENT ('<TABLE_NAME>', RESEED, <CURRENT_MAX_ID>);
+                                                     |
+                                                     └-> a row with this ID should already exist
 
 ---------------------------------------------------------------------------------------------------
 
