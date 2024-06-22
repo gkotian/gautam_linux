@@ -24,9 +24,9 @@ libxcomp
 llvm15-libs
 mongodb-compass
 mongodb-compass-debug
-mongodb-tools
 mongodb-tools-debug
 mpack
+nautilus-sendto
 nordvpn-bin
 nordvpn-bin-debug
 nvm
