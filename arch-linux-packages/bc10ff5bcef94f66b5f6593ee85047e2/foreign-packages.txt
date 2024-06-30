@@ -27,6 +27,7 @@ mongodb-compass-debug
 mongodb-tools-debug
 mpack
 nautilus-sendto
+nautilus-sendto-debug
 nordvpn-bin
 nordvpn-bin-debug
 nvm
@@ -44,6 +45,7 @@ rancher-cli-bin
 redisinsight
 redisinsight-debug
 simplescreenrecorder
+simplescreenrecorder-debug
 teams
 timecamp-bin
 visual-studio-code-bin
