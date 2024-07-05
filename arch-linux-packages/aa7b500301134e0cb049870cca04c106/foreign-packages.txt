@@ -25,6 +25,7 @@ libnm-glib
 libnm-gtk
 llvm15-libs
 mozilla-common
+nautilus-sendto
 nordvpn-bin
 nordvpn-bin-debug
 opencolorio1
