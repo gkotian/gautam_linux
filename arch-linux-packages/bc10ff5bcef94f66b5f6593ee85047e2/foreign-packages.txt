@@ -1,4 +1,5 @@
 atomicwallet
+atomicwallet-debug
 authy
 authy-debug
 azure-functions-core-tools-bin
