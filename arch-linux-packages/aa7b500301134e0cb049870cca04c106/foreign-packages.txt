@@ -35,6 +35,7 @@ pdftk-bin
 python-cached-property
 python-docker-pycreds
 qt4
+rest
 simplescreenrecorder
 tor-browser
 tracker
