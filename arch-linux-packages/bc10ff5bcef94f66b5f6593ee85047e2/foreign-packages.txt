@@ -43,8 +43,9 @@ python-pyfavicon
 python-yoyo-migrations
 pyzbar
 rancher-cli-bin
-redisinsight
 redisinsight-debug
+rest
+rest-debug
 simplescreenrecorder
 simplescreenrecorder-debug
 teams
