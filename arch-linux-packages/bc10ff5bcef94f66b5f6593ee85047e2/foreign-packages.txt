@@ -5,6 +5,7 @@ authy-debug
 azure-functions-core-tools-bin
 azure-functions-core-tools-bin-debug
 celt
+celt-debug
 clang15
 compiler-rt15
 downgrade
