@@ -39,6 +39,7 @@ fzf
 gcc
 git
 git-delta
+gmtp
 gnome-calculator
 gnome-disk-utility
 gnome-screenshot

@@ -19,6 +19,8 @@ gnome-icon-theme-symbolic
 google-chrome
 gscreenshot
 insync
+jmtpfs
+jmtpfs-debug
 libcroco
 libmongocrypt
 libmongocrypt-debug
