@@ -24,6 +24,7 @@ jmtpfs-debug
 libcroco
 libmongocrypt
 libmongocrypt-debug
+libvisual
 libxcomp
 llvm15-libs
 mongodb-compass
