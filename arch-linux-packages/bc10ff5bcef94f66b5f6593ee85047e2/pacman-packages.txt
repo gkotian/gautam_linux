@@ -73,7 +73,6 @@ make
 man-db
 meld
 miniupnpc
-mlocate
 monero
 mono-msbuild
 mosh
@@ -94,6 +93,7 @@ p7zip
 pacman-contrib
 patch
 pdftk
+plocate
 polkit-gnome
 progress
 pv
