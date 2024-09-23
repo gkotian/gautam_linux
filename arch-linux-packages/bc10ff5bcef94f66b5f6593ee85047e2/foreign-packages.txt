@@ -12,6 +12,7 @@ downgrade
 electron19
 flashplugin
 gconf
+gconf-debug
 giblib
 globalprotect-openconnect-git
 gnome-icon-theme
