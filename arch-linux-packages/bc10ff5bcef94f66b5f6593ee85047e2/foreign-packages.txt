@@ -48,6 +48,7 @@ python-pyfavicon
 python-yoyo-migrations
 pyzbar
 rancher-cli-bin
+rancher-cli-bin-debug
 redisinsight-debug
 rest
 rest-debug
