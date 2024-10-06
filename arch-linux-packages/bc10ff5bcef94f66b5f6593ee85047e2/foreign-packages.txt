@@ -45,6 +45,8 @@ python-docker-pycreds
 python-iniherit
 python-progress
 python-pyfavicon
+python-pyrsistent
+python-pyrsistent-debug
 python-yoyo-migrations
 pyzbar
 rancher-cli-bin
