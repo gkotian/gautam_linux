@@ -58,7 +58,6 @@ simplescreenrecorder
 simplescreenrecorder-debug
 teams
 timecamp-bin
-visual-studio-code-bin
 visual-studio-code-bin-debug
 vmware-keymaps
 xorg-font-utils
