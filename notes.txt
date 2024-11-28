@@ -467,3 +467,73 @@ To set the next ID:
 
 ---------------------------------------------------------------------------------------------------
 
+[C#] To test a NuGet package locally before releasing it:
+---------------------------------------------------------
+1. Confirm that the local NuGet package builds successfully.
+1. Confirm that the application that uses the NuGet package builds successfully.
+1. Commit all the changes in the NuGet package.
+1. Commit all the changes in the application.
+1. Identify all the projects in the application solution that use the NuGet
+   package.
+1. Open the .csproj file of all these projects and delete the `PackageReference`
+   lines where the NuGet package gets included. Confirm that the application now
+   has build errors.
+1. Right click the top-level solution (not one of the projects), click on "Add",
+   and then "Existing project".
+1. Find the .csproj file of the NuGet package and choose it to add the NuGet
+   package as a project to the solution.
+1. Do the following for each project in the application that uses the NuGet
+   package (called `PROJ` in the box below).
+   ```
+   * In a terminal, go to the directory of PROJ (this is usually one level below
+     the root of the repository).
+   * Use `ls` to find the relative path from this directory to the .csproj file
+     of the NuGet package. Copy this relative path.
+   * Open the .csproj file of PROJ and add a new `ProjectReference` line (not a
+     new `PackageReference` line). The `Include` value in this line should be
+     set to the relative path copied earlier.
+   ```
+1. Confirm that the application builds successfully once again.
+1. Make a temporary commit so that it can be easily reverted after testing.
+
+---------------------------------------------------------------------------------------------------
+
+Useful helm commands:
+---------------------
+
+To view the current release:
+----------------------------
+➜ NS=my-awesome-namespace
+➜ DEPLOYMENT_NAME=my-awesome-deployment
+➜ helm list --namespace=${NS} --filter=${DEPLOYMENT_NAME}
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART
+blah-blah       blah-blah       8               2024-11-28 09:42:20.917525917 +0000 UTC deployed        some-chart-name
+                                |
+                                └-> this is the currently running version
+
+To see all available releases:
+------------------------------
+➜ NS=my-awesome-namespace
+➜ DEPLOYMENT_NAME=my-awesome-deployment
+➜ helm history --namespace=${NS} ${DEPLOYMENT_NAME}
+REVISION        UPDATED                         STATUS          CHART
+4               Fri Aug 25 14:51:26 2023        superseded      some-chart-name
+5               Fri Oct  6 22:06:16 2023        superseded      some-chart-name
+6               Wed Oct 25 08:11:39 2023        superseded      some-chart-name
+7               Mon Oct 30 11:04:02 2023        superseded      some-chart-name
+8               Thu Nov 28 09:42:20 2024        deployed        some-chart-name
+|
+└-> this column lists all the available versions
+
+To rollback to a particular release:
+------------------------------------
+➜ NS=my-awesome-namespace
+➜ DEPLOYMENT_NAME=my-awesome-deployment
+➜ VERSION_TO_ROLLBACK_TO=7
+➜ helm rollback --namespace=${NS} ${DEPLOYMENT_NAME} ${VERSION_TO_ROLLBACK_TO}
+                                                     |
+                                                     └-> if the version to rollback to is omitted,
+                                                         the previous version is chosen by default
+
+---------------------------------------------------------------------------------------------------
+
