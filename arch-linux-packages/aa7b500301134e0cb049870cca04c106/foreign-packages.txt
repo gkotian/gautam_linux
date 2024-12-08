@@ -9,7 +9,6 @@ deepin-wayland
 dtkwm
 electron4
 electron7
-gamin
 gconf
 gconf-debug
 gksu
