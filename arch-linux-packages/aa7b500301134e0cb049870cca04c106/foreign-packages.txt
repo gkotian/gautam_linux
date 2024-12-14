@@ -25,7 +25,6 @@ libgweather
 libnm-glib
 libnm-gtk
 libvisual
-llvm15-libs
 mozilla-common
 nautilus-sendto
 nautilus-sendto-debug
