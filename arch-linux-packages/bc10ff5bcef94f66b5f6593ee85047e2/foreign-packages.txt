@@ -10,6 +10,8 @@ clang15
 compiler-rt15
 downgrade
 electron19
+electron28
+electron29
 flashplugin
 gconf
 gconf-debug
@@ -41,6 +43,9 @@ opencolorio1
 pepper-flash
 postman-bin
 python-docker-pycreds
+python-flask-babelex
+python-flask-gravatar
+python-future
 python-iniherit
 python-progress
 python-pyfavicon
