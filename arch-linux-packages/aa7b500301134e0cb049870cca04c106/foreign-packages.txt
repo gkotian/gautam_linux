@@ -2,7 +2,6 @@ authy
 authy-debug
 celt
 celt-debug
-clang15
 compiler-rt15
 deepin-screenshot
 deepin-wayland

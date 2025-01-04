@@ -22,7 +22,6 @@ diffutils
 dmenu
 docker
 docker-compose
-doxygen
 dunst
 e2fsprogs
 eog
