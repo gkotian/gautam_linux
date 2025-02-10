@@ -42,6 +42,7 @@ python-yoyo-migrations
 pyzbar
 rancher-cli-bin
 rancher-cli-bin-debug
+reiserfsprogs
 rest
 rest-debug
 simplescreenrecorder
