@@ -117,6 +117,10 @@ nmap <leader>fj :%!python -m json.tool<CR>
 " Map '\fx' to format XML
 nmap <leader>fx :%!xmllint --format -<CR>
 
+" Map leader+hw (highlight word) to highlight the word under the cursor
+" It just searches forward and then jumps back to the old location
+nmap <leader>hw *``
+
 " Map '\n' to toggle line numbers
 nmap <leader>n :set invnumber<CR>
 
