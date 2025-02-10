@@ -42,6 +42,7 @@ git
 git-delta
 gmtp
 gnome-calculator
+gnome-common
 gnome-disk-utility
 gnome-screenshot
 gnome-terminal
@@ -56,6 +57,7 @@ i3blocks
 i3lock
 i3status
 iftop
+intltool
 jq
 kate
 kdiff3
