@@ -450,6 +450,30 @@ RabbitMQ general info:
 
 ---------------------------------------------------------------------------------------------------
 
+Enabling redis notifications for expiring keys:
+-----------------------------------------------
+- connect to the redis server of interest using `redis-cli`
+  (ProTip: on Windows, use "Another Redis Desktop Manager")
+- change to the database of interest using `SELECT <db-number>`
+- check the value of the current setting using `CONFIG GET notify-keyspace-events` (will probably be empty)
+- enable keyspace notifications using `CONFIG SET notify-keyspace-events Ex`
+- check the value once again using `CONFIG GET notify-keyspace-events` (should now be set correctly)
+- To make the change persist across restarts of the redis server, open
+  `/etc/redis/redis.conf`, look for `notify-keyspace-events` and set its value
+  to `Ex`.
+
+To confirm whether expiration events are being sent as expected:
+----------------------------------------------------------------
+in the redis-cli, simply subscribe to key expiration events using `PSUBSCRIBE __keyevent@<db-number>__:expired`
+(so for db0, this'll be `PSUBSCRIBE __keyevent@0__:expired`)
+if there's no activity, then maybe nothing is expiring
+in this case, set a temporary key along with a short expiry
+    SET tempkey tempvalue
+    EXPIRE tempkey 30
+then subscribe and wait for the temporary key to expire
+
+---------------------------------------------------------------------------------------------------
+
 On Microsoft SQL Server database:
 ---------------------------------
 
@@ -464,6 +488,13 @@ To set the next ID:
     DBCC CHECKIDENT ('<TABLE_NAME>', RESEED, <CURRENT_MAX_ID>);
                                                      |
                                                      └-> a row with this ID should already exist
+
+To get an idea of what a particular process is waiting for:
+    SELECT * FROM sys.dm_exec_session_wait_stats WHERE session_id = 123 ORDER BY wait_time_ms DESC
+                                                                    |
+                                                                    └-> you'd usually get this ID from the
+                                                                        "Blocked By" column in
+                                                                        Activity Monitor -> Processes
 
 ---------------------------------------------------------------------------------------------------
 
