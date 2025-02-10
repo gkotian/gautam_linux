@@ -203,6 +203,9 @@ alias dncreate='docker network create'
 alias dnls='docker network ls'
 alias dnrm='docker network rm'
 
+alias FindFilesWithTrailingWhitespace='grep --binary-files=without-match -rlP "\s+$" .'
+alias FindFilesWithDosLineEndings="grep --binary-files=without-match -rl $'\r' ."
+
 alias gca='git commit --amend --no-edit'
 alias gcae='git commit --amend'
 alias gcf='git commit --fixup'
