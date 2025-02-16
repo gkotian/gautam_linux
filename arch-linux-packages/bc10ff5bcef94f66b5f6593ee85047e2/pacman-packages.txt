@@ -38,6 +38,7 @@ freerdp
 fuse2
 fzf
 gcc
+gimp
 git
 git-delta
 gmtp

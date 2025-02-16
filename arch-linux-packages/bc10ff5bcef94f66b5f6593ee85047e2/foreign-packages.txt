@@ -50,6 +50,7 @@ simplescreenrecorder-debug
 teams
 timecamp-bin
 vmware-keymaps
+windsurf
 xorg-font-utils
 yay
 yay-debug
