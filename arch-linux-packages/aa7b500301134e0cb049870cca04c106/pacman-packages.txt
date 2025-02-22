@@ -7,6 +7,7 @@ bash
 bat
 binutils
 bison
+bleachbit
 blueberry
 bluez-tools
 bzip2
@@ -97,7 +98,6 @@ python
 qrencode
 redshift
 reflector
-reiserfsprogs
 rsync
 s-nail
 sed

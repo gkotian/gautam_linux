@@ -38,8 +38,8 @@ python-cached-property
 python-docker-pycreds
 python-pyrsistent
 python-pyrsistent-debug
-qt4
 qt4-debug
+reiserfsprogs
 rest
 rest-debug
 simplescreenrecorder
