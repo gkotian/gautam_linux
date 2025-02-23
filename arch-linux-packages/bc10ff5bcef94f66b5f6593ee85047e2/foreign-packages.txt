@@ -20,8 +20,6 @@ insync
 jmtpfs
 jmtpfs-debug
 libcroco
-libmongocrypt
-libmongocrypt-debug
 libvisual
 mongodb-compass
 mongodb-compass-debug
