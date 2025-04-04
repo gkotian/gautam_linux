@@ -26,12 +26,10 @@ mongodb-compass-debug
 mpack
 nautilus-sendto
 nautilus-sendto-debug
-nordvpn-bin
-nordvpn-bin-debug
-nvm
 opencolorio1
 pepper-flash
 postman-bin
+python-async-timeout
 python-docker-pycreds
 python-iniherit
 python-progress
