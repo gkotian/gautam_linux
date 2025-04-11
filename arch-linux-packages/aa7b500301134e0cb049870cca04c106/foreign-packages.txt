@@ -36,6 +36,7 @@ pcmciautils
 pcmciautils-debug
 pdftk-bin
 python-cached-property
+python-clint
 python-docker-pycreds
 python-pyrsistent
 python-pyrsistent-debug
