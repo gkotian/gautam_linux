@@ -5,7 +5,7 @@ azure-functions-core-tools-bin-debug
 celt
 celt-debug
 compiler-rt15
-downgrade
+compiler-rt15-debug
 electron19
 flashplugin
 gconf
@@ -21,7 +21,6 @@ jmtpfs
 jmtpfs-debug
 libcroco
 libvisual
-mongodb-compass
 mongodb-compass-debug
 mpack
 nautilus-sendto
@@ -33,13 +32,11 @@ python-async-timeout
 python-docker-pycreds
 python-iniherit
 python-progress
-python-pyfavicon
 python-yoyo-migrations
 pyzbar
 rancher-cli-bin
 rancher-cli-bin-debug
 reiserfsprogs
-rest
 rest-debug
 simplescreenrecorder
 simplescreenrecorder-debug

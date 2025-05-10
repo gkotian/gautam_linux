@@ -25,7 +25,6 @@ docker
 docker-compose
 dos2unix
 dotnet-runtime
-dotnet-sdk
 dpkg
 dunst
 eog
