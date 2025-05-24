@@ -104,7 +104,6 @@ pv
 python-sphinx
 qt5ct
 rclone
-redis
 redshift
 refind
 reflector

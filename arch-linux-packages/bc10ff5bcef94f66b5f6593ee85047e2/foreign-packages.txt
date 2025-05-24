@@ -6,6 +6,7 @@ celt
 celt-debug
 compiler-rt15
 compiler-rt15-debug
+eddie-ui
 electron19
 flashplugin
 gconf
@@ -36,10 +37,13 @@ python-yoyo-migrations
 pyzbar
 rancher-cli-bin
 rancher-cli-bin-debug
+redis
+redis-debug
 reiserfsprogs
 rest-debug
 simplescreenrecorder
 simplescreenrecorder-debug
+t1lib
 teams
 timecamp-bin
 vmware-keymaps
