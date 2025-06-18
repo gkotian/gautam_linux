@@ -6,6 +6,7 @@ gconf
 gconf-debug
 gksu
 google-chrome
+gtkd
 libcroco
 libgksu
 libvisual
@@ -22,11 +23,11 @@ python-docker-pycreds
 python-pyrsistent
 python-pyrsistent-debug
 reiserfsprogs
-rest
 rest-debug
 simplescreenrecorder
 simplescreenrecorder-debug
 t1lib
+tilix
 tracker
 xorg-font-utils
 yay

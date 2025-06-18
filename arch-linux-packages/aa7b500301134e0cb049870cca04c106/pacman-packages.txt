@@ -58,12 +58,14 @@ kdiff3
 krita
 kubectl
 less
+lib32-gcc-libs
 libreoffice-still
 libtool
 licenses
 lightdm
 lightdm-gtk-greeter
 linux
+llvm15
 logrotate
 lvm2
 m4
@@ -116,7 +118,6 @@ terminus-font
 texinfo
 the_silver_searcher
 thunar
-tilix
 tk
 ttf-jetbrains-mono
 unzip
