@@ -17,9 +17,11 @@ gnome-icon-theme
 gnome-icon-theme-symbolic
 google-chrome
 gscreenshot
+gtkd
 insync
 jmtpfs
 jmtpfs-debug
+kitemmodels5
 libcroco
 libvisual
 mongodb-compass-debug
@@ -45,6 +47,7 @@ simplescreenrecorder
 simplescreenrecorder-debug
 t1lib
 teams
+tilix
 timecamp-bin
 vmware-keymaps
 windsurf

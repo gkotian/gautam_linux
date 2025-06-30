@@ -120,7 +120,6 @@ system-config-printer
 telegram-desktop
 texinfo
 the_silver_searcher
-tilix
 tk
 ttf-jetbrains-mono
 unrar
