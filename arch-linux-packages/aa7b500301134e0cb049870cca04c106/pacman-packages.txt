@@ -102,6 +102,7 @@ redshift
 reflector
 rsync
 s-nail
+scrot
 sed
 shadow
 slock

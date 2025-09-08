@@ -2,13 +2,16 @@ celt
 celt-debug
 compiler-rt15
 eddie-ui
+freeimage
 gconf
 gconf-debug
 gksu
 google-chrome
 gtkd
+kitemmodels5
 libcroco
 libgksu
+libgrss
 libvisual
 nautilus-sendto
 nautilus-sendto-debug
@@ -20,6 +23,7 @@ pcmciautils-debug
 python-cached-property
 python-clint
 python-docker-pycreds
+python-nspektr
 python-pyrsistent
 python-pyrsistent-debug
 reiserfsprogs
