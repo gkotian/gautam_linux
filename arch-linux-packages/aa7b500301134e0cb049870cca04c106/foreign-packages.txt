@@ -8,6 +8,7 @@ gconf-debug
 gksu
 google-chrome
 gtkd
+http-parser
 kitemmodels5
 libcroco
 libgksu
