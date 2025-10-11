@@ -1,6 +1,6 @@
+amdvlk
 celt
 celt-debug
-compiler-rt15
 eddie-ui
 freeimage
 gconf
@@ -8,6 +8,7 @@ gconf-debug
 gksu
 google-chrome
 gtkd
+gtkd-debug
 http-parser
 kitemmodels5
 libcroco
@@ -19,6 +20,7 @@ nautilus-sendto-debug
 nordvpn-bin-debug
 opencolorio1
 openssl-1.0
+openssl-1.0-debug
 pcmciautils
 pcmciautils-debug
 python-cached-property
@@ -33,6 +35,7 @@ simplescreenrecorder
 simplescreenrecorder-debug
 t1lib
 tilix
+tilix-debug
 tracker
 xorg-font-utils
 yay
