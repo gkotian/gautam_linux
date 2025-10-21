@@ -11,8 +11,10 @@ function ask-for-confirmation() {
 
     if [[ "${RESPONSE}" =~ ^[Yy]$ ]]; then
         eval ${CMD}
+        return $? # propagate the command's exit code
     else
-        echo "Aborted."
+        echo "Cancelled."
+        return 1 # return non-zero code to signal cancellation
     fi
 }
 
