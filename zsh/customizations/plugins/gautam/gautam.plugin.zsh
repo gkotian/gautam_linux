@@ -185,6 +185,47 @@ function dcexecsh() {
     fi
 }
 
+function venv() {
+    if [ -n "${VIRTUAL_ENV}" ]; then
+        echo "Already in virtual environment '${VIRTUAL_ENV}', nothing to do."
+        return
+    fi
+
+    if [ $# -gt 1 ]; then
+        echo "ERROR: too many arguments, expected at most one."
+        return
+    fi
+
+    if [ -n "${1}" ]; then
+        VENV_NAME=${1}
+    else
+        # TODO: ask user for confirmation
+        VENV_NAME=$(basename ${PWD})
+    fi
+    VENV_PATH=/tmp/venv_${VENV_NAME}
+
+    if [ -d "${VENV_PATH}" ]; then
+        echo "Using the existing virtual environment '${VENV_PATH}'"
+    else
+        echo "Creating a new virtual environment '${VENV_PATH}'"
+        python -m venv ${VENV_PATH}
+    fi
+
+    source ${VENV_PATH}/bin/activate
+}
+
+function delete_current_venv() {
+    if [ -z "${VIRTUAL_ENV}" ]; then
+        echo "Not currently in a virtual environment, nothing to do."
+        return
+    fi
+
+    ask-for-confirmation \
+        "deactivate; rm -rf ${VIRTUAL_ENV}" \
+        "Are you sure you want to delete the virtual environment '${VIRTUAL_ENV}'?" \
+    && echo "Virtual environment deleted."
+}
+
 #
 # Aliases
 # (sorted alphabetically)
