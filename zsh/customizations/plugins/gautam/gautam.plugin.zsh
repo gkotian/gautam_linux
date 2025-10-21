@@ -185,6 +185,11 @@ function dcexecsh() {
     fi
 }
 
+function sortinplace() {
+    FILE_NAME=${1}
+    sort ${FILE_NAME} -o ${FILE_NAME}
+}
+
 function venv() {
     if [ -n "${VIRTUAL_ENV}" ]; then
         echo "Already in virtual environment '${VIRTUAL_ENV}', nothing to do."
