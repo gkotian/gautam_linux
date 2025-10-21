@@ -21,6 +21,11 @@ function reb() {
     git rebase -i HEAD~${1}
 }
 
+function changeFilePermissionsWindowsToWSL() {
+    chmod -x ${1}
+    chmod go-w ${1}
+}
+
 # Git cherry-pick one or more commits
 function custom-git-cherry-pick() {
     # Confirm that we are in a git repository
