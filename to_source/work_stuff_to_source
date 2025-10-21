@@ -1,5 +1,5 @@
 # This file is sourced from ~/.zshrc
 
-alias cda='cd ~/work/appname'
+alias cdtemp='cd /mnt/c/Temp'
 
 alias tun-client='make -f /path/to/vpn/Makefile tunnel-client'
