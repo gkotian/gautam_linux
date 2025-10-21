@@ -1,3 +1,9 @@
+vim:
+----
+* to replay whatever is recorded in register q from the current line until the
+  end of the file:
+      :.,$normal @q
+
 ---------------------------------------------------------------------------------------------------
 
 Additional softwares after a fresh Linux installation:
@@ -54,9 +60,14 @@ To squeeze/compress multiple spaces into one:
 ---------------------------------------------------------------------------------------------------
 
 Alternative way to do:
-    for file in `ls`; do echo $file; done
+    for F in `ls`; do echo ${F}; done
 is:
-    ls | while read file; do echo $file; done
+    ls | while read F; do echo ${F}; done
+
+---------------------------------------------------------------------------------------------------
+
+To read each line in a file one-by-one into a variable:
+    while IFS= read -r VAR; do echo ${VAR}; done < /path/to/file
 
 ---------------------------------------------------------------------------------------------------
 
@@ -149,6 +160,15 @@ Setting date from the command-line:
     sudo date MMDDHHMMYYYY.SS
               |     |
             month  minutes
+
+---------------------------------------------------------------------------------------------------
+
+To quickly remove embedded newlines etc. from some JSON text:
+    - open a browser and launch developer tools
+    - go to the 'Console' tab
+    - enter the command `allow pasting`
+    - write `x = ` and then paste the JSON to be formatted (you might need to
+      remove any enclosing quotes)
 
 ---------------------------------------------------------------------------------------------------
 
@@ -452,9 +472,12 @@ RabbitMQ general info:
 
 Enabling redis notifications for expiring keys:
 -----------------------------------------------
+(Note that enabling the notifications is a global redis-server wide setting and
+not tied to a specific database. The subscriptions, however, are
+database-specific.)
+
 - connect to the redis server of interest using `redis-cli`
   (ProTip: on Windows, use "Another Redis Desktop Manager")
-- change to the database of interest using `SELECT <db-number>`
 - check the value of the current setting using `CONFIG GET notify-keyspace-events` (will probably be empty)
 - enable keyspace notifications using `CONFIG SET notify-keyspace-events Ex`
 - check the value once again using `CONFIG GET notify-keyspace-events` (should now be set correctly)
@@ -495,6 +518,9 @@ To get an idea of what a particular process is waiting for:
                                                                     └-> you'd usually get this ID from the
                                                                         "Blocked By" column in
                                                                         Activity Monitor -> Processes
+
+To see who's currently connected to a database:
+    SELECT * FROM sys.dm_exec_Sessions WHERE database_id = DB_ID('<DATABASE_NAME>')
 
 ---------------------------------------------------------------------------------------------------
 
@@ -565,6 +591,79 @@ To rollback to a particular release:
                                                      |
                                                      └-> if the version to rollback to is omitted,
                                                          the previous version is chosen by default
+
+---------------------------------------------------------------------------------------------------
+
+RabbitMQ shovelling messages from a queue into an exchange:
+-----------------------------------------------------------
+1. Choose the necessary virtual host.
+1. Give some name to the shovel.
+1. Source:
+   Keep protocol as-is at `AMQP 0.9.1`
+   URI: Set to `amqp://kotian@/XXX` (where XXX is the name of the vhost)
+   if source is queue:
+       enter source queue name
+   else if source is exchange:
+       enter source exchange name
+       optionally enter a routing key
+   Prefetch count: leave empty
+   Auto-delete: After initial length transferred
+1. Destination:
+   Keep protocol as-is at `AMQP 0.9.1`
+   URI: Set to `amqp://kotian@/XXX` (where XXX is the name of the vhost)
+   choose exchange destination
+   Exchange name: exchange.scraperoutbound
+   Routing key: leave empty
+
+---------------------------------------------------------------------------------------------------
+
+MongoDB renaming a database (the best way to do this is to dump and restore the
+database)
+-------------------------------------------------------------------------------
+
+1. Stop everything that's writing into the database.
+1. Create a temporary directory to store the dump (ensure there is sufficient
+   disk space).
+   ```
+   ➜  mkdir /tmp/mongodb_rename && cd /tmp/mongodb_rename
+   ```
+1. Dump to local disk.
+   ```
+   ➜  mongodump --db=OLD_DATABASE_NAME --out=backup mongodb://hostname:27017
+   ```
+1. Restore from local disk.
+   ```
+   ➜  mongorestore --nsFrom="OLD_DATABASE_NAME.*" --nsTo="NEW_DATABASE_NAME.*" backup mongodb://hostname:27017
+   ```
+
+---------------------------------------------------------------------------------------------------
+
+To login to rancher CLI:
+------------------------
+1. Open the rancher UI.
+1. Click the avatar on the top-right and then click on "Account & API Keys".
+1. Click on "Create API Key".
+1. Under "Description", write "Rancher CLI session".
+1. Under "Scope", select "No scope".
+1. Set expiration to the maximum allowed of 90 days.
+1. Click "Create".
+1. Copy the bearer token and paste it into the file `/tmp/token`.
+1. Click "Done".
+1. Run the login command.
+   ```
+   # For prod rancher
+   ➜ rancher login https://rancher.rke2-cnvx.com --token=$(cat /tmp/token) --name=prod
+
+   # For dev rancher
+   ➜ rancher login https://rancher.dev.rke2-cnvx.com --token=$(cat /tmp/token) --name=dev
+   ```
+
+To list configured servers:
+    rancher server ls
+        # also shows which one is the current
+
+To switch to a different server:
+    rancher server switch <dev/prod>
 
 ---------------------------------------------------------------------------------------------------
 
