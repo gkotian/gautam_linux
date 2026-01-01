@@ -11,7 +11,6 @@ bat
 bind
 binutils
 bison
-blueberry
 bluez-utils
 cifs-utils
 ctags
@@ -46,7 +45,6 @@ gnome-common
 gnome-disk-utility
 gnome-screenshot
 gnome-terminal
-gnu-netcat
 go
 groff
 gutenprint
@@ -97,6 +95,7 @@ openssh
 pacman-contrib
 patch
 pdftk
+perl-xml-libxml
 plocate
 polkit-gnome
 progress
