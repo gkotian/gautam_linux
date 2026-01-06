@@ -68,7 +68,6 @@ lightdm-slick-greeter
 linux
 linux-firmware
 llvm
-llvm15
 lsof
 lxinput
 m4

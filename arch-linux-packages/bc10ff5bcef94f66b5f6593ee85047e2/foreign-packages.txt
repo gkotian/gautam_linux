@@ -40,6 +40,8 @@ libpng12
 libudev0-shim
 libudev0-shim-debug
 libvisual
+llvm15
+llvm15-libs
 mpack
 nautilus-sendto
 nautilus-sendto-debug
