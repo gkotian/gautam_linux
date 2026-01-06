@@ -46,6 +46,7 @@ gnome-disk-utility
 gnome-screenshot
 gnome-terminal
 go
+gopass
 groff
 gutenprint
 htop
