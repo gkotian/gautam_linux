@@ -1,6 +1,5 @@
 atomicwallet
 atomicwallet-debug
-blueberry
 celt
 celt-debug
 compiler-rt15
@@ -14,7 +13,6 @@ gconf
 gconf-debug
 giblib
 globalprotect-openconnect-git
-gnome-bluetooth
 gnome-icon-theme
 gnome-icon-theme-symbolic
 gnu-netcat
@@ -33,23 +31,18 @@ libappindicator-gtk2-debug
 libcroco
 libdbusmenu-gtk2
 libdbusmenu-gtk2-debug
-libgnome-keyring
-libgrss
 libindicator-gtk2
 libindicator-gtk2-debug
 libpng12
 libudev0-shim
 libudev0-shim-debug
 libvisual
-llvm15
-llvm15-libs
 mpack
 nautilus-sendto
 nautilus-sendto-debug
 opencolorio1
 pepper-flash
 python-async-timeout
-python-backports-zstd
 python-docker-pycreds
 python-iniherit
 python-nspektr
@@ -67,7 +60,6 @@ reiserfsprogs-debug
 simplescreenrecorder
 simplescreenrecorder-debug
 t1lib
-teams
 timecamp-bin
 vmware-keymaps
 xorg-font-utils
