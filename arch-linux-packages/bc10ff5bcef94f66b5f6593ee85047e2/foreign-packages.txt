@@ -1,5 +1,6 @@
 atomicwallet
 atomicwallet-debug
+bridge-utils
 celt
 celt-debug
 compiler-rt15
@@ -43,6 +44,7 @@ mpack
 nautilus-sendto
 nautilus-sendto-debug
 opencolorio1
+openssl-1.1
 pepper-flash
 python-async-timeout
 python-docker-pycreds
