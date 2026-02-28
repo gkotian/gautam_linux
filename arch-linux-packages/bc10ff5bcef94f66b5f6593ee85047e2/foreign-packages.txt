@@ -1,6 +1,7 @@
 atomicwallet
 atomicwallet-debug
 bridge-utils
+bridge-utils-debug
 celt
 celt-debug
 compiler-rt15
