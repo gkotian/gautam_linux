@@ -5,10 +5,17 @@
 
 declare -a LINKS
 
-mapfile -t LINKS < ${1}
+mapfile -t LINKS < "$1"
 
-for L in ${LINKS[@]}
+for L in "${LINKS[@]}"
 do
-    curl --remote-name ${L}
+    curl \
+        --fail \
+        --location \
+        --remote-name \
+        --retry 5 \
+        --retry-all-errors \
+        --retry-delay 2 \
+        "$L"
     sleep 1
 done
