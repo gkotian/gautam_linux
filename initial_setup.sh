@@ -537,6 +537,34 @@ echo "Add gpg signing for commits"
 
 echo "Set the 'IS_LAPTOP' variable in '${GL_DIR}/scripts/g_startup.sh' as appropriate"
 
+echo "Claude Code setup"
+echo "-----------------"
+echo "Creating symbolic links for Claude Code configuration:"
+CLAUDE_DIR="/home/${THE_USER}/.claude"
+sudo -u ${THE_USER} mkdir -p ${CLAUDE_DIR}/hooks ${CLAUDE_DIR}/commands
+echo -n "    CLAUDE.md... "
+sudo -u ${THE_USER} ln -srf $GL_DIR/claude/CLAUDE.md ${CLAUDE_DIR}/CLAUDE.md
+echo "Done!"
+echo -n "    settings.json... "
+sudo -u ${THE_USER} ln -srf $GL_DIR/claude/settings.json ${CLAUDE_DIR}/settings.json
+echo "Done!"
+echo -n "    settings.local.json... "
+sudo -u ${THE_USER} ln -srf $GL_DIR/claude/settings.local.linux.json ${CLAUDE_DIR}/settings.local.json
+echo "Done!"
+echo -n "    statusline-command.js... "
+sudo -u ${THE_USER} ln -srf $GL_DIR/claude/statusline-command.js ${CLAUDE_DIR}/statusline-command.js
+echo "Done!"
+echo -n "    statusline-command.sh... "
+sudo -u ${THE_USER} ln -srf $GL_DIR/claude/statusline-command.sh ${CLAUDE_DIR}/statusline-command.sh
+echo "Done!"
+echo -n "    commands/note-save.md... "
+sudo -u ${THE_USER} ln -srf $GL_DIR/claude/commands/note-save.md ${CLAUDE_DIR}/commands/note-save.md
+echo "Done!"
+echo -n "    hooks/user-prompt-qmd.sh... "
+sudo -u ${THE_USER} ln -srf $GL_DIR/claude/hooks/user-prompt-qmd.sh ${CLAUDE_DIR}/hooks/user-prompt-qmd.sh
+echo "Done!"
+echo ""
+
 echo "You're all set. Congratulations!!"
 
 END_TIMESTAMP=$(date +%s)

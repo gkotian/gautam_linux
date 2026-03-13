@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git config:*)",
+      "Bash(echo:*)",
+      "Bash(cmd /c \"echo HOME=%HOME% & echo USERPROFILE=%USERPROFILE% & echo HOMEDRIVE=%HOMEDRIVE% & echo HOMEPATH=%HOMEPATH%\")",
+      "Bash(cmd /c \"git config --list --show-origin\")",
+      "Bash(set)",
+      "Bash(findstr:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(where git)",
+      "Bash(printenv:*)",
+      "Bash(env)",
+      "Bash(git --version)",
+      "Bash(time git:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
