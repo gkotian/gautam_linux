@@ -122,14 +122,7 @@ alias unmute='amixer set Master unmute > /dev/null && amixer set Speaker unmute 
 # Description of the fields at: https://superuser.com/a/464413/135510
 alias ps='ps -eo pid,comm,lstart,etime,time,args'
 
-#alias reviewChanges='for file in `svn status -q | awk '\''{print \$NF}'\''`; do sd $file; done'
-alias reviewChanges='for file in `svn status -q | awk '\''{print \$NF}'\''`; do svn diff --diff-cmd kdiff3 $file; done'
-    # To display a quote (') inside an alias, we need to first break out of the quote, escape the
-    # quotation mark, and then re-enter the quote. Hence: '\''
-    # (source: http://muffinresearch.co.uk/archives/2007/01/30/bash-single-quotes-inside-of-single-quoted-strings)
-alias rc='reviewChanges'
 alias reviewBranch='$PLAY_DIR/git_scripts/review_branch.sh'
-alias rb='reviewBranch'
 alias rsync='rsync -zP'
 alias fb='filesInBranch'
 alias mb='mergeBranch'

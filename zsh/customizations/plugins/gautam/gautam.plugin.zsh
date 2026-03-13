@@ -28,6 +28,29 @@ function changeFilePermissionsWindowsToWSL() {
     chmod go-w ${1}
 }
 
+compare_files() {
+    if [[ $# -ne 2 ]]; then
+        echo "Usage: compare_files <file1> <file2>"
+        return 1
+    fi
+
+    if [[ ! -f "$1" || ! -f "$2" ]]; then
+        echo "Error: Both arguments must be valid files"
+        return 1
+    fi
+
+    hash1=$(tr -d '\r' < "$1" | md5sum | cut -d' ' -f1)
+    hash2=$(tr -d '\r' < "$2" | md5sum | cut -d' ' -f1)
+
+    if [[ "$hash1" == "$hash2" ]]; then
+        echo "The files are identical"
+        return 0
+    else
+        echo "The files are different"
+        return 1
+    fi
+}
+
 # Git cherry-pick one or more commits
 function custom-git-cherry-pick() {
     # Confirm that we are in a git repository
@@ -132,21 +155,6 @@ function get_docker_image() {
     echo ${IMG_WITH_TAG}
 }
 
-function gofmt() {
-    local IMAGE=$(get_docker_image golang)
-
-    if [ -z "${IMAGE}" ]; then
-        echo "No golang docker image found. Aborting."
-        return 1
-    fi
-
-    docker run --rm --tty \
-        --mount "type=bind,source=${PWD},target=/go/src" \
-		--workdir /go/src \
-        ${IMAGE} \
-            /bin/sh -c "gofmt -s -w ."
-}
-
 # gtb => git test branch
 # This is not just an alias as I sometimes need to pass arguments to
 # 'git-test-branch'
@@ -242,6 +250,7 @@ alias b='bat'
 alias batttery='upower -i $(upower -e | grep "BAT") | grep -E "state|time\ to|percentage"'
 
 alias cdt='cd /tmp'
+alias cdtt='mkdir -p /tmp/tmp && cd /tmp/tmp'
 
 alias dclogs='docker container logs'
 alias dcexec='docker container exec'

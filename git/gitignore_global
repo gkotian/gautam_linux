@@ -1,11 +1,14 @@
+.claude
+
 # Vim swap files.
 *.swp
 
 # Backup files created by kdiff3.
 *.orig
 
-# Tags files created by universal-ctags.
+# Tags files created by gutentags.
 tags
+tags.lock
 
 # Python bytecode-compiled files.
 __pycache__/

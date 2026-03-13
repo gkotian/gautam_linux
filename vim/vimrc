@@ -176,7 +176,6 @@ source ~/.vim/functions.vim
 source ~/.vim/autocmds.vim
 
 " Plugin specific stuff
-source ~/.vim/govim.vim
 source ~/.vim/vim-startify.vim
 source ~/.vim/NERDTree.vim
 
