@@ -17,9 +17,6 @@
     verbose = true
     gpgsign = true
 
-[core]
-    deltaBaseCacheLimit = 1G
-
 [color]
     diff   = auto
     status = auto
@@ -27,8 +24,9 @@
     ui     = auto
 
 [core]
-    whitespace   = tab-in-indent red reverse
+    deltaBaseCacheLimit = 1G
     excludesfile = /home/gautam/.gitignore_global
+    whitespace   = tab-in-indent red reverse
 
 [color "diff"]
     whitespace = red reverse
@@ -51,6 +49,7 @@
     algorithm = patience
     submodule = log
     tool = meld
+    colorMoved = default
 
 [log]
     submodule = log
@@ -66,9 +65,6 @@
 
 [rebase]
     autosquash = true
-
-[init]
-	defaultBranch = main
 
 [alias]
     ; prune-tags first deletes all local tags, and then fetches all tags from
