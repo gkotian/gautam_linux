@@ -251,6 +251,8 @@ alias batttery='upower -i $(upower -e | grep "BAT") | grep -E "state|time\ to|pe
 
 alias cdt='cd /tmp'
 alias cdtt='mkdir -p /tmp/tmp && cd /tmp/tmp'
+alias cet='TZ=Europe/Berlin date'
+alias cest='TZ=Europe/Berlin date'
 
 alias dclogs='docker container logs'
 alias dcexec='docker container exec'
