@@ -24,7 +24,6 @@
     ui     = auto
 
 [core]
-    deltaBaseCacheLimit = 1G
     excludesfile = /home/gautam/.gitignore_global
     whitespace   = tab-in-indent red reverse
 
@@ -70,6 +69,3 @@
     ; prune-tags first deletes all local tags, and then fetches all tags from
     ; the remote
     prune-tags = !git tag -l | xargs git tag -d && git fetch -t
-
-    ; fetches a merge request from GitLab
-    mr = !sh -c 'git fetch origin merge-requests/${1}/head:MR-${1} && git checkout MR-${1}' -
