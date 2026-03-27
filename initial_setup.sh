@@ -505,9 +505,9 @@ echo "dmenu PATH setup"
 echo "----------------"
 echo "    launch dmenu (mod+d), and write 'echo \$PATH > /tmp/path'"
 echo "    cat /tmp/path to see if it contains \$HOME/bin"
-echo "    if not, try setting the path manually in ~/.profile"
+echo "    if not, try setting the path manually in ~/.xprofile"
 echo "    (for how to do this, look inside the initial_setup.sh script in the line following this one)"
-#             echo 'export PATH="$HOME/bin:$PATH"' > ~/.profile
+#             echo 'export PATH="$HOME/bin:$PATH"' > ~/.xprofile
 # TODO: figure out how to show the above comment when this script runs.
 waitForConfirmation
 
