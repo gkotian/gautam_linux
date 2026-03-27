@@ -19,6 +19,9 @@ bindsym $mod+Shift+Q kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 
+# take a screenshot
+bindsym $mod+s exec scrot --silent
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -52,10 +55,14 @@ bindsym $mod+v split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
 
+# I have intentionally commented out the default keybindings to change the
+# container layout, because changing layouts is not something I do. That lets me
+# use the shortcuts for other things. As of now, `$mod+s` is the only thing I
+# have remapped for taking screenshots.
 # change container layout (stacked, tabbed, default)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout default
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout default
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
