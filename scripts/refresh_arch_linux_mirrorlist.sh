@@ -72,4 +72,9 @@ reflector \
 NEW_REFRESH_TIME=$(grep When ${MIRRORLIST} | cut -d":" -f2-)
 echo "New mirrorlist refresh time: ${NEW_REFRESH_TIME}"
 
+# Refreshing keys cannot be done here as `pacman-key` needs to be run as root.
+# One way would be to put it in a separate script and start that script as a
+# systemd service at startup. This is left as an exercise for the future.
+# pacman-key --refresh-keys
+
 echo "-------------------------------------------------------------------------"
