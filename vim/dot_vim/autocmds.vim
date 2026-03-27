@@ -7,6 +7,9 @@ if has("autocmd")
         " Clear the auto command group so we don't define it multiple times
         autocmd!
 
+        " Show a vertical bar at textwidth
+        autocmd BufReadPost * call ShowBar()
+
         " Source the vimrc file as soon as it is saved.
         autocmd BufWritePost .vimrc source $MYVIMRC
 
@@ -18,7 +21,10 @@ if has("autocmd")
 
         " Remove trailing whitespace whenever a buffer is saved
         " (only for files with specified file extensions)
-        autocmd BufWritePre Dockerfile,*.cs,*.js,*.json,*.md,*.py,*.sh,*.sql,*.toml,*.ts,*.txt,*.yaml,*.yml :%s/\s\+$//e
+        autocmd BufWritePre COMMIT_EDITMSG,Dockerfile,*.cs,*.js,*.json,*.md,*.py,*.sh,*.sql,*.toml,*.ts,*.txt,*.yaml,*.yml :%s/\s\+$//e
+
+        " Use CRLF line endings for C# files.
+        autocmd BufNewFile,BufRead *.cs set fileformat=dos
 
         " Avoid storing temporary files when editing secrets
         autocmd BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
@@ -30,4 +36,3 @@ if has("autocmd")
         autocmd FileType help nnoremap <buffer>q :q<CR>
     augroup END
 endif
-
