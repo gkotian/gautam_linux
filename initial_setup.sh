@@ -313,7 +313,7 @@ echo "Done!"
 
 echo "docker setup"
 echo "------------"
-echo "Follow instructions in: https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository"
+echo "Follow instructions in: https://wiki.archlinux.org/title/Docker#Installation"
 waitForConfirmation
 
 echo "GPG keys setup"
@@ -377,16 +377,6 @@ echo "-----------"
 echo "    launch authy"
 echo "    set it up using the phone number"
 echo "    gopass authy for password"
-waitForConfirmation
-
-echo "default applications setup"
-echo "--------------------------"
-echo "    System Settings -> Details -> Default Applications"
-echo "        Web    : Google Chrome"
-echo "        Mail   : Thunderbird Mail"
-echo "        Music  : VLC media player"
-echo "        Video  : VLC media player"
-echo "        Photos : gThumb"
 waitForConfirmation
 
 echo "kdiff3 setup"
