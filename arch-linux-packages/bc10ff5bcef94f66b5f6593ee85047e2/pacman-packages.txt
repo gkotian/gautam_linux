@@ -39,7 +39,6 @@ fzf
 gcc
 gimp
 git
-git-delta
 gmtp
 gnome-calculator
 gnome-common
