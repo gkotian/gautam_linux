@@ -110,25 +110,9 @@ chmod go-rx /home/${THE_USER}/.gnupg
 echo "Done!"
 echo ""
 
-echo -n "Enabling all the Ubuntu repositories... "
-add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
-if [[ $? -ne 0 ]]; then
-    echo "Failed. Aborting." 1>&2
-    exit 5
-fi
-echo "Done!"
-
-echo -n "Adding the git-core PPA... "
-apt-add-repository -y ppa:git-core/ppa > /dev/null 2>&1
-if [[ $? -ne 0 ]]; then
-    echo "Failed. Aborting." 1>&2
-    exit 4
-fi
-echo "Done!"
-
 echo ""
 echo "In a new terminal/tab run the following command:"
-echo "    sudo apt-get update"
+echo "    sudo pacman -Syu"
 waitForConfirmation
 
 echo "Installing packages:"
