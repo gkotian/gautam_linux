@@ -345,20 +345,6 @@ echo "        (when it asks for an email address, use 2258100-gkotian@users.nore
 #echo "    run 'gopass firefox' to see if the credentials can be correctly decrypted"
 waitForConfirmation
 
-echo "fzf setup (only needed for ubuntu, as everything is already done for arch)"
-echo "--------------------------------------------------------------------------"
-echo "In the other terminal/tab run the following commands:"
-echo "    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf"
-echo "    ~/.fzf/install"
-echo "        - Choose yes for enabling fuzzy auto-completion"
-echo "        - Choose yes for enabling key bindings"
-echo "        - Choose no for updating shell configuration files"
-echo "    in the 'FZF related' section of ~/.zshrc:"
-echo "        - change the 'if' line to 'if [ -f ~/.fzf.zsh ]; then'"
-echo "        - fix the paths in the two 'source' lines"
-echo "    rm -f ${HOME}/.fzf.bash"
-waitForConfirmation
-
 echo "Arch Linux mirrorlist setup"
 echo "---------------------------"
 echo "In the other terminal/tab run the following commands:"
