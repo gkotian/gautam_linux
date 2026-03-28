@@ -284,6 +284,10 @@ echo -n "    umlauts... "
 sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/umlauts.sh /home/$THE_USER/bin/umlauts
 echo "Done!"
 
+echo -n "    ctrl... "
+sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/ctrl.py /home/$THE_USER/bin/ctrl
+echo "Done!"
+
 echo -n "    .gdbinit... "
 sudo -u ${THE_USER} ln -srf $GL_DIR/misc/gdbinit /home/$THE_USER/.gdbinit
 echo "Done!"
