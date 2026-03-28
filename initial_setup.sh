@@ -357,18 +357,6 @@ echo "--------------"
 echo "Create the clone.py config file (format present at the top of ${PLAY_DIR}/python_scripts/clone.py)"
 waitForConfirmation
 
-echo "google-chrome setup"
-echo "-------------------"
-echo "    Go to 'https://www.google.com/chrome/browser/desktop/index.html', download and install chrome"
-waitForConfirmation
-ln -s /usr/bin/google-chrome /usr/bin/chrome
-echo "    Launch google-chrome, lock it to launcher and set it as the default browser"
-echo "    Go to 'chrome://settings', scroll down to the end and click on 'Show advanced settings...'"
-echo "    Scroll down further to 'Downloads'"
-echo "    Edit the default path there to '/tmp' and check 'Ask where to save each file before downloading'"
-echo "    also disable third-party tracking"
-waitForConfirmation
-
 echo "firefox setup"
 echo "-------------"
 echo "    log in to firefox so that things get synced"
