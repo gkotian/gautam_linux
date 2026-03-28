@@ -477,14 +477,6 @@ echo "    (for how to do this, look inside the initial_setup.sh script in the li
 # TODO: figure out how to show the above comment when this script runs.
 waitForConfirmation
 
-echo "flake8 setup"
-echo "------------"
-echo "    flake8 should already be installed as it's in the python packages list"
-echo "    all that's needed is to make sure it's in the PATH"
-echo "    first open a new terminal and simply run flake8. If it works, then it's all good."
-echo "    If not, find out where it's installed using https://stackoverflow.com/a/45956582/793930,"
-echo "    and then update ~/.profile as appropriate."
-
 echo "Specifying DNS servers"
 echo "----------------------"
 echo "    Get the connection name (under column NAME on running 'nmcli con')"
