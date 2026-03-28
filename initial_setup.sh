@@ -10,13 +10,12 @@ GITLAB_USERNAME="gkotian"
 PACKAGES_LIST=(
     git
     gitk
-    git-man
     i3
     kdiff3
     meld
-    silversearcher-ag
-    ssh-askpass
-    suckless-tools
+    the_silver_searcher
+    x11-ssh-askpass
+    dmenu
     vim
     vlc
     xclip
