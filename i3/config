@@ -55,14 +55,13 @@ bindsym $mod+v split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
 
-# I have intentionally commented out the default keybindings to change the
-# container layout, because changing layouts is not something I do. That lets me
-# use the shortcuts for other things. As of now, `$mod+s` is the only thing I
-# have remapped for taking screenshots.
+# The default keybinding of `$mod+s` to change to the stacked container layout
+# has been intentionally commented out as I never use that layout. That allows
+# me to remap `$mod+s` for taking screenshots.
 # change container layout (stacked, tabbed, default)
 # bindsym $mod+s layout stacking
-# bindsym $mod+w layout tabbed
-# bindsym $mod+e layout default
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout default
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
