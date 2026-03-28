@@ -23,10 +23,6 @@ PACKAGES_LIST=(
     zsh
 )
 
-PYTHON_PACKAGES_LIST=(pyenchant flake8)
-
-RUBY_PACKAGES_LIST=(jekyll)
-
 MY_PROJECTS_LIST=(git_scripts gkotian.github.io python_scripts)
 
 DIRECTORIES_TO_PRECREATE=(
@@ -128,30 +124,6 @@ do
     sudo -u ${THE_USER} yay -S --noconfirm $PACKAGE > /dev/null 2>&1
     if [[ $? -ne 0 ]]; then
         echo "Failed." 1>&2
-    else
-        echo "Done!"
-    fi
-done
-
-echo "Installing python packages:"
-for PACKAGE in ${PYTHON_PACKAGES_LIST[@]}
-do
-    echo -n "    $PACKAGE... "
-    sudo -u ${THE_USER} yay -S --noconfirm $PACKAGE > /dev/null 2>&1
-    if [[ $? -ne 0 ]]; then
-        echo "Failed." 1>&2
-    else
-        echo "Done!"
-    fi
-done
-
-echo "Installing ruby packages:"
-for PACKAGE in ${RUBY_PACKAGES_LIST[@]}
-do
-    echo -n "    $PACKAGE... "
-    sudo -u ${THE_USER} yay -S --noconfirm $PACKAGE > /dev/null 2>&1
-    if [[ $? -ne 0 ]]; then
-        echo "Failed."
     else
         echo "Done!"
     fi
