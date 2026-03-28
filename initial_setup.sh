@@ -105,7 +105,6 @@ chmod go-rx /home/${THE_USER}/.gnupg
 echo "Done!"
 echo ""
 
-echo ""
 echo "In a new terminal/tab run the following command:"
 echo "    sudo pacman -Syu"
 waitForConfirmation
@@ -129,8 +128,6 @@ do
 done
 
 echo -n "Changing default shell to zsh... "
-# echo "    (enter ${THE_USER}'s password if asked for)"
-# sudo -u ${THE_USER} chsh -s /bin/zsh
 chsh -s /bin/zsh ${THE_USER}
 echo "Done!"
 
@@ -416,8 +413,10 @@ echo "    (note that this needs to be done separately for each new connection)"
 waitForConfirmation
 
 echo "Add gpg signing for commits"
+waitForConfirmation
 
 echo "Set the 'IS_LAPTOP' variable in '${GL_DIR}/scripts/g_startup.sh' as appropriate"
+waitForConfirmation
 
 echo "Claude Code setup"
 echo "-----------------"
