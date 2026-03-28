@@ -115,11 +115,17 @@ echo "In a new terminal/tab run the following command:"
 echo "    sudo pacman -Syu"
 waitForConfirmation
 
+echo "Installing yay..."
+echo "In the other terminal/tab run the following commands:"
+echo "    sudo pacman -S --needed git base-devel"
+echo "    cd /tmp && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si"
+waitForConfirmation
+
 echo "Installing packages:"
 for PACKAGE in ${PACKAGES_LIST[@]}
 do
     echo -n "    $PACKAGE... "
-    apt-get install -qq $PACKAGE > /dev/null 2>&1
+    sudo -u ${THE_USER} yay -S --noconfirm $PACKAGE > /dev/null 2>&1
     if [[ $? -ne 0 ]]; then
         echo "Failed." 1>&2
     else
@@ -131,7 +137,7 @@ echo "Installing python packages:"
 for PACKAGE in ${PYTHON_PACKAGES_LIST[@]}
 do
     echo -n "    $PACKAGE... "
-    pip install $PACKAGE > /dev/null 2>&1
+    sudo -u ${THE_USER} yay -S --noconfirm $PACKAGE > /dev/null 2>&1
     if [[ $? -ne 0 ]]; then
         echo "Failed." 1>&2
     else
@@ -143,7 +149,7 @@ echo "Installing ruby packages:"
 for PACKAGE in ${RUBY_PACKAGES_LIST[@]}
 do
     echo -n "    $PACKAGE... "
-    gem install $PACKAGE > /dev/null 2>&1
+    sudo -u ${THE_USER} yay -S --noconfirm $PACKAGE > /dev/null 2>&1
     if [[ $? -ne 0 ]]; then
         echo "Failed."
     else
