@@ -470,12 +470,6 @@ echo "    nmcli con mod <connection-name> ipv4.ignore-auto-dns yes"
 echo "    (note that this needs to be done separately for each new connection)"
 waitForConfirmation
 
-echo "Disabling icons on Desktop (or else launching nautilus in i3 will open an
-additional window)"
-sudo -u ${THE_USER} gsettings set org.gnome.desktop.background show-desktop-icons false
-echo "Done!"
-echo ""
-
 echo "Add gpg signing for commits"
 
 echo "Set the 'IS_LAPTOP' variable in '${GL_DIR}/scripts/g_startup.sh' as appropriate"
