@@ -23,6 +23,53 @@ function reb() {
     git rebase -i HEAD~${1}
 }
 
+function gitResetBranch() {
+    local branch_name="${1}"
+    local current_branch
+    local default_remote_branch
+    local commit_hash
+
+    current_branch=$(git branch --show-current 2>/dev/null)
+    if [ $? != "0" ]; then
+        return 1
+    fi
+
+    if [ -z "${branch_name}" ]; then
+        read "branch_name?Enter the name of the branch to reset (leave empty for '${current_branch}'): "
+        if [ -z "${branch_name}" ]; then
+            branch_name="${current_branch}"
+        fi
+    fi
+
+    if [ -z "${branch_name}" ]; then
+        echo "Could not determine a branch name. Aborting."
+        return 1
+    fi
+
+    default_remote_branch="origin/${branch_name}"
+    read "commit_hash?Enter the commit hash to set '${branch_name}' to (leave empty for '${default_remote_branch}'): "
+    if [ -z "${commit_hash}" ]; then
+        commit_hash="${default_remote_branch}"
+    fi
+
+    git checkout -B "${branch_name}" "${commit_hash}"
+}
+
+function rbm() {
+    local branch_name
+
+    if git rev-parse --verify --quiet main >/dev/null || git rev-parse --verify --quiet origin/main >/dev/null; then
+        branch_name="main"
+    elif git rev-parse --verify --quiet master >/dev/null || git rev-parse --verify --quiet origin/master >/dev/null; then
+        branch_name="master"
+    else
+        echo "Could not find 'main' or 'master'. Aborting."
+        return 1
+    fi
+
+    gitResetBranch "${branch_name}"
+}
+
 function changeFilePermissionsWindowsToWSL() {
     chmod -x ${1}
     chmod go-w ${1}
@@ -320,6 +367,7 @@ alias laptop_right='~/play/gautam_linux/scripts/setup-monitors.sh right'
 
 alias poweroff='echo "This command is intentionally disabled. (It can only be run as root.)" && return 1'
 
+alias rb='gitResetBranch'
 alias reboot='echo "This command is intentionally disabled. (It can only be run as root.)" && return 1'
 
 # Three special things are done when playing sounds:
