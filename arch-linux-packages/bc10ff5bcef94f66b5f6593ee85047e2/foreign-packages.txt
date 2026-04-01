@@ -58,6 +58,7 @@ qt5-location
 qt5-webchannel
 qt5-webchannel-debug
 qtkeychain-qt5
+quazip-qt5
 rancher-cli-bin
 rancher-cli-bin-debug
 redis
@@ -68,6 +69,7 @@ simplescreenrecorder
 simplescreenrecorder-debug
 t1lib
 timecamp-bin
+udisks2-qt5
 vmware-keymaps
 xorg-font-utils
 yay
