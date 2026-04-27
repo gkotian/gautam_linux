@@ -226,6 +226,10 @@ echo -n "    clone... "
 sudo -u ${THE_USER} ln -srf ${PLAY_DIR}/python_scripts/clone.py /home/$THE_USER/bin/clone
 echo "Done!"
 
+echo -n "    compress... "
+sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/compress.sh /home/$THE_USER/bin/compress
+echo "Done!"
+
 echo -n "    img (image viewer)... "
 sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/image_viewer.sh /home/$THE_USER/bin/img
 echo "Done!"
