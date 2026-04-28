@@ -16,6 +16,7 @@ PACKAGES_LIST=(
     the_silver_searcher
     x11-ssh-askpass
     dmenu
+    reflector
     vim
     vlc
     xclip
@@ -349,6 +350,7 @@ waitForConfirmation
 echo "Arch Linux mirrorlist setup"
 echo "---------------------------"
 echo "In the other terminal/tab run the following commands:"
+echo "    ${GL_DIR}/scripts/refresh_arch_linux_mirrorlist.sh --manual"
 echo "    doas rm /etc/pacman.d/mirrorlist"
 echo "    doas ln -s /home/${THE_USER}/.config/arch_linux_mirrorlist /etc/pacman.d/mirrorlist"
 waitForConfirmation
