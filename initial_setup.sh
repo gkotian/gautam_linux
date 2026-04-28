@@ -16,6 +16,7 @@ PACKAGES_LIST=(
     the_silver_searcher
     x11-ssh-askpass
     dmenu
+    opendoas
     reflector
     vim
     vlc
