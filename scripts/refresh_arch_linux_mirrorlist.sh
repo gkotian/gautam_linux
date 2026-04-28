@@ -1,10 +1,24 @@
-#!/bin/sh
+#!/bin/bash
 
 # Refreshes the Arch Linux mirrorlist if it hasn't been updated for over a week.
 
-SCRIPT_NAME=$(basename ${0})
+SCRIPT_NAME=$(basename "${0}")
 LOG_FILE=/var/tmp/${SCRIPT_NAME%.sh}.log
-exec 1>>${LOG_FILE} 2>&1
+
+# During automatic runs, we sleep for 10 minutes in the beginning to allow for
+# any VPN connection, if present, to get activated.
+INITIAL_SLEEP_TIME=600
+MANUAL_RUN="NO"
+
+if [ "${1}" = "--manual" ]; then
+    MANUAL_RUN="YES"
+fi
+
+if [ "${MANUAL_RUN}" = "YES" ]; then
+    exec > >(tee -a "${LOG_FILE}") 2>&1
+else
+    exec 1>>"${LOG_FILE}" 2>&1
+fi
 
 echo "[`date`]"
 
@@ -12,10 +26,6 @@ if [ $# -gt 1 ]; then
     echo "ERROR: Expected at most 1 argument, got $#"
     exit 1
 fi
-
-# During automatic runs, we sleep for 10 minutes in the beginning to allow for
-# any VPN connection, if present, to get activated.
-INITIAL_SLEEP_TIME=600
 
 if [ $# -eq 1 ]; then
     if [ "$1" != "--manual" ]; then
