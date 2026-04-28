@@ -350,7 +350,7 @@ echo "Arch Linux mirrorlist setup"
 echo "---------------------------"
 echo "In the other terminal/tab run the following commands:"
 echo "    doas rm /etc/pacman.d/mirrorlist"
-echo "    doas ln -s ${HOME}/.config/arch_linux_mirrorlist /etc/pacman.d/mirrorlist"
+echo "    doas ln -s /home/${THE_USER}/.config/arch_linux_mirrorlist /etc/pacman.d/mirrorlist"
 waitForConfirmation
 
 echo "clone.py setup"
