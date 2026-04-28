@@ -8,6 +8,7 @@ GITHUB_USERNAME="gkotian"
 GITLAB_USERNAME="gkotian"
 
 PACKAGES_LIST=(
+    bat
     git
     gitk
     i3
@@ -17,10 +18,12 @@ PACKAGES_LIST=(
     x11-ssh-askpass
     dmenu
     opendoas
+    redshift
     reflector
     vim
     vlc
     xclip
+    yad
     zsh
 )
 
