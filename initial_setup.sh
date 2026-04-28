@@ -376,13 +376,6 @@ echo "    launch signal-desktop"
 echo "    open signal on the phone, go to Settings -> Linked devices, and add a new device"
 waitForConfirmation
 
-echo "authy setup"
-echo "-----------"
-echo "    launch authy"
-echo "    set it up using the phone number"
-echo "    gopass authy for password"
-waitForConfirmation
-
 echo "kdiff3 setup"
 echo "------------"
 echo "    launch kdiff3, go to Settings -> Directory"
