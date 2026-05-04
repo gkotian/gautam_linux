@@ -100,6 +100,7 @@ plocate
 polkit-gnome
 progress
 pv
+python-i3ipc
 python-sphinx
 qt5ct
 rclone
