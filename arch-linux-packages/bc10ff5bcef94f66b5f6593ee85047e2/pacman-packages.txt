@@ -19,7 +19,6 @@ cups
 dbus-broker
 dconf-editor
 debugedit
-deepin-screen-recorder
 dmenu
 docker
 docker-compose
