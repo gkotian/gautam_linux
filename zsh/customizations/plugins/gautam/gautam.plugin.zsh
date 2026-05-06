@@ -50,6 +50,8 @@ function gitResetBranch() {
     read "commit_hash?Enter the commit hash to set '${branch_name}' to (leave empty for '${default_remote_branch}'): "
     if [ -z "${commit_hash}" ]; then
         commit_hash="${default_remote_branch}"
+    elif [[ "${commit_hash}" =~ ^-[0-9]+$ ]]; then
+        commit_hash="HEAD~${commit_hash#-}"
     fi
 
     git checkout -B "${branch_name}" "${commit_hash}"
