@@ -186,6 +186,10 @@ function gd () {
     fi
 }
 
+function gdh() {
+    git diff "$1" HEAD
+}
+
 function get_docker_image() {
     local REPOSITORY=${1}
 
