@@ -24,7 +24,7 @@ if (os.platform() !== 'win32') {
 
 const ctx = data.context_window;
 const ctxStr = ctx && ctx.remaining_percentage != null
-  ? ` <ctx: ${100 - ctx.remaining_percentage}% used>` : '';
+  ? ` (ctx: ${100 - ctx.remaining_percentage}% used)` : '';
 const qmd = fs.existsSync('/tmp/.qmd-running')
   ? ' [QMD query active]' : '';
 console.log(`[v${version}:${model}]${ctxStr}${qmd} ${dir}`);
