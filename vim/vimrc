@@ -164,10 +164,11 @@ colorscheme gautam_colors
 " Augment existing editor commands.
 " The "!" (bang attribute) after the keyword 'command' tells vim to redefine
 " the command everytime vimrc is sourced. Otherwise the new command would get
-" appended to list of existing commands.
+" appended to the list of existing commands.
 command! RemoveBlankLines g/^$/d
 command! RemoveMultipleBlankLines %s/^\_s\+\n/\r
 command! RemoveTrailingWhiteSpace %s/\s\+$//
+command! RepeatMacroInRegisterQUntilTheEndOfFile execute 'normal ' . (line('$') - line('.') + 1) . '@q'
 
 " Functions
 source ~/.vim/functions.vim
