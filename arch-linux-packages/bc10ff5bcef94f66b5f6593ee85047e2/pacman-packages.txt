@@ -14,7 +14,6 @@ binutils
 bison
 bluez-utils
 cifs-utils
-ctags
 cups
 dbus-broker
 dconf-editor
