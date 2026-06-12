@@ -112,7 +112,6 @@ samba
 scrot
 signal-desktop
 staticcheck
-strongswan
 sudo
 system-config-printer
 telegram-desktop

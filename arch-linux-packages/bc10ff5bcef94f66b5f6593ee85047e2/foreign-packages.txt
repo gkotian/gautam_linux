@@ -37,6 +37,8 @@ libkdcraw5
 libpng12
 libquvi
 libquvi-scripts
+libsoup
+libtermkey
 libudev0-shim
 libudev0-shim-debug
 libvisual
