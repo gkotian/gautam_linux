@@ -73,8 +73,14 @@ function rbm() {
 }
 
 function changeFilePermissionsWindowsToWSL() {
-    chmod -x ${1}
-    chmod go-w ${1}
+    if (( $# == 0 )); then
+        echo "usage: changeFilePermissionsWindowsToWSL FILE..." >&2
+        return 2
+    fi
+
+    sudo chown gautam:gautam -- "$@" || return
+    chmod -x -- "$@" || return
+    chmod go-w -- "$@"
 }
 
 compare_files() {
