@@ -143,21 +143,10 @@ if [ -n "${OUTPUT}" ]; then
         exit 1
     fi
 else
-    # zip updates an existing archive, so an empty mktemp file is treated as a
-    # corrupt zip. Give it a fresh path inside a temporary directory instead.
-    if [ "${FORMAT}" = "zip" ]; then
-        TEMP_DIR=$(mktemp -d)
-        if [ -z "${TEMP_DIR}" ]; then
-            error "Could not create temporary directory"
-            exit 1
-        fi
-        ARCHIVE="${TEMP_DIR}/archive${SUFFIX}"
-    else
-        ARCHIVE=$(mktemp --suffix="${SUFFIX}")
-        if [ -z "${ARCHIVE}" ]; then
-            error "Could not create temporary file"
-            exit 1
-        fi
+    ARCHIVE=$(mktemp --suffix="${SUFFIX}")
+    if [ -z "${ARCHIVE}" ]; then
+        error "Could not create temporary file"
+        exit 1
     fi
 fi
 
@@ -180,7 +169,7 @@ case "${FORMAT}" in
         ;;
     zip)
         require_command zip
-        zip --recurse-paths --quiet "${ARCHIVE}" -- "${INPUTS[@]}"
+        zip --recurse-paths --quiet - -- "${INPUTS[@]}" > "${ARCHIVE}"
         ;;
 esac
 
