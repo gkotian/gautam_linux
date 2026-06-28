@@ -15,7 +15,7 @@
 
 [commit]
     verbose = true
-    gpgsign = true
+    ; gpgsign = true
 
 [color]
     diff   = auto
