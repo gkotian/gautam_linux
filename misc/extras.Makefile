@@ -41,7 +41,7 @@ help:
 				msg = substr(lastLine, RSTART + 3, RLENGTH); \
 				gsub("\\\\", "", cmd); \
 				gsub(":+$$", "", cmd); \
-				printf "  ${GREEN}make %-20s${RESET} %s\n", cmd, msg; \
+				printf "  ${GREEN}make %-24s${RESET} %s\n", cmd, msg; \
 			} \
 	} \
 	{ lastLine = $$0 }' $(MAKEFILE_LIST)
