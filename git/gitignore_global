@@ -1,4 +1,7 @@
 .claude
+.codex
+.python-version
+*.egg-info/
 
 # Vim swap files.
 *.swp
