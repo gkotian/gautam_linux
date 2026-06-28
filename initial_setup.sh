@@ -243,8 +243,9 @@ echo -n "    o (opener)... "
 sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/opener.sh /home/$THE_USER/bin/o
 echo "Done!"
 
-echo -n "    screenshot... "
-sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/screenshot.sh /home/$THE_USER/bin/screenshot
+echo -n "    screenshot (full + selection)... "
+sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/screenshot.sh /home/$THE_USER/bin/screenshot-full
+sudo -u ${THE_USER} ln -srf $GL_DIR/scripts/screenshot.sh /home/$THE_USER/bin/screenshot-selection
 echo "Done!"
 
 echo -n "    umlauts... "
