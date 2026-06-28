@@ -1,5 +1,39 @@
 # This file is sourced from ~/.zshrc
 
+#---- Variables ----------------------------------------------------------------
+
+WORK_EMAIL_ADDRESS='gautam.kotian@example.com'
+
+
+#---- Aliases ------------------------------------------------------------------
+
 alias cdtemp='cd /mnt/c/Temp'
 
-alias tun-client='make -f /path/to/vpn/Makefile tunnel-client'
+
+#---- Functions ----------------------------------------------------------------
+
+add_work_user_section_to_git_config() {
+    GIT_TOP=$(git rev-parse --show-toplevel)
+    RC=$?
+    if [ $RC != "0" ]; then
+        return $RC
+    fi
+
+    if [ ! -f "${GIT_TOP}/.git/config" ]; then
+        echo "File '${GIT_TOP}/.git/config' not found. Aborting."
+        return 1
+    fi
+
+    if grep --silent "\[user\]" ${GIT_TOP}/.git/config; then
+        echo "[user] section already exists in git config. Will not modify."
+        return 1
+    fi
+
+    {
+        echo "[user]";
+        echo "    email = ${WORK_EMAIL_ADDRESS}";
+        echo "    signingkey = D06EC35B239EA426759B6613394B3C39E3DEAF23";
+    } >> ${GIT_TOP}/.git/config
+
+    echo "Done."
+}
