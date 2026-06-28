@@ -1,1 +1,6 @@
 enable-ssh-support
+pinentry-program /usr/bin/pinentry-curses
+default-cache-ttl 86400
+max-cache-ttl 86400
+default-cache-ttl-ssh 86400
+max-cache-ttl-ssh 86400
