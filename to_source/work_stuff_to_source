@@ -12,6 +12,17 @@ alias cdtemp='cd /mnt/c/Temp'
 
 #---- Functions ----------------------------------------------------------------
 
+function changeFilePermissionsWindowsToWSL() {
+    if (( $# == 0 )); then
+        echo "usage: changeFilePermissionsWindowsToWSL FILE..." >&2
+        return 2
+    fi
+
+    sudo chown gautam:gautam -- "$@" || return
+    chmod -x -- "$@" || return
+    chmod go-w -- "$@"
+}
+
 add_work_user_section_to_git_config() {
     GIT_TOP=$(git rev-parse --show-toplevel)
     RC=$?

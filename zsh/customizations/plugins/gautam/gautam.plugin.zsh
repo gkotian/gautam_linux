@@ -72,17 +72,6 @@ function rbm() {
     gitResetBranch "${branch_name}"
 }
 
-function changeFilePermissionsWindowsToWSL() {
-    if (( $# == 0 )); then
-        echo "usage: changeFilePermissionsWindowsToWSL FILE..." >&2
-        return 2
-    fi
-
-    sudo chown gautam:gautam -- "$@" || return
-    chmod -x -- "$@" || return
-    chmod go-w -- "$@"
-}
-
 compare_files() {
     if [[ $# -ne 2 ]]; then
         echo "Usage: compare_files <file1> <file2>"
