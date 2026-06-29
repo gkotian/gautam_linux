@@ -23,6 +23,53 @@ function changeFilePermissionsWindowsToWSL() {
     chmod go-w -- "$@"
 }
 
+function MoveLatestDownloadHere() {
+    if (( $# != 0 )); then
+        echo "usage: MoveLatestDownloadHere" >&2
+        return 2
+    fi
+
+    local downloads_dir="/mnt/c/Users/kotian/Downloads"
+    local current_dir="${PWD:A}"
+    local latest_download
+    local download
+    local destination
+
+    if [[ "${current_dir}" == "/mnt/c" || "${current_dir}" == /mnt/c/* ]]; then
+        echo "Current directory is on the Windows C: drive (${current_dir}). Run Move-LatestDownloadHere in PowerShell instead." >&2
+        return 1
+    fi
+
+    if [[ ! -d "${downloads_dir}" ]]; then
+        echo "Downloads directory not found: ${downloads_dir}" >&2
+        return 1
+    fi
+
+    for download in "${downloads_dir}"/*(N.om.); do
+        if [[ "${download:t}" == *Zone.Identifier ]]; then
+            continue
+        fi
+
+        latest_download="${download}"
+        break
+    done
+
+    if [[ -z "${latest_download}" ]]; then
+        echo "No downloaded files found in ${downloads_dir}." >&2
+        return 1
+    fi
+
+    destination="./${latest_download:t}"
+    if [[ -e "${destination}" || -L "${destination}" ]]; then
+        echo "Destination already exists: ${destination}" >&2
+        return 1
+    fi
+
+    sudo mv -- "${latest_download}" "${destination}" || return
+    rm -f -- "${destination}:Zone.Identifier" "${destination}.Zone.Identifier" || return
+    changeFilePermissionsWindowsToWSL "${destination}"
+}
+
 add_work_user_section_to_git_config() {
     GIT_TOP=$(git rev-parse --show-toplevel)
     RC=$?
