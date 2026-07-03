@@ -29,6 +29,7 @@ eog
 evince
 fakeroot
 firefox
+flameshot
 flatpak
 flex
 freerdp
@@ -41,7 +42,6 @@ gmtp
 gnome-calculator
 gnome-common
 gnome-disk-utility
-gnome-screenshot
 gnome-terminal
 go
 gopass

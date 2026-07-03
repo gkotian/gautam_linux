@@ -17,7 +17,6 @@ gnome-icon-theme
 gnome-icon-theme-symbolic
 gnu-netcat
 google-chrome
-gscreenshot
 gtk-sharp-2
 gtk-sharp-2-debug
 gtk2
@@ -38,6 +37,7 @@ libtermkey
 libudev0-shim
 libudev0-shim-debug
 libvisual
+mbedtls2
 nautilus-sendto
 nautilus-sendto-debug
 opencolorio1
