@@ -7,6 +7,11 @@ celt-debug
 compiler-rt15
 compiler-rt15-debug
 eddie-ui
+electron34
+electron35
+electron36
+electron37
+electron38
 flashplugin
 freeimage
 gconf
@@ -31,7 +36,6 @@ libdbusmenu-gtk2
 libdbusmenu-gtk2-debug
 libindicator-gtk2
 libindicator-gtk2-debug
-libpng12
 libsoup
 libtermkey
 libudev0-shim
