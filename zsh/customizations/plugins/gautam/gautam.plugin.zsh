@@ -289,6 +289,12 @@ function delete_current_venv() {
     && echo "Virtual environment deleted."
 }
 
+function uuid() {
+    local uuid=$(/usr/bin/uuidgen)
+    echo -n "${uuid}" | xclip -selection clipboard
+    echo "${uuid} (also copied to the clipboard)"
+}
+
 #
 # Aliases
 # (sorted alphabetically)
@@ -384,4 +390,3 @@ alias sound-drop='(aplay ~/play/gautam_linux/misc/sounds/drop.wav 2>/dev/null &)
 alias sound-complete='(aplay ~/play/gautam_linux/misc/sounds/complete.wav 2>/dev/null &)'
 
 alias utc='date -u'
-alias uuid='/usr/bin/uuidgen'
