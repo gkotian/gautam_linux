@@ -372,6 +372,8 @@ alias laptop_down='~/play/gautam_linux/scripts/setup-monitors.sh down'
 alias laptop_left='~/play/gautam_linux/scripts/setup-monitors.sh left'
 alias laptop_right='~/play/gautam_linux/scripts/setup-monitors.sh right'
 
+alias mh='make help'
+
 alias poweroff='echo "This command is intentionally disabled. (It can only be run as root.)" && return 1'
 alias pr='~/play/azure_scripts/azure_devops/prepare_azure_devops_pull_request.py'
 
