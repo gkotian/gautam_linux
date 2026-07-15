@@ -71,6 +71,38 @@ function MoveLatestDownloadHere() {
     echo "Moved: ${latest_download:t}"
 }
 
+function PrintLatestDownloadName() {
+    if (( $# != 0 )); then
+        echo "usage: PrintLatestDownloadName" >&2
+        return 2
+    fi
+
+    local downloads_dir="/mnt/c/Users/kotian/Downloads"
+    local latest_download
+    local download
+
+    if [[ ! -d "${downloads_dir}" ]]; then
+        echo "Downloads directory not found: ${downloads_dir}" >&2
+        return 1
+    fi
+
+    for download in "${downloads_dir}"/*(N.om.); do
+        if [[ "${download:t}" == *Zone.Identifier ]]; then
+            continue
+        fi
+
+        latest_download="${download}"
+        break
+    done
+
+    if [[ -z "${latest_download}" ]]; then
+        echo "No downloaded files found in ${downloads_dir}." >&2
+        return 1
+    fi
+
+    echo "${latest_download:t}"
+}
+
 add_work_user_section_to_git_config() {
     GIT_TOP=$(git rev-parse --show-toplevel)
     RC=$?
