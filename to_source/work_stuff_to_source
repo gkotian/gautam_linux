@@ -68,6 +68,7 @@ function MoveLatestDownloadHere() {
     sudo mv -- "${latest_download}" "${destination}" || return
     rm -f -- "${destination}:Zone.Identifier" "${destination}.Zone.Identifier" || return
     changeFilePermissionsWindowsToWSL "${destination}"
+    echo "Moved: ${latest_download:t}"
 }
 
 add_work_user_section_to_git_config() {
