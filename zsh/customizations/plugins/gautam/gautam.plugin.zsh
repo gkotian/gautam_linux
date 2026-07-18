@@ -301,6 +301,8 @@ function uuid() {
 # (sorted alphabetically)
 #
 
+alias adjust-minecraft-time='make -C ~/play/gTimer adjust-minecraft-time'
+
 alias b='bat'
 alias batttery='upower -i $(upower -e | grep "BAT") | grep -E "state|time\ to|percentage"'
 
@@ -380,6 +382,9 @@ alias pr='~/play/azure_scripts/azure_devops/prepare_azure_devops_pull_request.py
 
 alias rb='gitResetBranch'
 alias reboot='echo "This command is intentionally disabled. (It can only be run as root.)" && return 1'
+
+alias show-minecraft-history='make -C ~/play/gTimer show-minecraft-history'
+alias show-minecraft-time='make -C ~/play/gTimer show-minecraft-time'
 
 # Three special things are done when playing sounds:
 #   1. 'stderr' is redirected to /dev/null to suppress aplay's output.
