@@ -386,6 +386,8 @@ alias pr='~/play/azure_scripts/azure_devops/prepare_azure_devops_pull_request.py
 alias rb='gitResetBranch'
 alias reboot='echo "This command is intentionally disabled. (It can only be run as root.)" && return 1'
 
+alias s1s='sha1sum'
+
 alias show-minecraft-history='make -C ~/play/gTimer show-minecraft-history'
 alias show-minecraft-time='make -C ~/play/gTimer show-minecraft-time'
 
