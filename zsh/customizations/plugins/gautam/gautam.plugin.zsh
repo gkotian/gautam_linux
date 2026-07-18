@@ -183,8 +183,9 @@ function gd () {
     fi
 }
 
+# git diff the given commit against HEAD
 function gdh() {
-    git diff "$1" HEAD
+    git diff "${1}" HEAD
 }
 
 function get_docker_image() {
