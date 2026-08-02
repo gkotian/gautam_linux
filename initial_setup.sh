@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 THE_USER=${SUDO_USER:-${USERNAME:-unknown}}
 PLAY_DIR="/home/$THE_USER/play"
 GL_DIR="$PLAY_DIR/gautam_linux"
