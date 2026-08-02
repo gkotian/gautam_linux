@@ -45,13 +45,7 @@ START_TIMESTAMP=$(date +%s)
 
 function waitForConfirmation
 {
-    echo "Press 'Enter' when done."
-    read -s -n 1 C
-    while [ -n "$C" ];
-    do
-        read -s -n 1 C
-    done
-    echo ""
+    read -r -p "Press 'Enter' when done."
 }
 
 function formatTime
