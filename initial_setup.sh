@@ -69,7 +69,7 @@ function formatTime
     printf '%d seconds\n' $S
 }
 
-echo "Starting script at: `date +%H:%M:%S`"
+echo "Starting script at: $(date +%H:%M:%S)"
 echo ""
 
 echo -n "Checking internet connectivity... "
