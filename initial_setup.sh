@@ -82,7 +82,7 @@ echo "Starting script at: $(date +%H:%M:%S)"
 echo ""
 
 echo -n "Checking internet connectivity... "
-if ! wget --quiet --tries=10 --timeout=20 --spider http://google.com; then
+if ! curl --silent --head --fail --retry 3 --max-time 20 --output /dev/null https://archlinux.org; then
     echo "Not connected to the Internet. Aborting." 1>&2
     exit 1
 fi
