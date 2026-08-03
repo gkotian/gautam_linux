@@ -126,15 +126,25 @@ chmod go-rx "/home/${THE_USER}/.gnupg"
 echo "Done!"
 echo ""
 
-echo "In a new terminal/tab run the following command:"
-echo "    sudo pacman -Syu"
-waitForConfirmation
+echo "Updating the system..."
+pacman -Syu --noconfirm
+echo "Done!"
+echo ""
 
 echo "Installing yay..."
-echo "In the other terminal/tab run the following commands:"
-echo "    sudo pacman -S --needed git base-devel"
-echo "    cd /tmp && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si"
-waitForConfirmation
+if command -v yay > /dev/null 2>&1; then
+    echo "yay is already installed. Skipping."
+else
+    pacman -S --needed --noconfirm git base-devel go
+    YAY_BUILD_DIR=$(mktemp -d)
+    chown "${THE_USER}" "${YAY_BUILD_DIR}"
+    sudo -u "${THE_USER}" git clone --quiet https://aur.archlinux.org/yay.git "${YAY_BUILD_DIR}/yay"
+    (cd "${YAY_BUILD_DIR}/yay" && sudo -u "${THE_USER}" makepkg --noconfirm)
+    pacman -U --noconfirm "${YAY_BUILD_DIR}/yay/"yay-[0-9]*.pkg.tar.zst
+    rm -rf "${YAY_BUILD_DIR}"
+fi
+echo "Done!"
+echo ""
 
 echo "Installing packages:"
 for PACKAGE in "${PACKAGES_LIST[@]}"
@@ -161,7 +171,7 @@ cat "/home/${THE_USER}/.ssh/id_ed25519_github.pub"
 echo ""
 waitForConfirmation
 
-echo "In the other terminal/tab run the following command:"
+echo "In a new terminal/tab run the following command:"
 echo "    ssh -T -i ~/.ssh/id_ed25519_github git@github.com"
 echo "(when a password is asked for, enter the passphrase used above while creating the key)"
 echo "You should get the following output:"
