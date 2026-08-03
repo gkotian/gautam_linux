@@ -48,6 +48,21 @@ function waitForConfirmation
     read -r -p "Press 'Enter' when done."
 }
 
+function cloneRepo
+{
+    local REPO_URL=$1
+    local TARGET_DIR=$2
+    local SSH_KEY=${3:-/home/${THE_USER}/.ssh/id_ed25519_github}
+
+    echo -n "    ${REPO_URL} -> ${TARGET_DIR}... "
+    if [ -d "${TARGET_DIR}" ]; then
+        echo "already exists. Skipping."
+        return
+    fi
+    sudo -u "${THE_USER}" git -c core.sshCommand="ssh -i '${SSH_KEY}' -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new" clone --quiet "${REPO_URL}" "${TARGET_DIR}"
+    echo "Done!"
+}
+
 function formatTime
 {
     local T=$1
@@ -147,7 +162,7 @@ echo ""
 waitForConfirmation
 
 echo "In the other terminal/tab run the following command:"
-echo "    ssh -T git@github.com"
+echo "    ssh -T -i ~/.ssh/id_ed25519_github git@github.com"
 echo "(when a password is asked for, enter the passphrase used above while creating the key)"
 echo "You should get the following output:"
 echo "    Hi ${GITHUB_USERNAME}! You've successfully authenticated, but GitHub does not provide shell access."
@@ -164,19 +179,16 @@ echo ""
 waitForConfirmation
 
 echo "In the other terminal/tab run the following command:"
-echo "    ssh -T git@gitlab.com"
+echo "    ssh -T -i ~/.ssh/id_ed25519_gitlab git@gitlab.com"
 echo "(when a password is asked for, enter the passphrase used above while creating the key)"
 echo "You should get the following output:"
 echo "    Welcome to GitLab, @${GITLAB_USERNAME}!"
 waitForConfirmation
 
-echo "In the other terminal/tab run the following command:"
-echo "    git clone git@github.com:gkotian/gautam_linux.git $PLAY_DIR/gautam_linux"
-waitForConfirmation
-
-echo "In the other terminal/tab run the following command:"
-echo "    git clone git@github.com:robbyrussell/oh-my-zsh.git $PLAY_DIR/oh-my-zsh"
-waitForConfirmation
+echo "Cloning repositories (enter the SSH key passphrase when prompted):"
+cloneRepo git@github.com:gkotian/gautam_linux.git "$PLAY_DIR/gautam_linux"
+cloneRepo git@github.com:robbyrussell/oh-my-zsh.git "$PLAY_DIR/oh-my-zsh"
+echo ""
 
 echo "Creating symbolic links for:"
 echo -n "    SSH config file... "
@@ -280,9 +292,8 @@ echo "Done!"
 echo ""
 
 if [ -d "/home/$THE_USER/.vim" ]; then
-    echo "In the other terminal/tab run the following command:"
-    echo "    git clone git@github.com:gmarik/Vundle.vim.git /home/$THE_USER/.vim/bundle/vundle"
-    waitForConfirmation
+    echo "Cloning Vundle:"
+    cloneRepo git@github.com:gmarik/Vundle.vim.git "/home/$THE_USER/.vim/bundle/vundle"
 
     echo -n "Installing all Vim plugins... "
     sudo -u "${THE_USER}" vim +PluginInstall +qall
@@ -290,11 +301,10 @@ if [ -d "/home/$THE_USER/.vim" ]; then
 fi
 echo ""
 
+echo "Cloning personal projects:"
 for PROJECT in "${MY_PROJECTS_LIST[@]}"
 do
-    echo "In the other terminal/tab run the following command:"
-    echo "    git clone git@github.com:gkotian/$PROJECT.git $PLAY_DIR/$PROJECT"
-    waitForConfirmation
+    cloneRepo "git@github.com:gkotian/$PROJECT.git" "$PLAY_DIR/$PROJECT"
 done
 
 echo "In the other terminal/tab, open the '/home/$THE_USER/.pypirc' file"
