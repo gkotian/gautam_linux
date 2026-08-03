@@ -12,7 +12,6 @@ GITLAB_USERNAME="gkotian"
 PACKAGES_LIST=(
     bat
     git
-    gitk
     i3
     kdiff3
     meld
@@ -22,6 +21,7 @@ PACKAGES_LIST=(
     opendoas
     redshift
     reflector
+    tk    # gitk needs it, but it's only an optional dependency of git
     vim
     vlc
     xclip
