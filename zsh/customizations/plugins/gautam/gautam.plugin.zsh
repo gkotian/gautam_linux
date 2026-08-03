@@ -313,6 +313,8 @@ alias cdt='cd /tmp'
 alias cdtt='mkdir -p /tmp/tmp && cd /tmp/tmp'
 alias cet='TZ=Europe/Berlin date'
 alias cest='TZ=Europe/Berlin date'
+alias claude='COLORTERM=truecolor claude --dangerously-skip-permissions'
+alias codex='codex --sandbox=danger-full-access'
 
 alias dclogs='docker container logs'
 alias dclogsf='docker container logs --follow'
