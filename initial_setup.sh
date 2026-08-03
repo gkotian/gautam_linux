@@ -67,8 +67,7 @@ echo "Starting script at: $(date +%H:%M:%S)"
 echo ""
 
 echo -n "Checking internet connectivity... "
-wget --quiet --tries=10 --timeout=20 --spider http://google.com
-if [[ $? -ne 0 ]]; then
+if ! wget --quiet --tries=10 --timeout=20 --spider http://google.com; then
     echo "Not connected to the Internet. Aborting." 1>&2
     exit 1
 fi
@@ -126,11 +125,10 @@ echo "Installing packages:"
 for PACKAGE in "${PACKAGES_LIST[@]}"
 do
     echo -n "    $PACKAGE... "
-    sudo -u "${THE_USER}" yay -S --noconfirm "$PACKAGE" > /dev/null 2>&1
-    if [[ $? -ne 0 ]]; then
-        echo "Failed." 1>&2
-    else
+    if sudo -u "${THE_USER}" yay -S --noconfirm "$PACKAGE" > /dev/null 2>&1; then
         echo "Done!"
+    else
+        echo "Failed." 1>&2
     fi
 done
 
