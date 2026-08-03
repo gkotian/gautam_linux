@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-THE_USER=${SUDO_USER:-${USERNAME:-unknown}}
+THE_USER=${SUDO_USER:-$(logname 2>/dev/null || true)}
 PLAY_DIR="/home/$THE_USER/play"
 GL_DIR="$PLAY_DIR/gautam_linux"
 
@@ -82,11 +82,17 @@ fi
 echo "Done!"
 
 echo -n "Checking who's the standard user... "
-if [ "${THE_USER}" == "unknown" ]; then
-    echo "unknown. Aborting." 1>&2
+if [[ -z "${THE_USER}" || "${THE_USER}" == "root" ]]; then
+    echo "could not determine a non-root user. Aborting." 1>&2
     exit 3
 fi
 echo "$THE_USER"
+
+read -r -p "Set up this machine for user '${THE_USER}'? [y/N] " ANSWER
+if [[ ! "${ANSWER}" =~ ^[Yy]([Ee][Ss])?$ ]]; then
+    echo "Aborting." 1>&2
+    exit 3
+fi
 
 echo -n "Adding user '${THE_USER}' to the 'wheel' group... "
 usermod -aG wheel ${THE_USER}
