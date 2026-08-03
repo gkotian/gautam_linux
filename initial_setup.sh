@@ -278,6 +278,10 @@ echo -n "    ctrl... "
 sudo -u "${THE_USER}" ln -srf "${GL_DIR}/scripts/ctrl.py" "/home/${THE_USER}/bin/ctrl"
 echo "Done!"
 
+echo -n "    gitk (5-to-reload wrapper)... "
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/scripts/gitk_wrapper.sh" "/home/${THE_USER}/bin/gitk"
+echo "Done!"
+
 echo -n "    .gdbinit... "
 sudo -u "${THE_USER}" ln -srf "${GL_DIR}/misc/gdbinit" "/home/${THE_USER}/.gdbinit"
 echo "Done!"
@@ -324,14 +328,6 @@ waitForConfirmation
 echo -n "Renaming '${PLAY_DIR}/gkotian.github.io' to '${PLAY_DIR}/website'... "
 sudo -u "${THE_USER}" mv "${PLAY_DIR}/gkotian.github.io" "${PLAY_DIR}/website"
 echo "Done!"
-echo ""
-
-echo "Patching gitk... "
-sed -i".orig" "s/bindmodfunctionkey Shift 5 reloadcommits$/bindkey 5 reloadcommits/g" /usr/bin/gitk
-echo "Done!"
-echo "(you may want to check that gitk was patched correctly by running:"
-echo "    meld /usr/bin/gitk.orig /usr/bin/gitk"
-echo "in the other terminal/tab, and/or by launching gitk in any of the existing repos)"
 echo ""
 
 echo "Changing ownership of the doas config file... "

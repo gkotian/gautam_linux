@@ -31,7 +31,6 @@ alias ol='one_line'
 
 alias patch-dbeaver='doas sed -i".orig" "/^-vmargs$/a\-Duser.timezone=UTC" /usr/share/dbeaver/dbeaver.ini'
 alias patch-ferdi='F=$(ls ${HOME}/AppImage/Ferdi*); ln -srf ${F} ${HOME}/bin/ferdi'
-alias patch-gitk='doas sed -i".orig" "s/bindmodfunctionkey Shift 5 reloadcommits$/bindkey 5 reloadcommits/g" /usr/bin/gitk'
 
 alias p='python'
 alias mv='mv -i' # Prompt before overwriting
