@@ -3,8 +3,8 @@
 set -euo pipefail
 
 THE_USER=${SUDO_USER:-$(logname 2>/dev/null || true)}
-PLAY_DIR="/home/$THE_USER/play"
-GL_DIR="$PLAY_DIR/gautam_linux"
+PLAY_DIR="/home/${THE_USER}/play"
+GL_DIR="${PLAY_DIR}/gautam_linux"
 
 GITHUB_USERNAME="gkotian"
 GITLAB_USERNAME="gkotian"
@@ -71,11 +71,11 @@ function formatTime
     local M=$((T / 60 % 60))
     local S=$((T % 60))
 
-    (( $D > 0 )) && printf '%d days ' $D
-    (( $H > 0 )) && printf '%d hours ' $H
-    (( $M > 0 )) && printf '%d minutes ' $M
-    (( $D > 0 || $H > 0 || $M > 0 )) && printf 'and '
-    printf '%d seconds\n' $S
+    (( ${D} > 0 )) && printf '%d days ' ${D}
+    (( ${H} > 0 )) && printf '%d hours ' ${H}
+    (( ${M} > 0 )) && printf '%d minutes ' ${M}
+    (( ${D} > 0 || ${H} > 0 || ${M} > 0 )) && printf 'and '
+    printf '%d seconds\n' ${S}
 }
 
 echo "Starting script at: $(date +%H:%M:%S)"
@@ -89,7 +89,7 @@ fi
 echo "Connected!"
 
 echo -n "Checking super-user privileges... "
-if [[ $EUID -ne 0 ]]; then
+if [[ ${EUID} -ne 0 ]]; then
    echo "This script must be run as root. Aborting." 1>&2
    exit 2
 fi
@@ -100,7 +100,7 @@ if [[ -z "${THE_USER}" || "${THE_USER}" == "root" ]]; then
     echo "could not determine a non-root user. Aborting." 1>&2
     exit 3
 fi
-echo "$THE_USER"
+echo "${THE_USER}"
 
 read -r -p "Set up this machine for user '${THE_USER}'? [y/N] " ANSWER
 if [[ ! "${ANSWER}" =~ ^[Yy]([Ee][Ss])?$ ]]; then
@@ -139,8 +139,8 @@ waitForConfirmation
 echo "Installing packages:"
 for PACKAGE in "${PACKAGES_LIST[@]}"
 do
-    echo -n "    $PACKAGE... "
-    if sudo -u "${THE_USER}" yay -S --noconfirm "$PACKAGE" > /dev/null 2>&1; then
+    echo -n "    ${PACKAGE}... "
+    if sudo -u "${THE_USER}" yay -S --noconfirm "${PACKAGE}" > /dev/null 2>&1; then
         echo "Done!"
     else
         echo "Failed." 1>&2
@@ -186,94 +186,94 @@ echo "    Welcome to GitLab, @${GITLAB_USERNAME}!"
 waitForConfirmation
 
 echo "Cloning repositories (enter the SSH key passphrase when prompted):"
-cloneRepo git@github.com:gkotian/gautam_linux.git "$PLAY_DIR/gautam_linux"
-cloneRepo git@github.com:robbyrussell/oh-my-zsh.git "$PLAY_DIR/oh-my-zsh"
+cloneRepo git@github.com:gkotian/gautam_linux.git "${PLAY_DIR}/gautam_linux"
+cloneRepo git@github.com:robbyrussell/oh-my-zsh.git "${PLAY_DIR}/oh-my-zsh"
 echo ""
 
 echo "Creating symbolic links for:"
 echo -n "    SSH config file... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/misc/ssh_config" "/home/$THE_USER/.ssh/config"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/misc/ssh_config" "/home/${THE_USER}/.ssh/config"
 echo "Done!"
 
 echo -n "    GPG agent config file... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/misc/gpg_agent_config" "/home/$THE_USER/.gnupg/gpg-agent.conf"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/misc/gpg_agent_config" "/home/${THE_USER}/.gnupg/gpg-agent.conf"
 echo "Done!"
 
 echo -n "    zsh theme... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/zsh/customizations/themes/gautam.zsh-theme" "$PLAY_DIR/oh-my-zsh/themes/gautam.zsh-theme"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/zsh/customizations/themes/gautam.zsh-theme" "${PLAY_DIR}/oh-my-zsh/themes/gautam.zsh-theme"
 echo "Done!"
 
 echo -n "    .zshrc... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/zsh/zshrc" "/home/$THE_USER/.zshrc"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/zsh/zshrc" "/home/${THE_USER}/.zshrc"
 echo "Done!"
 
 echo -n "    .vim... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/vim/dot_vim" "/home/$THE_USER/.vim"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/vim/dot_vim" "/home/${THE_USER}/.vim"
 echo "Done!"
 
 echo -n "    .vimrc... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/vim/vimrc" "/home/$THE_USER/.vimrc"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/vim/vimrc" "/home/${THE_USER}/.vimrc"
 echo "Done!"
 
 echo -n "    .gitconfig... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/git/gitconfig_global" "/home/$THE_USER/.gitconfig"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/git/gitconfig_global" "/home/${THE_USER}/.gitconfig"
 echo "Done!"
 
 echo -n "    .gitignore_global... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/git/gitignore_global" "/home/$THE_USER/.gitignore_global"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/git/gitignore_global" "/home/${THE_USER}/.gitignore_global"
 echo "Done!"
 
 echo -n "    .i3/config... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/i3/config" "/home/$THE_USER/.i3/config"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/i3/config" "/home/${THE_USER}/.i3/config"
 echo "Done!"
 
 echo -n "    extras.Makefile... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/misc/extras.Makefile" "/home/$THE_USER/.config/gkotian/extras.Makefile"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/misc/extras.Makefile" "/home/${THE_USER}/.config/gkotian/extras.Makefile"
 echo "Done!"
 
 echo -n "    calc (calculator)... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/scripts/calculator.sh" "/home/$THE_USER/bin/calc"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/scripts/calculator.sh" "/home/${THE_USER}/bin/calc"
 echo "Done!"
 
 echo -n "    c (calendar)... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/scripts/calendar.sh" "/home/$THE_USER/bin/c"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/scripts/calendar.sh" "/home/${THE_USER}/bin/c"
 echo "Done!"
 
 echo -n "    clone... "
-sudo -u "${THE_USER}" ln -srf "${PLAY_DIR}/python_scripts/clone.py" "/home/$THE_USER/bin/clone"
+sudo -u "${THE_USER}" ln -srf "${PLAY_DIR}/python_scripts/clone.py" "/home/${THE_USER}/bin/clone"
 echo "Done!"
 
 echo -n "    compress... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/scripts/compress.sh" "/home/$THE_USER/bin/compress"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/scripts/compress.sh" "/home/${THE_USER}/bin/compress"
 echo "Done!"
 
 echo -n "    img (image viewer)... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/scripts/image_viewer.sh" "/home/$THE_USER/bin/img"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/scripts/image_viewer.sh" "/home/${THE_USER}/bin/img"
 echo "Done!"
 
 echo -n "    o (opener)... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/scripts/opener.sh" "/home/$THE_USER/bin/o"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/scripts/opener.sh" "/home/${THE_USER}/bin/o"
 echo "Done!"
 
 echo -n "    screenshot (full + selection)... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/scripts/screenshot.sh" "/home/$THE_USER/bin/screenshot-full"
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/scripts/screenshot.sh" "/home/$THE_USER/bin/screenshot-selection"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/scripts/screenshot.sh" "/home/${THE_USER}/bin/screenshot-full"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/scripts/screenshot.sh" "/home/${THE_USER}/bin/screenshot-selection"
 echo "Done!"
 
 echo -n "    umlauts... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/scripts/umlauts.sh" "/home/$THE_USER/bin/umlauts"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/scripts/umlauts.sh" "/home/${THE_USER}/bin/umlauts"
 echo "Done!"
 
 echo -n "    ctrl... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/scripts/ctrl.py" "/home/$THE_USER/bin/ctrl"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/scripts/ctrl.py" "/home/${THE_USER}/bin/ctrl"
 echo "Done!"
 
 echo -n "    .gdbinit... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/misc/gdbinit" "/home/$THE_USER/.gdbinit"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/misc/gdbinit" "/home/${THE_USER}/.gdbinit"
 echo "Done!"
 
 echo -n "    PyPI config file... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/misc/pypi_config" "/home/$THE_USER/.pypirc"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/misc/pypi_config" "/home/${THE_USER}/.pypirc"
 echo "Done!"
 
 echo -n "    doas config file... "
@@ -282,7 +282,7 @@ echo "Done!"
 
 echo -n "    /usr/bin/dmenu_path... "
 rm -f /usr/bin/dmenu_path
-ln -s "$GL_DIR/scripts/dmenu_path.sh" /usr/bin/dmenu_path
+ln -s "${GL_DIR}/scripts/dmenu_path.sh" /usr/bin/dmenu_path
 echo "Done!"
 
 echo -n "    monitor-hotplug.rules... "
@@ -291,9 +291,9 @@ echo "Done!"
 
 echo ""
 
-if [ -d "/home/$THE_USER/.vim" ]; then
+if [ -d "/home/${THE_USER}/.vim" ]; then
     echo "Cloning Vundle:"
-    cloneRepo git@github.com:gmarik/Vundle.vim.git "/home/$THE_USER/.vim/bundle/vundle"
+    cloneRepo git@github.com:gmarik/Vundle.vim.git "/home/${THE_USER}/.vim/bundle/vundle"
 
     echo -n "Installing all Vim plugins... "
     sudo -u "${THE_USER}" vim +PluginInstall +qall
@@ -304,15 +304,15 @@ echo ""
 echo "Cloning personal projects:"
 for PROJECT in "${MY_PROJECTS_LIST[@]}"
 do
-    cloneRepo "git@github.com:gkotian/$PROJECT.git" "$PLAY_DIR/$PROJECT"
+    cloneRepo "git@github.com:gkotian/${PROJECT}.git" "${PLAY_DIR}/${PROJECT}"
 done
 
-echo "In the other terminal/tab, open the '/home/$THE_USER/.pypirc' file"
+echo "In the other terminal/tab, open the '/home/${THE_USER}/.pypirc' file"
 echo "and replace both occurrences of PASSWORD with the PyPI password."
 waitForConfirmation
 
-echo -n "Renaming '$PLAY_DIR/gkotian.github.io' to '$PLAY_DIR/website'... "
-sudo -u "${THE_USER}" mv "$PLAY_DIR/gkotian.github.io" "$PLAY_DIR/website"
+echo -n "Renaming '${PLAY_DIR}/gkotian.github.io' to '${PLAY_DIR}/website'... "
+sudo -u "${THE_USER}" mv "${PLAY_DIR}/gkotian.github.io" "${PLAY_DIR}/website"
 echo "Done!"
 echo ""
 
@@ -440,25 +440,25 @@ echo "Creating symbolic links for Claude Code configuration:"
 CLAUDE_DIR="/home/${THE_USER}/.claude"
 sudo -u "${THE_USER}" mkdir -p "${CLAUDE_DIR}/hooks" "${CLAUDE_DIR}/commands"
 echo -n "    CLAUDE.md... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/claude/CLAUDE.md" "${CLAUDE_DIR}/CLAUDE.md"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/claude/CLAUDE.md" "${CLAUDE_DIR}/CLAUDE.md"
 echo "Done!"
 echo -n "    settings.json... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/claude/settings.json" "${CLAUDE_DIR}/settings.json"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/claude/settings.json" "${CLAUDE_DIR}/settings.json"
 echo "Done!"
 echo -n "    settings.local.json... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/claude/settings.local.linux.json" "${CLAUDE_DIR}/settings.local.json"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/claude/settings.local.linux.json" "${CLAUDE_DIR}/settings.local.json"
 echo "Done!"
 echo -n "    statusline-command.js... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/claude/statusline-command.js" "${CLAUDE_DIR}/statusline-command.js"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/claude/statusline-command.js" "${CLAUDE_DIR}/statusline-command.js"
 echo "Done!"
 echo -n "    statusline-command.sh... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/claude/statusline-command.sh" "${CLAUDE_DIR}/statusline-command.sh"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/claude/statusline-command.sh" "${CLAUDE_DIR}/statusline-command.sh"
 echo "Done!"
 echo -n "    commands/note-save.md... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/claude/commands/note-save.md" "${CLAUDE_DIR}/commands/note-save.md"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/claude/commands/note-save.md" "${CLAUDE_DIR}/commands/note-save.md"
 echo "Done!"
 echo -n "    hooks/user-prompt-qmd.sh... "
-sudo -u "${THE_USER}" ln -srf "$GL_DIR/claude/hooks/user-prompt-qmd.sh" "${CLAUDE_DIR}/hooks/user-prompt-qmd.sh"
+sudo -u "${THE_USER}" ln -srf "${GL_DIR}/claude/hooks/user-prompt-qmd.sh" "${CLAUDE_DIR}/hooks/user-prompt-qmd.sh"
 echo "Done!"
 echo ""
 
@@ -466,6 +466,6 @@ echo "You're all set. Congratulations!!"
 
 END_TIMESTAMP=$(date +%s)
 TIME_TAKEN=$((END_TIMESTAMP - START_TIMESTAMP))
-echo "Total time taken: $(formatTime "$TIME_TAKEN")"
+echo "Total time taken: $(formatTime "${TIME_TAKEN}")"
 
 exit 0
