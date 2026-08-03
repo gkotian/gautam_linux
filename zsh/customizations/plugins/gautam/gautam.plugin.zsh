@@ -292,8 +292,11 @@ function delete_current_venv() {
 
 function uuid() {
     local uuid=$(/usr/bin/uuidgen)
-    echo -n "${uuid}" | xclip -selection clipboard
-    echo "${uuid} (also copied to the clipboard)"
+    if echo -n "${uuid}" | xclip -selection clipboard 2>/dev/null; then
+        echo "Copied '${uuid}' to the clipboard"
+    else
+        echo "${uuid}"
+    fi
 }
 
 #
