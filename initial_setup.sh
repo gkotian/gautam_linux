@@ -452,6 +452,6 @@ echo "You're all set. Congratulations!!"
 
 END_TIMESTAMP=$(date +%s)
 TIME_TAKEN=$((END_TIMESTAMP - START_TIMESTAMP))
-echo "Total time taken: `formatTime $TIME_TAKEN`"
+echo "Total time taken: $(formatTime $TIME_TAKEN)"
 
 exit 0
