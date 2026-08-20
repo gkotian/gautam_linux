@@ -11,6 +11,7 @@ ffmpeg
 fzf
 git
 gopass
+hcloud
 helm
 imagemagick
 inetutils
