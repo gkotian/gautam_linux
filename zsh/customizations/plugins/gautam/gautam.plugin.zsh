@@ -57,19 +57,32 @@ function gitResetBranch() {
     git checkout -B "${branch_name}" "${commit_hash}"
 }
 
-function rbm() {
-    local branch_name
-
+# Print the repo's main branch name: "main" if it exists locally or on
+# origin, otherwise "master". Fails if neither exists.
+function gitMainBranch() {
     if git rev-parse --verify --quiet main >/dev/null || git rev-parse --verify --quiet origin/main >/dev/null; then
-        branch_name="main"
+        echo "main"
     elif git rev-parse --verify --quiet master >/dev/null || git rev-parse --verify --quiet origin/master >/dev/null; then
-        branch_name="master"
+        echo "master"
     else
-        echo "Could not find 'main' or 'master'. Aborting."
+        echo "Could not find 'main' or 'master'. Aborting." >&2
         return 1
     fi
+}
+
+function rbm() {
+    local branch_name
+    branch_name="$(gitMainBranch)" || return 1
 
     gitResetBranch "${branch_name}"
+}
+
+# git rebase onto origin/<main branch>
+function grom() {
+    local branch_name
+    branch_name="$(gitMainBranch)" || return 1
+
+    git rebase "origin/${branch_name}" "$@"
 }
 
 compare_files() {
@@ -363,7 +376,6 @@ alias grma='git remote add'
 alias grmr='git remote remove'
 alias grmset='git remote set-url'
 alias grmu='git remote update -p'
-alias grom='git rebase origin/master'
 alias groot='cd $(git rev-parse --show-toplevel || echo ".")'
 alias grs='git rebase --skip'
 alias grsh='git reset HEAD'
